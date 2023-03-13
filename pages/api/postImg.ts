@@ -1,3 +1,4 @@
+// @ts-ignore 
 import { FILE_PATH_GET_API, FOLDER_IMAGE_PATH } from "config"
 import { IncomingForm } from "formidable"
 

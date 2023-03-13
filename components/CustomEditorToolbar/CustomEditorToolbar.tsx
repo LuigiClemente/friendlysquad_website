@@ -10,10 +10,7 @@ import { useAppProvider } from "@appProvider/AppProvider"
 import { useUndoable } from "@appProvider/UndoableProvider"
 import "react-toastify/dist/ReactToastify.css"
 
-import { uploadToServer, writeTemplate } from "@/utility/util"
-import { TempleBuddhist } from "@mui/icons-material"
-import { PATH_POST_IMG_LOCAL } from "config"
-import html2canvas from "html2canvas"
+import { useModalsAppProvider } from "@appProvider/ModalsAppProvider"
 import Edit from "../icons/Edit"
 import PreviewIcon from "../icons/PreviewIcon"
 import RedoIcon from "../icons/Redo"
@@ -22,7 +19,6 @@ import UndoIcon from "../icons/UndoIcon"
 import ZoomIn from "../icons/ZoomIn"
 import ZoomOut from "../icons/ZoomOut"
 import UndoCustomization from "./UndoCustomization"
-import { useModalsAppProvider } from "@appProvider/ModalsAppProvider"
 
 const useStyles = makeStyles(
   (theme) => ({

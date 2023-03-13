@@ -1,6 +1,6 @@
 import React from 'react'
 
-const XMark = ({ classCss }) => {
+const XMark = ({ classCss }:any) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'

@@ -1,13 +1,8 @@
-import Footer from "@/Footer/Footer"
 import PageLayout from "@/PageLayout"
-import GrassIframe from "@/siteComponents/grass/GrassIframe"
-import Layout from "@/siteComponents/layout/Layout"
-import { LayoutManger } from "@/siteComponents/layout/LayoutManager"
-import Verification from "@/Verification/ModalData"
+import { LayoutManger } from "@/SiteComponents/layout/LayoutManager"
 import { useAppProvider } from "@appProvider/AppProvider"
 import { Container } from "@mui/material"
 import Box from "@mui/material/Box"
-import dynamic from "next/dynamic"
 
 // const DynamicHeader = dynamic(() => import("../Header"), {
 //   ssr: false
@@ -33,7 +28,6 @@ const HomeComponent = () => {
           id="capture"
         >
           <Box
-          //  sx={{ width: "490px" }}
            >
             {/* <DynamicHeader /> */}
             <Box

@@ -1,3 +1,4 @@
+// @ts-ignore 
 import { IncomingForm } from "formidable"
 
 const formidable = require("formidable")

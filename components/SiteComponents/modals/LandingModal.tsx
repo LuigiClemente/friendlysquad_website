@@ -37,14 +37,14 @@ const LandingModal = () => {
                     as='h3'
                     className='pt-4 pl-4 text-2xl font-bold text-black'>{`Welcome to our website!`}</Dialog.Title>
                   <span className='flex w-8 h-8 p-1 border-0 cursor-pointer' onClick={() => setOpen(false)}>
-                    <XMark className='w-6 h-6 text-gray-400' aria-hidden='true' />
+                    <XMark classCss='w-6 h-6 text-gray-400' aria-hidden='true' />
                   </span>
                 </div>
                 <div className='px-4 pb-4 sm:my-3 sm:w-full sm:max-w-sm sm:p-3'>
                   <div className=' text-center'>
                     <div className='text-left'>
                       {MODAL_DATA.map((item, index) => (
-                        <p key={index + item} className='p-3 text-lg  font-bold text-gray-900 leading-6'>
+                        <p key={index + item.name} className='p-3 text-lg  font-bold text-gray-900 leading-6'>
                           {item.name}
                         </p>
                       ))}

@@ -3,9 +3,7 @@ import html2canvas from "html2canvas"
 import {
   FILE_PATH_APP,
   FILE_PATH_HEADER,
-  FILE_PATH_MODALS,
-  PATH_POST_TEMPLATE_LIST,
-  TEMPLATE_LIST_PATH
+  FILE_PATH_MODALS, TEMPLATE_LIST_PATH
 } from "../../config"
 const imageCompression = import("browser-image-compression")
 export const loadApp = async () => {
@@ -92,17 +90,6 @@ export const handleScreenShot = async () => {
   }
 }
 
-export const writeTemplate = async (data: string) => {
-  await fetch(PATH_POST_TEMPLATE_LIST, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(data)
-  }).then((res) => {
-    console.log("res", res)
-  })
-}
 
 // change millisecond to date
 export const convertMillisecondToFormat = (millisecond) => {

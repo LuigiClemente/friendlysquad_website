@@ -1,11 +1,12 @@
-import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
+import { Fragment } from 'react'
 import { LANGUAGES } from '../constant'
 import XMark from '../icons/XMark'
 
 const LanguageModal = ({ open, close }) => {
   return (
-    <Transition.Root show={open} as={Fragment} className='w-[500px] min-w-[500px]'>
+    // className='w-[500px] min-w-[500px]'
+    <Transition.Root show={open} as={Fragment} >
       <Dialog as='div' className='relative z-10 w-[500px] min-w-[500px]' onClose={close}>
         <Transition.Child
           as={Fragment}
@@ -39,7 +40,7 @@ const LanguageModal = ({ open, close }) => {
                   <div className='mt-3 text-center sm:mt-5'>
                     <div className='flex flex-row flex-wrap min-w-[38rem]'>
                       {LANGUAGES.map((item, index) => (
-                        <p key={index + item} className='px-2 py-1 text-sm text-gray-600'>
+                        <p key={index + item.lan} className='px-2 py-1 text-sm text-gray-600'>
                           {item.lan}
                         </p>
                       ))}

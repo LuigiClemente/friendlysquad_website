@@ -1,3 +1,4 @@
+// @ts-ignore 
 var Minio = require("minio")
 import { IncomingForm } from "formidable"
 const formidable = require("formidable")

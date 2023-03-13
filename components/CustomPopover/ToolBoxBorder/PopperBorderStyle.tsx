@@ -12,6 +12,8 @@ import { CompactPicker } from "react-color"
 import { updatePluginValue } from "../../../utils/uiController"
 import BorderType from "../../BorderType"
 import {
+  BUTTONS,
+  BUTTONS_PLUGIN_ID,
   HEADER,
   HEADER_PLUGIN_ID,
   LOGO,
@@ -276,6 +278,11 @@ const PopperBorderStyle = ({
       )
       setContent({ name: "borderBottomColor", value: e.hex, nameSection: VERIFY_CODE })
     }
+    else if (nameSection === BUTTONS) {
+      setBorderBottomColorButtons(e.hex)
+      setDbModalsFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID, "borderBottomColorButtons", e.hex))
+      setContent({ name: "borderBottomColor", value: e.hex, nameSection: BUTTONS })
+    }
   }
   //handle for border top color change
   const handleBorderTopColorChange = (e: any) => {
@@ -319,6 +326,11 @@ const PopperBorderStyle = ({
         updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "borderTopColorVerifyCode", e.hex)
       )
       setContent({ name: "borderTopColor", value: e.hex, nameSection: VERIFY_CODE })
+    }
+    else if (nameSection === BUTTONS) {
+      setBorderTopColorButtons(e.hex)
+      setDbModalsFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID, "borderTopColorButtons", e.hex))
+      setContent({ name: "borderTopColor", value: e.hex, nameSection: BUTTONS })
     }
   }
   //handle for border left color change
@@ -369,6 +381,11 @@ const PopperBorderStyle = ({
         updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "borderLeftColorVerifyCode", e.hex)
       )
       setContent({ name: "borderLeftColor", value: e.hex, nameSection: VERIFY_CODE })
+    }
+    else if (nameSection === BUTTONS) {
+      setBorderLeftColorButtons(e.hex)
+      setDbModalsFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID, "borderLeftColorButtons", e.hex))
+      setContent({ name: "borderLeftColor", value: e.hex, nameSection: BUTTONS })
     }
   }
   //handle for border right color change
