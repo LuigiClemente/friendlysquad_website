@@ -5,9 +5,9 @@
   "sideEffects": false,
   "scripts": {
     "analyze": "cross-env ANALYZE=true next build && next export -o build",
-    "dev": "next dev -p 3001 SET NODE_OPTIONS=--max_old_space_size=8048",
-    "build": "next build && next export -o build",
-    "start": "next start"
+    "dev": "SET NODE_OPTIONS=--max_old_space_size=8048 && next dev -p 3001",
+    "build": "SET NODE_OPTIONS=--max_old_space_size=8048 && next build",
+    "start": "SET NODE_OPTIONS=--max_old_space_size=8048 && next start"
   },
   "peerDependencies": {
     "react": ">= 16.14",
