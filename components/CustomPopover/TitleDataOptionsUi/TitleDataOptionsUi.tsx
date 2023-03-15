@@ -32,15 +32,9 @@ type TitleDataOptionsUiProps = {
 }
 const TitleDataOptionsUi = ({ style }: TitleDataOptionsUiProps) => {
   const classes = useStyles()
-<<<<<<< HEAD
   const { dialogOpenTitleModal, setDialogOpenTitleModal }: any = useModalsAppProvider()
   const handleClickOpen = () => {
     setDialogOpenTitleModal(true)
-=======
-  const { dialogOpenVerifyTitle, setDialogOpenVerifyTitle }: any = useModalsAppProvider()
-  const handleClickOpen = () => {
-    setDialogOpenVerifyTitle(true)
->>>>>>> 1c6806168f51fa92cd3293a86a7d411567c6662a
   }
 
   return (
@@ -70,11 +64,7 @@ const TitleDataOptionsUi = ({ style }: TitleDataOptionsUiProps) => {
       >
         <Edit />
       </IconButton>
-<<<<<<< HEAD
       {dialogOpenTitleModal && <SettingsTitleVerification open={dialogOpenTitleModal} />}
-=======
-      {dialogOpenVerifyTitle && <SettingsTitleVerification open={dialogOpenVerifyTitle} />}
->>>>>>> 1c6806168f51fa92cd3293a86a7d411567c6662a
     </div>
   )
 }
