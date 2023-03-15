@@ -19,6 +19,7 @@ module.exports = withBundleAnalyzer({
     ]
   },
   experimental: {
+    esmExternals: false,
     externalDir: true,
     concurrentFeatures: true,
     useSuspense: false
