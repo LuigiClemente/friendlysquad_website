@@ -16,8 +16,8 @@ export const LayoutManger = () => {
                 return <IframeFood />
             case "SERVICE":
                 return <GrassIframe />
-            case "CONTACT US":
-                return <IframeLaser />
+            // case "CONTACT US":
+            //     return <IframeLaser />
             default:
                 return <GlobalEdgeNetwork title={GLOBAL_TITLE} noteList={NOTE_GLOBE_SECTION} description={GLOBAL_DESCRIPTION} />
         }

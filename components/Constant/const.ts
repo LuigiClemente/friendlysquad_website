@@ -1,4 +1,3 @@
-// new code
 
 export const LOGO = "logo"
 export const HEADER = "header"

@@ -1,3 +1,4 @@
+import GlobalEdgeNetwork from "@/SiteComponents/globe/GlobalEdgeNetwork"
 import { AppProvider } from "@appProvider/AppProvider"
 import { AppStateProvider } from "@appProvider/AppStateProvider"
 import { ModalsAppProvider } from "@appProvider/ModalsAppProvider"
