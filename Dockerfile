@@ -2,9 +2,9 @@
 FROM node:14-alpine AS deps
 # Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
 WORKDIR /app
-COPY package.json package-lock.json ./
+COPY package*.json ./
 ADD package.json /app/package.json
-RUN npm install  
+RUN yarn  
 
 # If using npm with a `package-lock.json` comment out above and use below instead
 # COPY package.json package-lock.json ./ --frozen-lockfile
@@ -21,6 +21,7 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
+
 RUN ls
 RUN ls /app
 
@@ -32,7 +33,7 @@ ENV NEXT_PUBLIC_FRONTEND_URL=$NEXT_PUBLIC_FRONTEND_URL
 # Uncomment the following line in case you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED 1
 
-RUN npm run build
+RUN yarn build
 
 # If using npm comment out above and use below instead
 # RUN npm run build
@@ -61,5 +62,5 @@ EXPOSE 3001
 
 ENV PORT 3001
 
-CMD ["npm", "start"]
+CMD ["yarn", "start"]
 
