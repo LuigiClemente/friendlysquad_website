@@ -3,6 +3,7 @@ FROM node:14-alpine AS deps
 # Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
 WORKDIR /app
 COPY package.json package-lock.json ./
+ADD package.json /app/package.json
 RUN npm install  
 
 # If using npm with a `package-lock.json` comment out above and use below instead
