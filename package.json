@@ -5,7 +5,7 @@
   "sideEffects": false,
   "scripts": {
     "analyze": "cross-env ANALYZE=true next build && next export -o build",
-    "dev": "next dev -p 3001",
+    "dev": "next dev -p 3001 SET NODE_OPTIONS=--max_old_space_size=8048",
     "build": "next build && next export -o build",
     "start": "next start"
   },
