@@ -1,0 +1,56 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+  
+    // "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "baseUrl": ".",
+    "jsx": "preserve",
+    "incremental": true,
+    "paths": {
+      "@/*": ["components/*"],
+      "@pages/*": ["pages/*"],
+      "@pages": ["pages"],
+      "@components/*": ["components/*"],
+      "@components": ["components"],
+      "@appProvider/*": ["appProvider/*"],
+      "@plugins/*": ["plugins/*"],
+      "@config/*": ["config/*"],
+     
+      "react": [
+        "./node_modules/@types/react",
+       
+      ]
+    },
+    "strict": false
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "plugins/giftCard.Plugintsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "public"
+  ],
+  "react": {
+    "useSuspense": false,
+  },
+  "reloadOnPrerender": false,
+    
+}

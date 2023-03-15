@@ -1,0 +1,190 @@
+{
+    "version": 1,
+    "rows": [
+        {
+            "id": "56g17r",
+            "cells": [
+                {
+                    "id": "mshnjh",
+                    "size": 12,
+                    "dataI18n": {},
+                    "rows": [
+                        {
+                            "id": "x446wb",
+                            "cells": [
+                                {
+                                    "id": "uv17ku",
+                                    "size": 12,
+                                    "plugin": {
+                                        "id": "header-Plugin",
+                                        "version": 1
+                                    },
+                                    "dataI18n": {
+                                        "en": {
+                                            "fontSizeHeader": "13",
+                                            "fontHeader": "Segoe UI",
+                                            "colorHeader": "#3612ec",
+                                            "backgroundColorHeader": "#000000",
+                                            "borderBottomColorHeader": "#000000",
+                                            "borderBottomWidthHeader": "0",
+                                            "borderTopColorHeader": "#000000",
+                                            "borderTopWidthHeader": "0",
+                                            "borderLeftColorHeader": "#ffcdd2",
+                                            "borderLeftWidthHeader": "0",
+                                            "borderRightColorHeader": "#f8bbd0",
+                                            "borderRightWidthHeader": "0",
+                                            "borderRightStyleHeader": "outset",
+                                            "borderLeftStyleHeader": "inset",
+                                            "borderTopStyleHeader": "solid",
+                                            "borderBottomStyleHeader": "solid",
+                                            "borderTopRightRadiusHeader": "0",
+                                            "borderTopLeftRadiusHeader": "0",
+                                            "borderBottomRightRadiusHeader": "0",
+                                            "borderBottomLeftRadiusHeader": "0",
+                                            "paddingTopHeader": "20",
+                                            "paddingBottomHeader": "20",
+                                            "paddingLeftHeader": "20",
+                                            "paddingRightHeader": "20",
+                                            "marginTopHeader": "0",
+                                            "marginBottomHeader": "0",
+                                            "marginLeftHeader": "0",
+                                            "marginRightHeader": "1"
+                                        }
+                                    },
+                                    "inline": null
+                                }
+                            ]
+                        },
+                        {
+                            "id": "x446wb",
+                            "cells": [
+                                {
+                                    "id": "uv17ku",
+                                    "size": 12,
+                                    "plugin": {
+                                        "id": "custom-logo-plugin",
+                                        "version": 1
+                                    },
+                                    "dataI18n": {
+                                        "en": {
+                                            "fontSizeLogo": "20",
+                                            "backgroundColorLogo": "",
+                                            "colorLogo": "",
+                                            "fontLogo": "",
+                                            "borderBottomColorLogo": "#CFCFCF",
+                                            "borderBottomWidthLogo": "0",
+                                            "borderTopColorLogo": "#CFCFCF",
+                                            "borderTopWidthLogo": "5",
+                                            "borderLeftColorLogo": "#CFCFCF",
+                                            "borderLeftWidthLogo": "0",
+                                            "borderRightColorLogo": "#CFCFCF",
+                                            "borderRightWidthLogo": "0",
+                                            "borderRightStyleLogo": "solid",
+                                            "borderLeftStyleLogo": "solid",
+                                            "borderTopStyleLogo": "solid",
+                                            "borderBottomStyleLogo": "solid",
+                                            "borderTopRightRadiusLogo": "0",
+                                            "borderTopLeftRadiusLogo": "0",
+                                            "borderBottomRightRadiusLogo": "0",
+                                            "borderBottomLeftRadiusLogo": "0",
+                                            "paddingTopLogo": "3",
+                                            "paddingBottomLogo": "3",
+                                            "paddingLeftLogo": "",
+                                            "paddingRightLogo": "3",
+                                            "marginTopLogo": "2",
+                                            "marginBottomLogo": "3",
+                                            "marginLeftLogo": "2",
+                                            "marginRightLogo": "3",
+                                            "minWidthLogo": "140",
+                                            "maxWidthLogo": "120",
+                                            "minHeightLogo": "60",
+                                            "maxHeightLogo": "60"
+                                        }
+                                    },
+                                    "inline": null
+                                }
+                            ]
+                        },
+                        {
+                            "id": "x446wb",
+                            "cells": [
+                                {
+                                    "id": "uv17ku",
+                                    "size": 12,
+                                    "plugin": {
+                                        "id": "referral-image-plugin",
+                                        "version": 1
+                                    },
+                                    "dataI18n": {
+                                        "en": {
+                                            "borderBottomColorModalBox": "#000",
+                                            "borderBottomWidthModalBox": "0",
+                                            "borderTopColorModalBox": "#311b92",
+                                            "borderTopWidthModalBox": "1",
+                                            "borderLeftColorModalBox": "#d9d9d9",
+                                            "borderLeftWidthModalBox": "1",
+                                            "borderRightColorModalBox": "#000",
+                                            "borderRightWidthModalBox": "1",
+                                            "borderRightStyleModalBox": "double",
+                                            "borderLeftStyleModalBox": "solid",
+                                            "borderTopStyleModalBox": "dotted",
+                                            "borderBottomStyleModalBox": "solid",
+                                            "borderTopRightRadiusModalBox": "0",
+                                            "borderTopLeftRadiusModalBox": "0",
+                                            "borderBottomRightRadiusModalBox": "0",
+                                            "borderBottomLeftRadiusModalBox": "0",
+                                            "paddingTopModalBox": "1",
+                                            "paddingBottomModalBox": "1",
+                                            "paddingLeftModalBox": "1",
+                                            "paddingRightModalBox": "1",
+                                            "marginTopModalBox": "1",
+                                            "marginBottomModalBox": "10",
+                                            "marginLeftModalBox": "18",
+                                            "marginRightModalBox": "1",
+                                            "minWidthModalBox": "",
+                                            "maxWidthModalBox": "",
+                                            "minHeightModalBox": "",
+                                            "maxHeightModalBox": "",
+                                            "visibilityModalBox": false
+                                        }
+                                    },
+                                    "inline": null
+                                }
+                            ]
+                        },
+                        {
+                            "id": "x446wb",
+                            "cells": [
+                                {
+                                    "id": "uv17ku",
+                                    "size": 12,
+                                    "plugin": {
+                                        "id": "body-Plugin",
+                                        "version": 1
+                                    },
+                                    "dataI18n": {
+                                        "en": {
+                                            "bodyBackgroundColor": "#ffffff",
+                                            "containerBackgroundColor": "#ffffff",
+                                            "containerShadow": "rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px",
+                                            "paddingTopHeader": "8",
+                                            "paddingBottomHeader": "8",
+                                            "paddingLeftHeader": "0",
+                                            "paddingRightHeader": "0",
+                                            "marginTopHeader": "0",
+                                            "marginBottomHeader": "0",
+                                            "marginLeftHeader": "0",
+                                            "marginRightHeader": "1"
+                                        }
+                                    },
+                                    "inline": null
+                                }
+                            ]
+                        }
+                    ],
+                    "inline": null
+                }
+            ]
+        }
+    ]
+}

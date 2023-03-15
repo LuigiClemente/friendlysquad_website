@@ -1,0 +1,233 @@
+{
+    "version": 1,
+    "rows": [
+        {
+            "id": "56g17r",
+            "cells": [
+                {
+                    "id": "mshnjh",
+                    "size": 12,
+                    "dataI18n": {},
+                    "rows": [
+                        {
+                            "id": "x446wb",
+                            "cells": [
+                                {
+                                    "id": "uv17ku",
+                                    "size": 12,
+                                    "plugin": {
+                                        "id": "TitleModal-modal-Plugin",
+                                        "version": 1
+                                    },
+                                    "dataI18n": {
+                                        "en": {
+                                            "fontSizeTitleModal": "1.5rem",
+                                            "fontTitleModal": "sans-serif",
+                                            "colorTitleModal": "#000000",
+                                            "backgroundColorTitleModal": "#000000",
+                                            "borderBottomColorTitleModal": "#000000",
+                                            "borderBottomWidthTitleModal": "0",
+                                            "borderTopColorTitleModal": "#000000",
+                                            "borderTopWidthTitleModal": "0",
+                                            "borderLeftColorTitleModal": "#000000",
+                                            "borderLeftWidthTitleModal": "0",
+                                            "borderRightColorTitleModal": "#000000",
+                                            "borderRightWidthTitleModal": "0",
+                                            "borderRightStyleTitleModal": "solid",
+                                            "borderLeftStyleTitleModal": "solid",
+                                            "borderTopStyleTitleModal": "solid",
+                                            "borderBottomStyleTitleModal": "solid",
+                                            "borderTopRightRadiusTitleModal": "0",
+                                            "borderTopLeftRadiusTitleModal": "0",
+                                            "borderBottomRightRadiusTitleModal": "0",
+                                            "borderBottomLeftRadiusTitleModal": "0",
+                                            "paddingTopTitleModal": "0",
+                                            "paddingBottomTitleModal": "0",
+                                            "paddingLeftTitleModal": "0",
+                                            "paddingRightTitleModal": "0",
+                                            "marginTopTitleModal": "10",
+                                            "marginBottomTitleModal": "0",
+                                            "marginLeftTitleModal": "0",
+                                            "marginRightTitleModal": "1",
+                                            "fontSizeDataTitle": "1.5rem",
+                                            "fontDataTitle": "Oxygen",
+                                            "colorDataTitle": "#2908de",
+                                            "backgroundColorDataTitle": "#000000",
+                                            "borderBottomColorDataTitle": "#000000",
+                                            "borderBottomWidthDataTitle": "0",
+                                            "borderTopColorDataTitle": "#000000",
+                                            "borderTopWidthDataTitle": "0",
+                                            "borderLeftColorDataTitle": "#000000",
+                                            "borderLeftWidthDataTitle": "0",
+                                            "borderRightColorDataTitle": "#000000",
+                                            "borderRightWidthDataTitle": "0",
+                                            "borderRightStyleDataTitle": "solid",
+                                            "borderLeftStyleDataTitle": "solid",
+                                            "borderTopStyleDataTitle": "solid",
+                                            "borderBottomStyleDataTitle": "solid",
+                                            "borderTopRightRadiusDataTitle": "0",
+                                            "borderTopLeftRadiusDataTitle": "20",
+                                            "borderBottomRightRadiusDataTitle": "0",
+                                            "borderBottomLeftRadiusDataTitle": "0",
+                                            "paddingTopDataTitle": "8",
+                                            "paddingBottomDataTitle": "8",
+                                            "paddingLeftDataTitle": "8",
+                                            "paddingRightDataTitle": "8",
+                                            "marginTopDataTitle": "0",
+                                            "marginBottomDataTitle": "0",
+                                            "marginLeftDataTitle": "0",
+                                            "marginRightDataTitle": "1",
+                                            "backgroundColorGiftCheckCard": "10"
+                                        }
+                                    },
+                                    "inline": null
+                                }
+                            ]
+                        },
+                        {
+                            "id": "x446mb",
+                            "cells": [
+                                {
+                                    "id": "uv17kl",
+                                    "size": 12,
+                                    "plugin": {
+                                        "id": "Data-modal-Plugin",
+                                        "version": 1
+                                    },
+                                    "dataI18n": {
+                                        "en": {
+                                            "fontSizeData": "1rem",
+                                            "fontData": "Segoe UI",
+                                            "colorData": "#4a4a4a",
+                                            "backgroundColorData": "#000000",
+                                            "borderBottomColorData": "#000000",
+                                            "borderBottomWidthData": "0",
+                                            "borderTopColorData": "#000000",
+                                            "borderTopWidthData": "0",
+                                            "borderLeftColorData": "#000000",
+                                            "borderLeftWidthData": "0",
+                                            "borderRightColorData": "#000000",
+                                            "borderRightWidthData": "0",
+                                            "borderRightStyleData": "solid",
+                                            "borderLeftStyleData": "solid",
+                                            "borderTopStyleData": "solid",
+                                            "borderBottomStyleData": "solid",
+                                            "borderTopRightRadiusData": "0",
+                                            "borderTopLeftRadiusData": "0",
+                                            "borderBottomRightRadiusData": "0",
+                                            "borderBottomLeftRadiusData": "0",
+                                            "paddingTopData": "0",
+                                            "paddingBottomData": "0",
+                                            "paddingLeftData": "0",
+                                            "paddingRightData": "0",
+                                            "marginTopData": "13",
+                                            "marginBottomData": "0",
+                                            "marginLeftData": "0",
+                                            "marginRightData": "1"
+                                        }
+                                    },
+                                    "inline": null
+                                }
+                            ]
+                        },
+                        {
+                            "id": "x446mb",
+                            "cells": [
+                                {
+                                    "id": "uv17kl",
+                                    "size": 12,
+                                    "plugin": {
+                                        "id": "DataModal-modal-btn",
+                                        "version": 1
+                                    },
+                                    "dataI18n": {
+                                        "en": {
+                                            "fontSizeDataModal": "16",
+                                            "fontDataModal": "#4a4a4a",
+                                            "colorDataModal": "#4a4a4a",
+                                            "backgroundColorDataModal": "#000000",
+                                            "borderBottomColorDataModal": "#000000",
+                                            "borderBottomWidthDataModal": "0",
+                                            "borderTopColorDataModal": "#000000",
+                                            "borderTopWidthDataModal": "0",
+                                            "borderLeftColorDataModal": "#000000",
+                                            "borderLeftWidthDataModal": "0",
+                                            "borderRightColorDataModal": "#000000",
+                                            "borderRightWidthDataModal": "0",
+                                            "borderRightStyleDataModal": "solid",
+                                            "borderLeftStyleDataModal": "solid",
+                                            "borderTopStyleDataModal": "solid",
+                                            "borderBottomStyleDataModal": "solid",
+                                            "borderTopRightRadiusDataModal": "0",
+                                            "borderTopLeftRadiusDataModal": "0",
+                                            "borderBottomRightRadiusDataModal": "0",
+                                            "borderBottomLeftRadiusDataModal": "20",
+                                            "paddingTopDataModal": "8",
+                                            "paddingBottomDataModal": "8",
+                                            "paddingLeftDataModal": "8",
+                                            "paddingRightDataModal": "8",
+                                            "marginTopDataModal": "0",
+                                            "marginBottomDataModal": "0",
+                                            "marginLeftDataModal": "0",
+                                            "marginRightDataModal": "1",
+                                            "backgroundColorGiftCheckCard": "13"
+                                        }
+                                    },
+                                    "inline": null
+                                }
+                            ]
+                        },
+                        {
+                            "id": "x446mb",
+                            "cells": [
+                                {
+                                    "id": "uv17kl",
+                                    "size": 12,
+                                    "plugin": {
+                                        "id": "buttons-Plugin",
+                                        "version": 1
+                                    },
+                                    "dataI18n": {
+                                        "en": {
+                                            "fontSizeButtons": "16",
+                                            "fontButtons": "#4a4a4a",
+                                            "colorButtons": "#4a4a4a",
+                                            "backgroundColorButtons": "#000000",
+                                            "borderBottomColorButtons": "#000000",
+                                            "borderBottomWidthButtons": "0",
+                                            "borderTopColorButtons": "#000000",
+                                            "borderTopWidthButtons": "0",
+                                            "borderLeftColorButtons": "#000000",
+                                            "borderLeftWidthButtons": "0",
+                                            "borderRightColorButtons": "#000000",
+                                            "borderRightWidthButtons": "0",
+                                            "borderRightStyleButtons": "solid",
+                                            "borderLeftStyleButtons": "solid",
+                                            "borderTopStyleButtons": "solid",
+                                            "borderBottomStyleButtons": "solid",
+                                            "borderTopRightRadiusButtons": "0",
+                                            "borderTopLeftRadiusButtons": "0",
+                                            "borderBottomRightRadiusButtons": "0",
+                                            "borderBottomLeftRadiusButtons": "20",
+                                            "paddingTopButtons": "8",
+                                            "paddingBottomButtons": "8",
+                                            "paddingLeftButtons": "8",
+                                            "paddingRightButtons": "8",
+                                            "marginTopButtons": "0",
+                                            "marginBottomButtons": "0",
+                                            "marginLeftButtons": "5",
+                                            "marginRightButtons": "5",
+                                            "backgroundColorGiftCheckCard": "13"
+                                        }
+                                    },
+                                    "inline": null
+                                }
+                            ]
+                        }
+                    ],
+                    "inline": null
+                }
+            ]
+        }
+    ]
+}
