@@ -52,42 +52,42 @@ export const AppStateProvider = ({ children }: any) => {
     if (buttonFormat) {
       console.log("buttonFormat",buttonFormat?.fontSizeButtons)
       // Buttons-modal-btn
-      setFontSizeButtons(buttonFormat?.fontSizeButtons)
-      setFontButtons(buttonFormat?.fontButtons)
-      setColorButtons(buttonFormat?.colorButtons)
-      setBackgroundColorButtons(buttonFormat?.backgroundColorButtons)
-      // border
-      setBorderBottomColorButtons(buttonFormat?.borderBottomColorButtons)
-      setBorderRightColorButtons(buttonFormat?.borderRightColorButtons)
-      setBorderLeftColorButtons(buttonFormat?.borderLeftColorButtons)
-      setBorderTopColorButtons(buttonFormat?.borderTopColorButtons)
-      // border width
-      setBorderRightWidthButtons(buttonFormat?.borderRightWidthButtons)
-      setBorderLeftWidthButtons(buttonFormat?.borderLeftWidthButtons)
-      setBorderTopWidthButtons(buttonFormat?.borderTopWidthButtons)
-      setBorderBottomWidthButtons(buttonFormat?.borderBottomWidthButtons)
-      // border style
-      setBorderRightStyleButtons(buttonFormat?.borderRightStyleButtons)
-      setBorderLeftStyleButtons(buttonFormat?.borderLeftStyleButtons)
-      setBorderTopStyleButtons(buttonFormat?.borderTopStyleButtons)
-      setBorderBottomStyleButtons(buttonFormat?.borderBottomStyleButtons)
-      // border radius border-top-right-radius
-      setBorderTopRightRadiusButtons(buttonFormat?.borderTopRightRadiusButtons)
-      setBorderTopLeftRadiusButtons(buttonFormat?.borderTopLeftRadiusButtons)
-      setBorderBottomRightRadiusButtons(
-        buttonFormat?.borderBottomRightRadiusButtons
-      )
-      setBorderBottomLeftRadiusButtons(buttonFormat?.borderBottomLeftRadiusButtons)
-      // padding
-      setPaddingRightButtons(buttonFormat?.paddingRightButtons)
-      setPaddingLeftButtons(buttonFormat?.paddingLeftButtons)
-      setPaddingTopButtons(buttonFormat?.paddingTopButtons)
-      setPaddingBottomButtons(buttonFormat?.paddingBottomButtons)
-      // margin
-      setMarginRightButtons(buttonFormat?.marginRightButtons)
-      setMarginLeftButtons(buttonFormat?.marginLeftButtons)
-      setMarginTopButtons(buttonFormat?.marginTopButtons)
-      setMarginBottomButtons(buttonFormat?.marginBottomButtons)
+      // setFontSizeButtons(buttonFormat?.fontSizeButtons)
+      // setFontButtons(buttonFormat?.fontButtons)
+      // setColorButtons(buttonFormat?.colorButtons)
+      // setBackgroundColorButtons(buttonFormat?.backgroundColorButtons)
+      // // border
+      // setBorderBottomColorButtons(buttonFormat?.borderBottomColorButtons)
+      // setBorderRightColorButtons(buttonFormat?.borderRightColorButtons)
+      // setBorderLeftColorButtons(buttonFormat?.borderLeftColorButtons)
+      // setBorderTopColorButtons(buttonFormat?.borderTopColorButtons)
+      // // border width
+      // setBorderRightWidthButtons(buttonFormat?.borderRightWidthButtons)
+      // setBorderLeftWidthButtons(buttonFormat?.borderLeftWidthButtons)
+      // setBorderTopWidthButtons(buttonFormat?.borderTopWidthButtons)
+      // setBorderBottomWidthButtons(buttonFormat?.borderBottomWidthButtons)
+      // // border style
+      // setBorderRightStyleButtons(buttonFormat?.borderRightStyleButtons)
+      // setBorderLeftStyleButtons(buttonFormat?.borderLeftStyleButtons)
+      // setBorderTopStyleButtons(buttonFormat?.borderTopStyleButtons)
+      // setBorderBottomStyleButtons(buttonFormat?.borderBottomStyleButtons)
+      // // border radius border-top-right-radius
+      // setBorderTopRightRadiusButtons(buttonFormat?.borderTopRightRadiusButtons)
+      // setBorderTopLeftRadiusButtons(buttonFormat?.borderTopLeftRadiusButtons)
+      // setBorderBottomRightRadiusButtons(
+      //   buttonFormat?.borderBottomRightRadiusButtons
+      // )
+      // setBorderBottomLeftRadiusButtons(buttonFormat?.borderBottomLeftRadiusButtons)
+      // // padding
+      // setPaddingRightButtons(buttonFormat?.paddingRightButtons)
+      // setPaddingLeftButtons(buttonFormat?.paddingLeftButtons)
+      // setPaddingTopButtons(buttonFormat?.paddingTopButtons)
+      // setPaddingBottomButtons(buttonFormat?.paddingBottomButtons)
+      // // margin
+      // setMarginRightButtons(buttonFormat?.marginRightButtons)
+      // setMarginLeftButtons(buttonFormat?.marginLeftButtons)
+      // setMarginTopButtons(buttonFormat?.marginTopButtons)
+      // setMarginBottomButtons(buttonFormat?.marginBottomButtons)
     }
   }, [])
   return (
