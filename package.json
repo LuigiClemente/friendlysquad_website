@@ -23,8 +23,6 @@
     "@mui/material": "^5.8.1",
     "@mui/styled-engine-sc": "^5.11.11",
     "@mui/styles": "^5.8.0",
-    "@react-page/editor": "5.2.0",
-    "@react-page/plugins-slate": "5.2.0",
     "@types/minio": "^7.0.15",
     "@types/react": "18.0.25",
     "@types/react-datepicker": "^4.8.0",

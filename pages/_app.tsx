@@ -1,11 +1,9 @@
 import type { EmotionCache } from "@emotion/react"
 import { CacheProvider } from "@emotion/react"
-import "@react-page/editor/lib/index.css"
 import React, { useEffect, useState } from "react"
 import '../styles/index.css'
 import "../styles/styles.css"
 
-import { AppStateProvider } from "@appProvider/AppStateProvider"
 import { ThemePageProvider } from "@appProvider/ThemePageProvider"
 import { ThemeProvider } from "@mui/material"
 import type { AppProps } from "next/app"
