@@ -3,7 +3,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
   openAnalyzer: false
 })
 module.exports = withBundleAnalyzer({
-  target: 'server',
+  target: 'serverless',
   reactStrictMode: false,
   trailingSlash: true,
   webpack: (config, { dev }) => {
