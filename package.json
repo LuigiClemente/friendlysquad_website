@@ -6,8 +6,8 @@
   "scripts": {
     "analyze": "cross-env ANALYZE=true next build && next export -o build",
     "dev": "next dev -p 3001",
-    "build": "next build  --max_old_space_size=4096 build",
-    "start": "next start --max_old_space_size=4096 start"
+    "build": "next build && next export -o build",
+    "start": "next start"
   },
   "peerDependencies": {
     "react": ">= 16.14",

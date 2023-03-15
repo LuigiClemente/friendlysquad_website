@@ -33,9 +33,15 @@ type ModalDataOptionsUiProps = {
 }
 const ModalDataOptionsUi = ({ style }: ModalDataOptionsUiProps) => {
   const classes = useStyles()
+<<<<<<< HEAD
   const { dialogOpenDataModal, setDialogOpenDataModal }: any = useModalsAppProvider()
   const handleClickOpen = () => {
     setDialogOpenDataModal(true)
+=======
+  const { dialogOpenVerifyCode, setDialogOpenVerifyCode }: any = useModalsAppProvider()
+  const handleClickOpen = () => {
+    setDialogOpenVerifyCode(true)
+>>>>>>> 1c6806168f51fa92cd3293a86a7d411567c6662a
   }
 
   return (
@@ -65,7 +71,11 @@ const ModalDataOptionsUi = ({ style }: ModalDataOptionsUiProps) => {
       >
         <Edit />
       </IconButton>
+<<<<<<< HEAD
       {dialogOpenDataModal && <SettingsCodeVerification open={dialogOpenDataModal} />}
+=======
+      {dialogOpenVerifyCode && <SettingsCodeVerification open={dialogOpenVerifyCode} />}
+>>>>>>> 1c6806168f51fa92cd3293a86a7d411567c6662a
     </div>
   )
 }

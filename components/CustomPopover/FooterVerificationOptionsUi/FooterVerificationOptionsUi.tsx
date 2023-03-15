@@ -1,7 +1,7 @@
 import { useModalsAppProvider } from "@appProvider/ModalsAppProvider"
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles"
 import { IconButton } from "@mui/material"
-import SettingsTitleVerification from "@plugins/SettingsTitleVerification/SettingsTitleVerification"
+import SettingsFooterVerification from "@plugins/settingsFooterVerification/SettingsFooterVerification"
 import Edit from "../../icons/Edit"
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -27,20 +27,14 @@ const useStyles = makeStyles((theme: Theme) =>
     }
   })
 )
-type TitleDataOptionsUiProps = {
+type FooterVerificationOptionsUiProps = {
   style: any
 }
-const TitleDataOptionsUi = ({ style }: TitleDataOptionsUiProps) => {
+const FooterVerificationOptionsUi = ({ style }: FooterVerificationOptionsUiProps) => {
   const classes = useStyles()
-<<<<<<< HEAD
-  const { dialogOpenTitleModal, setDialogOpenTitleModal }: any = useModalsAppProvider()
+  const { dialogOpenVerifyFooter, setDialogOpenVerifyFooter }: any = useModalsAppProvider()
   const handleClickOpen = () => {
-    setDialogOpenTitleModal(true)
-=======
-  const { dialogOpenVerifyTitle, setDialogOpenVerifyTitle }: any = useModalsAppProvider()
-  const handleClickOpen = () => {
-    setDialogOpenVerifyTitle(true)
->>>>>>> 1c6806168f51fa92cd3293a86a7d411567c6662a
+    setDialogOpenVerifyFooter(true)
   }
 
   return (
@@ -70,12 +64,8 @@ const TitleDataOptionsUi = ({ style }: TitleDataOptionsUiProps) => {
       >
         <Edit />
       </IconButton>
-<<<<<<< HEAD
-      {dialogOpenTitleModal && <SettingsTitleVerification open={dialogOpenTitleModal} />}
-=======
-      {dialogOpenVerifyTitle && <SettingsTitleVerification open={dialogOpenVerifyTitle} />}
->>>>>>> 1c6806168f51fa92cd3293a86a7d411567c6662a
+      {dialogOpenVerifyFooter && <SettingsFooterVerification open={dialogOpenVerifyFooter} />}
     </div>
   )
 }
-export default TitleDataOptionsUi
+export default FooterVerificationOptionsUi

@@ -1,9 +1,18 @@
+<<<<<<< HEAD
 import React, { useEffect, useRef, useState } from 'react'
 import { ABOUT_US } from '../constant'
 import PageModals from '../modals/PageModals'
 import Spinner from '../spinner/Spinner'
 import { useWindowSize } from '../utils/utility'
 
+=======
+import Header from '@/Header'
+import React, { useRef, useState } from 'react'
+import PageModals from '../modals/PageModals'
+import { useWindowSize } from '../utils/utility'
+
+
+>>>>>>> 1c6806168f51fa92cd3293a86a7d411567c6662a
 const GrassIframe = () => {
   const pageRef = useRef()
   const size = useWindowSize()
@@ -16,6 +25,7 @@ const GrassIframe = () => {
   if(typeof window == 'undefined'){
     return null
   }
+<<<<<<< HEAD
   const [load, setLoad] = useState(false)
   useEffect(() => {
     document.getElementById('grass-iframe').onload = () => {
@@ -31,6 +41,13 @@ const GrassIframe = () => {
       ref={pageRef}
         id='grass-iframe'
         src={src} 
+=======
+  return (
+      <iframe
+      ref={pageRef}
+        id='animation-iframe'
+        src={src}
+>>>>>>> 1c6806168f51fa92cd3293a86a7d411567c6662a
         scrolling='yes'
         frameBorder={0}
         allowFullScreen={true}
@@ -42,8 +59,11 @@ const GrassIframe = () => {
         onLoad={onLoad}
         loading='lazy'
       />
+<<<<<<< HEAD
        {load && <PageModals title={`SERVICE`} content={ABOUT_US} />}
     </div>
+=======
+>>>>>>> 1c6806168f51fa92cd3293a86a7d411567c6662a
       
   )
 }
