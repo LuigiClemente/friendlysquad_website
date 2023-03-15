@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "sideEffects": false,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "analyze": "cross-env ANALYZE=true next build && next export -o build",
     "dev": "next dev -p 3001",
