@@ -10,6 +10,11 @@ RUN npm install
 COPY ./ /app
 
 COPY package.json ./app
+# COPY pages ./pages
+# COPY pages ./pages
+# COPY public ./public
+# COPY plugins ./plugins
+COPY styles ./styles
 COPY . .
 
 
