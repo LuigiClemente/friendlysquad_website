@@ -3,7 +3,11 @@ FROM node:14-alpine AS deps
 # Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
 WORKDIR /app
 COPY package*.json yarn.lock ./
-RUN yarn  
+RUN npm install  
+
+COPY ./ /app
+
+COPY package*.json ./app
 
 # If using npm with a `package-lock.json` comment out above and use below instead
 # COPY package.json package-lock.json ./ --frozen-lockfile
@@ -34,26 +38,27 @@ RUN npm run build
 # RUN npm run build
 
 # Production image, copy all the files and run next
-FROM node:14-alpine AS runner
-WORKDIR /app
+# FROM node:14-alpine AS runner
+# WORKDIR /app
 
-ENV NODE_ENV production
-# Uncomment the following line in case you want to disable telemetry during runtime.
-# ENV NEXT_TELEMETRY_DISABLED 1
-ARG NEXT_PUBLIC_FRONTEND_URL
+# ENV NODE_ENV production
+# # Uncomment the following line in case you want to disable telemetry during runtime.
+# # ENV NEXT_TELEMETRY_DISABLED 1
+# ARG NEXT_PUBLIC_FRONTEND_URL
 
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
+# RUN addgroup --system --gid 1001 nodejs
+# RUN adduser --system --uid 1001 nextjs
 
-RUN chown -R nextjs:nodejs /app
-USER nextjs
+# RUN chown -R nextjs:nodejs /app
+# USER nextjs
 
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/next.config.js ./next.config.js
+# COPY --from=builder /app/node_modules ./node_modules
+# COPY --from=builder /app/.next ./.next
+# COPY --from=builder /app/public ./public
+# COPY --from=builder /app/next.config.js ./next.config.js
+# COPY --from=builder /app/package*.json ./package.json
 
-USER nextjs
+# USER nextjs
 
 EXPOSE 3001
 
