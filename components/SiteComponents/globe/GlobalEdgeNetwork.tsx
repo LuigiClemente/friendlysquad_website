@@ -84,7 +84,7 @@ const GlobalEdgeNetwork = ({ title, noteList, description: description }) => {
   const { isReadOnly }: any = useAppProvider()
   return (
     // style={{ backgroundColor: '#18181B' }}
-    <div className='my-15 relative ml-4'
+    <div className='my-15 relative ml-4' style={{marginTop:"90px", marginLeft:"60px"}}
     >
       <div className={`flex flex-col relative lg:flex-row items-center lg:justify-between`}>
         <ul className='flex flex-col w-[50%]'>
