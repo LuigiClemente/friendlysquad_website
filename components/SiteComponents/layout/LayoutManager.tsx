@@ -3,6 +3,7 @@ import { GLOBAL_DESCRIPTION, GLOBAL_TITLE, NOTE_GLOBE_SECTION } from "../constan
 import GlobalEdgeNetwork from "../globe/GlobalEdgeNetwork";
 import GrassIframe from "../grass/GrassIframe";
 import IframeFood from "../iframeFood/IframeFood";
+import IframeLaser from "../iframeLaser/IframeLaser";
 import Layout from "./Layout";
 
 export const LayoutManger = () => {
@@ -13,8 +14,8 @@ export const LayoutManger = () => {
                 return <IframeFood />
             case "SERVICE":
                 return <GrassIframe />
-            // case "CONTACT US":
-            //     return <IframeLaser />
+            case "CONTACT US":
+                return <IframeLaser />
             default:
                 return <GlobalEdgeNetwork title={GLOBAL_TITLE} noteList={NOTE_GLOBE_SECTION} description={GLOBAL_DESCRIPTION} />
         }

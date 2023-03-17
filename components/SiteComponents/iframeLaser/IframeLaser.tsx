@@ -1,16 +1,14 @@
-import React, { useRef, useState, Suspense, useEffect } from 'react'
-
-import PageModals from '../modals/PageModals'
-import { useWindowSize } from '../utils/utility'
-import Spinner from '../spinner/Spinner'
+import React, { useEffect, useRef, useState } from 'react'
 import { ABOUT_US } from '../constant'
-import InlineModals from '../modals/InlineModals'
+import PageModals from '../modals/PageModals'
+import Spinner from '../spinner/Spinner'
+import { useWindowSize } from '../utils/utility'
+
 const IframeLaser = () => {
   const pageRef = useRef(null)
   const size = useWindowSize()
   const [src, setSrc] = useState(`../parlour/the_Parlour.htm`)
   const [load, setLoad] = useState(false)
-
   const [, setHeight] = React.useState('0px')
   const onLoad = () => {
     setHeight(size.height + 'px')
@@ -39,10 +37,10 @@ const IframeLaser = () => {
         onLoad={onLoad}
         loading='lazy'
       />
-      <InlineModals />
       {load && <PageModals title={`CONTACT US`} content={ABOUT_US} />}
     </div>
   )
 }
+
 
 export default IframeLaser
