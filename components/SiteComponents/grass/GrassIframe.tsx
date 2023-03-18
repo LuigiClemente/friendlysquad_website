@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { ABOUT_US } from '../constant'
-import PageModals from '../modals/PageModals'
+import InlineModals from '../modals/InlineModals'
 import Spinner from '../spinner/Spinner'
 import { useWindowSize } from '../utils/utility'
 
@@ -42,7 +41,7 @@ const GrassIframe = () => {
         onLoad={onLoad}
         loading='lazy'
       />
-       {load && <PageModals title={`SERVICE`} content={ABOUT_US} />}
+      <InlineModals />
     </div>
       
   )

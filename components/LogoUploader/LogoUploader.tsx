@@ -169,9 +169,13 @@ const LogoUploader = () => {
               marginBottom: `${marginBottomLogo}px`,
               marginLeft: `${marginLeftLogo}px`,
               marginRight: `${marginRightLogo}px`,
-              width: `${minWidthLogo}px`,
-              height: "auto",
-              objectFit: "cover"
+              width: `auto`,
+              // height: "auto",
+              objectFit: "cover",
+              minWidth: `${minWidthLogo}px`,
+              maxWidth: `${maxWidthLogo}px`,
+              minHeight: ` ${minHeightLogo}px`,
+              maxHeight: `${maxHeightLogo}px`
 
               // width: "100%",
               // height: `100px`,

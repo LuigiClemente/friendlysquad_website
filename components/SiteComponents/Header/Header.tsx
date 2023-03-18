@@ -22,66 +22,38 @@ const Header = () => {
     isReadOnly,
     // -------------------------- Header --------------------------
     fontSizeHeader,
-    setFontSizeHeader,
     fontHeader,
-    setFontHeader,
     colorHeader,
-    setColorHeader,
     backgroundColorHeader,
-    setBackgroundColorHeader,
     //  border
     borderBottomColorHeader,
-    setBorderBottomColorHeader,
     borderBottomWidthHeader,
-    setBorderBottomWidthHeader,
     borderTopColorHeader,
-    setBorderTopColorHeader,
     borderTopWidthHeader,
-    setBorderTopWidthHeader,
     borderLeftColorHeader,
-    setBorderLeftColorHeader,
     borderLeftWidthHeader,
-    setBorderLeftWidthHeader,
     borderRightColorHeader,
-    setBorderRightColorHeader,
     borderRightWidthHeader,
-    setBorderRightWidthHeader,
     // border style
     borderRightStyleHeader,
-    setBorderRightStyleHeader,
     borderLeftStyleHeader,
-    setBorderLeftStyleHeader,
     borderTopStyleHeader,
-    setBorderTopStyleHeader,
     borderBottomStyleHeader,
-    setBorderBottomStyleHeader,
     // border radius
     borderTopRightRadiusHeader,
-    setBorderTopRightRadiusHeader,
     borderTopLeftRadiusHeader,
-    setBorderTopLeftRadiusHeader,
     borderBottomRightRadiusHeader,
-    setBorderBottomRightRadiusHeader,
     borderBottomLeftRadiusHeader,
-    setBorderBottomLeftRadiusHeader,
     // padding
     paddingTopHeader,
-    setPaddingTopHeader,
     paddingBottomHeader,
-    setPaddingBottomHeader,
     paddingLeftHeader,
-    setPaddingLeftHeader,
     paddingRightHeader,
-    setPaddingRightHeader,
     // margin
     marginTopHeader,
-    setMarginTopHeader,
     marginBottomHeader,
-    setMarginBottomHeader,
     marginLeftHeader,
-    setMarginLeftHeader,
     marginRightHeader,
-    setMarginRightHeader,
     // header hight and width
     headerMenus,
     setHeaderMenus,
@@ -98,7 +70,7 @@ const Header = () => {
   }
   const [style, setStyle] = useState({ display: "none" })
   return (
-    <header className='absolute top-0 left-0 right-0 z-10 w-full overflow-hidden bg-white'
+    <header className='absolute top-0 left-0 right-0 z-10 w-full overflow-hidden bg-transparent'
       onMouseEnter={() => { setStyle({ display: "block" }) }}
       onMouseLeave={() => { setStyle({ display: "none" }) }}>
       <HeaderOptionsUi style={style} ></HeaderOptionsUi>
@@ -107,7 +79,7 @@ const Header = () => {
           fontSize: fontSizeHeader,
           fontFamily: fontHeader,
           color: colorHeader,
-          backgroundColor: backgroundColorHeader,
+          // backgroundColor: backgroundColorHeader,
           // border
           borderBottomColor: `${borderBottomColorHeader}px`,
           borderBottomWidth: `${borderBottomWidthHeader}px`,
@@ -195,7 +167,7 @@ const Header = () => {
               fontSize: fontSizeHeader,
               fontFamily: fontHeader,
               color: colorHeader,
-              backgroundColor: backgroundColorHeader,
+              // backgroundColor: backgroundColorHeader,
               // border
               borderBottomColor: `${borderBottomColorHeader}px`,
               borderBottomWidth: `${borderBottomWidthHeader}px`,
@@ -271,8 +243,6 @@ const Header = () => {
               </div>
             </div>
           </div>
-          {/* {openLan &&  */}
-          {/* } */}
         </Dialog.Panel>
       </Dialog>
       <LanguageModal open={openLan} close={closeLanModals} />

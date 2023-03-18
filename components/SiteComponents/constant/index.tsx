@@ -2,6 +2,13 @@ export const ICON_URL = '/svg/'
 
 
 export const SHIELDRING = { lat: 90, lng: 0 }
+
+export const SLIDER_IMAGES=[
+  {id:1, img:"/images/slider/1.png"},
+  {id:2, img:"/images/slider/2.png"},
+  {id:3, img:"/images/slider/3.png"},
+  {id:4, img:"/images/slider/4.png"}
+]
 export const VOLCANOES = [
   {
     name: 'Abu',
@@ -32,14 +39,14 @@ export const GLOBAL_DESCRIPTION = {
 export const NOTE_GLOBE_SECTION = [
   {
     title: ' Global Edge Network',
-    description: ' Your site, fast everywhere. Deploy content around the world and update it in 300ms. ',
-    image: `${ICON_URL}globe.svg`,
+    description: 'Your site, fast everywhere. Deploy content around the world and update it in 300ms. ',
+    image: "GlobeIcon",
   },
   {
     title: 'First-party monitoring and observability',
     description:
       'Analyze logs, understand traffic and usage, and easily optimize your applications, without extra tooling or code.',
-    image: `${ICON_URL}network.svg`,
+    image: "network",
   },
 ]
 

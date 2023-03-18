@@ -1,20 +1,19 @@
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles"
-import Box from "@mui/material/Box"
-import CssBaseline from "@mui/material/CssBaseline"
-import type { FC } from "react"
-import * as React from "react"
-import { ToastContainer } from "react-toastify"
-import { useAppProvider } from "../appProvider/AppProvider"
-import CustomEditorToolbar from "./CustomEditorToolbar"
-import BodyPopoverOptionsUi from "./CustomPopover/BodyPopoverOptionsUi"
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import Box from "@mui/material/Box";
+import CssBaseline from "@mui/material/CssBaseline";
+import type { FC } from "react";
+import * as React from "react";
+import { ToastContainer } from "react-toastify";
+import { useAppProvider } from "../appProvider/AppProvider";
+import CustomEditorToolbar from "./CustomEditorToolbar";
+import BodyPopoverOptionsUi from "./CustomPopover/BodyPopoverOptionsUi";
 
-const drawerWidth = 240
-// PropsWithChildren
+const drawerWidth = 240;
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     title: {
       display: "block",
-      marginTop: theme.spacing(2)
+      marginTop: theme.spacing(2),
     },
     content: {
       display: "flex",
@@ -23,29 +22,29 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: "center",
       width: "100%",
       marginTop: "10px",
-      marginBottom: "10px"
+      marginBottom: "10px",
     },
-    appbar: {
-      // check theme to change background color
-      // backgroundColor: theme.palette.type === "dark" ? DEFAULT_BACKGROUND : DEFAULT_PAPER_LIGHT,
-      // color: theme.palette.type === "dark" ? DEFAULT_PAPER_LIGHT : DEFAULT_BACKGROUND
-      // change muiAppBar color
-    }
+    appbar: {},
   })
-)
+);
 const PageLayout: FC<any> = ({ children }) => {
-  const [mobileOpen, setMobileOpen] = React.useState(false)
-  const [bodyStyle, setBodyStyle] = React.useState({ display: "none" })
-  const classes = useStyles()
-  const { bodyBackgroundColor, setBodyBackgroundColor, loading, isReadOnly }: any = useAppProvider()
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [bodyStyle, setBodyStyle] = React.useState({ display: "none" });
+  const classes = useStyles();
+  const {
+    bodyBackgroundColor,
+    setBodyBackgroundColor,
+    loading,
+    isReadOnly,
+  }: any = useAppProvider();
 
   const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen)
-  }
+    setMobileOpen(!mobileOpen);
+  };
 
-  const [isDarkTheme, setIsDarkTheme] = React.useState(false)
+  const [isDarkTheme, setIsDarkTheme] = React.useState(false);
   return (
-    <div style={{height:"fit-content"}}>
+    <div style={{ height: "fit-content", marginBottom: "20px" }}>
       <Box
         sx={{
           display: "flex",
@@ -74,13 +73,18 @@ const PageLayout: FC<any> = ({ children }) => {
           component="main"
           sx={{
             flexGrow: 1,
-            width: { sm: `100%` }
+            width: { sm: `100%` },
           }}
         >
           {/* <Toolbar /> */}
           <CustomEditorToolbar />
           <div
-            style={{ position: "relative", backgroundColor:"red", height:"650px", marginBottom:"50px" }}
+            style={{
+              position: "relative",
+              backgroundColor: "red",
+              height: "650px",
+              marginBottom: "50px",
+            }}
             className="h-full"
             onMouseEnter={() => setBodyStyle({ display: "block" })}
             onMouseLeave={() => setBodyStyle({ display: "none" })}
@@ -94,7 +98,8 @@ const PageLayout: FC<any> = ({ children }) => {
                 p: 4,
                 backgroundColor: `${bodyBackgroundColor}`,
                 width: "100%",
-                height:"100%",
+                height: "100%",
+                position: "relative",
               }}
               className="h-full"
             >
@@ -104,7 +109,7 @@ const PageLayout: FC<any> = ({ children }) => {
         </Box>
       </Box>
     </div>
-  )
-}
+  );
+};
 
-export default PageLayout
+export default PageLayout;

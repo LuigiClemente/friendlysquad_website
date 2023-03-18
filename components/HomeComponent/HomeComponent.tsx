@@ -1,16 +1,17 @@
-import PageLayout from "@/PageLayout"
-import { LayoutManger } from "@/SiteComponents/layout/LayoutManager"
-import { useAppProvider } from "@appProvider/AppProvider"
-import { Container } from "@mui/material"
-import Box from "@mui/material/Box"
-
-// const DynamicHeader = dynamic(() => import("../Header"), {
-//   ssr: false
-// })
+import PageLayout from "@/PageLayout";
+import { LayoutManger } from "@/SiteComponents/layout/LayoutManager";
+import { useAppProvider } from "@appProvider/AppProvider";
+import { withResizeDetector } from "react-resize-detector";
+import { Container } from "@mui/material";
+import Box from "@mui/material/Box";
 
 const HomeComponent = () => {
-  const { containerBackgroundColor, bodyBackgroundColor, containerShadow, zoom }: any =
-    useAppProvider()
+  const {
+    containerBackgroundColor,
+    bodyBackgroundColor,
+    containerShadow,
+    zoom,
+  }: any = useAppProvider();
 
   return (
     <Container>
@@ -23,26 +24,27 @@ const HomeComponent = () => {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            alignItems: "center"
+            alignItems: "center",
           }}
           id="capture"
         >
-          <Box
-           >
-            {/* <DynamicHeader /> */}
+          <Box>
             <Box
               sx={{
                 backgroundColor: `${containerBackgroundColor}`,
-                boxShadow: `${containerShadow}`
+                boxShadow: `${containerShadow}`,
+                position: "relative",
               }}
+              style={{ position: "relative" }}
             >
-             <LayoutManger />
+              <LayoutManger />
             </Box>
           </Box>
         </div>
       </PageLayout>
     </Container>
-  )
-}
+  );
+};
 
-export default HomeComponent
+// export default HomeComponent;
+export default withResizeDetector(HomeComponent);

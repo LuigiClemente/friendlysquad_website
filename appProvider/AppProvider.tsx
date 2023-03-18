@@ -37,8 +37,8 @@ export const AppProvider = ({ children }: any) => {
 
   //---------------------------------------------------------------- Header
   const [fontSizeHeader, setFontSizeHeader] = useState("1rem")
-  const [backgroundColorHeader, setBackgroundColorHeader] = useState(DEFAULT_COLOR_SITE)
-  const [colorHeader, setColorHeader] = useState("#fff")
+  const [backgroundColorHeader, setBackgroundColorHeader] = useState('transparent')
+  const [colorHeader, setColorHeader] = useState("#000")
   const [fontHeader, setFontHeader] = useState("Roboto")
   const [dialogOpenHeader, setDialogOpenHeader] = useState(false)
   // border for Header
@@ -110,13 +110,13 @@ export const AppProvider = ({ children }: any) => {
   const [marginTopLogo, setMarginTopLogo] = useState("0")
   const [marginBottomLogo, setMarginBottomLogo] = useState("0")
   // min width for logo
-  const [minWidthLogo, setMinWidthLogo] = useState("150")
+  const [minWidthLogo, setMinWidthLogo] = useState("124")
   // min height for logo
   const [minHeightLogo, setMinHeightLogo] = useState("60")
   // max width for logo
-  const [maxWidthLogo, setMaxWidthLogo] = useState("0")
+  const [maxWidthLogo, setMaxWidthLogo] = useState("124")
   // max height for logo
-  const [maxHeightLogo, setMaxHeightLogo] = useState("0")
+  const [maxHeightLogo, setMaxHeightLogo] = useState("60")
   // for logo dialog
   const [dialogOpenLogo, setDialogOpenLogo] = useState(false)
 

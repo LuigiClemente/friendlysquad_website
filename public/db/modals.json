@@ -51,7 +51,7 @@
                                             "marginRightTitleModal": "1",
                                             "fontSizeDataTitle": "1.5rem",
                                             "fontDataTitle": "Oxygen",
-                                            "colorDataTitle": "#2908de",
+                                            "colorDataTitle": "#fff",
                                             "backgroundColorDataTitle": "#000000",
                                             "borderBottomColorDataTitle": "#000000",
                                             "borderBottomWidthDataTitle": "0",
@@ -98,7 +98,7 @@
                                         "en": {
                                             "fontSizeData": "1rem",
                                             "fontData": "Segoe UI",
-                                            "colorData": "#4a4a4a",
+                                            "colorData": "#D3D3D3",
                                             "backgroundColorData": "#000000",
                                             "borderBottomColorData": "#000000",
                                             "borderBottomWidthData": "0",
