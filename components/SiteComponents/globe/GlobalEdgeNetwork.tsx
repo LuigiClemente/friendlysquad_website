@@ -88,13 +88,14 @@ const GlobalEdgeNetwork = ({
   return (
     <>
       <div
-        className="my-15 relative m-0"
+        className="my-15 relative m-0 globe"
         style={{
           marginTop: "80px",
           zIndex: 10,
           backgroundColor: "#000",
-          paddingTop: "20px",
+          paddingTop: "50px",
           paddingRight: "20px",
+          paddingBottom: "50px",
         }}
       >
         <div

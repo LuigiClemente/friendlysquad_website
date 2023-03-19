@@ -16,6 +16,13 @@ const GlobeComponent = () => {
       pointsData={VOLCANOES}
       pointLat="lat"
       pointLng="lon"
+      // add image pin to point
+      bumpImageUrl="/img/globe/earth-night9.png"
+      pointAltitude="elevation"
+      pointRadius={0.5}
+      pointColor={() => "rgba(255, 255, 125, 0.8)"}
+      pointResolution={2}
+      pointLabel="name"
     />
   );
 };

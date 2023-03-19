@@ -116,8 +116,8 @@ export const AppProvider = ({ children }: any) => {
   const [paddingBottomLogo, setPaddingBottomLogo] = useState("0");
   // margin
   const [marginRightLogo, setMarginRightLogo] = useState("20");
-  const [marginLeftLogo, setMarginLeftLogo] = useState("20");
-  const [marginTopLogo, setMarginTopLogo] = useState("15");
+  const [marginLeftLogo, setMarginLeftLogo] = useState("0");
+  const [marginTopLogo, setMarginTopLogo] = useState("0");
   const [marginBottomLogo, setMarginBottomLogo] = useState("20");
   // min width for logo
   const [minWidthLogo, setMinWidthLogo] = useState("120");

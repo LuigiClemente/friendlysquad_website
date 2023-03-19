@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import "./styles.css";
+@import "./paperbits.css";
 
   .swiper {
     width: 100%;
@@ -81,4 +82,16 @@
   /* width: 1000px !important; */
   width:67.5%;
   position: relative
+}
+.globe{
+  background-image: url('/img/globe/night-sky.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* .form-group.collapse{
+  visibility: visible !important;
+} */
+.collapse{
+  visibility: visible !important;
 }

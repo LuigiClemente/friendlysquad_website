@@ -6,7 +6,6 @@ import * as React from "react";
 import { ToastContainer } from "react-toastify";
 import { useAppProvider } from "../appProvider/AppProvider";
 import CustomEditorToolbar from "./CustomEditorToolbar";
-import BodyPopoverOptionsUi from "./CustomPopover/BodyPopoverOptionsUi";
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme: Theme) =>
@@ -87,11 +86,11 @@ const PageLayout: FC<any> = ({ children }) => {
               marginBottom: "50px",
             }}
             className="h-full"
-            onMouseEnter={() => setBodyStyle({ display: "block" })}
-            onMouseLeave={() => setBodyStyle({ display: "none" })}
+            // onMouseEnter={() => setBodyStyle({ display: "block" })}
+            // onMouseLeave={() => setBodyStyle({ display: "none" })}
           >
             {/* {loading && (isReadOnly ? null : */}
-            <BodyPopoverOptionsUi style={bodyStyle} />
+            {/* <BodyPopoverOptionsUi style={bodyStyle} /> */}
             {/* )} */}
             {/* <Box
               sx={{

@@ -10,9 +10,7 @@ import { useState } from "react";
 import { useWindowSize } from "../utils/utility";
 
 const Carousel = ({ images, scrollFun }: any) => {
-  let checkMouseWeel = false;
   const size = useWindowSize();
-  console.log("check is   , ", checkMouseWeel);
   return (
     <div
       className="relative "
@@ -33,7 +31,13 @@ const Carousel = ({ images, scrollFun }: any) => {
           preventInteractionOnTransition={true}
           slidesPerView={1}
           spaceBetween={30}
-          mousewheel={{ releaseOnEdges: true }}
+          // mousewheel={{ releaseOnEdges: true }}
+          // add function to mousewheel
+          mousewheel={() => {
+            console.log("mouse wheel");
+
+            return true;
+          }}
           pagination={{
             clickable: true,
           }}
@@ -49,11 +53,11 @@ const Carousel = ({ images, scrollFun }: any) => {
             },
             768: {
               slidesPerView: 3,
-              spaceBetween: 30,
+              spaceBetween: 20,
             },
             1024: {
-              slidesPerView: 3,
-              spaceBetween: 40,
+              slidesPerView: 4,
+              spaceBetween: 5,
             },
           }}
           style={{
@@ -76,7 +80,11 @@ const Carousel = ({ images, scrollFun }: any) => {
                   <img
                     src={image.img}
                     alt={`Image ${index + 1}`}
-                    style={{ width: "300px", height: "auto", zIndex: 10 }}
+                    style={{
+                      width: `${image.width}`,
+                      height: "auto",
+                      zIndex: 10,
+                    }}
                   />
                 </div>
               </SwiperSlide>

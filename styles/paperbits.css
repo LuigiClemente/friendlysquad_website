@@ -6622,7 +6622,7 @@ textarea {
 
 .input-group {
   display: flex !important;
-  border: 1px solid #e6e7e8;
+  border: 1px solid #2265a8;
 }
 .input-group:focus-within {
   border: 1px solid #61b2e8;
