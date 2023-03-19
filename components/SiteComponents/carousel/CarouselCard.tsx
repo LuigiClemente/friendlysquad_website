@@ -4,40 +4,39 @@ const CarouselCard = () => {
   return (
     <div
       style={{
-        backgroundColor: "red",
+        backgroundColor: "transparent",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "flex-start",
-        padding: "10px",
-        width: "100%",
+        justifyContent: "center",
+        width: "400px",
         position: "absolute",
-        zIndex: 100,
+        zIndex: 1000,
+        left: "5%",
+        top: "20%",
         height: "fit-content",
+        paddingBottom: "100px",
       }}
     >
-      <div
+      <p
+        style={{ fontFamily: "Ppneuemontreal", fontSize: "2rem" }}
+      >{`Visual Designer + Developer`}</p>
+      <p
         style={{
-          backgroundColor: "transparent",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "10px",
-          width: "200px",
-          position: "absolute",
+          fontSize: "5rem",
+          fontFamily: "Ppneuemontreal",
+          fontWeight: 800,
         }}
-      >
-        <p
-          style={{ fontFamily: "Ppneuemontreal", fontSize: "2rem" }}
-        >{`Visual Designer + Developer`}</p>
-        <p
-          style={{ fontSize: "3rem", fontFamily: "Ppneuemontreal" }}
-        >{`Zachary Hayes`}</p>
-        <p
-          style={{ fontFamily: "Ppneuemontreal", fontSize: "2rem" }}
-        >{`View The Work`}</p>
-      </div>
+      >{`Zachary Hayes`}</p>
+      <p
+        style={{
+          fontFamily: "Ppneuemontreal",
+          fontSize: "2rem",
+          padding: "10px",
+          border: "1px solid black",
+          borderRadius: "5px",
+        }}
+      >{`View The Work`}</p>
     </div>
   );
 };

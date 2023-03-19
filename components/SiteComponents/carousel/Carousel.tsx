@@ -14,16 +14,17 @@ const Carousel = ({ images, scrollFun }: any) => {
   const size = useWindowSize();
   return (
     <div
-      className="relative "
       style={{
         marginTop: "150px",
-        marginBottom: "50px",
+        marginBottom: "150px",
         zIndex: 10,
         position: "relative",
         width: "100%",
         display: "flex",
         justifyContent: "center",
         alignContent: "center",
+        height: "fit-content",
+        minHeight: "fit-content",
       }}
     >
       <Swiper

@@ -96,11 +96,12 @@ const GlobalEdgeNetwork = ({
           backgroundColor: "#000",
           paddingTop: "50px",
           paddingRight: "20px",
-          paddingBottom: "50px",
+          paddingBottom: "200px",
         }}
       >
         <div
           className={`flex flex-col relative lg:flex-row items-center lg:justify-between`}
+          ref={ref}
         >
           <div className="h-auto" style={{ width: "60%" }}>
             <GlobeComponent />
