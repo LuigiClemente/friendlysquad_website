@@ -87,6 +87,7 @@ export const AppProvider = ({ children }: any) => {
   const [fontLogo, setFontLogo] = useState("Roboto");
 
   //  border background color
+
   const [borderBottomColorLogo, setBorderBottomColorLogo] = useState("#000");
   const [borderRightColorLogo, setBorderRightColorLogo] = useState("#000");
   const [borderLeftColorLogo, setBorderLeftColorLogo] = useState("#000");
