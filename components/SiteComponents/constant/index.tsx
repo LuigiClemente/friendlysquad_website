@@ -62,8 +62,8 @@ export const STEPS = [
 export const NAVIGATION = [
   { name: "HOME", href: "/" },
   { name: "ABOUT US", href: "/about-us" },
-  { name: "CONTACT US", href: "/contact-us" },
   { name: "SERVICE", href: "/service" },
+  { name: "CONTACT US", href: "/contact-us" },
 ];
 
 export const MODAL_DATA = [

@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
+import { ABOUT_US } from "../constant";
 import InlineModals from "../modals/InlineModals";
+import PageModals from "../modals/PageModals";
 import Spinner from "../spinner/Spinner";
 import { useWindowSize } from "../utils/utility";
 
@@ -43,6 +45,7 @@ const IframeFood = () => {
         loading="lazy"
       />
       {/* <InlineModals /> */}
+      {load && <PageModals title={`ABOUT US`} content={ABOUT_US} />}
     </div>
   );
 };
