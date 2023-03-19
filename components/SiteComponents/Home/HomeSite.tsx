@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import Carousel from "../carousel/Carousel";
 import {
   GLOBAL_DESCRIPTION,
@@ -10,9 +10,15 @@ import GlobalEdgeNetwork from "../globe/GlobalEdgeNetwork";
 import Layout from "../layout/Layout";
 
 const HomeSite = () => {
-  const myRef = useRef(null);
+  const myRef = useRef(undefined);
+  // jump scroll to the ref
 
-  const executeScroll = () => myRef.current.scrollIntoView();
+  useEffect(() => {
+    // myRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.scrollTo({ behavior: "smooth", top: myRef.current?.offsetTop });
+  }, []);
+
+  // const executeScroll = () => myRef.current.scrollIntoView();
   return (
     <div style={{ zIndex: 1000, position: "relative", width: "100%" }}>
       <Layout>
@@ -36,7 +42,7 @@ const HomeSite = () => {
             justifyContent: "center",
           }}
         >
-          <Carousel images={SLIDER_IMAGES} scrollFun={executeScroll} />
+          <Carousel images={SLIDER_IMAGES} scrollFun={null} />
           <GlobalEdgeNetwork
             title={GLOBAL_TITLE}
             noteList={NOTE_GLOBE_SECTION}

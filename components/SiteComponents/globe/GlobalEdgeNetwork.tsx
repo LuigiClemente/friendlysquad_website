@@ -89,6 +89,7 @@ const GlobalEdgeNetwork = ({
     <>
       <div
         className="my-15 relative m-0 globe"
+        ref={ref}
         style={{
           marginTop: "80px",
           zIndex: 10,
@@ -100,7 +101,6 @@ const GlobalEdgeNetwork = ({
       >
         <div
           className={`flex flex-col relative lg:flex-row items-center lg:justify-between`}
-          ref={ref}
         >
           <div className="h-auto" style={{ width: "60%" }}>
             <GlobeComponent />
