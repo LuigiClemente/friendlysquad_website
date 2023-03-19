@@ -3,18 +3,20 @@ import DataOptionsUi from "@/CustomPopover/DataOptionsUi";
 import DataTitleOptionsUi from "@/CustomPopover/DataTitleOptionsUi";
 import { useAppProvider } from "@appProvider/AppProvider";
 import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
-import Image from "next/image";
 import { useState } from "react";
-import Carousel from "../carousel/Carousel";
-import { SLIDER_IMAGES } from "../constant";
 import GlobeComponent from "./GlobeComponent";
 
-const GlobalEdgeNetwork = ({ title, noteList, description: description }) => {
+const GlobalEdgeNetwork = ({
+  title,
+  noteList,
+  description: description,
+  ref,
+}) => {
   const {
     fontSizeDataTitle,
     fontDataTitle,
     colorDataTitle,
-    backgroundColorDataTitle,
+    // backgroundColorDataTitle,
     //  border
     borderBottomColorDataTitle,
     borderBottomWidthDataTitle,
@@ -82,12 +84,13 @@ const GlobalEdgeNetwork = ({ title, noteList, description: description }) => {
   const [contentStyle, setContentStyle] = useState({ display: "none" });
   const [titleStyle, setTitleStyle] = useState({ display: "none" });
   const { isReadOnly }: any = useAppProvider();
+
   return (
     <>
       <div
         className="my-15 relative m-0"
         style={{
-          margin: "40px",
+          marginTop: "80px",
           zIndex: 10,
           backgroundColor: "#000",
           paddingTop: "20px",
@@ -96,6 +99,7 @@ const GlobalEdgeNetwork = ({ title, noteList, description: description }) => {
       >
         <div
           className={`flex flex-col relative lg:flex-row items-center lg:justify-between`}
+          ref={ref}
         >
           <div className="h-auto" style={{ width: "60%" }}>
             <GlobeComponent />
@@ -206,7 +210,7 @@ const GlobalEdgeNetwork = ({ title, noteList, description: description }) => {
                   <h2
                     className="font-sans text-3xl font-bold text-title text-darkgray"
                     style={{
-                      backgroundColor: backgroundColorDataTitle,
+                      // backgroundColor: backgroundColorDataTitle,
                       color: colorDataTitle,
                       fontSize: fontSizeDataTitle,
                       fontFamily: fontDataTitle,

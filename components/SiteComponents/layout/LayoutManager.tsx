@@ -3,7 +3,6 @@ import GrassIframe from "../grass/GrassIframe";
 import HomeSite from "../Home/HomeSite";
 import IframeFood from "../iframeFood/IframeFood";
 import IframeLaser from "../iframeLaser/IframeLaser";
-import { withResizeDetector } from "react-resize-detector";
 import Layout from "./Layout";
 
 export const LayoutManger = () => {
@@ -16,11 +15,10 @@ export const LayoutManger = () => {
         return <GrassIframe />;
       case "CONTACT US":
         return <IframeLaser />;
-      default:
+      case "HOME":
         return <HomeSite />;
     }
   };
 
   return <Layout>{handleMenu()}</Layout>;
 };
-export default withResizeDetector(LayoutManger);

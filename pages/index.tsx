@@ -40,22 +40,21 @@ export default function Home() {
   }, []);
 
   return (
-    <ResizeObserver>
-      <React.Fragment>
-        <CssBaseline />
-        <UndoableProvider>
-          <AppProvider>
-            <UpdateSettingsProvider>
-              <AppStateProvider>
-                <ModalsAppProvider>
-                  <DynamicHome />
-                  {/* <HomeSite /> */}
-                </ModalsAppProvider>
-              </AppStateProvider>
-            </UpdateSettingsProvider>
-          </AppProvider>
-        </UndoableProvider>
-      </React.Fragment>
-    </ResizeObserver>
+    // <ResizeObserver>
+    <React.Fragment>
+      <CssBaseline />
+      <UndoableProvider>
+        <AppProvider>
+          <UpdateSettingsProvider>
+            <AppStateProvider>
+              <ModalsAppProvider>
+                <DynamicHome />
+                {/* <HomeSite /> */}
+              </ModalsAppProvider>
+            </AppStateProvider>
+          </UpdateSettingsProvider>
+        </AppProvider>
+      </UndoableProvider>
+    </React.Fragment>
   );
 }

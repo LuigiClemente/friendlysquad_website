@@ -33,11 +33,10 @@
     width:100%;
     object-fit: cover;
   } 
-  /* .mySwiper{
-    display: flex;
-    flex-direction: row;
-  } */
-  
+  .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    display: none !important;
+}
+
   
   .header33_background-video-wrapper {
     position: fixed;

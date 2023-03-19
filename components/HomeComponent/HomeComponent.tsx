@@ -1,7 +1,6 @@
 import PageLayout from "@/PageLayout";
 import { LayoutManger } from "@/SiteComponents/layout/LayoutManager";
 import { useAppProvider } from "@appProvider/AppProvider";
-import { withResizeDetector } from "react-resize-detector";
 import { Container } from "@mui/material";
 import Box from "@mui/material/Box";
 
@@ -28,17 +27,16 @@ const HomeComponent = () => {
           }}
           id="capture"
         >
-          <Box>
-            <Box
-              sx={{
-                backgroundColor: `${containerBackgroundColor}`,
-                boxShadow: `${containerShadow}`,
-                position: "relative",
-              }}
-              style={{ position: "relative" }}
-            >
-              <LayoutManger />
-            </Box>
+          <Box
+            sx={{
+              backgroundColor: `${containerBackgroundColor}`,
+              boxShadow: `${containerShadow}`,
+              height: "fit-content",
+              // position: "relative",
+            }}
+            // style={{ position: "relative" }}
+          >
+            <LayoutManger />
           </Box>
         </div>
       </PageLayout>
@@ -46,5 +44,4 @@ const HomeComponent = () => {
   );
 };
 
-// export default HomeComponent;
-export default withResizeDetector(HomeComponent);
+export default HomeComponent;

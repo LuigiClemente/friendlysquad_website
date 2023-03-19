@@ -1,18 +1,14 @@
-import React, { useRef, useState } from "react"
-import { useAppProvider } from "@appProvider/AppProvider"
-import LogoOptionsUi from "../CustomPopover/LogoOptionsUi"
-import axios from "axios"
-import { FILE_PATH_LOGO } from "config"
+import { useAppProvider } from "@appProvider/AppProvider";
+import axios from "axios";
+import React, { useRef, useState } from "react";
+import LogoOptionsUi from "../CustomPopover/LogoOptionsUi";
 
-// create a component to get the image from the user and show it in the div MUI design
 const LogoUploader = () => {
   const {
-    // this is for logo
     fontSizeLogo,
     backgroundColorLogo,
     colorLogo,
     fontLogo,
-    // border color and width
     borderBottomColorLogo,
     borderBottomWidthLogo,
     borderTopColorLogo,
@@ -47,80 +43,82 @@ const LogoUploader = () => {
     minHeightLogo,
     maxHeightLogo,
     // readonly
-    isReadOnly
-  }: any = useAppProvider()
-  const [image, setImage] = useState("")
-  // create useRef to get the image input
-  const inputRef: any = useRef(null)
-  console.log("isReadOnly", isReadOnly)
+    isReadOnly,
+  }: any = useAppProvider();
+  const [image, setImage] = useState("");
+  const inputRef: any = useRef(null);
+  console.log("isReadOnly", isReadOnly);
 
   const handleImageChange = (e: any) => {
-    e.preventDefault()
+    e.preventDefault();
     if (e.target.files[0]) {
       console.log(
         "(URL.createObjectURL(e.target.files[0]))",
         URL.createObjectURL(e.target.files[0])
-      )
-      setImage(URL.createObjectURL(e.target.files[0]))
-      var filename = e.target.files[0].name
-      var type = e.target.files[0].type
-      let last_dot = filename.lastIndexOf(".")
-      let ext = filename.slice(last_dot + 1)
-      uploadToServer(e.target.files[0], filename, type, ext)
+      );
+      setImage(URL.createObjectURL(e.target.files[0]));
+      var filename = e.target.files[0].name;
+      var type = e.target.files[0].type;
+      let last_dot = filename.lastIndexOf(".");
+      let ext = filename.slice(last_dot + 1);
+      uploadToServer(e.target.files[0], filename, type, ext);
     }
-  }
+  };
 
-  const uploadToServer = async (blob: Blob, filename: any, type: any, ext: any) => {
-    inputRef.current.click()
+  const uploadToServer = async (
+    blob: Blob,
+    filename: any,
+    type: any,
+    ext: any
+  ) => {
+    inputRef.current.click();
     // const compressImage = await onUploadImage(blob)
-    console.log("uploadToServer")
-    const body = new FormData()
-    body.append("path", window.URL.createObjectURL(blob))
-    body.append("image", blob)
-    body.append("filename", "logo")
-    body.append("type", type)
-    body.append("ext", ext)
+    console.log("uploadToServer");
+    const body = new FormData();
+    body.append("path", window.URL.createObjectURL(blob));
+    body.append("image", blob);
+    body.append("filename", "logo");
+    body.append("type", type);
+    body.append("ext", ext);
     await axios
       .post(`/api/imagMove`, body, {
-        headers: { "Content-type": type }
+        headers: { "Content-type": type },
       })
       .then((res) => {
         if (res.status === 200) {
-          console.log("upload successfully !")
+          console.log("upload successfully !");
         }
       })
       .catch((error) => {
         if (error.response.status === 400) {
-          console.log(`HTTP 400 error occured for third request`)
+          console.log(`HTTP 400 error occured for third request`);
         }
         // You can get response data (mostly the reason would be in it)
         if (error.response.data) {
-          console.log("errors ====>", error.response.data)
+          console.log("errors ====>", error.response.data);
         }
-      })
-  }
+      });
+  };
 
   const handleImageUpload = () => {
-    inputRef.current.click()
-  }
-  const [styleLogo, setStyleLogo] = React.useState({ display: "none" })
+    inputRef.current.click();
+  };
+  const [styleLogo, setStyleLogo] = React.useState({ display: "none" });
   return (
     <div
       style={{
         width: "fit-content",
         height: "fit-content",
-        position: "relative"
+        position: "relative",
       }}
-      // on mouse over show logo options
       onMouseEnter={(e) => {
-        setStyleLogo({ display: "block" })
+        setStyleLogo({ display: "block" });
       }}
       onMouseLeave={(e) => {
-        setStyleLogo({ display: "none" })
+        setStyleLogo({ display: "none" });
       }}
     >
       {isReadOnly ? null : <LogoOptionsUi style={styleLogo} />}
-      {/* <LogoOptionsUi style={styleLogo} /> */}
 
       {!image ? (
         <div
@@ -129,15 +127,13 @@ const LogoUploader = () => {
             maxWidth: `${maxWidthLogo}px`,
             minHeight: ` ${minHeightLogo}px`,
             maxHeight: `${maxHeightLogo}px`,
-            overflow: "hidden"
+            overflow: "hidden",
           }}
         >
           <img
             src={image ? image : "/images/logo.png"}
             alt="image"
             className="overflow-hidden"
-            // width="minWidthLogo"
-            // height="auto"
             onClick={handleImageUpload}
             style={{
               position: "relative",
@@ -169,13 +165,12 @@ const LogoUploader = () => {
               marginBottom: `${marginBottomLogo}px`,
               marginLeft: `${marginLeftLogo}px`,
               marginRight: `${marginRightLogo}px`,
-              width: `auto`,
-              // height: "auto",
               objectFit: "cover",
               minWidth: `${minWidthLogo}px`,
               maxWidth: `${maxWidthLogo}px`,
-              minHeight: ` ${minHeightLogo}px`,
-              maxHeight: `${maxHeightLogo}px`
+              height: "auto",
+              // minHeight: ` ${minHeightLogo}px`,
+              // maxHeight: `${maxHeightLogo}px`,
 
               // width: "100%",
               // height: `100px`,
@@ -183,7 +178,12 @@ const LogoUploader = () => {
               // objectPosition: `bottom`
             }}
           />
-          <input type="file" onChange={handleImageChange} hidden ref={inputRef} />
+          <input
+            type="file"
+            onChange={handleImageChange}
+            hidden
+            ref={inputRef}
+          />
         </div>
       ) : (
         <div className="dropzone">
@@ -227,16 +227,20 @@ const LogoUploader = () => {
               minWidth: `${minWidthLogo}px`,
               maxWidth: `${maxWidthLogo}px`,
               minHeight: ` ${minHeightLogo}px`,
-              maxHeight: `${maxHeightLogo}px`
+              maxHeight: `${maxHeightLogo}px`,
             }}
           >
             <div aria-hidden="true"></div>
           </a>
-
-          <input type="file" onChange={handleImageChange} hidden ref={inputRef} />
+          <input
+            type="file"
+            onChange={handleImageChange}
+            hidden
+            ref={inputRef}
+          />
         </div>
       )}
     </div>
-  )
-}
-export default LogoUploader
+  );
+};
+export default LogoUploader;

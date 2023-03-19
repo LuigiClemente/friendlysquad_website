@@ -81,8 +81,9 @@ const PageLayout: FC<any> = ({ children }) => {
           <div
             style={{
               position: "relative",
+              height: "fit-content",
               backgroundColor: "red",
-              height: "650px",
+              // height: "650px",
               marginBottom: "50px",
             }}
             className="h-full"
@@ -92,19 +93,19 @@ const PageLayout: FC<any> = ({ children }) => {
             {/* {loading && (isReadOnly ? null : */}
             <BodyPopoverOptionsUi style={bodyStyle} />
             {/* )} */}
-            <Box
+            {/* <Box
               sx={{
                 flexGrow: 1,
                 p: 4,
                 backgroundColor: `${bodyBackgroundColor}`,
                 width: "100%",
-                height: "100%",
+                height: "fit-content",
                 position: "relative",
               }}
               className="h-full"
-            >
-              {children}
-            </Box>
+            > */}
+            {children}
+            {/* </Box> */}
           </div>
         </Box>
       </Box>

@@ -7,18 +7,24 @@ import "swiper/swiper.css";
 import "swiper/swiper-element-bundle.min.css";
 import { Mousewheel, Pagination } from "swiper";
 import { useState } from "react";
+import { useWindowSize } from "../utils/utility";
 
-const Carousel = ({ images }: any) => {
+const Carousel = ({ images, scrollFun }: any) => {
   let checkMouseWeel = false;
+  const size = useWindowSize();
   console.log("check is   , ", checkMouseWeel);
   return (
     <div
-      className="my-15 relative  home"
+      className="relative "
       style={{
-        marginTop: "90px",
-        marginLeft: "60px",
+        marginTop: "150px",
+        marginBottom: "50px",
         zIndex: 10,
         position: "relative",
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignContent: "center",
       }}
     >
       <>
@@ -30,6 +36,10 @@ const Carousel = ({ images }: any) => {
           mousewheel={{ releaseOnEdges: true }}
           pagination={{
             clickable: true,
+          }}
+          onAnimationEnd={() => {
+            scrollFun();
+            console.log("animation end ");
           }}
           modules={[Mousewheel, Pagination]}
           breakpoints={{
@@ -45,6 +55,10 @@ const Carousel = ({ images }: any) => {
               slidesPerView: 3,
               spaceBetween: 40,
             },
+          }}
+          style={{
+            width: size.width - 200,
+            minWidth: size.width - 200,
           }}
         >
           {images.map((image, index) => {
@@ -62,7 +76,7 @@ const Carousel = ({ images }: any) => {
                   <img
                     src={image.img}
                     alt={`Image ${index + 1}`}
-                    style={{ width: "300px", height: "260px", zIndex: 10 }}
+                    style={{ width: "300px", height: "auto", zIndex: 10 }}
                   />
                 </div>
               </SwiperSlide>

@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import Carousel from "../carousel/Carousel";
 import {
   GLOBAL_DESCRIPTION,
@@ -9,6 +10,9 @@ import GlobalEdgeNetwork from "../globe/GlobalEdgeNetwork";
 import Layout from "../layout/Layout";
 
 const HomeSite = () => {
+  const myRef = useRef(null);
+
+  const executeScroll = () => myRef.current.scrollIntoView();
   return (
     <div style={{ zIndex: 1000, position: "relative", width: "100%" }}>
       <Layout>
@@ -32,11 +36,12 @@ const HomeSite = () => {
             justifyContent: "center",
           }}
         >
-          <Carousel images={SLIDER_IMAGES} />
+          <Carousel images={SLIDER_IMAGES} scrollFun={executeScroll} />
           <GlobalEdgeNetwork
             title={GLOBAL_TITLE}
             noteList={NOTE_GLOBE_SECTION}
             description={GLOBAL_DESCRIPTION}
+            ref={myRef}
           />
         </div>
       </Layout>

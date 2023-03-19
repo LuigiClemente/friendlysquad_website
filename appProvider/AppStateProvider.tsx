@@ -1,12 +1,12 @@
-import { createContext, useContext, useEffect, useState } from "react"
-import { useModalsAppProvider } from "./ModalsAppProvider"
+import { createContext, useContext, useEffect, useState } from "react";
+import { useModalsAppProvider } from "./ModalsAppProvider";
 
-const Context = createContext({})
+const Context = createContext({});
 
 export const AppStateProvider = ({ children }: any) => {
-  const [currentMenu, setCurrentMenu]: any = useState()
+  const [currentMenu, setCurrentMenu]: any = useState("HOME");
 
-  const { setButtonFormat, buttonFormat }: any = useModalsAppProvider()
+  const { setButtonFormat, buttonFormat }: any = useModalsAppProvider();
 
   // //---------------------------------------------------------------- buttons -----------------------------------------------
   // const [fontSizeButtons, setFontSizeButtons] = useState("1rem")
@@ -46,11 +46,9 @@ export const AppStateProvider = ({ children }: any) => {
   // const [marginTopButtons, setMarginTopButtons] = useState("0")
   // const [marginBottomButtons, setMarginBottomButtons] = useState("0")
 
-
-
   useEffect(() => {
     if (buttonFormat) {
-      console.log("buttonFormat",buttonFormat?.fontSizeButtons)
+      console.log("buttonFormat", buttonFormat?.fontSizeButtons);
       // Buttons-modal-btn
       // setFontSizeButtons(buttonFormat?.fontSizeButtons)
       // setFontButtons(buttonFormat?.fontButtons)
@@ -89,7 +87,7 @@ export const AppStateProvider = ({ children }: any) => {
       // setMarginTopButtons(buttonFormat?.marginTopButtons)
       // setMarginBottomButtons(buttonFormat?.marginBottomButtons)
     }
-  }, [])
+  }, []);
   return (
     <Context.Provider
       value={{
@@ -167,7 +165,7 @@ export const AppStateProvider = ({ children }: any) => {
     >
       {children}
     </Context.Provider>
-  )
-}
+  );
+};
 
-export const useAppStateProvider = () => useContext(Context)
+export const useAppStateProvider = () => useContext(Context);
