@@ -111,7 +111,6 @@ const Header = ({ customStyle }: any) => {
           marginBottom: `${marginBottomHeader}px`,
           marginLeft: `${marginLeftHeader}px`,
           marginRight: `${marginRightHeader}px`,
-
           display: "flex",
           position: "relative",
           flexDirection: "row",
@@ -133,37 +132,39 @@ const Header = ({ customStyle }: any) => {
             <Bars />
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-12">
-          {navigation.map((item) => (
-            <a
-              key={item.name}
-              // href={item.href}
-              className="text-sm font-semibold text-gray-900 leading-6"
-              style={{
-                fontSize: fontSizeHeader,
-                fontFamily: fontHeader,
-                color: colorHeader,
-                textDecoration: "none",
-              }}
+        <div style={{ display: "flex", flexDirection: "row" }}>
+          <div className="hidden lg:flex lg:gap-x-12">
+            {navigation.map((item) => (
+              <a
+                key={item.name}
+                // href={item.href}
+                className="text-sm font-semibold text-gray-900 leading-6"
+                style={{
+                  fontSize: fontSizeHeader,
+                  fontFamily: fontHeader,
+                  color: colorHeader,
+                  textDecoration: "none",
+                }}
+                onClick={() => {
+                  setCurrentMenu(item.name);
+                }}
+              >
+                {item.name}
+              </a>
+            ))}
+          </div>
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end ml-6">
+            <button className="block px-3 -mx-3 text-base font-semibold text-gray-900 rounded-lg py-2.5 leading-7 "></button>
+            <button
               onClick={() => {
-                setCurrentMenu(item.name);
+                console.log("click on lan button");
+                setOpenLan(true);
               }}
+              className="text-sm font-semibold text-gray-900 leading-6"
             >
-              {item.name}
-            </a>
-          ))}
-        </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <button className="block px-3 -mx-3 text-base font-semibold text-gray-900 rounded-lg py-2.5 leading-7 "></button>
-          <button
-            onClick={() => {
-              console.log("click on lan button");
-              setOpenLan(true);
-            }}
-            className="text-sm font-semibold text-gray-900 leading-6"
-          >
-            <GlobeIcon />
-          </button>
+              <GlobeIcon />
+            </button>
+          </div>
         </div>
       </nav>
       <Dialog

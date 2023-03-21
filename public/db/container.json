@@ -44,7 +44,7 @@
                                             "paddingTopHeader": "20",
                                             "paddingBottomHeader": "20",
                                             "paddingLeftHeader": "20",
-                                            "paddingRightHeader": "20",
+                                            "paddingRightHeader": "35",
                                             "marginTopHeader": "0",
                                             "marginBottomHeader": "0",
                                             "marginLeftHeader": "0",
@@ -96,7 +96,7 @@
                                             "marginLeftLogo": "2",
                                             "marginRightLogo": "3",
                                             "minWidthLogo": "120",
-                                            "maxWidthLogo": "120",
+                                            "maxWidthLogo": "200",
                                             "minHeightLogo": "60",
                                             "maxHeightLogo": "60"
                                         }

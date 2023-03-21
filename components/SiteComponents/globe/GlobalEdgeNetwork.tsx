@@ -2,16 +2,14 @@
 import DataOptionsUi from "@/CustomPopover/DataOptionsUi";
 import DataTitleOptionsUi from "@/CustomPopover/DataTitleOptionsUi";
 import { useAppProvider } from "@appProvider/AppProvider";
+import { useAppStateProvider } from "@appProvider/AppStateProvider";
 import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
-import { useState } from "react";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import CarouselVertical from "../carousel/CarouselVertical";
 import GlobeComponent from "./GlobeComponent";
 
-const GlobalEdgeNetwork = ({
-  title,
-  noteList,
-  description: description,
-  ref,
-}) => {
+const GlobalEdgeNetwork = ({ title, noteList, description: description }) => {
   const {
     fontSizeDataTitle,
     fontDataTitle,
@@ -89,28 +87,25 @@ const GlobalEdgeNetwork = ({
     <>
       <div
         className="my-15 relative m-0 globe"
-        ref={ref}
         style={{
-          marginTop: "80px",
           zIndex: 10,
           backgroundColor: "#000",
           paddingTop: "50px",
           paddingRight: "20px",
-          paddingBottom: "200px",
+          // paddingBottom: "200px",
         }}
       >
         <div
           className={`flex flex-col relative lg:flex-row items-center lg:justify-between`}
-          ref={ref}
+          id={`sectionId`}
         >
           <div className="h-auto" style={{ width: "60%" }}>
             <GlobeComponent />
           </div>
           <ul className="flex flex-col w-[40%] z-20">
-            <h1
+            {/* <h1
               className="self-start justify-start mb-5 font-sans text-2xl font-semibold text-title leading-10 lg:max-w-[580px]"
               style={{
-                // backgroundColor: backgroundColorDataTitle,
                 color: colorDataTitle,
                 fontSize: fontSizeDataTitle,
                 fontFamily: fontDataTitle,
@@ -146,11 +141,11 @@ const GlobalEdgeNetwork = ({
             >
               {isReadOnly ? null : <DataTitleOptionsUi style={titleStyle} />}
               {title}
-            </h1>
-            <p style={{ fontSize: "1rem", marginTop: "1rem" }}>
+            </h1> */}
+            {/* <p style={{ fontSize: "1rem", marginTop: "1rem" }}>
               {description?.subTitle}
-            </p>
-            <p
+            </p> */}
+            {/* <p
               className="mb-3 text-md text-friendly-light-dark"
               style={{
                 display: "flex",
@@ -193,22 +188,12 @@ const GlobalEdgeNetwork = ({
             >
               {isReadOnly ? null : <DataOptionsUi style={contentStyle} />}
               {description?.description}
-            </p>
+            </p> */}
+            {/* <CarouselVertical /> */}
+
             {noteList.map((item, index) => (
-              <li
-                key={index}
-                // className="flex flex-col justify-start mb-5 text-sm text-friendly-light-dark leading-10"
-              >
-                <div className="flex flex-col items-start content-start justify-start">
-                  <div className="pt-1 pb-0 pl-1 pr-1 rounded-md w-fit h-fit">
-                    {/* <Image
-                      className={` text-friendly-light-dark `}
-                      src={item.image}
-                      alt={"tick"}
-                      width={24}
-                      height={24}
-                    /> */}
-                  </div>
+              <li key={index} style={{ display: "flex", flexDirection: "row" }}>
+                {/* <div className="flex flex-col items-start content-start justify-start">
                   <h2
                     className="font-sans text-3xl font-bold text-title text-darkgray"
                     style={{
@@ -243,20 +228,28 @@ const GlobalEdgeNetwork = ({
                       width: "100%",
                     }}
                   >
-                    {item.title}
+                    {item?.title}
                   </h2>
-                </div>
+                </div> */}
+                {index === 0 && (
+                  <div className="pt-1 pb-0 pl-1 pr-1 rounded-md w-fit h-fit">
+                    <Image
+                      src={"/img/icon/globetext.png"}
+                      width={150}
+                      height={150}
+                    />
+                  </div>
+                )}
                 <p
-                  className="mt-1 mb-2 ml-2 font-sans text-base leading-10 align-center text-darkgray"
+                  className="mb-9 ml-2 font-sans text-base leading-10 align-center text-darkgray"
                   style={{
                     display: "flex",
                     flexDirection: "column",
                     width: "fit-content",
-                    padding: "2px",
-                    fontSize: fontSizeData,
+                    // fontSize: fontSizeData,
                     color: colorData,
                     font: fontData,
-                    fontFamily: fontData,
+                    // fontFamily: fontData,
                     // backgroundColor: backgroundColorData,
                     borderBottomColor: borderBottomColorData,
                     borderBottomWidth: `${borderBottomWidthData}px`,
@@ -279,9 +272,16 @@ const GlobalEdgeNetwork = ({
                     paddingLeft: `${paddingLeftData}px`,
                     paddingRight: `${paddingRightData}px`,
                     marginTop: `${marginTopData}px`,
-                    marginBottom: `${marginBottomData}px`,
+                    // marginBottom: `${marginBottomData}px`,
+                    marginBottom: "9px",
                     marginLeft: `${marginLeftData}px`,
                     marginRight: `${marginRightData}px`,
+                    fontFamily: "Ppneuemontreal",
+                    fontSize: "2rem",
+                    padding: "10px",
+                    border: "1px solid black",
+                    borderRadius: "5px",
+                    fontWeight: 500,
                   }}
                 >
                   {item.description}

@@ -9,25 +9,33 @@ const CarouselCard = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        width: "400px",
+        width: "500px",
         position: "absolute",
         zIndex: 1000,
         left: "5%",
-        top: "20%",
+        top: "60%",
         height: "fit-content",
-        paddingBottom: "100px",
+        paddingBottom: "150px",
       }}
     >
-      <p
-        style={{ fontFamily: "Ppneuemontreal", fontSize: "2rem" }}
-      >{`Visual Designer + Developer`}</p>
-      <p
+      <span
         style={{
-          fontSize: "5rem",
+          fontSize: "3rem",
+          fontFamily: "Ppneuemontreal",
+          fontWeight: 800,
+          display: "flex",
+          textAlign: "left",
+        }}
+        className="leading-10"
+      >{`Welcome`}</span>
+      <span
+        style={{
+          fontSize: "3rem",
           fontFamily: "Ppneuemontreal",
           fontWeight: 800,
         }}
-      >{`Zachary Hayes`}</p>
+        className="leading-11"
+      >{`to Friendly Squad!`}</span>
       <p
         style={{
           fontFamily: "Ppneuemontreal",
@@ -35,7 +43,9 @@ const CarouselCard = () => {
           padding: "10px",
           border: "1px solid black",
           borderRadius: "5px",
+          fontWeight: 500,
         }}
+        className="leading-10"
       >{`View The Work`}</p>
     </div>
   );

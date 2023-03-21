@@ -123,10 +123,10 @@ const LogoUploader = () => {
       {!image ? (
         <div
           style={{
-            minWidth: `${minWidthLogo}px`,
-            maxWidth: `${maxWidthLogo}px`,
-            minHeight: ` ${minHeightLogo}px`,
-            maxHeight: `${maxHeightLogo}px`,
+            // minWidth: `${minWidthLogo}px`,
+            // maxWidth: `${maxWidthLogo}px`,
+            // minHeight: ` ${minHeightLogo}px`,
+            // maxHeight: `${maxHeightLogo}px`,
             overflow: "hidden",
           }}
         >
@@ -167,6 +167,7 @@ const LogoUploader = () => {
               marginRight: `${marginRightLogo}px`,
               objectFit: "cover",
               minWidth: `${minWidthLogo}px`,
+              // maxWidth: `${maxWidthLogo}px`,
               maxWidth: `${maxWidthLogo}px`,
               height: "auto",
               // minHeight: ` ${minHeightLogo}px`,

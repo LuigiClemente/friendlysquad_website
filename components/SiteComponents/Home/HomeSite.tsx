@@ -1,5 +1,7 @@
+import { useAppStateProvider } from "@appProvider/AppStateProvider";
 import { useEffect, useRef } from "react";
-import Carousel from "../carousel/Carousel";
+import CarouselHorizontal from "../carousel/CarouselHorizontal";
+import CloudCard from "../cloud/CloudCard";
 import {
   GLOBAL_DESCRIPTION,
   GLOBAL_TITLE,
@@ -11,14 +13,13 @@ import Layout from "../layout/Layout";
 
 const HomeSite = () => {
   const myRef = useRef(undefined);
-  // jump scroll to the ref
-
+  const { isEndSlide, setIsEndSlide }: any = useAppStateProvider();
   useEffect(() => {
-    // myRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-    window.scrollTo({ behavior: "smooth", top: myRef.current?.offsetTop });
-  }, []);
-
-  // const executeScroll = () => myRef.current.scrollIntoView();
+    if (isEndSlide) {
+      myRef.current.scrollIntoView();
+      setIsEndSlide(false);
+    }
+  }, [isEndSlide]);
   return (
     <div style={{ zIndex: 1000, position: "relative", width: "100%" }}>
       <Layout>
@@ -33,6 +34,7 @@ const HomeSite = () => {
             <source src="/images/clouds.mp4" type="video/mp4" />
           </video>
         </div>
+
         <div
           style={{
             position: "relative",
@@ -42,13 +44,23 @@ const HomeSite = () => {
             justifyContent: "center",
           }}
         >
-          <Carousel images={SLIDER_IMAGES} scrollFun={null} />
-          <GlobalEdgeNetwork
-            title={GLOBAL_TITLE}
-            noteList={NOTE_GLOBE_SECTION}
-            description={GLOBAL_DESCRIPTION}
+          <CarouselHorizontal images={SLIDER_IMAGES} scrollFun={null} />
+
+          <div
             ref={myRef}
-          />
+            style={{
+              height: "fit-content",
+              width: "fit-content",
+              // marginsTop: "250px",
+            }}
+          >
+            <CloudCard />
+            <GlobalEdgeNetwork
+              title={GLOBAL_TITLE}
+              noteList={NOTE_GLOBE_SECTION}
+              description={GLOBAL_DESCRIPTION}
+            />
+          </div>
         </div>
       </Layout>
     </div>

@@ -30,26 +30,72 @@ export const VOLCANOES = [
   },
 ];
 
-export const GLOBAL_TITLE = "Speed is critical to customers — and SEO";
+export const GLOBAL_TITLE = "WELCOME TO FRIENDLY SQUAD!";
 export const GLOBAL_DESCRIPTION = {
-  subTitle:
-    "Next.js and Vercel work together to deliver the best performance for your end users, while maintaining best-in-class",
+  subTitle: "Where Git is the foundation of modern infrastructure deployment.",
   description:
     "Built on cutting-edge serverless technology, Vercel can withstand any traffic spike, with automatic failover and global replication of assets.",
 };
 
 export const NOTE_GLOBE_SECTION = [
   {
-    title: " Global Edge Network",
     description:
-      "Your site, fast everywhere. Deploy content around the world and update it in 300ms. ",
-    image: "GlobeIcon",
+      "At Friendly Squad, we understand that keeping sensitive data secure is a top priority for businesses. That's why we have implemented a Zero Trust security model and partnered with HarshCorp to provide Vault Secrets Management. Our security measures include 15-second renewals for banking-grade security by default.",
+    // image: "/img/icon/pngegg.png",
+  },
+  {
+    description:
+      "Our Zero Trust approach ensures that every user and device is verified and authenticated before being granted access to our infrastructure. We also use strict access controls, network segmentation, and continuous monitoring to quickly detect and address any potential security threats.",
+    // image: "/img/icon/svg/postgresql.svg",
+  },
+  {
+    description: `HarshCorp's Vault Secrets Management provides secure storage and management of sensitive data such as passwords and API keys. We keep our security protocols up-to-date and reliable to protect your data at all times.`,
+    // image: "/img/icon/database.png",
+  },
+  {
+    // title: "First-party monitoring and observability",
+    description:
+      "We are committed to providing a secure and reliable infrastructure, as demonstrated by our range of certifications, including ISO 9001, ISO 27001, PCI-DSS, and SSAE16/ISAE3402. Our physical security measures include 24/7 monitoring and biometric identification systems to ensure only authorised personnel access our infrastructure.s",
+    // image: "/img/icon/greenLeaf.png",
+  },
+  {
+    description:
+      "We also offer impressive performance capabilities. Our network nodes have a minimum shared speed of 10 gigabytes per second traffic, ensuring speedy and efficient data transfer. This level of performance is crucial for data-intensive applications and processes.",
+    // image: "/img/icon/network-graphics.png",
+  },
+  {
+    description:
+      "In conclusion, we provide reliable and secure services, allowing businesses to focus on their goals without worrying about sensitive data security. We look forward to working with you",
+  },
+];
+
+export const NOTE_CLOUD_SECTION = [
+  {
+    description:
+      "Our platform allows you to effortlessly create ENTERPRISE-LEVEL INFRASTRUCTURES in just minutes by adopting our Git-first approach, which puts you in complete control of your infrastructure. ",
+    image: "/img/icon/pngegg.png",
+  },
+  {
+    description:
+      "By defining your entire infrastructure in your Git repository, DEPLOYMENT BECOMES A BREEZE. We take care of deploying all the necessary components such as your database schemas, cache, S3 buckets, API gateway, and more directly from your Git repository, streamlining the deployment process.",
+    image: "/img/icon/svg/postgresql.svg",
+  },
+  {
+    title: "First-party monitoring and observability",
+    description: `With our extensive RESOURCE CATALOG, default connections, and secrets management, triggering your preferred message brokers has never been easier. All you have to do is declare it in your Git repository.`,
+    image: "/img/icon/database.png",
   },
   {
     title: "First-party monitoring and observability",
     description:
-      "Analyze logs, understand traffic and usage, and easily optimize your applications, without extra tooling or code.",
-    image: "network",
+      "SCALING YOUR INFRASTRUCTURE to meet your requirements is so easy! Simply adjust your RAM, CPU, storage, and other resources as needed. You can even scale down to zero if required, and you can do it all in your favourite programming languages without any hassle. All you need to do is define your requirements, and we'll take care of the rest.",
+    image: "/img/icon/greenLeaf.png",
+  },
+  {
+    title: "First-party monitoring and observability",
+    description:
+      "Join our vibrant community of business who have embraced the Git-first approach to infrastructure deployment. Our platform is USER-FRIENDLY and intuitive, making it easy for developers of all skill levels to deploy and manage their infrastructure. Sign up today and experience the full power of Git in action!",
+    image: "/img/icon/network-graphics.png",
   },
 ];
 
@@ -64,6 +110,7 @@ export const NAVIGATION = [
   { name: "ABOUT US", href: "/about-us" },
   { name: "SERVICE", href: "/service" },
   { name: "CONTACT US", href: "/contact-us" },
+  { name: "LOG IN", href: "/log-in" },
 ];
 
 export const MODAL_DATA = [
