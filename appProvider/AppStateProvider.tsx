@@ -6,6 +6,7 @@ const Context = createContext({});
 export const AppStateProvider = ({ children }: any) => {
   const [currentMenu, setCurrentMenu]: any = useState("HOME");
   const [isEndSlide, setIsEndSlide]: any = useState(false);
+  const [isEndCloud, setIsEndCloud]: any = useState(false);
   const { setButtonFormat, buttonFormat }: any = useModalsAppProvider();
 
   useEffect(() => {
@@ -20,6 +21,8 @@ export const AppStateProvider = ({ children }: any) => {
         setCurrentMenu,
         isEndSlide,
         setIsEndSlide,
+        isEndCloud,
+        setIsEndCloud,
       }}
     >
       {children}

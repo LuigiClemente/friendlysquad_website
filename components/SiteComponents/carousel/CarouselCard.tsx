@@ -13,7 +13,7 @@ const CarouselCard = () => {
         position: "absolute",
         zIndex: 1000,
         left: "5%",
-        top: "60%",
+        top: "70%",
         height: "fit-content",
         paddingBottom: "150px",
       }}

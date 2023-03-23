@@ -71,30 +71,38 @@ export const NOTE_GLOBE_SECTION = [
 
 export const NOTE_CLOUD_SECTION = [
   {
+    id: 1,
+    title: "Embrace the Git-First Revolution",
     description:
-      "Our platform allows you to effortlessly create ENTERPRISE-LEVEL INFRASTRUCTURES in just minutes by adopting our Git-first approach, which puts you in complete control of your infrastructure. ",
+      "Experience the power of Git as the foundation of modern infrastructure deployment. Our platform streamlines the deployment process and puts you in complete control of your infrastructure.",
     image: "/img/icon/pngegg.png",
   },
   {
+    id: 2,
+    title: "Define, Deploy, and Dominate",
     description:
-      "By defining your entire infrastructure in your Git repository, DEPLOYMENT BECOMES A BREEZE. We take care of deploying all the necessary components such as your database schemas, cache, S3 buckets, API gateway, and more directly from your Git repository, streamlining the deployment process.",
+      "With our platform, you can define your entire infrastructure in your Git repository, making deployment a breeze. Just declare your desired components, and we'll handle the rest",
     image: "/img/icon/svg/postgresql.svg",
   },
   {
-    title: "First-party monitoring and observability",
-    description: `With our extensive RESOURCE CATALOG, default connections, and secrets management, triggering your preferred message brokers has never been easier. All you have to do is declare it in your Git repository.`,
+    id: 3,
+    title: "Connect and Conquer",
+    description: `Our extensive resource catalogue, default connections, and secrets management allow you to seamlessly integrate your preferred message brokers. Just declare it in your Git repository, and you're good to go.
+    `,
     image: "/img/icon/database.png",
   },
   {
-    title: "First-party monitoring and observability",
+    id: 4,
+    title: "Scale with Ease",
     description:
-      "SCALING YOUR INFRASTRUCTURE to meet your requirements is so easy! Simply adjust your RAM, CPU, storage, and other resources as needed. You can even scale down to zero if required, and you can do it all in your favourite programming languages without any hassle. All you need to do is define your requirements, and we'll take care of the rest.",
+      "Adjusting your infrastructure has never been simpler. Customize your resources to meet your needs, and do it all in your favorite programming languages. Experience hassle-free scalability at its finest.",
     image: "/img/icon/greenLeaf.png",
   },
   {
-    title: "First-party monitoring and observability",
+    id: 5,
+    title: "Join the Community",
     description:
-      "Join our vibrant community of business who have embraced the Git-first approach to infrastructure deployment. Our platform is USER-FRIENDLY and intuitive, making it easy for developers of all skill levels to deploy and manage their infrastructure. Sign up today and experience the full power of Git in action!",
+      "Become a part of our vibrant community of businesses that have embraced the Git-first approach to infrastructure deployment. Our user-friendly platform empowers developers of all skill levels to deploy and manage infrastructure with confidence",
     image: "/img/icon/network-graphics.png",
   },
 ];

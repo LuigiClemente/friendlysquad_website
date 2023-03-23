@@ -5,14 +5,14 @@
 @import "./styles.css";
 @import "./paperbits.css";
 
-  .swiper {
+  #horizontalSwiper .swiper {
     width: 100%;
     height: 100%;
     flex-direction: row;
     position: relative;
   }
   
-  .swiper-slide {
+  #horizontalSwiper .swiper-slide {
     text-align: center;
     font-size: 18px;
     background: transparent;
@@ -26,7 +26,7 @@
     width:100%
   }
   
-  .swiper-slide img {
+  #horizontalSwiper .swiper-slide img {
     display: block;
     display: flex;
     justify-content: center;
@@ -34,21 +34,23 @@
     width:100%;
     object-fit: cover;
   } 
-  .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+ .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
     display: none !important;
 }
+.swiper-vertical>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  display: none !important;
+}
 
-  
-  .header33_background-video-wrapper {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 2;
-    overflow: visible;
-    width: 100%;
-    height: 100%;
+.header33_background-video-wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  /* overflow: visible; */
+  width: 100%;
+  height: 100%;
     margin-right: 0;
     padding-right: 0;
     padding-left: 0;
@@ -71,11 +73,11 @@
   }
   .w-background-video {
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
     height: 500px;
     color: #fff;
   }
-
+  
 
 .home{
   z-index: 1000000;
@@ -85,13 +87,41 @@
 }
 .globe{
   background-image: url('/img/globe/night-sky.png');
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: cover;
+
 }
 
-/* .form-group.collapse{
-  visibility: visible !important;
-} */
 .collapse{
   visibility: visible !important;
 }
+/* ---------------------------------------------------------- */
+
+  #verticalSwiper .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  #verticalSwiper .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #verticalSwiper .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .pos{
+    /*  */
+    position: sticky;
+    top: 0;
+  }
+  

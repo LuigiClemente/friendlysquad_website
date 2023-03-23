@@ -1,4 +1,6 @@
+import { HEADER_PLUGIN_ID, LOGO_PLUGIN_ID } from "@/Constant/const";
 import { createContext, useContext, useEffect, useState } from "react";
+import { getPluginValue } from "utils/uiController";
 import { DEFAULT_COLOR_SITE } from "../theme/ConstantColors";
 
 const Context = createContext({});
@@ -184,8 +186,168 @@ export const AppProvider = ({ children }: any) => {
   // @refresh reset
   useEffect(() => {
     console.log("loading in app provider");
-    // loadDb()
+    // loadDb();
+    // if (headerDBFormat) {
+    //   console.log("headerDBFormat==========>>>>>>", headerDBFormat);
+
+    // updateStateHeader();
+    // }
   }, []);
+
+  const updateStateHeader = () => {
+    if (headerDBFormat) {
+      const defaultHeaderFormat: any = getPluginValue(
+        headerDBFormat,
+        HEADER_PLUGIN_ID
+      );
+
+      setFontSizeHeader(defaultHeaderFormat?.fontSizeHeader);
+      setBackgroundColorHeader(defaultHeaderFormat?.backgroundColorHeader);
+      setColorHeader(defaultHeaderFormat?.colorHeader);
+      setFontHeader(defaultHeaderFormat?.fontHeader);
+      // border background color
+      setBorderBottomColorHeader(defaultHeaderFormat?.borderBottomColorHeader);
+      setBorderRightColorHeader(defaultHeaderFormat?.borderRightColorHeader);
+      setBorderLeftColorHeader(defaultHeaderFormat?.borderLeftColorHeader);
+      setBorderTopColorHeader(defaultHeaderFormat?.borderTopColorHeader);
+      // border width
+      setBorderRightWidthHeader(defaultHeaderFormat?.borderRightWidthHeader);
+      setBorderLeftWidthHeader(defaultHeaderFormat?.borderLeftWidthHeader);
+      setBorderTopWidthHeader(defaultHeaderFormat?.borderTopWidthHeader);
+      setBorderBottomWidthHeader(defaultHeaderFormat?.borderBottomWidthHeader);
+      // border style
+      setBorderRightStyleHeader(defaultHeaderFormat?.borderRightStyleHeader);
+      setBorderLeftStyleHeader(defaultHeaderFormat?.borderLeftStyleHeader);
+      setBorderTopStyleHeader(defaultHeaderFormat?.borderTopStyleHeader);
+      setBorderBottomStyleHeader(defaultHeaderFormat?.borderBottomStyleHeader);
+      // border radius border-top-right-radius
+      setBorderTopRightRadiusHeader(
+        defaultHeaderFormat?.borderTopRightRadiusHeader
+      );
+      setBorderTopLeftRadiusHeader(
+        defaultHeaderFormat?.borderTopLeftRadiusHeader
+      );
+      setBorderBottomRightRadiusHeader(
+        defaultHeaderFormat?.borderBottomRightRadiusHeader
+      );
+      setBorderBottomLeftRadiusHeader(
+        defaultHeaderFormat?.borderBottomLeftRadiusHeader
+      );
+      // padding
+      setPaddingRightHeader(defaultHeaderFormat?.paddingRightHeader);
+      setPaddingLeftHeader(defaultHeaderFormat?.paddingLeftHeader);
+      setPaddingTopHeader(defaultHeaderFormat?.paddingTopHeader);
+      setPaddingBottomHeader(defaultHeaderFormat?.paddingBottomHeader);
+      // margin
+      setMarginRightHeader(defaultHeaderFormat?.marginRightHeader);
+      setMarginLeftHeader(defaultHeaderFormat?.marginLeftHeader);
+      setMarginTopHeader(defaultHeaderFormat?.marginTopHeader);
+      setMarginBottomHeader(defaultHeaderFormat?.marginBottomHeader);
+      // ------------for Header button----------------
+      const defaultLogoFormat: any = getPluginValue(
+        headerDBFormat,
+        LOGO_PLUGIN_ID
+      );
+      setFontSizeLogo(defaultLogoFormat?.fontSizeLogo);
+      setBackgroundColorLogo(defaultLogoFormat?.backgroundColorLogo);
+      setColorLogo(defaultLogoFormat?.colorLogo);
+      setFontLogo(defaultLogoFormat?.fontLogo);
+      // border background color
+      setBorderBottomColorLogo(defaultLogoFormat?.borderBottomColorLogo);
+      setBorderRightColorLogo(defaultLogoFormat?.borderRightColorLogo);
+      setBorderLeftColorLogo(defaultLogoFormat?.borderLeftColorLogo);
+      setBorderTopColorLogo(defaultLogoFormat?.borderTopColorLogo);
+      // border width
+      setBorderRightWidthLogo(defaultLogoFormat?.borderRightWidthLogo);
+      setBorderLeftWidthLogo(defaultLogoFormat?.borderLeftWidthLogo);
+      setBorderTopWidthLogo(defaultLogoFormat?.borderTopWidthLogo);
+      setBorderBottomWidthLogo(defaultLogoFormat?.borderBottomWidthLogo);
+      // border style
+      setBorderRightStyleLogo(defaultLogoFormat?.borderRightStyleLogo);
+      setBorderLeftStyleLogo(defaultLogoFormat?.borderLeftStyleLogo);
+      setBorderTopStyleLogo(defaultLogoFormat?.borderTopStyleLogo);
+      setBorderBottomStyleLogo(defaultLogoFormat?.borderBottomStyleLogo);
+      // border radius border-top-right-radius
+      setBorderTopRightRadiusLogo(defaultLogoFormat?.borderTopRightRadiusLogo);
+      setBorderTopLeftRadiusLogo(defaultLogoFormat?.borderTopLeftRadiusLogo);
+      setBorderBottomRightRadiusLogo(
+        defaultLogoFormat?.borderBottomRightRadiusLogo
+      );
+      setBorderBottomLeftRadiusLogo(
+        defaultLogoFormat?.borderBottomLeftRadiusLogo
+      );
+      // padding
+      setPaddingRightLogo(defaultLogoFormat?.paddingRightLogo);
+      setPaddingLeftLogo(defaultLogoFormat?.paddingLeftLogo);
+      setPaddingTopLogo(defaultLogoFormat?.paddingTopLogo);
+      setPaddingBottomLogo(defaultLogoFormat?.paddingBottomLogo);
+      // margin
+      setMarginRightLogo(defaultLogoFormat?.marginRightLogo);
+      setMarginLeftLogo(defaultLogoFormat?.marginLeftLogo);
+      setMarginTopLogo(defaultLogoFormat?.marginTopLogo);
+      setMarginBottomLogo(defaultLogoFormat?.marginBottomLogo);
+
+      // ----------------for ModalBox----------------
+      const defaultModalBoxFormat: any = getPluginValue(
+        headerDBFormat,
+        LOGO_PLUGIN_ID
+      );
+      setFontSizeModalBox(defaultHeaderFormat?.fontSizeModalBox);
+      setBackgroundColorModalBox(defaultHeaderFormat?.backgroundColorModalBox);
+      setColorModalBox(defaultHeaderFormat?.colorModalBox);
+      setFontModalBox(defaultHeaderFormat?.fontModalBox);
+      // border background color
+      setBorderBottomColorModalBox(
+        defaultHeaderFormat?.borderBottomColorModalBox
+      );
+      setBorderRightColorModalBox(
+        defaultHeaderFormat?.borderRightColorModalBox
+      );
+      setBorderLeftColorModalBox(defaultHeaderFormat?.borderLeftColorModalBox);
+      setBorderTopColorModalBox(defaultHeaderFormat?.borderTopColorModalBox);
+      // border width
+      setBorderRightWidthModalBox(
+        defaultHeaderFormat?.borderRightWidthModalBox
+      );
+      setBorderLeftWidthModalBox(defaultHeaderFormat?.borderLeftWidthModalBox);
+      setBorderTopWidthModalBox(defaultHeaderFormat?.borderTopWidthModalBox);
+      setBorderBottomWidthModalBox(
+        defaultHeaderFormat?.borderBottomWidthModalBox
+      );
+      // border style
+      setBorderRightStyleModalBox(
+        defaultHeaderFormat?.borderRightStyleModalBox
+      );
+      setBorderLeftStyleModalBox(defaultHeaderFormat?.borderLeftStyleModalBox);
+      setBorderTopStyleModalBox(defaultHeaderFormat?.borderTopStyleModalBox);
+      setBorderBottomStyleModalBox(
+        defaultHeaderFormat?.borderBottomStyleModalBox
+      );
+      // border radius border-top-right-radius
+      setBorderTopRightRadiusModalBox(
+        defaultHeaderFormat?.borderTopRightRadiusModalBox
+      );
+      setBorderTopLeftRadiusModalBox(
+        defaultHeaderFormat?.borderTopLeftRadiusModalBox
+      );
+      setBorderBottomRightRadiusModalBox(
+        defaultHeaderFormat?.borderBottomRightRadiusModalBox
+      );
+      setBorderBottomLeftRadiusModalBox(
+        defaultHeaderFormat?.borderBottomLeftRadiusModalBox
+      );
+      // padding
+      setPaddingRightModalBox(defaultHeaderFormat?.paddingRightModalBox);
+      setPaddingLeftModalBox(defaultHeaderFormat?.paddingLeftModalBox);
+      setPaddingTopModalBox(defaultHeaderFormat?.paddingTopModalBox);
+      setPaddingBottomModalBox(defaultHeaderFormat?.paddingBottomModalBox);
+      // margin
+      setMarginRightModalBox(defaultHeaderFormat?.marginRightModalBox);
+      setMarginLeftModalBox(defaultHeaderFormat?.marginLeftModalBox);
+      setMarginTopModalBox(defaultHeaderFormat?.marginTopModalBox);
+      setMarginBottomModalBox(defaultHeaderFormat?.marginBottomModalBox);
+    }
+  };
 
   return (
     <Context.Provider

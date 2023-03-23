@@ -1,18 +1,19 @@
-import React, { useState } from "react";
 import { Dialog } from "@headlessui/react";
-import Bars from "../icons/Bars";
-import XMark from "../icons/XMark";
-import GlobeIcon from "../icons/GlobeIcon";
-import LanguageModal from "../modals/LanguageModal";
+import { useState } from "react";
+
 import HeaderOptionsUi from "@/CustomPopover/HeaderOptionsUi";
-import { useAppProvider } from "@appProvider/AppProvider";
-import { NAVIGATION } from "../constant";
-import { useAppStateProvider } from "@appProvider/AppStateProvider";
+import Bars from "@/icons/Bars";
+import Globe from "@/icons/Globe";
 import Logo from "@/Logo";
+import { useAppProvider } from "@appProvider/AppProvider";
+import { useAppStateProvider } from "@appProvider/AppStateProvider";
+import { NAVIGATION } from "../constant";
+import LanguageModal from "../modals/LanguageModal";
+import XMark from "@/icons/XMark";
 
 const navigation = NAVIGATION;
 
-const Header = ({ customStyle }: any) => {
+const Header = ({ bgHeader, colorMenu }: any) => {
   const {
     dialogOpenHeader,
     setDialogOpenHeader,
@@ -67,7 +68,7 @@ const Header = ({ customStyle }: any) => {
   const [style, setStyle] = useState({ display: "none" });
   return (
     <header
-      className={`absolute top-0 left-0 right-0 z-10 w-full overflow-hidden ${customStyle}`}
+      className={`absolute top-0 left-0 right-0 z-10 w-full overflow-hidden ${bgHeader}`}
       onMouseEnter={() => {
         setStyle({ display: "block" });
       }}
@@ -138,12 +139,13 @@ const Header = ({ customStyle }: any) => {
               <a
                 key={item.name}
                 // href={item.href}
-                className="text-sm font-semibold text-gray-900 leading-6"
+                className="text-sm font-semibold leading-6"
                 style={{
                   fontSize: fontSizeHeader,
                   fontFamily: fontHeader,
-                  color: colorHeader,
+                  // color: colorHeader,
                   textDecoration: "none",
+                  color: colorMenu,
                 }}
                 onClick={() => {
                   setCurrentMenu(item.name);
@@ -162,7 +164,7 @@ const Header = ({ customStyle }: any) => {
               }}
               className="text-sm font-semibold text-gray-900 leading-6"
             >
-              <GlobeIcon />
+              <Globe color={colorMenu} />
             </button>
           </div>
         </div>
@@ -220,7 +222,9 @@ const Header = ({ customStyle }: any) => {
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className="sr-only">Close menu</span>
-              <XMark classCss={`h-6 w-6 text-black`} />
+              {/* <XMark classCss={`h-6 w-6 text-black`} /> */}
+              <XMark />
+              close
             </button>
           </div>
           <div className="mt-6 flow-root">
@@ -253,7 +257,7 @@ const Header = ({ customStyle }: any) => {
                   }}
                   className="block px-3 -mx-3 text-base font-semibold text-gray-900 rounded-lg py-2.5 leading-7"
                 >
-                  <GlobeIcon />
+                  <Globe />
                 </span>
               </div>
             </div>

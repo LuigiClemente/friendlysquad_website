@@ -1,7 +1,6 @@
-import HomeSite from "@/SiteComponents/Home/HomeSite";
+import CloudDataComponent from "@/SiteComponents/cloud/CloudDataComponent";
 import { AppProvider } from "@appProvider/AppProvider";
 import { AppStateProvider } from "@appProvider/AppStateProvider";
-import ResizeObserver from "react-resize-detector";
 import { ModalsAppProvider } from "@appProvider/ModalsAppProvider";
 import UndoableProvider from "@appProvider/UndoableProvider";
 import { UpdateSettingsProvider } from "@appProvider/UpdateSettingsProvider";
@@ -50,6 +49,8 @@ export default function Home() {
               <ModalsAppProvider>
                 <DynamicHome />
                 {/* <HomeSite /> */}
+                {/* <GlobalEdgeNetworkO /> */}
+                {/* <CloudDataComponent /> */}
               </ModalsAppProvider>
             </AppStateProvider>
           </UpdateSettingsProvider>

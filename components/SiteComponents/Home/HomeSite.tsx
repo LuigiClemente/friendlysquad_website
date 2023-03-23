@@ -1,25 +1,49 @@
 import { useAppStateProvider } from "@appProvider/AppStateProvider";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import CarouselHorizontal from "../carousel/CarouselHorizontal";
-import CloudCard from "../cloud/CloudCard";
-import {
-  GLOBAL_DESCRIPTION,
-  GLOBAL_TITLE,
-  NOTE_GLOBE_SECTION,
-  SLIDER_IMAGES,
-} from "../constant";
+import CloudDataComponent from "../cloud/CloudDataComponent";
+import { SLIDER_IMAGES } from "../constant";
 import GlobalEdgeNetwork from "../globe/GlobalEdgeNetwork";
 import Layout from "../layout/Layout";
+import ScrollToTop from "../scrollToTop/ScrollToTop";
+import { useScroll } from "../utils/utility";
 
 const HomeSite = () => {
-  const myRef = useRef(undefined);
-  const { isEndSlide, setIsEndSlide }: any = useAppStateProvider();
-  useEffect(() => {
-    if (isEndSlide) {
-      myRef.current.scrollIntoView();
-      setIsEndSlide(false);
-    }
-  }, [isEndSlide]);
+  const globeRef = useRef(undefined);
+  const cloudRef = useRef(undefined);
+  const { isEndSlide, setIsEndSlide, isEndCloud, setIsEndCloud }: any =
+    useAppStateProvider();
+  const [isSecondPart, setIsSecondPart] = useState(false);
+  useScroll(cloudRef, globeRef);
+  // useEffect(() => {
+  //   if (isEndSlide) {
+  //     cloudRef.current.scrollIntoView();
+  //     setIsEndSlide(false);
+  //   }
+  // }, [isEndSlide]);
+
+  // useEffect(() => {
+  //   if (isSecondPart) {
+  //     globeRef.current.scrollIntoView();
+  //     setIsSecondPart(false);
+  //   }
+  // }, [isSecondPart]);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const scrollPosition = window.scrollY;
+  //     const globePosition = globeRef.current.offsetTop;
+  //     const cloudPosition = cloudRef.current.offsetTop;
+  //     if (!isSecondPart) {
+  //       if (scrollPosition > globePosition - 400) {
+  //         console.log("scrollPosition", scrollPosition);
+  //         setIsSecondPart(true);
+  //       }
+  //     }
+  //   };
+  //   window.addEventListener("scroll", handleScroll, { passive: true });
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, [isSecondPart]);
+
   return (
     <div style={{ zIndex: 1000, position: "relative", width: "100%" }}>
       <Layout>
@@ -47,21 +71,31 @@ const HomeSite = () => {
           <CarouselHorizontal images={SLIDER_IMAGES} scrollFun={null} />
 
           <div
-            ref={myRef}
+            ref={cloudRef}
             style={{
               height: "fit-content",
               width: "fit-content",
-              // marginsTop: "250px",
+              position: "relative",
+              marginBottom: "300px",
             }}
           >
-            <CloudCard />
-            <GlobalEdgeNetwork
-              title={GLOBAL_TITLE}
-              noteList={NOTE_GLOBE_SECTION}
-              description={GLOBAL_DESCRIPTION}
-            />
+            <CloudDataComponent />
+          </div>
+
+          <div
+            ref={globeRef}
+            style={{
+              height: "100%",
+              width: "100%",
+              padding: 0,
+              margin: 0,
+              zIndex: 1000,
+            }}
+          >
+            <GlobalEdgeNetwork />
           </div>
         </div>
+        <ScrollToTop />
       </Layout>
     </div>
   );

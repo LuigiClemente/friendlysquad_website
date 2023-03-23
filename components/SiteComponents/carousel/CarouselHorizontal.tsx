@@ -23,18 +23,22 @@ const CarouselHorizontal = ({ images, scrollFun }: any) => {
   return (
     <div
       // ref={myRef}
+      id="horizontalSwiper"
       style={{
         marginTop: "150px",
+        marginBottom: "150px",
         zIndex: 10,
         position: "relative",
         width: "100%",
         display: "flex",
         justifyContent: "center",
+        flexDirection: "row",
         alignContent: "center",
         height: "fit-content",
         minHeight: "fit-content",
       }}
     >
+      <CarouselCard />
       <Swiper
         direction={"horizontal"}
         preventInteractionOnTransition={true}
@@ -95,7 +99,6 @@ const CarouselHorizontal = ({ images, scrollFun }: any) => {
           );
         })}
       </Swiper>
-      <CarouselCard />
     </div>
   );
 };

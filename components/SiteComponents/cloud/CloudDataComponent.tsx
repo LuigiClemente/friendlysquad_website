@@ -2,10 +2,12 @@
 import { useAppProvider } from "@appProvider/AppProvider";
 import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
 import { useState } from "react";
-import GlobeCardList from "./GlobeCardList";
-import GlobeComponent from "./GlobeComponent";
+import GlobalEdgeNetwork from "../globe/GlobalEdgeNetwork";
+import GlobeCardList from "../globe/GlobeCardList";
+import CloudCardList from "./CloudCardList";
+import CloudMenu from "./CloudMenu";
 
-const GlobalEdgeNetwork = () => {
+const CloudDataComponent = () => {
   const {
     fontSizeDataTitle,
     fontDataTitle,
@@ -80,44 +82,51 @@ const GlobalEdgeNetwork = () => {
   const { isReadOnly }: any = useAppProvider();
 
   return (
-    <div style={{ backgroundColor: "#000" }}>
+    <div
+      className="my-30 relative m-0"
+      style={{
+        marginTop: "100px",
+        zIndex: 10,
+        backgroundColor: "transparent",
+        paddingRight: "20px",
+        height: "100%",
+        position: "relative",
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "flex-start",
+        alignItems: "start",
+        clip: "auto",
+      }}
+    >
       <div
-        className="globe"
         style={{
-          marginTop: "100px",
-          zIndex: 10,
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
           width: "100%",
-          margin: 0,
-          height: "100%",
-          paddingTop: "20px",
-          backgroundColor: "#000",
         }}
       >
         <div
-          className={`flex flex-row relative lg:flex-row lg:justify-between`}
-          id={`sectionId`}
+          style={{
+            position: "sticky",
+            bottom: "auto",
+            top: "0",
+            left: "0",
+            height: "fit-content",
+            width: "40%",
+            alignSelf: "auto",
+            alignItems: "stretch",
+            clip: "auto",
+          }}
         >
-          <div
-            style={{
-              position: "sticky",
-              bottom: "auto",
-              top: "0",
-              left: "0",
-              height: "fit-content",
-              width: "40%",
-              alignSelf: "auto",
-              alignItems: "stretch",
-              zIndex: 1000,
-            }}
-          >
-            <GlobeComponent />
-          </div>
-          <div className="flex flex-col w-[50%] z-20">
-            <GlobeCardList />
-          </div>
+          <CloudMenu />
+        </div>
+        <div className="flex flex-col w-[60%] z-20 ">
+          <CloudCardList />
         </div>
       </div>
     </div>
   );
 };
-export default GlobalEdgeNetwork;
+export default CloudDataComponent;

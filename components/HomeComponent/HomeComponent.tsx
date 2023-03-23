@@ -4,6 +4,10 @@ import { useAppProvider } from "@appProvider/AppProvider";
 import { Container } from "@mui/material";
 import Box from "@mui/material/Box";
 
+// const DynamicHeader = dynamic(() => import("../Header"), {
+//   ssr: false
+// })
+
 const HomeComponent = () => {
   const {
     containerBackgroundColor,
@@ -27,16 +31,16 @@ const HomeComponent = () => {
           }}
           id="capture"
         >
-          <Box
-            sx={{
-              backgroundColor: `${containerBackgroundColor}`,
-              boxShadow: `${containerShadow}`,
-              height: "fit-content",
-              // position: "relative",
-            }}
-            // style={{ position: "relative" }}
-          >
-            <LayoutManger />
+          <Box>
+            {/* <DynamicHeader /> */}
+            <Box
+              sx={{
+                backgroundColor: `${containerBackgroundColor}`,
+                boxShadow: `${containerShadow}`,
+              }}
+            >
+              <LayoutManger />
+            </Box>
           </Box>
         </div>
       </PageLayout>

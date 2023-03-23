@@ -1,6 +1,9 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import {
   BUTTONS_PLUGIN_ID,
+  DATA_PLUGIN,
+  HEADER_PLUGIN_ID,
+  VERIFY_CODE,
   VERIFY_TITLE_PLUGIN_ID,
 } from "../components/Constant/const";
 import { FILE_PATH_HEADER, FILE_PATH_MODALS, TEMPLATE_PATH } from "../config";
@@ -12,7 +15,8 @@ const Context = createContext({});
 
 export const ModalsAppProvider = ({ children }: any) => {
   const [dbModalsFormat, setDbModalsFormat]: any = useState();
-  const { setLoading, setHeaderDBFormat }: any = useAppProvider();
+  const { setLoading, setHeaderDBFormat, headerDBFormat }: any =
+    useAppProvider();
   const [buttonFormat, setButtonFormat] = useState();
 
   const [dialogOpenButtons, setDialogOpenButtons] = useState(false);
@@ -62,7 +66,7 @@ export const ModalsAppProvider = ({ children }: any) => {
   const [fontSizeDataModal, setFontSizeDataModal] = useState("1rem");
   const [backgroundColorDataModal, setBackgroundColorDataModal] =
     useState("#5BD62A");
-  const [colorDataModal, setColorDataModal] = useState("#fff");
+  const [colorDataModal, setColorDataModal] = useState("#000");
   const [fontDataModal, setFontDataModal] = useState("Roboto");
   const [dialogOpenDataModal, setDialogOpenDataModal] = useState(false);
   // border for DataModal
@@ -228,8 +232,8 @@ export const ModalsAppProvider = ({ children }: any) => {
   //---------------------------------------------------------------- buttons -----------------------------------------------
   const [fontSizeButtons, setFontSizeButtons] = useState("1rem");
   const [backgroundColorButtons, setBackgroundColorButtons] =
-    useState("#5BD62A");
-  const [colorButtons, setColorButtons] = useState("#fff");
+    useState("lightGray");
+  const [colorButtons, setColorButtons] = useState("#000");
   const [fontButtons, setFontButtons] = useState("Roboto");
   const [dialogOpenButtons2, setDialogOpenButtons2] = useState(false);
   // border for buttons
@@ -277,8 +281,9 @@ export const ModalsAppProvider = ({ children }: any) => {
 
   useEffect(() => {
     // if (isCurrentIdLoad) {
-    console.log("Modals");
+    console.log("Modals", dbModalsFormat);
     load();
+    updateStateContent();
     // }
   }, []);
 
@@ -298,13 +303,14 @@ export const ModalsAppProvider = ({ children }: any) => {
     // )
     // const result = await loadModals()
 
-    if (result) {
-      setDbModalsFormat(result);
+    setLoading(true);
+  };
+  const updateStateContent = () => {
+    if (dbModalsFormat) {
       const defaultTitleModalFormat: any = getPluginValue(
-        result,
+        dbModalsFormat,
         VERIFY_TITLE_PLUGIN_ID
       );
-      // setTitleModalDBFormat(TitleModal)
       setFontSizeTitleModal(defaultTitleModalFormat?.fontSizeTitleModal);
       setBackgroundColorTitleModal(
         defaultTitleModalFormat?.backgroundColorTitleModal
@@ -453,8 +459,8 @@ export const ModalsAppProvider = ({ children }: any) => {
 
       // -------------------------- Data --------------------------
       const defaultDataFormat: any = getPluginValue(
-        result,
-        "Data-modal-Plugin"
+        dbModalsFormat,
+        DATA_PLUGIN
       );
       setFontSizeData(defaultDataFormat?.fontSizeData);
       setFontData(defaultDataFormat?.fontData);
@@ -496,11 +502,10 @@ export const ModalsAppProvider = ({ children }: any) => {
       setMarginBottomData(defaultDataFormat?.marginBottomData);
       // -------------------------- Data Button --------------------------
       const defaultDataModalFormat: any = getPluginValue(
-        result,
-        "DataModal-modal-btn"
+        dbModalsFormat,
+        VERIFY_CODE
       );
 
-      // DataModal-modal-btn
       setFontSizeDataModal(defaultDataModalFormat?.fontSizeDataModal);
       setFontDataModal(defaultDataModalFormat?.fontDataModal);
       setColorDataModal(defaultDataModalFormat?.colorDataModal);
@@ -569,7 +574,10 @@ export const ModalsAppProvider = ({ children }: any) => {
       setMarginBottomDataModal(defaultDataFormat?.marginBottomDataModal);
 
       // -------------------------- Data Button --------------------------
-      const buttonFormat: any = getPluginValue(result, BUTTONS_PLUGIN_ID);
+      const buttonFormat: any = getPluginValue(
+        dbModalsFormat,
+        BUTTONS_PLUGIN_ID
+      );
       setButtonFormat(buttonFormat);
       if (buttonFormat) {
         console.log("buttonFormat", buttonFormat?.fontSizeButtons);
@@ -616,8 +624,8 @@ export const ModalsAppProvider = ({ children }: any) => {
         setMarginBottomButtons(buttonFormat?.marginBottomButtons);
       }
     }
-    setLoading(true);
   };
+
   // const loadT = async () => {
   //   const header = await import(TEMPLATE_PATH + `${template}` + "/container.json")
   //     .then((res: any) => {
@@ -642,18 +650,18 @@ export const ModalsAppProvider = ({ children }: any) => {
 
   // load locally
   const load = async () => {
-    const [header, Footer] = await Promise.all([
+    const [header, content] = await Promise.all([
       await fetch(FILE_PATH_HEADER).then((res) => res.json()),
       await fetch(FILE_PATH_MODALS).then((res) => res.json()),
     ]);
 
     console.log("New Fetch ----------------------------->", header);
-    console.log("New Fetch ----------------------------->", Footer);
+    console.log("New Fetch ----------------------------->", content);
 
     setHeaderDBFormat(header);
-    if (Footer) {
-      setDbModalsFormat(Footer);
-      loadDBFormat(Footer);
+    if (content) {
+      setDbModalsFormat(content);
+      loadDBFormat(content);
     }
   };
 

@@ -29,10 +29,6 @@ export const FILE_PATH_MODALS =
   process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/getModals";
 export const FILE_PATH_APP =
   process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/loadApp";
-export const TEMPLATE_LIST_PATH =
-  process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/getTemplateList";
-
-// ---------------------------------------------------------------
 
 export const BASE_POST_URL = process.env.NEXT_PUBLIC_FRONTEND_URL;
 // export const PATH_POST_HEADER = process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/postHeader"

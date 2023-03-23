@@ -40,7 +40,7 @@ const IframeFood = () => {
         }}
         width="100%"
         ref={pageRef}
-        height={size.height}
+        height={size.height + 100}
         onLoad={onLoad}
         loading="lazy"
       />

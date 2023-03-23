@@ -1,16 +1,22 @@
-import { createSvgIcon } from "@material-ui/core/utils";
 import React from "react";
 
-const ChevronUp = createSvgIcon(
-  <svg width="10" height="7" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M9 6L5 2L1 6"
-      stroke="#28234A"
-      stroke-opacity="0.4"
-      stroke-width="2"
-    />
-  </svg>,
-  "ChevronUp"
-);
+const ChevronUp = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="#000"
+      className="w-6 h-6"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M4.5 15.75l7.5-7.5 7.5 7.5"
+      />
+    </svg>
+  );
+};
 
 export default ChevronUp;
