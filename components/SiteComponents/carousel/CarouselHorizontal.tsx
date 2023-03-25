@@ -98,6 +98,13 @@ const CarouselHorizontal = ({ images, scrollFun }: any) => {
             </SwiperSlide>
           );
         })}
+
+        <SwiperSlide key={12}>
+          <div></div>
+        </SwiperSlide>
+        <SwiperSlide key={13}>
+          <div></div>
+        </SwiperSlide>
       </Swiper>
     </div>
   );
