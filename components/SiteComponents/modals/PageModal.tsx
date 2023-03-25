@@ -8,11 +8,9 @@ import React, { useState } from "react";
 interface PageModalsProps {
   title?: string;
   content?: any;
-  handleClose: () => void;
-  open: boolean;
 }
 
-const PageModal = ({ title, content, handleClose, open }: PageModalsProps) => {
+const PageModal = ({ title, content }: PageModalsProps) => {
   const [buttonStyle, setButtonStyle] = useState({ display: "none" });
 
   const { isReadOnly }: any = useAppProvider();
