@@ -1,0 +1,47 @@
+{
+    "contact_us":{
+        "title":"Contact Us",
+        "dataModal":"We understand that sometimes it's hard to express your thoughts or ideas in words. That's why we've created this unique and engaging animation to spark your imagination and help you communicate in a more creative way! Jokes aside, of course, feel free to skip the animation and send us a message directly. Either way, we're excited to hear from you!"
+        
+    },
+    "services":{
+        "title":"Services",
+        "dataModal":"Embark on a mesmerizing interactive animated adventure, where you possess the exceptional ability to breathe life into a desolate world! Immerse yourself in a captivating experience that will awaken and enchant your senses. If time is of the essence, fret not – you can plunge directly into our collection of profound and stirring services that will ignite your imagination and reveal the potential waiting to be unleashed."
+        
+    },
+    "about_us":{
+        "title":"About Us",
+        "dataModal":"Welcome to our website! We're ecstatic to have you here. While we'd relish the opportunity to introduce ourselves over a delightful dinner or a warm cup of coffee, that's not feasible at the moment. Instead, we've meticulously prepared a virtual banquet for you to savor. Our captivating 3D animations serve as a mere appetizer of what we can offer. So, are you ready to indulge in a virtual feast or would you prefer to dive straight into discovering more about us?"
+        
+    },
+    "home":{
+      "home_data":[
+         {
+            "title": "Embrace the Git-First Revolution",
+            "description":
+              "Experience the power of Git as the foundation of modern infrastructure deployment. Our platform streamlines the deployment process and puts you in complete control of your infrastructure."
+          },
+          {
+            "title": "Define, Deploy, and Dominate",
+            "description":
+              "With our platform, you can define your entire infrastructure in your Git repository, making deployment a breeze. Just declare your desired components, and we'll handle the rest"
+          },
+          {
+            "title": "Connect and Conquer",
+            "description": "Our extensive resource catalogue, default connections, and secrets management allow you to seamlessly integrate your preferred message brokers. Just declare it in your Git repository, and you're good to go."
+            
+          },
+          {
+            "title": "Scale with Ease",
+            "description":
+              "Adjusting your infrastructure has never been simpler. Customize your resources to meet your needs, and do it all in your favorite programming languages. Experience hassle-free scalability at its finest."
+          },
+          {
+            "title": "Join the Community",
+            "description":
+              "Become a part of our vibrant community of businesses that have embraced the Git-first approach to infrastructure deployment. Our user-friendly platform empowers developers of all skill levels to deploy and manage infrastructure with confidence"
+          }]
+        
+    }
+
+}

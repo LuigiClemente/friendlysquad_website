@@ -184,15 +184,15 @@ export const AppProvider = ({ children }: any) => {
   const [marginBottomModalBox, setMarginBottomModalBox] = useState("0");
 
   // @refresh reset
-  useEffect(() => {
-    console.log("loading in app provider");
-    // loadDb();
-    // if (headerDBFormat) {
-    //   console.log("headerDBFormat==========>>>>>>", headerDBFormat);
+  // useEffect(() => {
+  //   console.log("loading in app provider");
+  //   loadDb();
+  //   if (headerDBFormat) {
+  //     console.log("headerDBFormat==========>>>>>>", headerDBFormat);
 
-    // updateStateHeader();
-    // }
-  }, []);
+  //   updateStateHeader();
+  //   }
+  // }, []);
 
   const updateStateHeader = () => {
     if (headerDBFormat) {

@@ -74,42 +74,55 @@ const CloudCard = ({ item, index }: any) => {
   }: any = useModalsAppProvider();
   return (
     <div
+      className="hero"
       style={{
-        backgroundColor: "transparent",
         position: "relative",
         height: "fit-content",
         width: "fit-content",
-        zIndex: 1000,
-        margin: "20px",
-        borderRadius: "5px",
-        padding: "10px",
       }}
     >
-      <div key={index}>
-        <div className="flex flex-col items-center content-start justify-start">
-          <h1
-            style={{
-              color: "#000",
-              textAlign: "left",
-              width: "100%",
-              fontWeight: 500,
-              fontFamily: "Segoe UI",
-            }}
-          >
-            {item.title}
-          </h1>
-          <p
-            style={{
-              fontSize: "1.1rem",
-              fontWeight: 400,
-              color: "#000",
-              textAlign: "left",
-              fontFamily: "Segoe UI",
-            }}
-            className="mt-1 mb-2 ml-2 font-sans text-lg font-weight-400 leading-8 align-center  text-black"
-          >
-            {item.description}
-          </p>
+      <div
+        style={{
+          backgroundColor: "transparent",
+          position: "relative",
+          height: "fit-content",
+          width: "fit-content",
+          zIndex: 1000,
+          borderRadius: "5px",
+          padding: "40px",
+          opacity: 1,
+        }}
+      >
+        <div key={index} style={{ margin: "20px" }}>
+          <div className="flex flex-col items-center content-start justify-start">
+            {/* <div className="pt-1 pb-0 pl-1 pr-1 rounded-md w-fit h-fit mr-1">
+            <Image src={item.image} width={60} height={60} />
+          </div> */}
+            <h1
+              style={{
+                color: "#000",
+                textAlign: "left",
+                width: "100%",
+                fontWeight: 500,
+                fontFamily: "Segoe UI",
+                fontSize: "1.6rem",
+              }}
+            >
+              {item.title}
+            </h1>
+            <p
+              style={{
+                fontSize: "1.1rem",
+                fontWeight: 500,
+                color: "#000",
+                textAlign: "left",
+                fontFamily: "Segoe UI",
+              }}
+              className="mt-1 mb-2 ml-2 font-sans text-lg font-weight-500 leading-8 align-center  text-black"
+            >
+              {item.description}
+            </p>
+          </div>
         </div>
       </div>
     </div>

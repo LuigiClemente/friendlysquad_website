@@ -63,11 +63,11 @@ export const ModalsAppProvider = ({ children }: any) => {
   // for font of Data
   const [fontData, setFontData] = useState("Arial");
   //---------------------------------------------------------------- DataModal
-  const [fontSizeDataModal, setFontSizeDataModal] = useState("1rem");
+  const [fontSizeDataModal, setFontSizeDataModal] = useState("1.3rem");
   const [backgroundColorDataModal, setBackgroundColorDataModal] =
     useState("#5BD62A");
   const [colorDataModal, setColorDataModal] = useState("#000");
-  const [fontDataModal, setFontDataModal] = useState("Roboto");
+  const [fontDataModal, setFontDataModal] = useState("MAD Sans Fill");
   const [dialogOpenDataModal, setDialogOpenDataModal] = useState(false);
   // border for DataModal
   const [borderBottomColorDataModal, setBorderBottomColorDataModal] =
@@ -118,11 +118,11 @@ export const ModalsAppProvider = ({ children }: any) => {
 
   // -----------------------------------------------------------------------TitleModal --------------------------------------- 5
 
-  const [fontSizeTitleModal, setFontSizeTitleModal] = useState("0.78rem");
+  const [fontSizeTitleModal, setFontSizeTitleModal] = useState("2rem");
   const [backgroundColorTitleModal, setBackgroundColorTitleModal] =
     useState(DEFAULT_COLOR_SITE);
   const [colorTitleModal, setColorTitleModal] = useState("#000");
-  const [fontTitleModal, setFontTitleModal] = useState("Roboto");
+  const [fontTitleModal, setFontTitleModal] = useState("MAD Sans Fill");
   const [dialogOpenTitleModal, setDialogOpenTitleModal] = useState(false);
   // border for TitleModal
   const [borderBottomColorTitleModal, setBorderBottomColorTitleModal] =
@@ -164,10 +164,10 @@ export const ModalsAppProvider = ({ children }: any) => {
     setBorderBottomLeftRadiusTitleModal,
   ] = useState("0");
   // padding for TitleModal
-  const [paddingRightTitleModal, setPaddingRightTitleModal] = useState("20");
-  const [paddingLeftTitleModal, setPaddingLeftTitleModal] = useState("20");
-  const [paddingTopTitleModal, setPaddingTopTitleModal] = useState("20");
-  const [paddingBottomTitleModal, setPaddingBottomTitleModal] = useState("20");
+  const [paddingRightTitleModal, setPaddingRightTitleModal] = useState("0");
+  const [paddingLeftTitleModal, setPaddingLeftTitleModal] = useState("0");
+  const [paddingTopTitleModal, setPaddingTopTitleModal] = useState("0");
+  const [paddingBottomTitleModal, setPaddingBottomTitleModal] = useState("0");
   // margin for TitleModal
   const [marginRightTitleModal, setMarginRightTitleModal] = useState("10");
   const [marginLeftTitleModal, setMarginLeftTitleModal] = useState("10");
@@ -231,19 +231,17 @@ export const ModalsAppProvider = ({ children }: any) => {
 
   //---------------------------------------------------------------- buttons -----------------------------------------------
   const [fontSizeButtons, setFontSizeButtons] = useState("1rem");
-  const [backgroundColorButtons, setBackgroundColorButtons] =
-    useState("lightGray");
+  const [backgroundColorButtons, setBackgroundColorButtons] = useState("#fff");
   const [colorButtons, setColorButtons] = useState("#000");
   const [fontButtons, setFontButtons] = useState("Roboto");
   const [dialogOpenButtons2, setDialogOpenButtons2] = useState(false);
   // border for buttons
   const [borderBottomColorButtons, setBorderBottomColorButtons] =
-    useState("#c3c3c3");
+    useState("#000");
   const [borderRightColorButtons, setBorderRightColorButtons] =
-    useState("#c3c3c3");
-  const [borderLeftColorButtons, setBorderLeftColorButtons] =
-    useState("#c3c3c3");
-  const [borderTopColorButtons, setBorderTopColorButtons] = useState("#c3c3c3");
+    useState("#000");
+  const [borderLeftColorButtons, setBorderLeftColorButtons] = useState("#000");
+  const [borderTopColorButtons, setBorderTopColorButtons] = useState("#000");
   // border width
   const [borderRightWidthButtons, setBorderRightWidthButtons] = useState("0.5");
   const [borderLeftWidthButtons, setBorderLeftWidthButtons] = useState("0.5");
@@ -272,24 +270,22 @@ export const ModalsAppProvider = ({ children }: any) => {
   const [paddingTopButtons, setPaddingTopButtons] = useState("10");
   const [paddingBottomButtons, setPaddingBottomButtons] = useState("10");
   // margin for buttons
-  const [marginRightButtons, setMarginRightButtons] = useState("0");
-  const [marginLeftButtons, setMarginLeftButtons] = useState("0");
+  const [marginRightButtons, setMarginRightButtons] = useState("3");
+  const [marginLeftButtons, setMarginLeftButtons] = useState("3");
   const [marginTopButtons, setMarginTopButtons] = useState("0");
   const [marginBottomButtons, setMarginBottomButtons] = useState("0");
 
   const [dialogOpenData, setDialogOpenData] = useState();
 
-  useEffect(() => {
-    // if (isCurrentIdLoad) {
-    console.log("Modals", dbModalsFormat);
-    load();
-    updateStateContent();
-    // }
-  }, []);
+  // useEffect(() => {
+  //   console.log("Modals", dbModalsFormat);
+  //   load();
+  //   updateStateContent();
+  // }, []);
 
-  useEffect(() => {
-    // loadDBFormat()
-  }, []);
+  // useEffect(() => {
+  //   loadDBFormat()
+  // }, []);
 
   // useEffect(() => {
   //   // loadTemplate()

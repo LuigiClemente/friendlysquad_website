@@ -4,7 +4,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 })
 module.exports = withBundleAnalyzer({
   target: 'serverless',
-  reactStrictMode: false,
+  reactStrictMode: true,
   trailingSlash: true,
   webpack: (config, { dev }) => {
     config.resolve.alias["@babel/runtime/helpers/esm/asyncToGenerator"] =

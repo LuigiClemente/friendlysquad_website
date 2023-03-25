@@ -1,7 +1,8 @@
+import { useAppStateProvider } from "@appProvider/AppStateProvider";
 import React, { useEffect, useRef, useState } from "react";
-import { ABOUT_US } from "../constant";
-import InlineModals from "../modals/InlineModals";
-import PageModals from "../modals/PageModals";
+import { ABOUT_US, MODAL_DATA } from "../constant";
+import BookingListModal from "../modals/BookingListModal";
+import PageModal from "../modals/PageModal";
 import Spinner from "../spinner/Spinner";
 import { useWindowSize } from "../utils/utility";
 
@@ -11,6 +12,8 @@ const IframeFood = () => {
   const [src, setSrc] = useState(`../foodGallery/FoodGallery.htm`);
   const [load, setLoad] = useState(false);
   const [, setHeight] = React.useState("0px");
+  const { openBookList, setOpenBookList }: any = useAppStateProvider();
+
   const onLoad = () => {
     setHeight(size.height + "px");
   };
@@ -22,8 +25,24 @@ const IframeFood = () => {
     };
   }, []);
   return (
-    <div className="w-full h-full">
-      {!load ? <Spinner /> : null}
+    <div
+      className="w-full h-full border-x-2 border-y-2 border-solid"
+      style={{ border: "1px solid #000" }}
+    >
+      {!load ? (
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            height: "100%",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Spinner />
+        </div>
+      ) : null}
+
       <iframe
         id="food-iframe"
         src={src}
@@ -44,8 +63,17 @@ const IframeFood = () => {
         onLoad={onLoad}
         loading="lazy"
       />
-      {/* <InlineModals /> */}
-      {load && <PageModals title={`ABOUT US`} content={ABOUT_US} />}
+
+      {load && <PageModal title={`CONTACT US`} content={ABOUT_US} />}
+
+      {openBookList && (
+        <BookingListModal
+          title={`CONTACT US`}
+          content={MODAL_DATA}
+          handleClose={() => setOpenBookList(false)}
+          open={openBookList}
+        />
+      )}
     </div>
   );
 };

@@ -5,9 +5,12 @@ const Context = createContext({});
 
 export const AppStateProvider = ({ children }: any) => {
   const [currentMenu, setCurrentMenu]: any = useState("HOME");
+  const [currentCloudId, setCurrentCloudId]: any = useState(0);
   const [isEndSlide, setIsEndSlide]: any = useState(false);
   const [isEndCloud, setIsEndCloud]: any = useState(false);
   const { setButtonFormat, buttonFormat }: any = useModalsAppProvider();
+  const [openBook, setOpenBook] = useState(true);
+  const [openBookList, setOpenBookList] = useState(false);
 
   useEffect(() => {
     if (buttonFormat) {
@@ -23,6 +26,12 @@ export const AppStateProvider = ({ children }: any) => {
         setIsEndSlide,
         isEndCloud,
         setIsEndCloud,
+        currentCloudId,
+        setCurrentCloudId,
+        openBook,
+        setOpenBook,
+        openBookList,
+        setOpenBookList,
       }}
     >
       {children}

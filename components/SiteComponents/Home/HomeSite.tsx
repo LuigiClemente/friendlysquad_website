@@ -1,4 +1,3 @@
-import { useAppStateProvider } from "@appProvider/AppStateProvider";
 import { useEffect, useRef, useState } from "react";
 import CarouselHorizontal from "../carousel/CarouselHorizontal";
 import CloudDataComponent from "../cloud/CloudDataComponent";
@@ -11,38 +10,70 @@ import { useScroll } from "../utils/utility";
 const HomeSite = () => {
   const globeRef = useRef(undefined);
   const cloudRef = useRef(undefined);
-  const { isEndSlide, setIsEndSlide, isEndCloud, setIsEndCloud }: any =
-    useAppStateProvider();
-  const [isSecondPart, setIsSecondPart] = useState(false);
   useScroll(cloudRef, globeRef);
-  // useEffect(() => {
-  //   if (isEndSlide) {
-  //     cloudRef.current.scrollIntoView();
-  //     setIsEndSlide(false);
-  //   }
-  // }, [isEndSlide]);
+  const [isGlobePart, setIsGlobePart] = useState(false);
 
-  // useEffect(() => {
-  //   if (isSecondPart) {
-  //     globeRef.current.scrollIntoView();
-  //     setIsSecondPart(false);
-  //   }
-  // }, [isSecondPart]);
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const scrollPosition = window.scrollY;
-  //     const globePosition = globeRef.current.offsetTop;
-  //     const cloudPosition = cloudRef.current.offsetTop;
-  //     if (!isSecondPart) {
-  //       if (scrollPosition > globePosition - 400) {
-  //         console.log("scrollPosition", scrollPosition);
-  //         setIsSecondPart(true);
-  //       }
-  //     }
-  //   };
-  //   window.addEventListener("scroll", handleScroll, { passive: true });
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, [isSecondPart]);
+  // check when mouse wheel arrive to end of cloudRef it will show the globeRef
+  useEffect(() => {
+    if (!isGlobePart) {
+      console.log("cloudRef =>", cloudRef.current.clientHeight);
+      const cloudRefHeight = cloudRef.current.clientHeight;
+      const cloudRefTop = cloudRef.current.offsetTop;
+      const cloudRefBottom = cloudRefTop + cloudRefHeight;
+      const handleScroll = () => {
+        const scrollPosition = window.scrollY;
+        if (scrollPosition > cloudRefBottom + 100) {
+          // globeRef.current.style.display = "block";
+          console.log("jump on globe");
+          setIsGlobePart(true);
+          globeRef.current.scrollIntoView();
+        }
+      };
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    } else {
+      console.log("globeRef =>", globeRef.current.clientHeight);
+      const globeRefHeight = globeRef.current.clientHeight;
+      const globeRefTop = globeRef.current.offsetTop;
+      const globeRefBottom = globeRefTop + globeRefHeight;
+      const handleScroll = () => {
+        const scrollPosition = window.scrollY;
+        if (scrollPosition > globeRefBottom + 100) {
+          // globeRef.current.style.display = "block";
+          console.log("jump on footer");
+          // globeRef.current.scrollIntoView();
+          // setIsGlobePart(true);
+        }
+      };
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }
+  }, [cloudRef]);
+
+  // if isGlobePart is true, be able to scroll to the end of the page
+  useEffect(() => {
+    if (isGlobePart) {
+      globeRef.current.scrollIntoView({
+        block: "start",
+        behavior: "smooth",
+      });
+      console.log("globeRef =>", globeRef.current.clientHeight);
+      // const handleScroll = () => {
+      //   const scrollPosition = window.scrollY;
+      //   const globeRefHeight = globeRef.current.clientHeight;
+      //   const globeRefTop = globeRef.current.offsetTop;
+      //   const globeRefBottom = globeRefTop + globeRefHeight;
+      //   if (scrollPosition > globeRefBottom - 100) {
+      //     console.log("jump on footer");
+      //     // globeRef.current.style.display = "block";
+      //     // globeRef.current.scrollIntoView();
+      //     // setIsGlobePart(true);
+      //   }
+      // };
+      // window.addEventListener("scroll", handleScroll);
+      // return () => window.removeEventListener("scroll", handleScroll);
+    }
+  }, [globeRef]);
 
   return (
     <div style={{ zIndex: 1000, position: "relative", width: "100%" }}>

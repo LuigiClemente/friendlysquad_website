@@ -95,33 +95,33 @@
 .collapse{
   visibility: visible !important;
 }
-/* ---------------------------------------------------------- */
 
-  #verticalSwiper .swiper {
-    width: 100%;
-    height: 100%;
-  }
-  
-  #verticalSwiper .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-  
-    /* Center slide text vertically */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  #verticalSwiper .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .pos{
-    /*  */
-    position: sticky;
-    top: 0;
-  }
-  
+ 
+  .hero::before {
+    content: "";
+    position: absolute;
+    border-radius:10px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(255,255,255,255,0.9);
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -ms-border-radius:10px;
+    -o-border-radius:10px;
+}
+/* 
+.transition-all{
+  border: 1px solid #000 !important;; 
+} */
+
+/*  add border to headlessui dialog */
+.customDialog {
+  border: 1px solid rgb(32, 33, 33) !important;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}

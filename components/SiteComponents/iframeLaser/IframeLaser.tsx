@@ -1,7 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { ABOUT_US } from "../constant";
-import InlineModals from "../modals/InlineModals";
-import PageModals from "../modals/PageModals";
 import Spinner from "../spinner/Spinner";
 import { useWindowSize } from "../utils/utility";
 
@@ -9,8 +6,9 @@ const IframeLaser = () => {
   const pageRef = useRef(null);
   const size = useWindowSize();
   const [src, setSrc] = useState(`../parlour/the_Parlour.htm`);
-  const [load, setLoad] = useState(false);
+  const [load, setLoad] = useState(true);
   const [, setHeight] = React.useState("0px");
+  const [openBook, setOpenBook] = useState(true);
   const onLoad = () => {
     setHeight(size.height + "px");
   };
@@ -38,8 +36,6 @@ const IframeLaser = () => {
         onLoad={onLoad}
         loading="lazy"
       />
-      {/* <InlineModals /> */}
-      {load && <PageModals title={`CONTACT US`} content={ABOUT_US} />}
     </div>
   );
 };

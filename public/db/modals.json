@@ -22,7 +22,7 @@
                                     "dataI18n": {
                                         "en": {
                                             "fontSizeTitleModal": "1.5rem",
-                                            "fontTitleModal": "sans-serif",
+                                            "fontTitleModal": "MAD Sans Fill",
                                             "colorTitleModal": "#000000",
                                             "backgroundColorTitleModal": "#000000",
                                             "borderBottomColorTitleModal": "#000000",
@@ -97,7 +97,7 @@
                                     "dataI18n": {
                                         "en": {
                                             "fontSizeData": "1rem",
-                                            "fontData": "Segoe UI",
+                                            "fontData": "MAD Sans Fill",
                                             "colorData": "#D3D3D3",
                                             "backgroundColorData": "#000000",
                                             "borderBottomColorData": "#000000",
@@ -142,7 +142,7 @@
                                     },
                                     "dataI18n": {
                                         "en": {
-                                            "fontSizeDataModal": "16",
+                                            "fontSizeDataModal": "1.3rem",
                                             "fontDataModal": "#4a4a4a",
                                             "colorDataModal": "#4a4a4a",
                                             "backgroundColorDataModal": "#000000",
@@ -192,15 +192,15 @@
                                             "fontSizeButtons": "16",
                                             "fontButtons": "#4a4a4a",
                                             "colorButtons": "#4a4a4a",
-                                            "backgroundColorButtons": "#000000",
+                                            "backgroundColorButtons": "#fff",
                                             "borderBottomColorButtons": "#000000",
-                                            "borderBottomWidthButtons": "0",
+                                            "borderBottomWidthButtons": "0.5",
                                             "borderTopColorButtons": "#000000",
-                                            "borderTopWidthButtons": "0",
+                                            "borderTopWidthButtons": "0.5",
                                             "borderLeftColorButtons": "#000000",
-                                            "borderLeftWidthButtons": "0",
+                                            "borderLeftWidthButtons": "0.5",
                                             "borderRightColorButtons": "#000000",
-                                            "borderRightWidthButtons": "0",
+                                            "borderRightWidthButtons": "0.5",
                                             "borderRightStyleButtons": "solid",
                                             "borderLeftStyleButtons": "solid",
                                             "borderTopStyleButtons": "solid",
@@ -211,8 +211,8 @@
                                             "borderBottomLeftRadiusButtons": "20",
                                             "paddingTopButtons": "8",
                                             "paddingBottomButtons": "8",
-                                            "paddingLeftButtons": "8",
-                                            "paddingRightButtons": "8",
+                                            "paddingLeftButtons": "3",
+                                            "paddingRightButtons": "3",
                                             "marginTopButtons": "0",
                                             "marginBottomButtons": "0",
                                             "marginLeftButtons": "5",

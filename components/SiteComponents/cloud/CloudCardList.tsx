@@ -1,18 +1,28 @@
-import { useAppStateProvider } from "@appProvider/AppStateProvider";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/swiper-bundle.css";
-import "swiper/swiper.css";
-import "swiper/swiper.min.css";
+import { useState } from "react";
 
 import { NOTE_CLOUD_SECTION } from "../constant";
-import GlobeCard from "../globe/GlobeCard";
 import CloudCard from "./CloudCard";
 
-const CloudCardList = () => {
+const CloudCardList = ({ getItemId }: any) => {
+  const mouseInStyle = {
+    backgroundColor: "rgba(255, 255, 255, 0.7)",
+    border: "none",
+  };
+  const mouseOutStyle = {
+    backgroundColor: "rgba(255, 255, 255, 0.4)",
+    border: "1px solid #000",
+  };
+  const [isHovering, setIsHovering] = useState(null);
+
+  const handleMouseOver = (id: any) => {
+    setIsHovering(id);
+    getItemId(id);
+    console.log("id is ::: ", id);
+  };
+
+  const handleMouseOut = () => setIsHovering(null);
   return (
     <div
-      id="verticalSwiper"
       style={{
         zIndex: 10,
         position: "relative",
@@ -30,15 +40,27 @@ const CloudCardList = () => {
           <div
             key={index}
             style={{
-              backgroundColor: "rgba(255, 255, 255, 0.4)",
-              // backgroundColor: "transparent",
-              padding: "20px",
-              margin: "10px",
-              border: "1px solid #000",
               borderRadius: "10px",
+              margin: "20px",
+              ...(isHovering && isHovering === item?.id
+                ? mouseInStyle
+                : mouseOutStyle),
             }}
+            onMouseOver={() => handleMouseOver(item?.id)}
+            onMouseOut={handleMouseOut}
           >
-            <CloudCard item={item} index={index} />
+            <div
+              style={{
+                backgroundImage: `url(${item.image})`,
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "50% 50%",
+                backgroundSize: "250px 250px",
+                // backgroundColor: "rgba(255, 255, 255, 0.25)",
+                // opacity: 0.6,
+              }}
+            >
+              <CloudCard item={item} index={index} />
+            </div>
           </div>
         );
       })}

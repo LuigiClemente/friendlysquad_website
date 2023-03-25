@@ -1,9 +1,9 @@
-import { useModalsAppProvider } from "@appProvider/ModalsAppProvider"
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles"
-import { IconButton } from "@mui/material"
-import SettingsButtons from "@plugins/settingsButtons/settingsButtons"
-import SettingsCodeVerification from "@plugins/settingsCodeVerification/settingsCodeVerification"
-import Edit from "../../icons/Edit"
+import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import { IconButton } from "@mui/material";
+import SettingsButtons from "@plugins/settingsButtons/settingsButtons";
+import SettingsCodeVerification from "@plugins/settingsCodeVerification/settingsCodeVerification";
+import Edit from "../../icons/Edit";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     containerBtn: {
@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: "9px",
 
       height: "2rem",
-      width: "2.2rem"
+      width: "2.2rem",
     },
     container: {
       flexDirection: "row",
@@ -24,20 +24,20 @@ const useStyles = makeStyles((theme: Theme) =>
       right: "0px",
       height: "fit-content",
       width: "fit-content",
-      zIndex: 1000
-    }
+      zIndex: 1000,
+    },
   })
-)
+);
 type ButtonsOptionsUiProps = {
-  style: any
-}
+  style: any;
+};
 const ButtonsOptionsUi = ({ style }: ButtonsOptionsUiProps) => {
-  const classes = useStyles()
-  const {  dialogOpenButtons,
-    setDialogOpenButtons }: any = useModalsAppProvider()
+  const classes = useStyles();
+  const { dialogOpenButtons, setDialogOpenButtons }: any =
+    useModalsAppProvider();
   const handleClickOpen = () => {
-    setDialogOpenButtons(true)
-  }
+    setDialogOpenButtons(true);
+  };
 
   return (
     <div
@@ -52,15 +52,15 @@ const ButtonsOptionsUi = ({ style }: ButtonsOptionsUiProps) => {
         height: "fit-content",
         width: "fit-content",
         zIndex: 1000,
-        ...style
+        ...style,
       }}
     >
       <IconButton
         onClick={handleClickOpen}
         sx={{
           "&.MuiButtonBase-root:hover": {
-            bgcolor: "transparent"
-          }
+            bgcolor: "transparent",
+          },
         }}
         className={classes.containerBtn}
       >
@@ -68,6 +68,6 @@ const ButtonsOptionsUi = ({ style }: ButtonsOptionsUiProps) => {
       </IconButton>
       {dialogOpenButtons && <SettingsButtons open={dialogOpenButtons} />}
     </div>
-  )
-}
-export default ButtonsOptionsUi
+  );
+};
+export default ButtonsOptionsUi;

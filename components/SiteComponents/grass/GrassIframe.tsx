@@ -1,6 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { ABOUT_US } from "../constant";
-import PageModals from "../modals/PageModals";
 import Spinner from "../spinner/Spinner";
 import { useWindowSize } from "../utils/utility";
 
@@ -16,7 +14,7 @@ const GrassIframe = () => {
   if (typeof window == "undefined") {
     return null;
   }
-  const [load, setLoad] = useState(false);
+  const [load, setLoad] = useState(true);
   useEffect(() => {
     document.getElementById("grass-iframe").onload = () => {
       {
@@ -41,8 +39,6 @@ const GrassIframe = () => {
         onLoad={onLoad}
         loading="lazy"
       />
-      {/* <InlineModals /> */}
-      {load && <PageModals title={`SERVICE`} content={ABOUT_US} />}
     </div>
   );
 };

@@ -7,8 +7,8 @@ export const SLIDER_IMAGES = [
   { id: 2, img: "/images/slider/2.png", width: "800px" },
   { id: 3, img: "/images/slider/3.png", width: "500px" },
   { id: 4, img: "/images/slider/4.png", width: "500px" },
-  { id: 5, img: "/images/slider/5.png", width: "500px" },
-  { id: 6, img: "/images/slider/6.png", width: "500px" },
+  // { id: 5, img: "/images/slider/5.png", width: "500px" },
+  // { id: 6, img: "/images/slider/6.png", width: "500px" },
   { id: 7, img: "/images/slider/7.png", width: "500px" },
 ];
 export const VOLCANOES = [
@@ -82,7 +82,7 @@ export const NOTE_CLOUD_SECTION = [
     title: "Define, Deploy, and Dominate",
     description:
       "With our platform, you can define your entire infrastructure in your Git repository, making deployment a breeze. Just declare your desired components, and we'll handle the rest",
-    image: "/img/icon/svg/postgresql.svg",
+    image: "/img/svg/postgresql.svg",
   },
   {
     id: 3,
@@ -122,10 +122,11 @@ export const NAVIGATION = [
 ];
 
 export const MODAL_DATA = [
-  { name: "Food", href: "/about-us" },
-  { name: "Laser", href: "/contact-us" },
-  { name: "Tokyo", href: "/" },
-  { name: "Grass", href: "/work" },
+  { name: "The Food", href: "/about-us" },
+  { name: "The Lecture Rooms & library", href: "/about-us" },
+  { name: "The Laser", href: "/contact-us" },
+  { name: "The Tokyo", href: "/" },
+  { name: "The Grass", href: "/work" },
 ];
 
 export const ABOUT_US = `Welcome to our website! We're thrilled to have you here. We'd love to introduce ourselves over dinner or coffee, but since we can't do that at the moment, we've prepared a virtual feast for you to enjoy. Our 3D animations are just a taste of what we can offer. So, would you like to join us for a virtual meal or skip straight to learning more about us?`;
@@ -232,4 +233,31 @@ export const LANGUAGES = [
   { id: "98", lan: "Micronesia" },
   { id: "99", lan: "Nauru" },
   { id: "100", lan: "New Zealand" },
+];
+
+export const PLAY_BOOK_DATA =
+  "Tap the screen to drop some food. Plate it up or mess it up!, we let you paly with your food ....";
+
+export const FOOTER_DATA_BOOKING_LIST = [
+  { id: "1", name: "Home", url: "#" },
+  { id: "2", name: "About", url: "#" },
+  { id: "3", name: "Contact", url: "#" },
+  { id: "4", name: "Privacy Policy", url: "#" },
+  { id: "5", name: "Terms & Conditions", url: "#" },
+  { id: "6", name: "FAQ", url: "#" },
+  { id: "7", name: "Art & Music", url: "#" },
+  { id: "8", name: "Blog", url: "#" },
+  { id: "9", name: "Careers", url: "#" },
+  { id: "10", name: "Press", url: "#" },
+  { id: "11", name: "Gift Cards", url: "#" },
+  { id: "13", name: "Newsletr", url: "#" },
+];
+
+export const CONTACT_DATA = [
+  { id: "1", name: "info@friendly.com", url: "#" },
+  { id: "1", name: "+(44)2049 9844", url: "#" },
+  { id: "1", name: "99 contract street, Londan WSA", url: "#" },
+  { id: "1", name: "instagram", url: "#" },
+  { id: "1", name: "facebook", url: "#" },
+  { id: "1", name: "twitter", url: "#" },
 ];

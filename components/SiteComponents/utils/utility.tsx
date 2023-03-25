@@ -89,3 +89,19 @@ export const useScroll = (firstPart, secondPart) => {
     isEndFooter,
   };
 };
+
+// change the style of list of items when mouse is over it and change it back when mouse is out
+export const useMouseOver = () => {
+  const [isHover, setIsHover] = useState(false);
+  const handleMouseOver = () => {
+    setIsHover(true);
+  };
+  const handleMouseOut = () => {
+    setIsHover(false);
+  };
+  return {
+    isHover,
+    handleMouseOver,
+    handleMouseOut,
+  };
+};

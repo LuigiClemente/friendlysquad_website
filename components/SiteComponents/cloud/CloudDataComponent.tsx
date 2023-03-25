@@ -81,6 +81,13 @@ const CloudDataComponent = () => {
   const [titleStyle, setTitleStyle] = useState({ display: "none" });
   const { isReadOnly }: any = useAppProvider();
 
+  const [currentId, setCurrentId] = useState(0);
+
+  const getIdCurrentItem = (id: any) => {
+    setCurrentId(id);
+    console.log("id is :::>>> ", id);
+  };
+
   return (
     <div
       className="my-30 relative m-0"
@@ -114,16 +121,16 @@ const CloudDataComponent = () => {
             top: "0",
             left: "0",
             height: "fit-content",
-            width: "40%",
+            width: "35%",
             alignSelf: "auto",
             alignItems: "stretch",
             clip: "auto",
           }}
         >
-          <CloudMenu />
+          <CloudMenu activeId={currentId} />
         </div>
-        <div className="flex flex-col w-[60%] z-20 ">
-          <CloudCardList />
+        <div className="flex flex-col w-[65%] z-20 ">
+          <CloudCardList getItemId={getIdCurrentItem} />
         </div>
       </div>
     </div>

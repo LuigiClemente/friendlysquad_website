@@ -1,4 +1,3 @@
-import CloudDataComponent from "@/SiteComponents/cloud/CloudDataComponent";
 import { AppProvider } from "@appProvider/AppProvider";
 import { AppStateProvider } from "@appProvider/AppStateProvider";
 import { ModalsAppProvider } from "@appProvider/ModalsAppProvider";
@@ -31,15 +30,7 @@ const DynamicHome = dynamic(() => import("@/HomeComponent"), {
   ssr: false,
 });
 export default function Home() {
-  const [isLoad, setIsLoad] = React.useState(true);
-  React.useEffect(() => {
-    setTimeout(() => {
-      setIsLoad(false);
-    }, 1000);
-  }, []);
-
   return (
-    // <ResizeObserver>
     <React.Fragment>
       <CssBaseline />
       <UndoableProvider>
@@ -48,9 +39,6 @@ export default function Home() {
             <AppStateProvider>
               <ModalsAppProvider>
                 <DynamicHome />
-                {/* <HomeSite /> */}
-                {/* <GlobalEdgeNetworkO /> */}
-                {/* <CloudDataComponent /> */}
               </ModalsAppProvider>
             </AppStateProvider>
           </UpdateSettingsProvider>
