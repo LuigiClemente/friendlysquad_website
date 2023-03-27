@@ -1,10 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import { useAppProvider } from "@appProvider/AppProvider";
 import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
-import Image from "next/image";
 import { useState } from "react";
-import { NOTE_CLOUD_SECTION } from "../constant";
-import GlobeComponent from "./GlobeComponent";
+import { useTranslation } from "react-i18next";
 
 const GlobeCard = ({ item, index }: any) => {
   const {
@@ -79,6 +77,7 @@ const GlobeCard = ({ item, index }: any) => {
   const [contentStyle, setContentStyle] = useState({ display: "none" });
   const [titleStyle, setTitleStyle] = useState({ display: "none" });
   const { isReadOnly }: any = useAppProvider();
+  const { t } = useTranslation("");
 
   return (
     <>
@@ -88,6 +87,20 @@ const GlobeCard = ({ item, index }: any) => {
             <Image src={"/img/icon/globetext.png"} width={150} height={150} />
           </div>
         )} */}
+
+        <h1
+          style={{
+            color: "#fff",
+            textAlign: "left",
+            width: "100%",
+            fontWeight: 500,
+            fontFamily: "Segoe UI",
+            fontSize: "1.6rem",
+          }}
+        >
+          {/* {item.title} */}
+          {t(`home.globe_data.${index}.title`)}
+        </h1>
 
         <p
           className="mb-9 ml-2 font-sans text-base leading-10 align-center text-darkgray"
@@ -133,7 +146,8 @@ const GlobeCard = ({ item, index }: any) => {
             fontWeight: 500,
           }}
         >
-          {item?.description}
+          {/* {item?.description} */}
+          {t(`home.globe_data.${index}.description`)}
         </p>
       </div>
     </>

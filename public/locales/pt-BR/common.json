@@ -1,0 +1,78 @@
+{
+    "contact_us":{
+        "title":"Contact Us",
+        "dataModal":
+        "Entendemos que às vezes é difícil expressar seus pensamentos ou ideias em palavras. Por isso, criamos esta animação única e envolvente para estimular sua imaginação e ajudá-lo a se comunicar de forma mais criativa! Brincadeiras à parte, é claro, sinta-se à vontade para pular a animação e nos enviar uma mensagem diretamente. De qualquer forma, estamos ansiosos para ouvir de você!"
+    },
+    "services":{
+        "title":"Services",
+        "dataModal":
+        "Embarque em uma aventura animada interativa fascinante, onde você possui a habilidade excepcional de dar vida a um mundo desolado! Mergulhe em uma experiência cativante que despertará e encantará seus sentidos. Se o tempo é essencial, não se preocupe - você pode mergulhar diretamente em nossa coleção de serviços profundos e emocionantes que irão acender sua imaginação e revelar o potencial esperando para ser desencadeado."
+    },
+    "about_us":{
+        "title":"About Us",
+        "dataModal":
+        "Bem-vindo ao nosso site! Estamos extasiados por tê-lo aqui. Embora adoraríamos nos apresentar durante um delicioso jantar ou uma xícara de café quente, isso não é viável no momento. Em vez disso, preparamos cuidadosamente um banquete virtual para você saborear. Nossas cativantes animações 3D servem apenas como aperitivo do que podemos oferecer. Então, está pronto para se deliciar com uma festa virtual ou prefere mergulhar diretamente em descobrir mais sobre nós?"
+        
+    },
+    "home":{
+      "cloud_data":[
+         {
+            "title": "Abraçando a Revolução Git-First",
+            "description":
+            "Experimente o poder do Git como base para implantação de infraestrutura moderna. Nossa plataforma simplifica o processo de implantação e coloca você no controle total da sua infraestrutura."
+          },
+          {
+            "title": "Defina, Implemente e Domine",
+            "description":
+            "Com nossa plataforma, você pode definir toda a sua infraestrutura no seu repositório Git, tornando a implantação muito fácil. Basta declarar os componentes desejados e cuidaremos do resto."
+
+
+          },
+          {
+            "title": "Conecte e Conquiste",
+            "description": 
+            "Nosso extenso catálogo de recursos, conexões padrão e gerenciamento de segredos permitem a integração perfeita com os seus message brokers preferidos. Basta declará-los no seu repositório Git e você estará pronto."
+
+          },
+          {
+            "title": "Escale com Facilidade",
+            "description":
+            "Ajustar sua infraestrutura nunca foi tão simples. Personalize seus recursos para atender às suas necessidades e faça tudo isso nos seus idiomas de programação favoritos. Experimente escalabilidade sem complicações em sua melhor forma."
+          },
+          {
+            "title": "Junte-se à Comunidade",
+            "description":
+            "Torne-se parte da nossa vibrante comunidade de empresas que abraçaram a abordagem Git-first para implantação de infraestrutura. Nossa plataforma amigável capacita desenvolvedores de todos os níveis de habilidade a implantar e gerenciar infraestrutura com confiança."
+          }],
+         
+      "globe_data":[
+       {
+          "title": "Segurança de Nível Bancário",
+          "description":
+          "Na Friendly Squad, priorizamos a segurança dos dados. Nosso modelo de segurança Zero Trust e parceria com a HarshCorp garantem proteção de ponta para seus dados sensíveis através do Vault Secrets Management e renovações de 15 segundos."
+        },
+        {
+          "title": "Confie em Nossas Certificações",
+          "description":
+          "Nosso compromisso com segurança e confiabilidade é respaldado por uma série de certificações, incluindo ISO 9001, ISO 27001, PCI-DSS e SSAE16/ISAE3402. Fique tranquilo sabendo que sua infraestrutura está em boas mãos."
+        },
+        {
+          "title": "Desempenho Impressionante",
+          "description":
+          "Experimente transferências de dados ultrarrápidas com a velocidade compartilhada mínima de 10 gigabytes por segundo dos nossos nós de rede. Esse nível de desempenho é crucial para aplicações e processos que exigem grande quantidade de dados."
+          
+        },
+        {
+          "title": "Garanta Seu Sucesso",
+          "description":
+          "Oferecemos serviços confiáveis e seguros, permitindo que as empresas se concentrem em seus objetivos sem se preocupar com a segurança dos dados sensíveis. Faça parceria com a Friendly Squad e libere todo o seu potencial."
+        }
+      ]
+        
+    }
+
+}
+
+
+

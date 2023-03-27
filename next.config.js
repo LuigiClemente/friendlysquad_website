@@ -2,10 +2,13 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "false",
   openAnalyzer: false
 })
+const { i18n } = require("./next-i18next.config");
 module.exports = withBundleAnalyzer({
-  target: 'serverless',
+  // target: 'serverless',
   reactStrictMode: false,
   trailingSlash: true,
+  i18n,
+
   webpack: (config, { dev }) => {
     config.resolve.alias["@babel/runtime/helpers/esm/asyncToGenerator"] =
       "@babel/runtime/helpers/asyncToGenerator"

@@ -16,6 +16,7 @@ import type { AppProps } from "next/app";
 import { themeDarkStyle, themeLightStyle } from "theme/Theme";
 import { DarkTheme, lightTheme } from "theme/ThemeOveride";
 import createEmotionCache from "../utils/createEmotionCache";
+import { appWithTranslation } from "next-i18next";
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -67,4 +68,4 @@ function MyApp({
   );
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp);

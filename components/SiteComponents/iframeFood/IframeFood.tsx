@@ -5,8 +5,9 @@ import BookingListModal from "../modals/BookingListModal";
 import PageModal from "../modals/PageModal";
 import Spinner from "../spinner/Spinner";
 import { useWindowSize } from "../utils/utility";
-
+import { useTranslation } from "next-i18next";
 const IframeFood = () => {
+  const { t } = useTranslation("");
   const pageRef = useRef(null);
   const size = useWindowSize();
   const [src, setSrc] = useState(`../foodGallery/FoodGallery.htm`);
@@ -64,11 +65,16 @@ const IframeFood = () => {
         loading="lazy"
       />
 
-      {load && <PageModal title={`CONTACT US`} content={ABOUT_US} />}
+      {load && (
+        <PageModal
+          title={t("about_us.title")}
+          content={t("about_us.dataModal")}
+        />
+      )}
 
       {openBookList && (
         <BookingListModal
-          title={`CONTACT US`}
+          title={"Booking"}
           content={MODAL_DATA}
           handleClose={() => setOpenBookList(false)}
           open={openBookList}

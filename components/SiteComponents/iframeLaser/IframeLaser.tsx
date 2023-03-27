@@ -1,14 +1,20 @@
+import { useAppStateProvider } from "@appProvider/AppStateProvider";
 import React, { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { MODAL_DATA } from "../constant";
+import BookingListModal from "../modals/BookingListModal";
+import PageModal from "../modals/PageModal";
 import Spinner from "../spinner/Spinner";
 import { useWindowSize } from "../utils/utility";
 
 const IframeLaser = () => {
+  const { t } = useTranslation("");
   const pageRef = useRef(null);
   const size = useWindowSize();
   const [src, setSrc] = useState(`../parlour/the_Parlour.htm`);
   const [load, setLoad] = useState(true);
   const [, setHeight] = React.useState("0px");
-  const [openBook, setOpenBook] = useState(true);
+  const { openBookList, setOpenBookList }: any = useAppStateProvider();
   const onLoad = () => {
     setHeight(size.height + "px");
   };
@@ -36,6 +42,22 @@ const IframeLaser = () => {
         onLoad={onLoad}
         loading="lazy"
       />
+
+      {load && (
+        <PageModal
+          title={t("contact_us.title")}
+          content={t("contact_us.dataModal")}
+        />
+      )}
+
+      {openBookList && (
+        <BookingListModal
+          title={"Booking"}
+          content={MODAL_DATA}
+          handleClose={() => setOpenBookList(false)}
+          open={openBookList}
+        />
+      )}
     </div>
   );
 };

@@ -1,0 +1,75 @@
+{
+    "contact_us":{
+        "title":"Contact Us",
+        "dataModal":
+        "We begrijpen dat het soms moeilijk is om je gedachten of ideeën in woorden uit te drukken. Daarom hebben we deze unieke en boeiende animatie gemaakt om je verbeelding te prikkelen en je te helpen op een creatievere manier te communiceren! Grapjes terzijde, natuurlijk, voel je vrij om de animatie over te slaan en stuur ons rechtstreeks een bericht. Hoe dan ook, we kijken ernaar uit om van je te horen!"
+    },
+    "services":{
+        "title":"Services",
+        "dataModal":
+        "Begeef je op een betoverend interactief geanimeerd avontuur, waarin je over de uitzonderlijke mogelijkheid beschikt om leven te blazen in een desolate wereld! Dompel jezelf onder in een boeiende ervaring die je zintuigen zal ontwaken en betoveren. Als tijd van essentieel belang is, maak je geen zorgen – je kunt direct duiken in onze verzameling diepgaande en ontroerende diensten die je verbeeldingskracht zullen ontsteken en het potentieel zullen onthullen dat wacht om te worden ontketend."
+        
+    },
+    "about_us":{
+        "title":"About Us",
+        "dataModal":
+        "Welkom op onze website! We zijn extatisch om u hier te hebben. Hoewel we dolgraag de kans zouden grijpen om onszelf voor te stellen tijdens een heerlijk diner of een warm kopje koffie, is dat momenteel niet haalbaar. In plaats daarvan hebben we zorgvuldig een virtueel banket voor u bereid om van te genieten. Onze boeiende 3D-animaties dienen slechts als een voorgerecht van wat we te bieden hebben. Dus, bent u klaar om te genieten van een virtueel feestmaal, of wilt u liever meteen meer te weten komen over ons?"
+        
+        
+    },
+    "home":{
+      "cloud_data":[
+         {
+            "title": "Omarm de Git-First Revolutie",
+            "description":
+              "Ervaar de kracht van Git als basis voor moderne infrastructuurimplementatie. Ons platform stroomlijnt het implementatieproces en geeft u volledige controle over uw infrastructuur."
+          },
+          {
+            "title": "Definieer, Implementeer en Domineer",
+            "description":" Met ons platform kunt u uw volledige infrastructuur in uw Git-repository definiëren, waardoor implementatie een fluitje van een cent wordt. Declareer gewoon uw gewenste componenten en wij regelen de rest."
+          },
+          {
+            "title": "Verbind en Overwin",
+            "description": "Onze uitgebreide broncatalogus, standaardverbindingen en geheimenbeheer stellen u in staat om naadloos uw favoriete berichtenmakelaars te integreren. Declareer het gewoon in uw Git-repository en u bent klaar om te gaan."
+          },
+          {
+            "title": "Schaal met Gemak",
+            "description":
+            "Het aanpassen van uw infrastructuur is nog nooit zo eenvoudig geweest. Pas uw bronnen aan om aan uw behoeften te voldoen en doe dit allemaal in uw favoriete programmeertalen. Ervaar probleemloze schaalbaarheid op zijn best."
+          },
+          {
+            "title": "Word Lid van de Community",
+            "description":
+              " Word deel van onze levendige community van bedrijven die de Git-first benadering van infrastructuurimplementatie hebben omarmd. Ons gebruiksvriendelijke platform stelt ontwikkelaars van alle vaardigheidsniveaus in staat om met vertrouwen infrastructuur te implementeren en te beheren."
+          }],
+         
+      "globe_data":[
+       {
+          "title": "Bankiersniveau Beveiliging",
+          "description":
+            " Bij Friendly Squad staat gegevensbeveiliging voorop. Ons Zero Trust-beveiligingsmodel en partnerschap met HarshCorp zorgen voor eersteklas bescherming van uw gevoelige gegevens via Vault Secrets Management en 15-seconden vernieuwingen."
+        },
+        {
+          "title": "Vertrouw op Onze Certificeringen",
+          "description":
+          " Onze inzet voor beveiliging en betrouwbaarheid wordt ondersteund door een reeks certificeringen, waaronder ISO 9001, ISO 27001, PCI-DSS en SSAE16/ISAE3402. Wees gerust dat uw infrastructuur in goede handen is."
+        },
+        {
+          "title": "Indrukwekkende Prestaties",
+          "description":
+          " Ervaar bliksemsnelle gegevensoverdracht met onze netwerkknooppunten met een minimale gedeelde snelheid van 10 gigabyte per seconde. Dit prestatieniveau is cruciaal voor gegevensintensieve toepassingen en processen."
+          
+        },
+        {
+          "title": "Verzeker Uw Succes",
+          "description":
+          "We bieden betrouwbare en veilige diensten, waardoor bedrijven zich kunnen concentreren op hun doelen zonder zich zorgen te hoeven maken over gevoelige gegevensbeveiliging. Werk samen met Friendly Squad en ontgrendel uw ware potentieel."
+        }
+      ]
+        
+    }
+
+}
+
+
+

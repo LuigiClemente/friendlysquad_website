@@ -8,8 +8,8 @@ import XMark from "@/icons/XMark";
 import Logo from "@/Logo";
 import { useAppProvider } from "@appProvider/AppProvider";
 import { useAppStateProvider } from "@appProvider/AppStateProvider";
-import { NAVIGATION } from "../constant";
-import LanguageModal from "../modals/LanguageModal";
+import { LANGUAGES, NAVIGATION } from "../constant";
+import LangsModal from "../modals/LangsModal";
 
 const navigation = NAVIGATION;
 
@@ -264,7 +264,14 @@ const Header = ({ bgHeader, colorMenu }: any) => {
           </div>
         </Dialog.Panel>
       </Dialog>
-      <LanguageModal open={openLan} close={closeLanModals} />
+      {openLan && (
+        <LangsModal
+          title={`Languages`}
+          content={LANGUAGES}
+          handleClose={closeLanModals}
+          open={openLan}
+        />
+      )}
     </header>
   );
 };

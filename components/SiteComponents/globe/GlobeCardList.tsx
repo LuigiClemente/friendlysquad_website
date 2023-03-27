@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/swiper-bundle.css";

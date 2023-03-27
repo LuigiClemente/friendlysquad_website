@@ -1,6 +1,5 @@
 import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
-import Image from "next/image";
-import { NOTE_CLOUD_SECTION } from "../constant";
+import { useTranslation } from "react-i18next";
 
 const CloudCard = ({ item, index }: any) => {
   const {
@@ -72,6 +71,7 @@ const CloudCard = ({ item, index }: any) => {
     colorData,
     fontData,
   }: any = useModalsAppProvider();
+  const { t } = useTranslation("");
   return (
     <div
       className="hero"
@@ -95,9 +95,6 @@ const CloudCard = ({ item, index }: any) => {
       >
         <div key={index} style={{ margin: "20px" }}>
           <div className="flex flex-col items-center content-start justify-start">
-            {/* <div className="pt-1 pb-0 pl-1 pr-1 rounded-md w-fit h-fit mr-1">
-            <Image src={item.image} width={60} height={60} />
-          </div> */}
             <h1
               style={{
                 color: "#000",
@@ -108,7 +105,8 @@ const CloudCard = ({ item, index }: any) => {
                 fontSize: "1.6rem",
               }}
             >
-              {item.title}
+              {/* {item.title} */}
+              {t(`home.cloud_data.${index}.title`)}
             </h1>
             <p
               style={{
@@ -120,7 +118,8 @@ const CloudCard = ({ item, index }: any) => {
               }}
               className="mt-1 mb-2 ml-2 font-sans text-lg font-weight-500 leading-8 align-center  text-black"
             >
-              {item.description}
+              {t(`home.cloud_data.${index}.description`)}
+              {/* {item.description} */}
             </p>
           </div>
         </div>

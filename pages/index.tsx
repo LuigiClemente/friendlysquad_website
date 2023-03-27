@@ -3,6 +3,8 @@ import { AppStateProvider } from "@appProvider/AppStateProvider";
 import { ModalsAppProvider } from "@appProvider/ModalsAppProvider";
 import UndoableProvider from "@appProvider/UndoableProvider";
 import { UpdateSettingsProvider } from "@appProvider/UpdateSettingsProvider";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { CssBaseline, Skeleton } from "@mui/material";
 import dynamic from "next/dynamic";
 import React from "react";
@@ -46,4 +48,11 @@ export default function Home() {
       </UndoableProvider>
     </React.Fragment>
   );
+}
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
 }

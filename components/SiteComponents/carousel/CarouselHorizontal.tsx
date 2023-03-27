@@ -27,7 +27,7 @@ const CarouselHorizontal = ({ images, scrollFun }: any) => {
       style={{
         marginTop: "150px",
         marginBottom: "150px",
-        zIndex: 10,
+        zIndex: 2,
         position: "relative",
         width: "100%",
         display: "flex",

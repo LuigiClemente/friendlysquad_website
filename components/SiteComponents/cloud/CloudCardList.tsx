@@ -2,8 +2,10 @@ import { useState } from "react";
 
 import { NOTE_CLOUD_SECTION } from "../constant";
 import CloudCard from "./CloudCard";
-
+import { useTranslation } from "next-i18next";
+import i18next from "i18next";
 const CloudCardList = ({ getItemId }: any) => {
+  const { t } = useTranslation("");
   const mouseInStyle = {
     backgroundColor: "rgba(255, 255, 255, 0.7)",
     border: "none",

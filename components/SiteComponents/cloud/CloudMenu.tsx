@@ -1,9 +1,11 @@
 import { ChevronRight } from "@mui/icons-material";
 import Image from "next/image";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { NOTE_CLOUD_SECTION } from "../constant";
 
 const CloudMenu = ({ activeId }: any) => {
+  const { t } = useTranslation("");
   useEffect(() => {
     console.log("activeId", activeId);
   }, [activeId]);
@@ -24,7 +26,6 @@ const CloudMenu = ({ activeId }: any) => {
               flexDirection: "row",
               justifyContent: "space-between",
               alignItems: "center",
-              // width: "300px",
               paddingTop: "25px",
               paddingBottom: "25px",
               paddingLeft: "20px",
@@ -32,9 +33,6 @@ const CloudMenu = ({ activeId }: any) => {
             }}
           >
             <div className="flex flex-row items-center content-start justify-start">
-              {/* <div className="pt-1 pb-0 pl-1 pr-1 rounded-md w-fit h-fit mr-1">
-                <Image src={item.image} width={30} height={30} />
-              </div> */}
               <a
                 key={index}
                 href="https://www.google.com"
@@ -47,7 +45,8 @@ const CloudMenu = ({ activeId }: any) => {
                   fontFamily: "Ppneuemontreal",
                 }}
               >
-                {item.title}
+                {/* {item.title} */}
+                {t(`home.cloud_data.${index}.title`)}
               </a>
             </div>
             <ChevronRight />

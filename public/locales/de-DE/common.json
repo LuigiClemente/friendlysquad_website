@@ -1,0 +1,76 @@
+{
+    "contact_us":{
+        "title":"Contact Us",
+        "dataModal":
+        "Wir wissen, dass es manchmal schwierig sein kann, Gedanken oder Ideen in Worte zu fassen. Deshalb haben wir diese einzigartige und ansprechende Animation erstellt, um Ihre Fantasie anzuregen und Ihnen zu helfen, auf kreativere Weise zu kommunizieren! Spaß beiseite, natürlich können Sie die Animation überspringen und uns direkt eine Nachricht schicken. So oder so freuen wir uns darauf, von Ihnen zu hören!"
+    },
+    "services":{
+        "title":"Services",
+        "dataModal":"Отправьтесь в захватывающее интерактивное анимационное приключение, где у вас есть исключительная способность оживлять безжизненный мир! Погрузитесь в увлекательный опыт, который пробудит и очарует ваши чувства. Если время имеет значение, не волнуйтесь - вы можете непосредственно окунуться в нашу коллекцию глубоких и трогательных услуг, которые разжигут ваше воображение и покажут потенциал, который ждет своего раскрытия."
+        
+    },
+    "about_us":{
+        "title":"About Us",
+        "dataModal":
+        "Willkommen auf unserer Webseite! Wir sind begeistert, Sie hier zu haben. Obwohl wir uns liebend gerne bei einem gemütlichen Abendessen oder einer warmen Tasse Kaffee vorstellen würden, ist dies im Moment nicht möglich. Stattdessen haben wir sorgfältig ein virtuelles Festmahl für Sie zubereitet. Unsere fesselnden 3D-Animationen dienen als kleiner Vorgeschmack auf das, was wir Ihnen bieten können. Also, sind Sie bereit, sich einem virtuellen Schmaus hinzugeben oder möchten Sie lieber direkt mehr über uns erfahren?"
+        
+    },
+    "home":{
+      "cloud_data":[
+         {
+            "title": "Umarme die Git-First Revolution",
+            "description":
+              "Erlebe die Kraft von Git als Grundlage moderner Infrastruktur-Bereitstellung. Unsere Plattform vereinfacht den Bereitstellungsprozess und ermöglicht dir die vollständige Kontrolle über deine Infrastruktur."
+          },
+          {
+            "title": "Definieren, Bereitstellen und Dominieren",
+            "description":
+              "Mit unserer Plattform kannst du deine gesamte Infrastruktur in deinem Git-Repository definieren und die Bereitstellung zum Kinderspiel machen. Gib einfach deine gewünschten Komponenten an, und wir kümmern uns um den Rest."
+          },
+          {
+            "title": "Verbinden und Erobern",
+            "description": " Unser umfangreicher Ressourcenkatalog, Standardverbindungen und Geheimnisse-Management ermöglichen eine nahtlose Integration deiner bevorzugten Message-Broker. Füge es einfach in dein Git-Repository ein, und du bist startklar."
+          },
+          {
+            "title": "Skalieren leicht gemacht",
+            "description":
+              " Die Anpassung deiner Infrastruktur war noch nie so einfach. Passe deine Ressourcen nach Bedarf an und nutze dabei deine Lieblings-Programmiersprachen. Erlebe problemlose Skalierbarkeit in Bestform."
+          },
+          {
+            "title": "Werde Teil der Community",
+            "description":
+              " Tritt unserer lebendigen Gemeinschaft von Unternehmen bei, die den Git-First Ansatz zur Infrastruktur-Bereitstellung übernommen haben. Unsere benutzerfreundliche Plattform ermöglicht Entwicklern aller Könnensstufen, Infrastrukturen mit Zuversicht bereitzustellen und zu verwalten."
+          }],
+         
+          "globe_data":[
+       {
+          "title": "Bank-Sicherheit",
+          "description":" Bei Friendly Squad steht Datensicherheit an erster Stelle. Unser Zero-Trust-Sicherheitsmodell und die Partnerschaft mit HarshCorp garantieren erstklassigen Schutz für sensible Daten durch Vault Secrets Management und 15-Sekunden-Erneuerungen."
+        },
+        {
+          "title": "Vertrauen in unsere Zertifizierungen",
+          "description":"Unsere Verpflichtung zu Sicherheit und Zuverlässigkeit wird durch eine Vielzahl von Zertifizierungen, einschließlich ISO 9001, ISO 27001, PCI-DSS und SSAE16/ISAE3402, untermauert. Sei dir sicher, dass deine Infrastruktur in guten Händen ist."
+        },
+        {
+          "title": "Beeindruckende Leistung",
+          "description": "Erlebe blitzschnelle Datenübertragung mit unseren Netzwerkknoten und einer minimalen gemeinsamen Geschwindigkeit von 10 Gigabit pro Sekunde. Diese Leistung ist entscheidend für datenintensive Anwendungen und Prozesse."
+          
+        },
+        {
+          "title": "Sichere deinen Erfolg",
+          "description":"Wir bieten zuverlässige und sichere Dienstleistungen, die es Unternehmen ermöglichen, sich auf ihre Ziele zu konzentrieren, ohne sich um den Schutz sensibler Daten sorgen zu müssen. Werde Partner von Friendly Squad und entfalte dein wahres Potenzial."
+        }
+      ]
+        
+    },
+    "header": {
+      "Home": "HOME",
+      "About": "ABOUT US",
+      "Service": "SERVICE",
+      "Contact": "CONTACT US",
+      "Login": "LOG IN"
+    }
+}
+
+
+
