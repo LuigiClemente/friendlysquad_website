@@ -2,6 +2,7 @@
 import { useAppProvider } from "@appProvider/AppProvider";
 import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
 import { useState } from "react";
+import Scene from "./ColorGlobe/Scene";
 import GlobeCardList from "./GlobeCardList";
 import GlobeComponent from "./GlobeComponent";
 
@@ -97,6 +98,7 @@ const GlobalEdgeNetwork = () => {
         >
           <div className="w-full lg:sticky lg:inset-x-0 lg:top-0 lg:left-0 lg:bottom-auto z-30 self-auto items-stretch lg:w-[50%] h-fit">
             {/* <GlobeComponent /> */}
+            {/* <Scene /> */}
             <div>Hi</div>
           </div>
           <div className="flex flex-col w-full lg:w-[50%] z-20">
