@@ -52,6 +52,7 @@ const PageLayout: FC<any> = ({ children }) => {
           padding: "0px",
           margin: "0px",
         }}
+        className="editorToolbar"
       >
         <CssBaseline />
 
@@ -92,19 +93,21 @@ const PageLayout: FC<any> = ({ children }) => {
             {/* {loading && (isReadOnly ? null : */}
             {/* <BodyPopoverOptionsUi style={bodyStyle} /> */}
             {/* )} */}
-            {/* <Box
+            <Box
               sx={{
                 flexGrow: 1,
-                p: 4,
-                backgroundColor: `${bodyBackgroundColor}`,
+                p: 1.5,
+                backgroundColor: `#fff`,
                 width: "100%",
                 height: "fit-content",
                 position: "relative",
+                boxShadow:
+                  "rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px",
               }}
               className="h-full"
-            > */}
-            {children}
-            {/* </Box> */}
+            >
+              {children}
+            </Box>
           </div>
         </Box>
       </Box>

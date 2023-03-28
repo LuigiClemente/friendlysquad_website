@@ -32,7 +32,19 @@ const GrassIframe = () => {
   }, []);
   return (
     <div className="w-full h-full">
-      {!load ? <Spinner /> : null}
+      {!load ? (
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            height: "100%",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Spinner />
+        </div>
+      ) : null}
       <iframe
         ref={pageRef}
         id="grass-iframe"

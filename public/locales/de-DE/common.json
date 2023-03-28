@@ -64,12 +64,15 @@
         
     },
     "header": {
-      "Home": "HOME",
-      "About": "ABOUT US",
-      "Service": "SERVICE",
-      "Contact": "CONTACT US",
-      "Login": "LOG IN"
+      "Home": "STARTSEITE",
+      "About": "ÜBER UNS",
+      "infrastructure": "INFRASTRUKTUR",
+      "Service": "DIENSTLEISTUNGEN",
+      "Contact": "KONTAKT",
+      "Login": "ANMELDEN"
     }
+
+
 }
 
 

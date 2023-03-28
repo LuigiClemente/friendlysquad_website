@@ -74,7 +74,7 @@ const CloudCard = ({ item, index }: any) => {
   const { t } = useTranslation("");
   return (
     <div
-      className="hero"
+      // className="hero"
       style={{
         position: "relative",
         height: "fit-content",
@@ -85,7 +85,7 @@ const CloudCard = ({ item, index }: any) => {
         style={{
           backgroundColor: "transparent",
           position: "relative",
-          height: "fit-content",
+          height: "400px",
           width: "fit-content",
           zIndex: 1000,
           borderRadius: "5px",
@@ -102,7 +102,7 @@ const CloudCard = ({ item, index }: any) => {
                 width: "100%",
                 fontWeight: 500,
                 fontFamily: "Segoe UI",
-                fontSize: "1.6rem",
+                fontSize: "2rem",
               }}
             >
               {/* {item.title} */}
@@ -110,13 +110,13 @@ const CloudCard = ({ item, index }: any) => {
             </h1>
             <p
               style={{
-                fontSize: "1.1rem",
-                fontWeight: 500,
+                fontSize: "1.5rem",
+                fontWeight: 400,
                 color: "#000",
                 textAlign: "left",
                 fontFamily: "Segoe UI",
               }}
-              className="mt-1 mb-2 ml-2 font-sans text-lg font-weight-500 leading-8 align-center  text-black"
+              className="mt-1 mb-2 ml-2 font-sans text-lg font-weight-500 leading-8 align-center text-black"
             >
               {t(`home.cloud_data.${index}.description`)}
               {/* {item.description} */}

@@ -2,8 +2,7 @@
 import { useAppProvider } from "@appProvider/AppProvider";
 import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
 import { useState } from "react";
-import GlobalEdgeNetwork from "../globe/GlobalEdgeNetwork";
-import GlobeCardList from "../globe/GlobeCardList";
+import CarouselBrand from "../carousel/CarouselBrand";
 import CloudCardList from "./CloudCardList";
 import CloudMenu from "./CloudMenu";
 
@@ -85,7 +84,6 @@ const CloudDataComponent = () => {
 
   const getIdCurrentItem = (id: any) => {
     setCurrentId(id);
-    console.log("id is :::>>> ", id);
   };
 
   return (
@@ -106,32 +104,16 @@ const CloudDataComponent = () => {
         clip: "auto",
       }}
     >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          width: "100%",
-        }}
-      >
-        <div
-          style={{
-            position: "sticky",
-            bottom: "auto",
-            top: "0",
-            left: "0",
-            height: "fit-content",
-            width: "35%",
-            alignSelf: "auto",
-            alignItems: "stretch",
-            clip: "auto",
-          }}
-        >
+      <div className="flex w-full justify-center lg:justify-between">
+        <div className="hidden md:block lg:sticky lg:inset-x-0 lg:top-0 lg:left-0 lg:bottom-auto z-30 self-auto items-stretch md:w-[35%] h-fit border-gray-1">
           <CloudMenu activeId={currentId} />
         </div>
-        <div className="flex flex-col w-[65%] z-20 ">
+        <div className="flex lg:w-[65%] flex-col w-full z-20  ">
           <CloudCardList getItemId={getIdCurrentItem} />
         </div>
+      </div>
+      <div className="flex flex-col w-full z-20  ">
+        <CarouselBrand getItemId={getIdCurrentItem} />
       </div>
     </div>
   );

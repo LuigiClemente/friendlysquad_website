@@ -22,7 +22,7 @@ const HomeComponent = () => {
         <div
           style={{
             transform: `scale(${zoom})`,
-            transformOrigin: "0% 0px 0%",
+            transformOrigin: "0% 0% 0% 0%",
             backgroundColor: `${bodyBackgroundColor}`,
             display: "flex",
             flexDirection: "column",
@@ -31,17 +31,14 @@ const HomeComponent = () => {
           }}
           id="capture"
         >
-          <Box>
-            {/* <DynamicHeader /> */}
-            <Box
-              sx={{
-                backgroundColor: `${containerBackgroundColor}`,
-                boxShadow: `${containerShadow}`,
-              }}
-            >
-              <LayoutManger />
-            </Box>
-          </Box>
+          {/* <Box
+            sx={{
+              backgroundColor: `${containerBackgroundColor}`,
+              boxShadow: `${containerShadow}`,
+            }}
+          > */}
+          <LayoutManger />
+          {/* </Box> */}
         </div>
       </PageLayout>
     </Container>

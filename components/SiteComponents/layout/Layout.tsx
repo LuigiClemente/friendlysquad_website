@@ -1,18 +1,23 @@
 import { useAppStateProvider } from "@appProvider/AppStateProvider";
 import dynamic from "next/dynamic";
-import { useState } from "react";
+import Navbar from "../Header/Navbar";
 const DynamicHeader = dynamic(() => import("../Header/Header"));
 const Layout = ({ children }) => {
   const { currentMenu }: any = useAppStateProvider();
   return (
     <div
       style={{ width: "100%", height: "100%" }}
-      className="flex flex-col w-full min-h-full bg-transparent"
+      className="flex flex-col w-full min-h-full bg-transparent z-40"
     >
-      {currentMenu === "CONTACT US" ? (
-        <DynamicHeader bgHeader={`bg-transparent`} colorMenu={"#fff"} />
+      {currentMenu === "CONTACT US" || currentMenu === "INFRASTUCTURE" ? (
+        <>
+          {/* <DynamicHeader bgHeader={`bg-transparent`} colorMenu={"#fff"} /> */}
+          <Navbar bgHeader={"transparent"} colorMenu={"#fff"} fixed={true} />
+        </>
       ) : (
-        <DynamicHeader bgHeader={`bg-transparent`} colorMenu={"#000"} />
+        <>
+          <Navbar bgHeader={`transparent`} colorMenu={"#000"} fixed={true} />
+        </>
       )}
 
       {children}

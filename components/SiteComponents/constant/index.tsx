@@ -7,10 +7,19 @@ export const SLIDER_IMAGES = [
   { id: 2, img: "/images/slider/2.png", width: "800px" },
   { id: 3, img: "/images/slider/3.png", width: "500px" },
   { id: 4, img: "/images/slider/4.png", width: "500px" },
-  // { id: 5, img: "/images/slider/5.png", width: "500px" },
-  // { id: 6, img: "/images/slider/6.png", width: "500px" },
   { id: 7, img: "/images/slider/7.png", width: "500px" },
 ];
+export const BRAND_IMAGES = [
+  { id: 1, img: "/img/icon/pngegg.png", width: "200px" },
+  { id: 2, img: "/img/svg/postgresql.svg", width: "200px" },
+  { id: 3, img: "/img/icon/database.png", width: "200px" },
+  { id: 4, img: "/img/icon/greenLeaf.png", width: "200px" },
+  { id: 5, img: "/img/icon/pngegg.png", width: "200px" },
+  { id: 6, img: "/img/svg/postgresql.svg", width: "200px" },
+  { id: 7, img: "/img/icon/database.png", width: "200px" },
+  { id: 8, img: "/img/icon/greenLeaf.png", width: "200px" },
+];
+
 export const VOLCANOES = [
   {
     name: "Abu",
@@ -98,24 +107,14 @@ export const NOTE_CLOUD_SECTION = [
       "Adjusting your infrastructure has never been simpler. Customize your resources to meet your needs, and do it all in your favorite programming languages. Experience hassle-free scalability at its finest.",
     image: "/img/icon/greenLeaf.png",
   },
-  {
-    id: 5,
-    title: "Join the Community",
-    description:
-      "Become a part of our vibrant community of businesses that have embraced the Git-first approach to infrastructure deployment. Our user-friendly platform empowers developers of all skill levels to deploy and manage infrastructure with confidence",
-    image: "/img/icon/network-graphics.png",
-  },
 ];
 
 export const DomainsList = [{ name: "whatchhi.com" }];
 
-export const STEPS = [
-  { name: "Step 1", href: "#", status: "complete" },
-  { name: "Step 2", href: "#", status: "current" },
-];
 export const NAVIGATION = [
   { name: "HOME", tag: "Home" },
   { name: "ABOUT US", tag: "About" },
+  { name: "INFRASTUCTURE", tag: "infrastructure" },
   { name: "SERVICE", tag: "Service" },
   { name: "CONTACT US", tag: "Contact" },
   { name: "LOG IN", tag: "Login" },

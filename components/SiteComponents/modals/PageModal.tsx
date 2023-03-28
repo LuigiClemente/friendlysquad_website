@@ -28,9 +28,9 @@ const PageModal = ({ title, content }: PageModalsProps) => {
               {/*content*/}
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 {/*header*/}
-                <div className="flex items-start justify-between p-3 pb-0 rounded-t">
+                {/* <div className="flex items-start justify-between p-3 pb-0 rounded-t">
                   <DialogTitle title={title} />
-                </div>
+                </div> */}
                 {/*body*/}
                 <div className="relative flex-auto">
                   <div className="mt-3 text-center sm:mt-5 ">

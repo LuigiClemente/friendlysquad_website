@@ -27,7 +27,19 @@ const IframeLaser = () => {
   }, []);
   return (
     <div className="w-full h-full">
-      {!load ? <Spinner /> : null}
+      {!load ? (
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            height: "100%",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Spinner />
+        </div>
+      ) : null}
       <iframe
         id="laser-iframe"
         src={src}

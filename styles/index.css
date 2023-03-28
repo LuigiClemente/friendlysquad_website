@@ -48,7 +48,7 @@
   right: 0;
   bottom: 0;
   z-index: 2;
-  /* overflow: visible; */
+  overflow: hidden;
   width: 100%;
   height: 100%;
     margin-right: 0;
@@ -79,12 +79,11 @@
   }
   
 
-.home{
+/* .home{
   z-index: 1000000;
-  /* width: 1000px !important; */
   width:67.5%;
   position: relative
-}
+} */
 .globe{
   background-image: url('/img/globe/night-sky.png');
   background-repeat: repeat;
@@ -111,12 +110,7 @@
     -ms-border-radius:10px;
     -o-border-radius:10px;
 }
-/* 
-.transition-all{
-  border: 1px solid #000 !important;; 
-} */
 
-/*  add border to headlessui dialog */
 .customDialog {
   border: 1px solid rgb(32, 33, 33) !important;
   border-radius: 6px;
@@ -124,4 +118,28 @@
   -moz-border-radius: 6px;
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
+}
+
+
+.slider{
+  transform: translate3d(-8.7696rem, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+   transform-style: preserve-3d;
+    will-change: transform
+}
+/* move animation  */
+.slider-transition{
+  transition: transform 0.5s ease 0s;
+  /* repeat animation */
+  animation: slider-move 0.5s ease 0s infinite;
+
+}
+ /* repeat animation */
+@keyframes slider-move {
+  0% {
+    transform: translate3d(-8.7696rem, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  }
+  100% {
+    transform: translate3d(-8.7696rem, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  }
+ 
 }

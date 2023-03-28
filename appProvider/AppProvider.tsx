@@ -72,8 +72,8 @@ export const AppProvider = ({ children }: any) => {
   const [borderBottomLeftRadiusHeader, setBorderBottomLeftRadiusHeader] =
     useState("0");
   // padding for Header
-  const [paddingRightHeader, setPaddingRightHeader] = useState("35");
-  const [paddingLeftHeader, setPaddingLeftHeader] = useState("15");
+  const [paddingRightHeader, setPaddingRightHeader] = useState("10");
+  const [paddingLeftHeader, setPaddingLeftHeader] = useState("8");
   const [paddingTopHeader, setPaddingTopHeader] = useState("0");
   const [paddingBottomHeader, setPaddingBottomHeader] = useState("0");
   // margin for Header
@@ -127,7 +127,7 @@ export const AppProvider = ({ children }: any) => {
   // min height for logo
   const [minHeightLogo, setMinHeightLogo] = useState("60");
   // max width for logo
-  const [maxWidthLogo, setMaxWidthLogo] = useState("200");
+  const [maxWidthLogo, setMaxWidthLogo] = useState("300");
   // max height for logo
   const [maxHeightLogo, setMaxHeightLogo] = useState("60");
   // for logo dialog

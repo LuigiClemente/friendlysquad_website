@@ -66,6 +66,14 @@
             }
           ]
         
+    },
+    "header": {
+      "Home": "ACCUEIL",
+      "About": "À PROPOS DE NOUS",
+      "infrastructure":"INFRASTRUCTURE",
+      "Service": "SERVICES",
+      "Contact": "NOUS CONTACTER",
+      "Login": "CONNEXION"
     }
 
 }

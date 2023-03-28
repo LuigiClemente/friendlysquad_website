@@ -1,5 +1,5 @@
+import ArrowRight from "@/icons/ArrowRight";
 import { ChevronRight } from "@mui/icons-material";
-import Image from "next/image";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { NOTE_CLOUD_SECTION } from "../constant";
@@ -16,6 +16,8 @@ const CloudMenu = ({ activeId }: any) => {
         flexDirection: "column",
         position: "relative",
         margin: "10px",
+        marginRight: "0px",
+        border: "1px solid grey",
       }}
     >
       {NOTE_CLOUD_SECTION.map((item, index) => {
@@ -26,11 +28,10 @@ const CloudMenu = ({ activeId }: any) => {
               flexDirection: "row",
               justifyContent: "space-between",
               alignItems: "center",
-              paddingTop: "25px",
-              paddingBottom: "25px",
-              paddingLeft: "20px",
-              borderBottom: "0.5px dotted black",
+              padding: "20px",
+              borderBottom: "0.5px dotted grey",
             }}
+            className="cursor-pointer hover:px-15 hover:text-2xl"
           >
             <div className="flex flex-row items-center content-start justify-start">
               <a
@@ -44,12 +45,14 @@ const CloudMenu = ({ activeId }: any) => {
                   color: activeId === item?.id ? "#000" : "#28282B",
                   fontFamily: "Ppneuemontreal",
                 }}
+                className="cursor-pointer hover:px-15 hover:text-2xl"
               >
                 {/* {item.title} */}
                 {t(`home.cloud_data.${index}.title`)}
               </a>
             </div>
-            <ChevronRight />
+            <ArrowRight color={activeId === item?.id ? "#000" : "#28282B"} />
+            {/* <ChevronRight /> */}
           </div>
         );
       })}

@@ -2,24 +2,20 @@ import { useState } from "react";
 
 import { NOTE_CLOUD_SECTION } from "../constant";
 import CloudCard from "./CloudCard";
-import { useTranslation } from "next-i18next";
-import i18next from "i18next";
 const CloudCardList = ({ getItemId }: any) => {
-  const { t } = useTranslation("");
   const mouseInStyle = {
     backgroundColor: "rgba(255, 255, 255, 0.7)",
     border: "none",
   };
   const mouseOutStyle = {
     backgroundColor: "rgba(255, 255, 255, 0.4)",
-    border: "1px solid #000",
+    border: "1px solid grey",
   };
   const [isHovering, setIsHovering] = useState(null);
 
   const handleMouseOver = (id: any) => {
     setIsHovering(id);
     getItemId(id);
-    console.log("id is ::: ", id);
   };
 
   const handleMouseOut = () => setIsHovering(null);
@@ -35,6 +31,7 @@ const CloudCardList = ({ getItemId }: any) => {
         alignContent: "center",
         backgroundColor: "transparent",
         margin: "10px",
+        marginLeft: "0px",
       }}
     >
       {NOTE_CLOUD_SECTION.map((item, index) => {
@@ -42,8 +39,8 @@ const CloudCardList = ({ getItemId }: any) => {
           <div
             key={index}
             style={{
-              borderRadius: "10px",
-              margin: "20px",
+              borderRadius: "0px",
+              // margin: "20px",
               ...(isHovering && isHovering === item?.id
                 ? mouseInStyle
                 : mouseOutStyle),
@@ -52,14 +49,14 @@ const CloudCardList = ({ getItemId }: any) => {
             onMouseOut={handleMouseOut}
           >
             <div
-              style={{
-                backgroundImage: `url(${item.image})`,
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "50% 50%",
-                backgroundSize: "250px 250px",
-                // backgroundColor: "rgba(255, 255, 255, 0.25)",
-                // opacity: 0.6,
-              }}
+              style={
+                {
+                  // backgroundImage: `url(${item.image})`,
+                  // backgroundRepeat: "no-repeat",
+                  // backgroundPosition: "50% 50%",
+                  // backgroundSize: "250px 250px",
+                }
+              }
             >
               <CloudCard item={item} index={index} />
             </div>

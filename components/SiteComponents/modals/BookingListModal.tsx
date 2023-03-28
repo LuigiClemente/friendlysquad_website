@@ -1,7 +1,5 @@
 import DialogContent from "@/DialogContent/DialogContent";
-import DialogTitle from "@/DialogTitle/DialogTitle";
 import Close from "@/icons/Close";
-import XMark from "@/icons/XMark";
 import {
   CONTACT_DATA,
   FOOTER_DATA_BOOKING_LIST,

@@ -26,10 +26,7 @@ const IframeFood = () => {
     };
   }, []);
   return (
-    <div
-      className="w-full h-full border-x-2 border-y-2 border-solid"
-      style={{ border: "1px solid #000" }}
-    >
+    <div className="w-full h-full">
       {!load ? (
         <div
           style={{

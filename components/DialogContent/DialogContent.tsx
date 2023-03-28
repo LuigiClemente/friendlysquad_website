@@ -60,6 +60,7 @@ const DialogContent = ({ data, isBookingList }: DialogContentProps) => {
         display: "flex",
         flexDirection: "column",
         position: "relative",
+        padding: "10px",
       }}
       onMouseEnter={() => setDialogContent({ display: "block" })}
       onMouseLeave={() => setDialogContent({ display: "none" })}
@@ -108,6 +109,7 @@ const DialogContent = ({ data, isBookingList }: DialogContentProps) => {
               marginBottom: "10px",
               fontFamily: fontDataModal,
               fontSize: fontSizeDataModal,
+              textAlign: "left",
             }}
           >
             {data}
@@ -116,7 +118,7 @@ const DialogContent = ({ data, isBookingList }: DialogContentProps) => {
           data.map((item, index) => (
             <p
               key={index + item.name}
-              className="p-3 text-lg  font-serif font-medium leading-5"
+              className="p-3 text-lg font-serif font-medium leading-5"
               style={{
                 marginBottom: "10px",
                 fontFamily: fontDataModal,

@@ -84,35 +84,22 @@ const GlobalEdgeNetwork = () => {
       <div
         className="globe"
         style={{
-          marginTop: "100px",
-          zIndex: 10,
           width: "100%",
           margin: 0,
           height: "100%",
-          paddingTop: "20px",
+          paddingTop: "200px",
           backgroundColor: "#000",
         }}
       >
         <div
-          className={`flex flex-row relative lg:flex-row lg:justify-between`}
+          className={`flex relative flex-col lg:flex-row lg:justify-between`}
           id={`sectionId`}
         >
-          <div
-            style={{
-              position: "sticky",
-              bottom: "auto",
-              top: "0",
-              left: "0",
-              height: "fit-content",
-              width: "40%",
-              alignSelf: "auto",
-              alignItems: "stretch",
-              zIndex: 1000,
-            }}
-          >
-            <GlobeComponent />
+          <div className="w-full lg:sticky lg:inset-x-0 lg:top-0 lg:left-0 lg:bottom-auto z-30 self-auto items-stretch lg:w-[50%] h-fit">
+            {/* <GlobeComponent /> */}
+            <div>Hi</div>
           </div>
-          <div className="flex flex-col w-[50%] z-20">
+          <div className="flex flex-col w-full lg:w-[50%] z-20">
             <GlobeCardList />
           </div>
         </div>

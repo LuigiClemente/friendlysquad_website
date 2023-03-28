@@ -66,13 +66,14 @@
     
 },
   "header": {
-    "Home": "HOME",
-    "About": "ABOUT US",
-    "infrastructure": "INFRASTRUCTURE",
-    "Service": "SERVICE",
-    "Contact": "CONTACT US",
-    "Login": "LOG IN"
+    "Home": "INICIO",
+    "About": "SOBRE NOSOTROS",
+    "infrastructure": "INFRAESTRUCTURA",
+    "Service": "SERVICIOS",
+    "Contact": "CONTÁCTANOS",
+    "Login": "INICIAR SESIÓN"
   }
+
 }
 
 

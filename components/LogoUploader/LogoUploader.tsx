@@ -5,10 +5,6 @@ import LogoOptionsUi from "../CustomPopover/LogoOptionsUi";
 
 const LogoUploader = () => {
   const {
-    fontSizeLogo,
-    backgroundColorLogo,
-    colorLogo,
-    fontLogo,
     borderBottomColorLogo,
     borderBottomWidthLogo,
     borderTopColorLogo,
@@ -40,14 +36,11 @@ const LogoUploader = () => {
     // logo hight and width
     minWidthLogo,
     maxWidthLogo,
-    minHeightLogo,
-    maxHeightLogo,
     // readonly
     isReadOnly,
   }: any = useAppProvider();
   const [image, setImage] = useState("");
   const inputRef: any = useRef(null);
-  console.log("isReadOnly", isReadOnly);
 
   const handleImageChange = (e: any) => {
     e.preventDefault();
@@ -72,7 +65,6 @@ const LogoUploader = () => {
     ext: any
   ) => {
     inputRef.current.click();
-    // const compressImage = await onUploadImage(blob)
     console.log("uploadToServer");
     const body = new FormData();
     body.append("path", window.URL.createObjectURL(blob));
@@ -93,7 +85,6 @@ const LogoUploader = () => {
         if (error.response.status === 400) {
           console.log(`HTTP 400 error occured for third request`);
         }
-        // You can get response data (mostly the reason would be in it)
         if (error.response.data) {
           console.log("errors ====>", error.response.data);
         }
@@ -119,14 +110,9 @@ const LogoUploader = () => {
       }}
     >
       {isReadOnly ? null : <LogoOptionsUi style={styleLogo} />}
-
       {!image ? (
         <div
           style={{
-            // minWidth: `${minWidthLogo}px`,
-            // maxWidth: `${maxWidthLogo}px`,
-            // minHeight: ` ${minHeightLogo}px`,
-            // maxHeight: `${maxHeightLogo}px`,
             overflow: "hidden",
           }}
         >
@@ -137,10 +123,6 @@ const LogoUploader = () => {
             onClick={handleImageUpload}
             style={{
               position: "relative",
-              fontSize: fontSizeLogo,
-              backgroundColor: backgroundColorLogo,
-              color: colorLogo,
-              fontFamily: fontLogo,
               borderBottomColor: borderBottomColorLogo,
               borderBottomWidth: `${borderBottomWidthLogo}px`,
               borderTopColor: borderTopColorLogo,
@@ -167,16 +149,8 @@ const LogoUploader = () => {
               marginRight: `${marginRightLogo}px`,
               objectFit: "cover",
               minWidth: `${minWidthLogo}px`,
-              // maxWidth: `${maxWidthLogo}px`,
               maxWidth: `${maxWidthLogo}px`,
               height: "auto",
-              // minHeight: ` ${minHeightLogo}px`,
-              // maxHeight: `${maxHeightLogo}px`,
-
-              // width: "100%",
-              // height: `100px`,
-              // objectFit: "cover",
-              // objectPosition: `bottom`
             }}
           />
           <input
@@ -197,10 +171,6 @@ const LogoUploader = () => {
             aria-expanded="true"
             onClick={handleImageUpload}
             style={{
-              fontSize: fontSizeLogo,
-              backgroundColor: backgroundColorLogo,
-              color: colorLogo,
-              fontFamily: fontLogo,
               borderBottomColor: borderBottomColorLogo,
               borderBottomWidth: `${borderBottomWidthLogo}px`,
               borderTopColor: borderTopColorLogo,
@@ -227,8 +197,7 @@ const LogoUploader = () => {
               marginRight: `${marginRightLogo}px`,
               minWidth: `${minWidthLogo}px`,
               maxWidth: `${maxWidthLogo}px`,
-              minHeight: ` ${minHeightLogo}px`,
-              maxHeight: `${maxHeightLogo}px`,
+              height: "auto",
             }}
           >
             <div aria-hidden="true"></div>

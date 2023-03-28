@@ -68,7 +68,7 @@ const Header = ({ bgHeader, colorMenu }: any) => {
   const [style, setStyle] = useState({ display: "none" });
   return (
     <header
-      className={`absolute top-0 left-0 right-0 z-10 w-full overflow-hidden ${bgHeader}`}
+      className={`absolute top-0 left-0 right-0 z-10 w-full overflow-hidden ${bgHeader} `}
       onMouseEnter={() => {
         setStyle({ display: "block" });
       }}
@@ -81,9 +81,6 @@ const Header = ({ bgHeader, colorMenu }: any) => {
         style={{
           fontSize: fontSizeHeader,
           fontFamily: fontHeader,
-          color: colorHeader,
-          // backgroundColor: backgroundColorHeader,
-          // border
           borderBottomColor: `${borderBottomColorHeader}px`,
           borderBottomWidth: `${borderBottomWidthHeader}px`,
           borderTopColor: borderTopColorHeader,
@@ -123,7 +120,7 @@ const Header = ({ bgHeader, colorMenu }: any) => {
         <div className="flex lg:flex-1">
           <Logo />
         </div>
-        <div className="flex lg:hidden md:hidden">
+        <div className="flex lg:hidden ">
           <button
             type="button"
             className="inline-flex items-center justify-center text-gray-700 -m-2.5 rounded-md p-2.5"
@@ -143,7 +140,6 @@ const Header = ({ bgHeader, colorMenu }: any) => {
                 style={{
                   fontSize: fontSizeHeader,
                   fontFamily: fontHeader,
-                  // color: colorHeader,
                   textDecoration: "none",
                   color: colorMenu,
                 }}
