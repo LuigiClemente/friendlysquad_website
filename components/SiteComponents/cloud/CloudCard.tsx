@@ -42,9 +42,9 @@ const CloudCard = ({ item, index }: any) => {
           opacity: 1,
         }}
       >
-        <div key={index} style={{ margin: "20px" }}>
+        <div key={index} style={{ margin: "20px", padding: "2.5rem" }}>
           <div
-            className="flex flex-col items-center relative content-start justify-start"
+            className="flex flex-col items-center relative content-start justify-start "
             onMouseEnter={() => setTitleStyle({ display: "block" })}
             onMouseLeave={() => setTitleStyle({ display: "none" })}
           >
