@@ -1,14 +1,14 @@
-import { useAppProvider } from "@appProvider/AppProvider"
-import { useAppStateProvider } from "@appProvider/AppStateProvider"
-import { useModalsAppProvider } from "@appProvider/ModalsAppProvider"
-import { useUndoable } from "@appProvider/UndoableProvider"
-import FormControl from "@material-ui/core/FormControl"
-import Select from "@material-ui/core/Select"
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles"
-import MenuItem from "@mui/material/MenuItem"
-import React, { useEffect } from "react"
-import { FONT_FAMILY } from "../../theme/ConstantColors"
-import { updatePluginValue } from "../../utils/uiController"
+import { useAppProvider } from "@appProvider/AppProvider";
+import { useAppStateProvider } from "@appProvider/AppStateProvider";
+import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
+import { useUndoable } from "@appProvider/UndoableProvider";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import MenuItem from "@mui/material/MenuItem";
+import React, { useEffect } from "react";
+import { FONT_FAMILY } from "../../theme/ConstantColors";
+import { updatePluginValue } from "../../utils/uiController";
 import {
   BUTTONS,
   BUTTONS_PLUGIN_ID,
@@ -16,6 +16,8 @@ import {
   DATA_PLUGIN,
   HEADER,
   HEADER_PLUGIN_ID,
+  LOGO,
+  LOGO_PLUGIN_ID,
   MODAL_BOX,
   MODAL_BOX_PLUGIN_ID,
   VERIFY_CODE,
@@ -23,44 +25,49 @@ import {
   VERIFY_DATA_PLUGIN_ID,
   VERIFY_TITLE,
   VERIFY_TITLE_BTN,
-  VERIFY_TITLE_PLUGIN_ID
-} from "../Constant/const"
+  VERIFY_TITLE_PLUGIN_ID,
+} from "../Constant/const";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     button: {
       display: "block",
-      marginTop: theme.spacing(2)
+      marginTop: theme.spacing(2),
     },
     formControl: {
       margin: theme.spacing(1),
       minWidth: 120,
-      width: "50%"
+      width: "50%",
     },
     content: {
       display: "flex",
       flexDirection: "row",
       justifyContent: "space-between",
       alignItems: "center",
-      width: "100%"
-    }
+      width: "100%",
+    },
   })
-)
+);
 
 const FontChanger = ({ nameSection }: any) => {
-  const classes = useStyles()
-  const [font, setFont] = React.useState(FONT_FAMILY[0])
-  const [open, setOpen] = React.useState(false)
+  const classes = useStyles();
+  const [font, setFont] = React.useState(FONT_FAMILY[0]);
+  const [open, setOpen] = React.useState(false);
   const {
     setFontHeader,
     setFontModalBox,
     // update value in settings
     fontHeader,
     fontModalBox,
+    fontSizeLogo,
+    backgroundColorLogo,
+    colorLogo,
+    setFontLogo,
+    fontLogo,
     // ----
     headerDBFormat,
-    setHeaderDBFormat
-  }: any = useAppProvider()
+    setHeaderDBFormat,
+  }: any = useAppProvider();
 
   const {
     dbModalsFormat,
@@ -77,31 +84,63 @@ const FontChanger = ({ nameSection }: any) => {
     fontDataTitle,
     fontData,
     // -------------Buttons
-    setFontButtons, fontButtons
-  }: any = useModalsAppProvider()
+    setFontButtons,
+    fontButtons,
+  }: any = useModalsAppProvider();
   // const {setFontButtons, fontButtons}:any=useAppStateProvider()
-  const { setContent }: any = useUndoable()
+  const { setContent }: any = useUndoable();
   // change the font for all the text in the App
   const handleChange = (event: any) => {
-    setFont(event.target.value)
+    setFont(event.target.value);
 
-    console.log("font name", event.target.value)
+    console.log("font name", event.target.value);
     if (nameSection === HEADER) {
-      setFontHeader(event.target.value)
+      setFontHeader(event.target.value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "fontHeader", event.target.value)
-      )
-      setContent({ name: "font", value: event.target.value, nameSection: HEADER })
-    } 
-    else if (nameSection === MODAL_BOX) {
-      setFontModalBox(event.target.value)
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "fontHeader",
+          event.target.value
+        )
+      );
+      setContent({
+        name: "font",
+        value: event.target.value,
+        nameSection: HEADER,
+      });
+    } else if (nameSection === LOGO) {
+      setFontLogo(event.target.value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, MODAL_BOX_PLUGIN_ID, "fontModalBox", event.target.value)
-      )
-      setContent({ name: "font", value: event.target.value, nameSection: MODAL_BOX })
-    } 
-    else if (nameSection === VERIFY_TITLE) {
-      setFontTitleModal(event.target.value)
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "fontLogo",
+          event.target.value
+        )
+      );
+      setContent({
+        name: "font",
+        value: event.target.value,
+        nameSection: HEADER,
+      });
+    } else if (nameSection === MODAL_BOX) {
+      setFontModalBox(event.target.value);
+      setHeaderDBFormat(
+        updatePluginValue(
+          headerDBFormat,
+          MODAL_BOX_PLUGIN_ID,
+          "fontModalBox",
+          event.target.value
+        )
+      );
+      setContent({
+        name: "font",
+        value: event.target.value,
+        nameSection: MODAL_BOX,
+      });
+    } else if (nameSection === VERIFY_TITLE) {
+      setFontTitleModal(event.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -109,10 +148,14 @@ const FontChanger = ({ nameSection }: any) => {
           "fontTitleModal",
           event.target.value
         )
-      )
-      setContent({ name: "font", value: event.target.value, nameSection: VERIFY_TITLE })
+      );
+      setContent({
+        name: "font",
+        value: event.target.value,
+        nameSection: VERIFY_TITLE,
+      });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setFontDataTitle(event.target.value)
+      setFontDataTitle(event.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -120,10 +163,14 @@ const FontChanger = ({ nameSection }: any) => {
           "fontDataTitle",
           event.target.value
         )
-      )
-      setContent({ name: "font", value: event.target.value, nameSection: VERIFY_TITLE_BTN })
+      );
+      setContent({
+        name: "font",
+        value: event.target.value,
+        nameSection: VERIFY_TITLE_BTN,
+      });
     } else if (nameSection === VERIFY_DATA) {
-      setFontVerifyData(event.target.value)
+      setFontVerifyData(event.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -131,10 +178,14 @@ const FontChanger = ({ nameSection }: any) => {
           "fontVerifyData",
           event.target.value
         )
-      )
-      setContent({ name: "font", value: event.target.value, nameSection: VERIFY_DATA })
+      );
+      setContent({
+        name: "font",
+        value: event.target.value,
+        nameSection: VERIFY_DATA,
+      });
     } else if (nameSection === VERIFY_CODE) {
-      setFontDataModal(event.target.value)
+      setFontDataModal(event.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -142,11 +193,15 @@ const FontChanger = ({ nameSection }: any) => {
           "fontDataModal",
           event.target.value
         )
-      )
-      setContent({ name: "font", value: event.target.value, nameSection: VERIFY_CODE })
-    }
-    else if (nameSection === CONTENT) {
-      setFontData(event.target.value)
+      );
+      console.log("this is for font modal:::");
+      setContent({
+        name: "font",
+        value: event.target.value,
+        nameSection: VERIFY_CODE,
+      });
+    } else if (nameSection === CONTENT) {
+      setFontData(event.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -154,11 +209,14 @@ const FontChanger = ({ nameSection }: any) => {
           "fontData",
           event.target.value
         )
-      )
-      setContent({ name: "font", value: event.target.value, nameSection: CONTENT })
-    }
-    else if (nameSection === BUTTONS) {
-      setFontButtons(event.target.value)
+      );
+      setContent({
+        name: "font",
+        value: event.target.value,
+        nameSection: CONTENT,
+      });
+    } else if (nameSection === BUTTONS) {
+      setFontButtons(event.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -166,37 +224,42 @@ const FontChanger = ({ nameSection }: any) => {
           "fontButtons",
           event.target.value
         )
-      )
-      setContent({ name: "font", value: event.target.value, nameSection: BUTTONS })
+      );
+      setContent({
+        name: "font",
+        value: event.target.value,
+        nameSection: BUTTONS,
+      });
     }
-  }
+  };
 
   useEffect(() => {
     if (nameSection === HEADER) {
-      setFont(fontHeader)
+      setFont(fontHeader);
+    } else if (nameSection === LOGO) {
+      setFont(fontLogo);
     } else if (nameSection === VERIFY_TITLE) {
-      setFont(fontTitleModal)
+      setFont(fontTitleModal);
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setFont(fontDataTitle)
+      setFont(fontDataTitle);
     } else if (nameSection === VERIFY_DATA) {
-      setFont(fontVerifyData)
+      setFont(fontVerifyData);
     } else if (nameSection === VERIFY_CODE) {
-      setFont(fontDataModal)
-    }else if (nameSection === CONTENT) {
-      setFont(fontData)
+      setFont(fontDataModal);
+    } else if (nameSection === CONTENT) {
+      setFont(fontData);
+    } else if (nameSection === BUTTONS) {
+      setFont(fontButtons);
     }
-    else if (nameSection === BUTTONS) {
-      setFont(fontButtons)
-    }
-  }, [])
+  }, []);
 
   const handleClose = () => {
-    setOpen(false)
-  }
+    setOpen(false);
+  };
 
   const handleOpen = () => {
-    setOpen(true)
-  }
+    setOpen(true);
+  };
 
   return (
     <div className={classes.content}>
@@ -216,8 +279,8 @@ const FontChanger = ({ nameSection }: any) => {
             style={{ width: "100%" }}
             MenuProps={{
               classes: {
-                paper: "customPaper"
-              }
+                paper: "customPaper",
+              },
             }}
           >
             {FONT_FAMILY.map((font, index) => (
@@ -233,7 +296,7 @@ const FontChanger = ({ nameSection }: any) => {
                   margin: "5px",
                   fontSize: "22px",
                   display: "flex",
-                  flexDirection: "column"
+                  flexDirection: "column",
                 }}
                 className="myk"
               >
@@ -244,6 +307,6 @@ const FontChanger = ({ nameSection }: any) => {
         </FormControl>
       </div>
     </div>
-  )
-}
-export default FontChanger
+  );
+};
+export default FontChanger;

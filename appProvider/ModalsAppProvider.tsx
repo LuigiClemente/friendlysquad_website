@@ -57,11 +57,11 @@ export const ModalsAppProvider = ({ children }: any) => {
   // for background color of Data
   const [backgroundColorData, setBackgroundColorData] = useState("#202844");
   // for color of Data
-  const [colorData, setColorData] = useState("#fff");
+  const [colorData, setColorData] = useState("#000");
   // for font size of Data
-  const [fontSizeData, setFontSizeData] = useState("1rem");
+  const [fontSizeData, setFontSizeData] = useState("1.5rem");
   // for font of Data
-  const [fontData, setFontData] = useState("Arial");
+  const [fontData, setFontData] = useState("Segoe UI");
   //---------------------------------------------------------------- DataModal
   const [fontSizeDataModal, setFontSizeDataModal] = useState("1.3rem");
   const [backgroundColorDataModal, setBackgroundColorDataModal] =
@@ -121,7 +121,7 @@ export const ModalsAppProvider = ({ children }: any) => {
   const [fontSizeTitleModal, setFontSizeTitleModal] = useState("2rem");
   const [backgroundColorTitleModal, setBackgroundColorTitleModal] =
     useState(DEFAULT_COLOR_SITE);
-  const [colorTitleModal, setColorTitleModal] = useState("#000");
+  const [colorTitleModal, setColorTitleModal] = useState("#fff");
   const [fontTitleModal, setFontTitleModal] = useState("MAD Sans Fill");
   const [dialogOpenTitleModal, setDialogOpenTitleModal] = useState(false);
   // border for TitleModal
@@ -175,12 +175,11 @@ export const ModalsAppProvider = ({ children }: any) => {
   const [marginBottomTitleModal, setMarginBottomTitleModal] = useState("10");
 
   //---------------------------------------------------------------- DataTitle
-  const [fontSizeDataTitle, setFontSizeDataTitle] = useState("1rem");
+  const [fontSizeDataTitle, setFontSizeDataTitle] = useState("2rem");
   const [backgroundColorDataTitle, setBackgroundColorDataTitle] =
     useState("#5BD62A");
-  const [colorDataTitle, setColorDataTitle] = useState("#fff");
-  const [fontDataTitle, setFontDataTitle] = useState("Roboto");
-  const [dialogOpenDataTitle, setDialogOpenDataTitle] = useState(false);
+  const [colorDataTitle, setColorDataTitle] = useState("#000");
+  const [fontDataTitle, setFontDataTitle] = useState("Segoe UI");
   // border for DataTitle
   const [borderBottomColorDataTitle, setBorderBottomColorDataTitle] =
     useState("#c3c3c3");
@@ -935,8 +934,6 @@ export const ModalsAppProvider = ({ children }: any) => {
         setMarginRightDataTitle,
         // TitleModal hight and width
 
-        dialogOpenDataTitle,
-        setDialogOpenDataTitle,
         //  db json table for modals
         dbModalsFormat,
         setDbModalsFormat,

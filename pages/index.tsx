@@ -8,6 +8,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { CssBaseline, Skeleton } from "@mui/material";
 import dynamic from "next/dynamic";
 import React from "react";
+import CarouselCloud from "@/SiteComponents/carousel/CarouselCloud";
 const DynamicHome = dynamic(() => import("@/HomeComponent"), {
   loading: () => (
     <div
@@ -41,6 +42,7 @@ export default function Home() {
             <AppStateProvider>
               <ModalsAppProvider>
                 <DynamicHome />
+                {/* <CarouselCloud getItemId={1} /> */}
               </ModalsAppProvider>
             </AppStateProvider>
           </UpdateSettingsProvider>

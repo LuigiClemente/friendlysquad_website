@@ -1,11 +1,11 @@
-import { useAppProvider } from "@appProvider/AppProvider"
-import { useAppStateProvider } from "@appProvider/AppStateProvider"
-import { useModalsAppProvider } from "@appProvider/ModalsAppProvider"
-import { useUndoable } from "@appProvider/UndoableProvider"
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles"
-import React, { useEffect } from "react"
-import { updatePluginValue } from "../../utils/uiController"
-import ColorPopover from "../ColorPopover/ColorPopover"
+import { useAppProvider } from "@appProvider/AppProvider";
+import { useAppStateProvider } from "@appProvider/AppStateProvider";
+import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
+import { useUndoable } from "@appProvider/UndoableProvider";
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import React, { useEffect } from "react";
+import { updatePluginValue } from "../../utils/uiController";
+import ColorPopover from "../ColorPopover/ColorPopover";
 import {
   BUTTONS,
   BUTTONS_PLUGIN_ID,
@@ -13,6 +13,8 @@ import {
   DATA_PLUGIN,
   HEADER,
   HEADER_PLUGIN_ID,
+  LOGO,
+  LOGO_PLUGIN_ID,
   MODAL_BOX,
   MODAL_BOX_PLUGIN_ID,
   VERIFY_CODE,
@@ -20,14 +22,14 @@ import {
   VERIFY_DATA_PLUGIN_ID,
   VERIFY_TITLE,
   VERIFY_TITLE_BTN,
-  VERIFY_TITLE_PLUGIN_ID
-} from "../Constant/const"
+  VERIFY_TITLE_PLUGIN_ID,
+} from "../Constant/const";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     title: {
       display: "block",
-      marginTop: theme.spacing(2)
+      marginTop: theme.spacing(2),
     },
     content: {
       display: "flex",
@@ -36,7 +38,7 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: "center",
       width: "100%",
       marginTop: "10px",
-      marginBottom: "10px"
+      marginBottom: "10px",
     },
     sizeBtn: {
       maxWidth: "fit-content",
@@ -50,13 +52,13 @@ const useStyles = makeStyles((theme: Theme) =>
       flexDirection: "row",
       alignItems: "center",
       justifyContent: "center",
-      position: "relative"
-    }
+      position: "relative",
+    },
   })
-)
+);
 
 const ColorChanger = ({ nameSection }: any) => {
-  const classes = useStyles()
+  const classes = useStyles();
 
   const {
     headerDBFormat,
@@ -65,10 +67,12 @@ const ColorChanger = ({ nameSection }: any) => {
     setColorHeader,
     setColorModalBox,
     colorModalBox,
+    setColorLogo,
+    colorLogo,
     dbFormat,
     giftDBFormat,
-    setGiftDBFormat
-  }: any = useAppProvider()
+    setGiftDBFormat,
+  }: any = useAppProvider();
 
   const {
     dbModalsFormat,
@@ -84,88 +88,138 @@ const ColorChanger = ({ nameSection }: any) => {
     colorTitleModal,
     colorDataTitle,
     colorData,
-    colorButtons, setColorButtons
-  }: any = useModalsAppProvider()
-// const {colorButtons, setColorButtons}:any=useAppStateProvider()
-  const [anchorElColor, setAnchorElColor] = React.useState<null | HTMLElement>(null)
+    colorButtons,
+    setColorButtons,
+  }: any = useModalsAppProvider();
+  // const {colorButtons, setColorButtons}:any=useAppStateProvider()
+  const [anchorElColor, setAnchorElColor] = React.useState<null | HTMLElement>(
+    null
+  );
   const handleDisplayColorPicker = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElColor(event.currentTarget)
-  }
+    setAnchorElColor(event.currentTarget);
+  };
   // call useUndo function from uiController
-  const { content, setContent }: any = useUndoable()
-  const [colorPicker, setColorPicker] = React.useState("#cad4ef")
+  const { content, setContent }: any = useUndoable();
+  const [colorPicker, setColorPicker] = React.useState("#cad4ef");
   const handleCloseReasonsList = () => {
-    setAnchorElColor(null)
-  }
+    setAnchorElColor(null);
+  };
   const handleGetColor = (color: any) => {
-    setColorPicker(color)
+    setColorPicker(color);
     if (nameSection === HEADER) {
-      setColorHeader(color)
-      setHeaderDBFormat(updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "colorHeader", color))
-      setContent({ name: "color", value: color, nameSection: HEADER })
-    } 
-    if (nameSection === MODAL_BOX) {
-      setColorModalBox(color)
-      setHeaderDBFormat(updatePluginValue(headerDBFormat, MODAL_BOX_PLUGIN_ID, "colorModalBox", color))
-      setContent({ name: "color", value: color, nameSection: MODAL_BOX })
+      setColorHeader(color);
+      setHeaderDBFormat(
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "colorHeader",
+          color
+        )
+      );
+      setContent({ name: "color", value: color, nameSection: HEADER });
+    } else if (nameSection === LOGO) {
+      setColorLogo(color);
+      setHeaderDBFormat(
+        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "colorLogo", color)
+      );
+    } else if (nameSection === MODAL_BOX) {
+      setColorModalBox(color);
+      setHeaderDBFormat(
+        updatePluginValue(
+          headerDBFormat,
+          MODAL_BOX_PLUGIN_ID,
+          "colorModalBox",
+          color
+        )
+      );
+      setContent({ name: "color", value: color, nameSection: MODAL_BOX });
     } // this is for modals
     else if (nameSection === VERIFY_TITLE) {
-      setColorTitleModal(color)
+      setColorTitleModal(color);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_TITLE_PLUGIN_ID, "colorTitleModal", color)
-      )
-      setContent({ name: "color", value: color, nameSection: VERIFY_TITLE })
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_TITLE_PLUGIN_ID,
+          "colorTitleModal",
+          color
+        )
+      );
+      setContent({ name: "color", value: color, nameSection: VERIFY_TITLE });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setColorDataTitle(color)
+      setColorDataTitle(color);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_TITLE_PLUGIN_ID, "colorDataTitle", color)
-      )
-      setContent({ name: "color", value: color, nameSection: VERIFY_TITLE_BTN })
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_TITLE_PLUGIN_ID,
+          "colorDataTitle",
+          color
+        )
+      );
+      setContent({
+        name: "color",
+        value: color,
+        nameSection: VERIFY_TITLE_BTN,
+      });
     } else if (nameSection === VERIFY_DATA) {
-      setColorVerifyData(color)
+      setColorVerifyData(color);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "colorVerifyData", color)
-      )
-      setContent({ name: "color", value: color, nameSection: VERIFY_DATA })
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "colorVerifyData",
+          color
+        )
+      );
+      setContent({ name: "color", value: color, nameSection: VERIFY_DATA });
     } else if (nameSection === VERIFY_CODE) {
-      setColorDataModal(color)
-      setDbModalsFormat(updatePluginValue(dbModalsFormat, VERIFY_CODE, "colorDataModal", color))
-      setContent({ name: "color", value: color, nameSection: VERIFY_CODE })
+      setColorDataModal(color);
+      setDbModalsFormat(
+        updatePluginValue(dbModalsFormat, VERIFY_CODE, "colorDataModal", color)
+      );
+      setContent({ name: "color", value: color, nameSection: VERIFY_CODE });
+      console.log("color", colorDataModal);
+    } else if (nameSection === CONTENT) {
+      setColorData(color);
+      setDbModalsFormat(
+        updatePluginValue(dbModalsFormat, DATA_PLUGIN, "colorData", color)
+      );
+      setContent({ name: "color", value: color, nameSection: CONTENT });
+    } else if (nameSection === BUTTONS) {
+      setColorButtons(color);
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "colorButtons",
+          color
+        )
+      );
+      setContent({ name: "color", value: color, nameSection: BUTTONS });
     }
-    else if (nameSection === CONTENT) {
-      setColorData(color)
-      setDbModalsFormat(updatePluginValue(dbModalsFormat, DATA_PLUGIN, "colorData", color))
-      setContent({ name: "color", value: color, nameSection: CONTENT })
-    }
-    else if (nameSection === BUTTONS) {
-      setColorButtons(color)
-      setDbModalsFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID, "colorButtons", color))
-      setContent({ name: "color", value: color, nameSection: BUTTONS })
-    }
-  }
+  };
   useEffect(() => {
     if (nameSection === HEADER) {
-      setColorPicker(colorHeader)
+      setColorPicker(colorHeader);
     } else if (nameSection === VERIFY_TITLE) {
-      setColorPicker(colorTitleModal)
+      setColorPicker(colorTitleModal);
+    } else if (nameSection === LOGO) {
+      setColorPicker(colorLogo);
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setColorPicker(colorDataTitle)
+      setColorPicker(colorDataTitle);
     } else if (nameSection === VERIFY_DATA) {
-      setColorPicker(colorVerifyData)
+      setColorPicker(colorVerifyData);
     } else if (nameSection === VERIFY_CODE) {
-      setColorPicker(colorDataModal)
-    }else if (nameSection === CONTENT) {
-      setColorPicker(colorData)
+      setColorPicker(colorDataModal);
+    } else if (nameSection === CONTENT) {
+      setColorPicker(colorData);
+    } else if (nameSection === BUTTONS) {
+      setColorPicker(colorButtons);
+    } else if (nameSection === MODAL_BOX) {
+      setColorPicker(colorModalBox);
     }
-    else if (nameSection === BUTTONS) {
-      setColorPicker(colorButtons)
-    }
-    else if (nameSection === MODAL_BOX) {
-      setColorPicker(colorModalBox)
-    }
-  }, [])
+  }, []);
 
-  const openColorList = Boolean(anchorElColor)
+  const openColorList = Boolean(anchorElColor);
   return (
     <div className={classes.content}>
       <div className={`text ${classes.title}`}>Change Color Text</div>
@@ -184,7 +238,7 @@ const ColorChanger = ({ nameSection }: any) => {
           justifyContent: "center",
           alignItems: "center",
           border: "0.5px solid #c7c4c4a2",
-          marginRight: "10px"
+          marginRight: "10px",
         }}
       >
         <span
@@ -193,7 +247,7 @@ const ColorChanger = ({ nameSection }: any) => {
             height: "20px",
             backgroundColor: colorPicker,
             marginRight: "10px",
-            border: "0.5px solid #c7c4c4a2"
+            border: "0.5px solid #c7c4c4a2",
           }}
         ></span>
         {colorPicker}
@@ -205,6 +259,6 @@ const ColorChanger = ({ nameSection }: any) => {
         getColor={handleGetColor}
       />
     </div>
-  )
-}
-export default ColorChanger
+  );
+};
+export default ColorChanger;

@@ -1,8 +1,9 @@
-import { useModalsAppProvider } from "@appProvider/ModalsAppProvider"
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles"
-import { IconButton } from "@mui/material"
-import SettingsData from "@plugins/settingsData/settingsData"
-import Edit from "../../icons/Edit"
+import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import { IconButton } from "@mui/material";
+import SettingsData from "@plugins/settingsData/settingsData";
+import { useState } from "react";
+import Edit from "../../icons/Edit";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     containerBtn: {
@@ -12,7 +13,7 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: "9px",
 
       height: "2rem",
-      width: "2.2rem"
+      width: "2.2rem",
     },
     container: {
       flexDirection: "row",
@@ -23,21 +24,22 @@ const useStyles = makeStyles((theme: Theme) =>
       right: "0px",
       height: "fit-content",
       width: "fit-content",
-      zIndex: 1000
-    }
+      zIndex: 1000,
+    },
   })
-)
+);
 type DataOptionsUiProps = {
-  style: any
-}
+  style: any;
+};
 const DataOptionsUi = ({ style }: DataOptionsUiProps) => {
-  const classes = useStyles()
-  const { dialogOpenData,
-    setDialogOpenData }: any = useModalsAppProvider()
+  const classes = useStyles();
+  const [dialogOpenData, setDialogOpenData] = useState(false);
   const handleClickOpen = () => {
-    setDialogOpenData(true)
-  }
-
+    setDialogOpenData(true);
+  };
+  const handleClickClose = () => {
+    setDialogOpenData(false);
+  };
   return (
     <div
       className={"popover-option"}
@@ -51,22 +53,24 @@ const DataOptionsUi = ({ style }: DataOptionsUiProps) => {
         height: "fit-content",
         width: "fit-content",
         zIndex: 1000,
-        ...style
+        ...style,
       }}
     >
       <IconButton
         onClick={handleClickOpen}
         sx={{
           "&.MuiButtonBase-root:hover": {
-            bgcolor: "transparent"
-          }
+            bgcolor: "transparent",
+          },
         }}
         className={classes.containerBtn}
       >
         <Edit />
       </IconButton>
-      {dialogOpenData && <SettingsData open={dialogOpenData} />}
+      {dialogOpenData && (
+        <SettingsData open={dialogOpenData} close={handleClickClose} />
+      )}
     </div>
-  )
-}
-export default DataOptionsUi
+  );
+};
+export default DataOptionsUi;

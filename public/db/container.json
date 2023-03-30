@@ -67,10 +67,10 @@
                                     },
                                     "dataI18n": {
                                         "en": {
-                                            "fontSizeLogo": "20",
+                                            "fontSizeLogo": "1.5rem",
                                             "backgroundColorLogo": "",
-                                            "colorLogo": "",
-                                            "fontLogo": "",
+                                            "colorLogo": "#fff",
+                                            "fontLogo": "Ppneuemontreal",
                                             "borderBottomColorLogo": "#CFCFCF",
                                             "borderBottomWidthLogo": "0",
                                             "borderTopColorLogo": "#CFCFCF",
@@ -96,7 +96,7 @@
                                             "marginLeftLogo": "2",
                                             "marginRightLogo": "3",
                                             "minWidthLogo": "120",
-                                            "maxWidthLogo": "300",
+                                            "maxWidthLogo": "200",
                                             "minHeightLogo": "60",
                                             "maxHeightLogo": "60"
                                         }

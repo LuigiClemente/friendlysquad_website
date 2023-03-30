@@ -1,16 +1,16 @@
-import { useAppProvider } from "@appProvider/AppProvider"
-import { useAppStateProvider } from "@appProvider/AppStateProvider"
-import { useModalsAppProvider } from "@appProvider/ModalsAppProvider"
-import { useUndoable } from "@appProvider/UndoableProvider"
-import { useUpdateSettingsProvider } from "@appProvider/UpdateSettingsProvider"
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles"
-import Box from "@mui/material/Box"
-import Divider from "@mui/material/Divider"
-import Fade from "@mui/material/Fade"
-import Popper from "@mui/material/Popper"
-import { CompactPicker } from "react-color"
-import { updatePluginValue } from "../../../utils/uiController"
-import BorderType from "../../BorderType"
+import { useAppProvider } from "@appProvider/AppProvider";
+import { useAppStateProvider } from "@appProvider/AppStateProvider";
+import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
+import { useUndoable } from "@appProvider/UndoableProvider";
+import { useUpdateSettingsProvider } from "@appProvider/UpdateSettingsProvider";
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import Box from "@mui/material/Box";
+import Divider from "@mui/material/Divider";
+import Fade from "@mui/material/Fade";
+import Popper from "@mui/material/Popper";
+import { CompactPicker } from "react-color";
+import { updatePluginValue } from "../../../utils/uiController";
+import BorderType from "../../BorderType";
 import {
   BUTTONS,
   BUTTONS_PLUGIN_ID,
@@ -23,9 +23,9 @@ import {
   VERIFY_DATA_PLUGIN_ID,
   VERIFY_TITLE,
   VERIFY_TITLE_BTN,
-  VERIFY_TITLE_PLUGIN_ID
-} from "../../Constant/const"
-import UpdateWidthColorBorder from "./UpdateWidthColorBorder"
+  VERIFY_TITLE_PLUGIN_ID,
+} from "../../Constant/const";
+import UpdateWidthColorBorder from "./UpdateWidthColorBorder";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -37,36 +37,37 @@ const useStyles = makeStyles((theme: Theme) =>
         border: "none !important",
         borderWidth: "0px",
         borderRadius: "5px",
-        boxShadow: "rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px",
+        boxShadow:
+          "rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px",
         backgroundColor: "white",
-        Padding: "10px"
-      }
+        Padding: "10px",
+      },
     },
     typography: {
-      padding: theme.spacing(2)
-    }
+      padding: theme.spacing(2),
+    },
   })
-)
+);
 interface PopperBorderStyleProps {
-  anchorEl?: any
-  open?: boolean
-  id?: any
-  valueWidth?: any
-  valueStyle?: any
-  valueColor?: any
-  nameSection?: any
-  sideName?: any
+  anchorEl?: any;
+  open?: boolean;
+  id?: any;
+  valueWidth?: any;
+  valueStyle?: any;
+  valueColor?: any;
+  nameSection?: any;
+  sideName?: any;
 }
 const PopperBorderStyle = ({
   anchorEl,
   open,
   id,
   nameSection,
-  sideName
+  sideName,
 }: PopperBorderStyleProps) => {
   // const [borderWidth, setBorderWidth] = React.useState(0)
   // const [borderColor, setBorderColor] = React.useState("#000000")
-  const classes = useStyles()
+  const classes = useStyles();
 
   const {
     borderStyle,
@@ -74,10 +75,10 @@ const PopperBorderStyle = ({
     setBorderColor,
     setBorderWidth,
     borderWidth,
-    borderColor
-  }: any = useUpdateSettingsProvider()
+    borderColor,
+  }: any = useUpdateSettingsProvider();
 
-  console.log("border style dialogs", nameSection, sideName)
+  console.log("border style dialogs", nameSection, sideName);
 
   const {
     setHeaderDBFormat,
@@ -101,8 +102,8 @@ const PopperBorderStyle = ({
     setBorderLeftColorLogo,
     setBorderLeftWidthLogo,
     setBorderRightColorLogo,
-    setBorderRightWidthLogo
-  }: any = useAppProvider()
+    setBorderRightWidthLogo,
+  }: any = useAppProvider();
   // set use state size
   const {
     // -------------------------- Data --------------------------
@@ -118,6 +119,7 @@ const PopperBorderStyle = ({
     setBorderBottomWidthDataModal,
     setBorderTopWidthDataModal,
     setBorderLeftWidthDataModal,
+    borderLeftWidthDataModal,
     setBorderRightWidthDataModal,
 
     // -------------------------- Data Btn --------------------------
@@ -151,19 +153,18 @@ const PopperBorderStyle = ({
     //  db json table for modals
     dbModalsFormat,
     setDbModalsFormat,
-     // -----------------------------------  buttons
-     setBorderBottomColorButtons,
-     setBorderRightColorButtons,
-     setBorderLeftColorButtons,
-     setBorderTopColorButtons,
-     // --------------- border width
-     // border width
-     setBorderRightWidthButtons,
-     setBorderLeftWidthButtons,
-     setBorderTopWidthButtons,
-     setBorderBottomWidthButtons
-
-  }: any = useModalsAppProvider()
+    // -----------------------------------  buttons
+    setBorderBottomColorButtons,
+    setBorderRightColorButtons,
+    setBorderLeftColorButtons,
+    setBorderTopColorButtons,
+    // --------------- border width
+    // border width
+    setBorderRightWidthButtons,
+    setBorderLeftWidthButtons,
+    setBorderTopWidthButtons,
+    setBorderBottomWidthButtons,
+  }: any = useModalsAppProvider();
   // set use state margin
 
   // const {
@@ -227,26 +228,44 @@ const PopperBorderStyle = ({
     marginLeft,
     setMarginLeft,
     marginRight,
-    setMarginRight
-  }: any = useUpdateSettingsProvider()
-  UpdateWidthColorBorder(nameSection, sideName)
-  const { setContent }: any = useUndoable()
+    setMarginRight,
+  }: any = useUpdateSettingsProvider();
+  UpdateWidthColorBorder(nameSection, sideName);
+  const { setContent }: any = useUndoable();
   //handle for border bottom color change
   const handleBorderBottomColorChange = (e: any) => {
     if (nameSection === LOGO) {
-      setBorderBottomColorLogo(e.hex)
+      setBorderBottomColorLogo(e.hex);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "borderBottomColorLogo", e.hex)
-      )
-      setContent({ name: "borderBottomColor", value: e.hex, nameSection: LOGO })
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "borderBottomColorLogo",
+          e.hex
+        )
+      );
+      setContent({
+        name: "borderBottomColor",
+        value: e.hex,
+        nameSection: LOGO,
+      });
     } else if (nameSection === HEADER) {
-      setBorderBottomColorHeader(e.hex)
+      setBorderBottomColorHeader(e.hex);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "borderBottomColorHeader", e.hex)
-      )
-      setContent({ name: "borderBottomColor", value: e.hex, nameSection: HEADER })
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "borderBottomColorHeader",
+          e.hex
+        )
+      );
+      setContent({
+        name: "borderBottomColor",
+        value: e.hex,
+        nameSection: HEADER,
+      });
     } else if (nameSection === VERIFY_TITLE) {
-      setBorderBottomColorTitleModal(e.hex)
+      setBorderBottomColorTitleModal(e.hex);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -254,10 +273,14 @@ const PopperBorderStyle = ({
           "borderBottomColorTitleModal",
           e.hex
         )
-      )
-      setContent({ name: "borderBottomColor", value: e.hex, nameSection: VERIFY_TITLE })
+      );
+      setContent({
+        name: "borderBottomColor",
+        value: e.hex,
+        nameSection: VERIFY_TITLE,
+      });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderBottomColorDataTitle(e.hex)
+      setBorderBottomColorDataTitle(e.hex);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -265,10 +288,14 @@ const PopperBorderStyle = ({
           "borderBottomColorDataTitle",
           e.hex
         )
-      )
-      setContent({ name: "borderBottomColor", value: e.hex, nameSection: VERIFY_TITLE_BTN })
+      );
+      setContent({
+        name: "borderBottomColor",
+        value: e.hex,
+        nameSection: VERIFY_TITLE_BTN,
+      });
     } else if (nameSection === VERIFY_DATA) {
-      setBorderBottomColorData(e.hex)
+      setBorderBottomColorData(e.hex);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -276,10 +303,14 @@ const PopperBorderStyle = ({
           "borderBottomColorData",
           e.hex
         )
-      )
-      setContent({ name: "borderBottomColor", value: e.hex, nameSection: VERIFY_DATA })
+      );
+      setContent({
+        name: "borderBottomColor",
+        value: e.hex,
+        nameSection: VERIFY_DATA,
+      });
     } else if (nameSection === VERIFY_CODE) {
-      setBorderBottomColorDataModal(e.hex)
+      setBorderBottomColorDataModal(e.hex);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -287,25 +318,44 @@ const PopperBorderStyle = ({
           "borderBottomColorDataModal",
           e.hex
         )
-      )
-      setContent({ name: "borderBottomColor", value: e.hex, nameSection: VERIFY_CODE })
+      );
+      setContent({
+        name: "borderBottomColor",
+        value: e.hex,
+        nameSection: VERIFY_CODE,
+      });
+    } else if (nameSection === BUTTONS) {
+      setBorderBottomColorButtons(e.hex);
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "borderBottomColorButtons",
+          e.hex
+        )
+      );
+      setContent({
+        name: "borderBottomColor",
+        value: e.hex,
+        nameSection: BUTTONS,
+      });
     }
-    else if (nameSection === BUTTONS) {
-      setBorderBottomColorButtons(e.hex)
-      setDbModalsFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID, "borderBottomColorButtons", e.hex))
-      setContent({ name: "borderBottomColor", value: e.hex, nameSection: BUTTONS })
-    }
-  }
+  };
   //handle for border top color change
   const handleBorderTopColorChange = (e: any) => {
     if (nameSection === LOGO) {
-      setBorderTopColorLogo(e.hex)
+      setBorderTopColorLogo(e.hex);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "borderTopColorLogo", e.hex)
-      )
-      setContent({ name: "borderTopColor", value: e.hex, nameSection: LOGO })
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "borderTopColorLogo",
+          e.hex
+        )
+      );
+      setContent({ name: "borderTopColor", value: e.hex, nameSection: LOGO });
     } else if (nameSection === VERIFY_TITLE) {
-      setBorderTopColorTitleModal(e.hex)
+      setBorderTopColorTitleModal(e.hex);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -313,10 +363,14 @@ const PopperBorderStyle = ({
           "borderTopColorTitleModal",
           e.hex
         )
-      )
-      setContent({ name: "borderTopColor", value: e.hex, nameSection: VERIFY_TITLE })
+      );
+      setContent({
+        name: "borderTopColor",
+        value: e.hex,
+        nameSection: VERIFY_TITLE,
+      });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderTopColorDataTitle(e.hex)
+      setBorderTopColorDataTitle(e.hex);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -324,43 +378,89 @@ const PopperBorderStyle = ({
           "borderTopColorDataTitle",
           e.hex
         )
-      )
-      setContent({ name: "borderTopColor", value: e.hex, nameSection: VERIFY_TITLE_BTN })
+      );
+      setContent({
+        name: "borderTopColor",
+        value: e.hex,
+        nameSection: VERIFY_TITLE_BTN,
+      });
     } else if (nameSection === VERIFY_DATA) {
-      setBorderTopColorData(e.hex)
+      setBorderTopColorData(e.hex);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "borderTopColorData", e.hex)
-      )
-      setContent({ name: "borderTopColor", value: e.hex, nameSection: VERIFY_DATA })
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "borderTopColorData",
+          e.hex
+        )
+      );
+      setContent({
+        name: "borderTopColor",
+        value: e.hex,
+        nameSection: VERIFY_DATA,
+      });
     } else if (nameSection === VERIFY_CODE) {
-      setBorderTopColorDataModal(e.hex)
+      setBorderTopColorDataModal(e.hex);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "borderTopColorDataModal", e.hex)
-      )
-      setContent({ name: "borderTopColor", value: e.hex, nameSection: VERIFY_CODE })
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "borderTopColorDataModal",
+          e.hex
+        )
+      );
+      setContent({
+        name: "borderTopColor",
+        value: e.hex,
+        nameSection: VERIFY_CODE,
+      });
+    } else if (nameSection === BUTTONS) {
+      setBorderTopColorButtons(e.hex);
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "borderTopColorButtons",
+          e.hex
+        )
+      );
+      setContent({
+        name: "borderTopColor",
+        value: e.hex,
+        nameSection: BUTTONS,
+      });
     }
-    else if (nameSection === BUTTONS) {
-      setBorderTopColorButtons(e.hex)
-      setDbModalsFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID, "borderTopColorButtons", e.hex))
-      setContent({ name: "borderTopColor", value: e.hex, nameSection: BUTTONS })
-    }
-  }
+  };
   //handle for border left color change
   const handleBorderLeftColorChange = (e: any) => {
     if (nameSection === LOGO) {
-      setBorderLeftColorLogo(e.hex)
+      setBorderLeftColorLogo(e.hex);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "borderLeftColorLogo", e.hex)
-      )
-      setContent({ name: "borderLeftColor", value: e.hex, nameSection: LOGO })
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "borderLeftColorLogo",
+          e.hex
+        )
+      );
+      setContent({ name: "borderLeftColor", value: e.hex, nameSection: LOGO });
     } else if (nameSection === HEADER) {
-      setBorderLeftColorHeader(e.hex)
+      setBorderLeftColorHeader(e.hex);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "borderLeftColorHeader", e.hex)
-      )
-      setContent({ name: "borderLeftColor", value: e.hex, nameSection: HEADER })
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "borderLeftColorHeader",
+          e.hex
+        )
+      );
+      setContent({
+        name: "borderLeftColor",
+        value: e.hex,
+        nameSection: HEADER,
+      });
     } else if (nameSection === VERIFY_TITLE) {
-      setBorderLeftColorTitleModal(e.hex)
+      setBorderLeftColorTitleModal(e.hex);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -368,10 +468,14 @@ const PopperBorderStyle = ({
           "borderLeftColorTitleModal",
           e.hex
         )
-      )
-      setContent({ name: "borderLeftColor", value: e.hex, nameSection: VERIFY_TITLE })
+      );
+      setContent({
+        name: "borderLeftColor",
+        value: e.hex,
+        nameSection: VERIFY_TITLE,
+      });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderLeftColorDataTitle(e.hex)
+      setBorderLeftColorDataTitle(e.hex);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -379,43 +483,89 @@ const PopperBorderStyle = ({
           "borderLeftColorDataTitle",
           e.hex
         )
-      )
-      setContent({ name: "borderLeftColor", value: e.hex, nameSection: VERIFY_TITLE_BTN })
+      );
+      setContent({
+        name: "borderLeftColor",
+        value: e.hex,
+        nameSection: VERIFY_TITLE_BTN,
+      });
     } else if (nameSection === VERIFY_DATA) {
-      setBorderLeftColorData(e.hex)
+      setBorderLeftColorData(e.hex);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "borderLeftColorData", e.hex)
-      )
-      setContent({ name: "borderLeftColor", value: e.hex, nameSection: VERIFY_DATA })
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "borderLeftColorData",
+          e.hex
+        )
+      );
+      setContent({
+        name: "borderLeftColor",
+        value: e.hex,
+        nameSection: VERIFY_DATA,
+      });
     } else if (nameSection === VERIFY_CODE) {
-      setBorderLeftColorDataModal(e.hex)
+      setBorderLeftColorDataModal(e.hex);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "borderLeftColorDataModal", e.hex)
-      )
-      setContent({ name: "borderLeftColor", value: e.hex, nameSection: VERIFY_CODE })
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "borderLeftColorDataModal",
+          e.hex
+        )
+      );
+      setContent({
+        name: "borderLeftColor",
+        value: e.hex,
+        nameSection: VERIFY_CODE,
+      });
+    } else if (nameSection === BUTTONS) {
+      setBorderLeftColorButtons(e.hex);
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "borderLeftColorButtons",
+          e.hex
+        )
+      );
+      setContent({
+        name: "borderLeftColor",
+        value: e.hex,
+        nameSection: BUTTONS,
+      });
     }
-    else if (nameSection === BUTTONS) {
-      setBorderLeftColorButtons(e.hex)
-      setDbModalsFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID, "borderLeftColorButtons", e.hex))
-      setContent({ name: "borderLeftColor", value: e.hex, nameSection: BUTTONS })
-    }
-  }
+  };
   //handle for border right color change
   const handleBorderRightColorChange = (e: any) => {
     if (nameSection === LOGO) {
-      setBorderRightColorLogo(e.hex)
+      setBorderRightColorLogo(e.hex);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "borderRightColorLogo", e.hex)
-      )
-      setContent({ name: "borderRightColor", value: e.hex, nameSection: LOGO })
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "borderRightColorLogo",
+          e.hex
+        )
+      );
+      setContent({ name: "borderRightColor", value: e.hex, nameSection: LOGO });
     } else if (nameSection === HEADER) {
-      setBorderRightColorHeader(e.hex)
+      setBorderRightColorHeader(e.hex);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "borderRightColorHeader", e.hex)
-      )
-      setContent({ name: "borderRightColor", value: e.hex, nameSection: HEADER })
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "borderRightColorHeader",
+          e.hex
+        )
+      );
+      setContent({
+        name: "borderRightColor",
+        value: e.hex,
+        nameSection: HEADER,
+      });
     } else if (nameSection === VERIFY_TITLE) {
-      setBorderRightColorTitleModal(e.hex)
+      setBorderRightColorTitleModal(e.hex);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -423,10 +573,14 @@ const PopperBorderStyle = ({
           "borderRightColorTitleModal",
           e.hex
         )
-      )
-      setContent({ name: "borderRightColor", value: e.hex, nameSection: VERIFY_TITLE })
+      );
+      setContent({
+        name: "borderRightColor",
+        value: e.hex,
+        nameSection: VERIFY_TITLE,
+      });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderRightColorDataTitle(e.hex)
+      setBorderRightColorDataTitle(e.hex);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -434,10 +588,14 @@ const PopperBorderStyle = ({
           "borderRightColorDataTitle",
           e.hex
         )
-      )
-      setContent({ name: "borderRightColor", value: e.hex, nameSection: VERIFY_TITLE_BTN })
+      );
+      setContent({
+        name: "borderRightColor",
+        value: e.hex,
+        nameSection: VERIFY_TITLE_BTN,
+      });
     } else if (nameSection === VERIFY_DATA) {
-      setBorderRightColorData(e.hex)
+      setBorderRightColorData(e.hex);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -445,10 +603,14 @@ const PopperBorderStyle = ({
           "borderRightColorData",
           e.hex
         )
-      )
-      setContent({ name: "borderRightColor", value: e.hex, nameSection: VERIFY_DATA })
+      );
+      setContent({
+        name: "borderRightColor",
+        value: e.hex,
+        nameSection: VERIFY_DATA,
+      });
     } else if (nameSection === VERIFY_CODE) {
-      setBorderRightColorDataModal(e.hex)
+      setBorderRightColorDataModal(e.hex);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -456,27 +618,50 @@ const PopperBorderStyle = ({
           "borderRightColorDataModal",
           e.hex
         )
-      )
-      setContent({ name: "borderRightColor", value: e.hex, nameSection: VERIFY_CODE })
+      );
+      setContent({
+        name: "borderRightColor",
+        value: e.hex,
+        nameSection: VERIFY_CODE,
+      });
+    } else if (nameSection === BUTTONS) {
+      setBorderRightColorButtons(e.hex);
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "borderRightColorButtons",
+          e.hex
+        )
+      );
+      setContent({
+        name: "borderRightColor",
+        value: e.hex,
+        nameSection: BUTTONS,
+      });
     }
-    else if (nameSection === BUTTONS) {
-      setBorderRightColorButtons(e.hex)
-      setDbModalsFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID, "borderRightColorButtons", e.hex))
-      setContent({ name: "borderRightColor", value: e.hex, nameSection: BUTTONS })
-    }
-  }
+  };
 
   //handle for border bottom width change
   const handleBorderBottomWidthChange = (e: any) => {
-    setBorderBottomWidth(e.target.value)
+    setBorderBottomWidth(e.target.value);
     if (nameSection === LOGO) {
-      setBorderBottomWidthLogo(e.target.value)
+      setBorderBottomWidthLogo(e.target.value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "borderBottomWidthLogo", e.target.value)
-      )
-      setContent({ name: "borderBottomWidth", value: e.target.value, nameSection: LOGO })
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "borderBottomWidthLogo",
+          e.target.value
+        )
+      );
+      setContent({
+        name: "borderBottomWidth",
+        value: e.target.value,
+        nameSection: LOGO,
+      });
     } else if (nameSection === HEADER) {
-      setBorderBottomWidthHeader(e.target.value)
+      setBorderBottomWidthHeader(e.target.value);
       setHeaderDBFormat(
         updatePluginValue(
           headerDBFormat,
@@ -484,10 +669,14 @@ const PopperBorderStyle = ({
           "borderBottomWidthHeader",
           e.target.value
         )
-      )
-      setContent({ name: "borderBottomWidth", value: e.target.value, nameSection: HEADER })
+      );
+      setContent({
+        name: "borderBottomWidth",
+        value: e.target.value,
+        nameSection: HEADER,
+      });
     } else if (nameSection === VERIFY_TITLE) {
-      setBorderBottomWidthTitleModal(e.target.value)
+      setBorderBottomWidthTitleModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -495,10 +684,14 @@ const PopperBorderStyle = ({
           "borderBottomWidthTitleModal",
           e.target.value
         )
-      )
-      setContent({ name: "borderBottomWidth", value: e.target.value, nameSection: VERIFY_TITLE })
+      );
+      setContent({
+        name: "borderBottomWidth",
+        value: e.target.value,
+        nameSection: VERIFY_TITLE,
+      });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderBottomWidthDataTitle(e.target.value)
+      setBorderBottomWidthDataTitle(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -506,14 +699,14 @@ const PopperBorderStyle = ({
           "borderBottomWidthDataTitle",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderBottomWidth",
         value: e.target.value,
-        nameSection: VERIFY_TITLE_BTN
-      })
+        nameSection: VERIFY_TITLE_BTN,
+      });
     } else if (nameSection === VERIFY_DATA) {
-      setBorderBottomWidthData(e.target.value)
+      setBorderBottomWidthData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -521,10 +714,14 @@ const PopperBorderStyle = ({
           "borderBottomWidthData",
           e.target.value
         )
-      )
-      setContent({ name: "borderBottomWidth", value: e.target.value, nameSection: VERIFY_DATA })
+      );
+      setContent({
+        name: "borderBottomWidth",
+        value: e.target.value,
+        nameSection: VERIFY_DATA,
+      });
     } else if (nameSection === VERIFY_CODE) {
-      setBorderBottomWidthDataModal(e.target.value)
+      setBorderBottomWidthDataModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -532,37 +729,65 @@ const PopperBorderStyle = ({
           "borderBottomWidthDataModal",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderBottomWidth",
         value: e.target.value,
-        nameSection: VERIFY_CODE
-      })
+        nameSection: VERIFY_CODE,
+      });
+    } else if (nameSection === BUTTONS) {
+      setBorderBottomWidthButtons(e.hex);
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "borderBottomWidthButtons",
+          e.hex
+        )
+      );
+      setContent({
+        name: "borderBottomWidth",
+        value: e.hex,
+        nameSection: BUTTONS,
+      });
     }
-    else if (nameSection === BUTTONS) {
-      setBorderBottomWidthButtons(e.hex)
-      setDbModalsFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID, "borderBottomWidthButtons", e.hex))
-      setContent({ name: "borderBottomWidth", value: e.hex, nameSection: BUTTONS })
-    }
-  }
+  };
 
   //handle for border top width change
   const handleBorderTopWidthChange = (e: any) => {
-    setBorderTopWidth(e.target.value)
+    setBorderTopWidth(e.target.value);
     if (nameSection === LOGO) {
-      setBorderTopWidthLogo(e.target.value)
+      setBorderTopWidthLogo(e.target.value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "borderTopWidthLogo", e.target.value)
-      )
-      setContent({ name: "borderTopWidth", value: e.target.value, nameSection: LOGO })
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "borderTopWidthLogo",
+          e.target.value
+        )
+      );
+      setContent({
+        name: "borderTopWidth",
+        value: e.target.value,
+        nameSection: LOGO,
+      });
     } else if (nameSection === HEADER) {
-      setBorderTopWidthHeader(e.target.value)
+      setBorderTopWidthHeader(e.target.value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "borderTopWidthHeader", e.target.value)
-      )
-      setContent({ name: "borderTopWidth", value: e.target.value, nameSection: HEADER })
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "borderTopWidthHeader",
+          e.target.value
+        )
+      );
+      setContent({
+        name: "borderTopWidth",
+        value: e.target.value,
+        nameSection: HEADER,
+      });
     } else if (nameSection === VERIFY_TITLE) {
-      setBorderTopWidthTitleModal(e.target.value)
+      setBorderTopWidthTitleModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -570,10 +795,14 @@ const PopperBorderStyle = ({
           "borderTopWidthTitleModal",
           e.target.value
         )
-      )
-      setContent({ name: "borderTopWidth", value: e.target.value, nameSection: VERIFY_TITLE })
+      );
+      setContent({
+        name: "borderTopWidth",
+        value: e.target.value,
+        nameSection: VERIFY_TITLE,
+      });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderTopWidthDataTitle(e.target.value)
+      setBorderTopWidthDataTitle(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -581,10 +810,14 @@ const PopperBorderStyle = ({
           "borderTopWidthDataTitle",
           e.target.value
         )
-      )
-      setContent({ name: "borderTopWidth", value: e.target.value, nameSection: VERIFY_TITLE_BTN })
+      );
+      setContent({
+        name: "borderTopWidth",
+        value: e.target.value,
+        nameSection: VERIFY_TITLE_BTN,
+      });
     } else if (nameSection === VERIFY_DATA) {
-      setBorderTopWidthData(e.target.value)
+      setBorderTopWidthData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -592,10 +825,14 @@ const PopperBorderStyle = ({
           "borderTopWidthData",
           e.target.value
         )
-      )
-      setContent({ name: "borderTopWidth", value: e.target.value, nameSection: VERIFY_DATA })
+      );
+      setContent({
+        name: "borderTopWidth",
+        value: e.target.value,
+        nameSection: VERIFY_DATA,
+      });
     } else if (nameSection === VERIFY_CODE) {
-      setBorderTopWidthDataModal(e.target.value)
+      setBorderTopWidthDataModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -603,27 +840,50 @@ const PopperBorderStyle = ({
           "borderTopWidthDataModal",
           e.target.value
         )
-      )
-      setContent({ name: "borderTopWidth", value: e.target.value, nameSection: VERIFY_CODE })
+      );
+      setContent({
+        name: "borderTopWidth",
+        value: e.target.value,
+        nameSection: VERIFY_CODE,
+      });
+    } else if (nameSection === BUTTONS) {
+      setBorderTopWidthButtons(e.hex);
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "borderTopWidthButtons",
+          e.hex
+        )
+      );
+      setContent({
+        name: "borderTopWidth",
+        value: e.hex,
+        nameSection: BUTTONS,
+      });
     }
-    else if (nameSection === BUTTONS) {
-      setBorderTopWidthButtons(e.hex)
-      setDbModalsFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID, "borderTopWidthButtons", e.hex))
-      setContent({ name: "borderTopWidth", value: e.hex, nameSection: BUTTONS })
-    }
-  }
+  };
 
   //handle for border left width change
   const handleBorderLeftWidthChange = (e: any) => {
-    setBorderLeftWidth(e.target.value)
+    setBorderLeftWidth(e.target.value);
     if (nameSection === LOGO) {
-      setBorderLeftWidthLogo(e.target.value)
+      setBorderLeftWidthLogo(e.target.value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "borderLeftWidthLogo", e.target.value)
-      )
-      setContent({ name: "borderLeftWidth", value: e.target.value, nameSection: LOGO })
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "borderLeftWidthLogo",
+          e.target.value
+        )
+      );
+      setContent({
+        name: "borderLeftWidth",
+        value: e.target.value,
+        nameSection: LOGO,
+      });
     } else if (nameSection === VERIFY_TITLE) {
-      setBorderLeftWidthTitleModal(e.target.value)
+      setBorderLeftWidthTitleModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -631,10 +891,14 @@ const PopperBorderStyle = ({
           "borderLeftWidthTitleModal",
           e.target.value
         )
-      )
-      setContent({ name: "borderLeftWidth", value: e.target.value, nameSection: VERIFY_TITLE })
+      );
+      setContent({
+        name: "borderLeftWidth",
+        value: e.target.value,
+        nameSection: VERIFY_TITLE,
+      });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderLeftWidthDataTitle(e.target.value)
+      setBorderLeftWidthDataTitle(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -642,10 +906,14 @@ const PopperBorderStyle = ({
           "borderLeftWidthDataTitle",
           e.target.value
         )
-      )
-      setContent({ name: "borderLeftWidth", value: e.target.value, nameSection: VERIFY_TITLE_BTN })
+      );
+      setContent({
+        name: "borderLeftWidth",
+        value: e.target.value,
+        nameSection: VERIFY_TITLE_BTN,
+      });
     } else if (nameSection === VERIFY_DATA) {
-      setBorderLeftWidthData(e.target.value)
+      setBorderLeftWidthData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -653,10 +921,14 @@ const PopperBorderStyle = ({
           "borderLeftWidthData",
           e.target.value
         )
-      )
-      setContent({ name: "borderLeftWidth", value: e.target.value, nameSection: VERIFY_DATA })
+      );
+      setContent({
+        name: "borderLeftWidth",
+        value: e.target.value,
+        nameSection: VERIFY_DATA,
+      });
     } else if (nameSection === VERIFY_CODE) {
-      setBorderLeftWidthDataModal(e.target.value)
+      setBorderLeftWidthDataModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -664,31 +936,51 @@ const PopperBorderStyle = ({
           "borderLeftWidthDataModal",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderLeftWidth",
         value: e.target.value,
-        nameSection: VERIFY_CODE
-      })
+        nameSection: VERIFY_CODE,
+      });
+      console.log(borderLeftWidthDataModal);
+    } else if (nameSection === BUTTONS) {
+      setBorderLeftWidthButtons(e.hex);
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "borderLeftWidthButtons",
+          e.hex
+        )
+      );
+      setContent({
+        name: "borderLeftWidth",
+        value: e.hex,
+        nameSection: BUTTONS,
+      });
     }
-    else if (nameSection === BUTTONS) {
-      setBorderLeftWidthButtons(e.hex)
-      setDbModalsFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID, "borderLeftWidthButtons", e.hex))
-      setContent({ name: "borderLeftWidth", value: e.hex, nameSection: BUTTONS })
-    }
-  }
+  };
 
   //handle for border right width change
   const handleBorderRightWidthChange = (e: any) => {
-    setBorderRightWidth(e.target.value)
+    setBorderRightWidth(e.target.value);
     if (nameSection === LOGO) {
-      setBorderRightWidthLogo(e.target.value)
+      setBorderRightWidthLogo(e.target.value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "borderRightWidthLogo", e.target.value)
-      )
-      setContent({ name: "borderRightWidth", value: e.target.value, nameSection: LOGO })
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "borderRightWidthLogo",
+          e.target.value
+        )
+      );
+      setContent({
+        name: "borderRightWidth",
+        value: e.target.value,
+        nameSection: LOGO,
+      });
     } else if (nameSection === VERIFY_TITLE) {
-      setBorderRightWidthTitleModal(e.target.value)
+      setBorderRightWidthTitleModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -696,10 +988,14 @@ const PopperBorderStyle = ({
           "borderRightWidthTitleModal",
           e.target.value
         )
-      )
-      setContent({ name: "borderRightWidth", value: e.target.value, nameSection: VERIFY_TITLE })
+      );
+      setContent({
+        name: "borderRightWidth",
+        value: e.target.value,
+        nameSection: VERIFY_TITLE,
+      });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderRightWidthDataTitle(e.target.value)
+      setBorderRightWidthDataTitle(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -707,10 +1003,14 @@ const PopperBorderStyle = ({
           "borderRightWidthDataTitle",
           e.target.value
         )
-      )
-      setContent({ name: "borderRightWidth", value: e.target.value, nameSection: VERIFY_TITLE_BTN })
+      );
+      setContent({
+        name: "borderRightWidth",
+        value: e.target.value,
+        nameSection: VERIFY_TITLE_BTN,
+      });
     } else if (nameSection === VERIFY_DATA) {
-      setBorderRightWidthData(e.target.value)
+      setBorderRightWidthData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -718,10 +1018,14 @@ const PopperBorderStyle = ({
           "borderRightWidthData",
           e.target.value
         )
-      )
-      setContent({ name: "borderRightWidth", value: e.target.value, nameSection: VERIFY_DATA })
+      );
+      setContent({
+        name: "borderRightWidth",
+        value: e.target.value,
+        nameSection: VERIFY_DATA,
+      });
     } else if (nameSection === VERIFY_CODE) {
-      setBorderRightWidthDataModal(e.target.value)
+      setBorderRightWidthDataModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -729,56 +1033,66 @@ const PopperBorderStyle = ({
           "borderRightWidthDataModal",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderRightWidth",
         value: e.target.value,
-        nameSection: VERIFY_CODE
-      })
+        nameSection: VERIFY_CODE,
+      });
+    } else if (nameSection === BUTTONS) {
+      setBorderRightWidthButtons(e.hex);
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "borderRightWidthButtons",
+          e.hex
+        )
+      );
+      setContent({
+        name: "borderRightWidth",
+        value: e.hex,
+        nameSection: BUTTONS,
+      });
     }
-    else if (nameSection === BUTTONS) {
-      setBorderRightWidthButtons(e.hex)
-      setDbModalsFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID, "borderRightWidthButtons", e.hex))
-      setContent({ name: "borderRightWidth", value: e.hex, nameSection: BUTTONS })
-    }
-  }
+  };
   //
   const handleBorderColor = (e: any) => {
-    console.log(" color :", e.hex)
-    setBorderColor(e.hex)
+    console.log(" color :", e.hex);
+    setBorderColor(e.hex);
     switch (sideName) {
       case "top":
-        handleBorderTopColorChange(e)
-        break
+        handleBorderTopColorChange(e);
+        break;
       case "bottom":
-        handleBorderBottomColorChange(e)
-        break
+        handleBorderBottomColorChange(e);
+        break;
       case "right":
-        handleBorderRightColorChange(e)
-        break
+        handleBorderRightColorChange(e);
+        break;
       case "left":
-        handleBorderLeftColorChange(e)
-        break
+        handleBorderLeftColorChange(e);
+        break;
     }
-  }
+  };
 
   const handleBorderWidth = (e: any) => {
-    setBorderWidth(e.target.value)
+    setBorderWidth(e.target.value);
     switch (sideName) {
       case "top":
-        handleBorderTopWidthChange(e)
-        break
+        handleBorderTopWidthChange(e);
+        break;
       case "bottom":
-        handleBorderBottomWidthChange(e)
-        break
+        handleBorderBottomWidthChange(e);
+        break;
       case "right":
-        handleBorderRightWidthChange(e)
-        break
+        handleBorderRightWidthChange(e);
+        break;
       case "left":
-        handleBorderLeftWidthChange(e)
-        break
+        handleBorderLeftWidthChange(e);
+        break;
     }
-  }
+  };
 
   return (
     <Popper
@@ -792,9 +1106,10 @@ const PopperBorderStyle = ({
         border: "none !important",
         borderWidth: "0px",
         borderRadius: "5px",
-        boxShadow: "rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px",
+        boxShadow:
+          "rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px",
         width: "fit-content",
-        minWidth: "fit-content"
+        minWidth: "fit-content",
       }}
       className={classes.root}
       placement="top"
@@ -824,6 +1139,6 @@ const PopperBorderStyle = ({
         </Fade>
       )}
     </Popper>
-  )
-}
-export default PopperBorderStyle
+  );
+};
+export default PopperBorderStyle;

@@ -14,8 +14,8 @@ import {
   SECONDARY_DARK,
   SECONDARY_LIGHT,
   SECONDARY_TEXT_LIGHT,
-  wHITE_COLOR
-} from "./ConstantColors"
+  wHITE_COLOR,
+} from "./ConstantColors";
 
 export const themeLightStyle = `
 <style>
@@ -28,7 +28,8 @@ html , body{
   background: ${DEFAULT_BACKGROUND_COLOR_CONTAINER_LIGHT} !important;
 }
 .editorToolbar [class*="shadow-"] * {
-  color: ${DARK_GRAY} !important;
+  // color: ${DARK_GRAY} !important;
+  // color: ${DARK_GRAY} ;
 
 }
 .editorToolbar [class*="shadow-"] .btn-info:hover {
@@ -134,7 +135,7 @@ html , body{
   }
 
   </style>
-`
+`;
 
 export const themeDarkStyle = `
 <style>
@@ -259,4 +260,4 @@ body{
   }
 
   </style> 
-`
+`;

@@ -17,50 +17,52 @@
 "home":{
   "cloud_data":[
      {
-        "title": "Embrace the Git-First Revolution",
+        "title": "Únete a la Revolución Git-First",
         "description":
-          "Experience the power of Git as the foundation of modern infrastructure deployment. Our platform streamlines the deployment process and puts you in complete control of your infrastructure."
+        "Experimenta el poder de Git como la base de la implementación de infraestructuras modernas. Nuestra plataforma agiliza el proceso de implementación y te brinda control total sobre tu infraestructura."
       },
       {
-        "title": "Define, Deploy, and Dominate",
+        "title": "Define, Implementa y Domina",
         "description":
-          "With our platform, you can define your entire infrastructure in your Git repository, making deployment a breeze. Just declare your desired components, and we'll handle the rest"
+          "Con nuestra plataforma, puedes definir toda tu infraestructura en tu repositorio Git, facilitando la implementación. Solo declara tus componentes deseados y nos encargaremos del resto."
       },
       {
-        "title": "Connect and Conquer",
-        "description": "Our extensive resource catalogue, default connections, and secrets management allow you to seamlessly integrate your preferred message brokers. Just declare it in your Git repository, and you're good to go."
+        "title": "Conecta y Conquista",
+        "description": "Nuestro extenso catálogo de recursos, conexiones predeterminadas y gestión de secretos te permiten integrar sin problemas tus message brokers preferidos. Simplemente decláralo en tu repositorio Git y estarás listo."
         
       },
       {
-        "title": "Scale with Ease",
+        "title": "Escala con Facilidad",
         "description":
-          "Adjusting your infrastructure has never been simpler. Customize your resources to meet your needs, and do it all in your favorite programming languages. Experience hassle-free scalability at its finest."
+        "Ajustar tu infraestructura nunca ha sido tan fácil. Personaliza tus recursos según tus necesidades y hazlo todo en tus lenguajes de programación favoritos. Experimenta la escalabilidad sin complicaciones en su máxima expresión."
       },
       {
-        "title": "Join the Community",
+        "title": "Únete a la Comunidad",
         "description":
-          "Become a part of our vibrant community of businesses that have embraced the Git-first approach to infrastructure deployment. Our user-friendly platform empowers developers of all skill levels to deploy and manage infrastructure with confidence"
+        "Forma parte de nuestra vibrante comunidad de empresas que han adoptado el enfoque Git-first para la implementación de infraestructuras. Nuestra plataforma fácil de usar permite a los desarrolladores de todos los niveles de habilidad implementar y administrar infraestructuras con confianza."
       }],
         "globe_data":[
      {
-        "title": "Banking-Grade Security",
-        "description":
-          "At Friendly Squad, we prioritize data security. Our Zero Trust security model and partnership with HarshCorp ensure top-of-the-line protection for your sensitive data through Vault Secrets Management and 15-second renewals."
-      },
-      {
-        "title": "Trust in Our Certifications",
-        "description":
-          "Our commitment to security and reliability is backed by a range of certifications, including ISO 9001, ISO 27001, PCI-DSS, and SSAE16/ISAE3402. Rest assured that your infrastructure is in good hands."
-      },
-      {
-        "title": "Impressive Performance",
-        "description": "Experience lightning-fast data transfer with our network nodes' minimum shared speed of 10 gigabytes per second. This level of performance is crucial for data-intensive applications and processes."
+        "title": "Seguridad de Nivel Bancario",
+        "description":"En Friendly Squad, priorizamos la seguridad de los datos. Nuestro modelo de seguridad Zero Trust y la colaboración con HarshCorp garantizan una protección de primera línea para tus datos sensibles a través de la gestión de secretos de Vault y renovaciones de 15 segundos."
+
         
       },
       {
-        "title": "Secure Your Success",
+        "title": "Confía en Nuestras Certificaciones",
         "description":
-          "We provide reliable and secure services, allowing businesses to focus on their goals without worrying about sensitive data security. Partner with Friendly Squad and unlock your true potential."
+        "Nuestro compromiso con la seguridad y la fiabilidad está respaldado por una serie de certificaciones, incluidas ISO 9001, ISO 27001, PCI-DSS y SSAE16/ISAE3402. Ten la seguridad de que tu infraestructura está en buenas manos."
+      },
+      {
+        "title": "Rendimiento Impresionante",
+        "description": 
+        "Experimenta una transferencia de datos ultrarrápida con la velocidad compartida mínima de 10 gigabytes por segundo de nuestros nodos de red. Este nivel de rendimiento es crucial para aplicaciones y procesos intensivos en datos."
+        
+      },
+      {
+        "title": "Asegura tu Éxito",
+        "description":
+        "Brindamos servicios confiables y seguros, lo que permite a las empresas concentrarse en sus objetivos sin preocuparse por la seguridad de los datos sensibles. Asóciate con Friendly Squad y desbloquea tu verdadero potencial."
       }
     ]
     
@@ -73,6 +75,7 @@
     "Contact": "CONTÁCTANOS",
     "Login": "INICIAR SESIÓN"
   }
+  
 
 }
 

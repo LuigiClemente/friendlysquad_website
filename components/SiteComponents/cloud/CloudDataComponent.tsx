@@ -1,83 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import { useAppProvider } from "@appProvider/AppProvider";
-import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
 import { useState } from "react";
 import CarouselBrand from "../carousel/CarouselBrand";
-import CloudCardList from "./CloudCardList";
+import CarouselCloud from "../carousel/CarouselCloud";
 import CloudMenu from "./CloudMenu";
 
 const CloudDataComponent = () => {
-  const {
-    fontSizeDataTitle,
-    fontDataTitle,
-    colorDataTitle,
-    // backgroundColorDataTitle,
-    //  border
-    borderBottomColorDataTitle,
-    borderBottomWidthDataTitle,
-    borderTopColorDataTitle,
-    borderTopWidthDataTitle,
-    borderLeftColorDataTitle,
-    borderLeftWidthDataTitle,
-    borderRightColorDataTitle,
-    borderRightWidthDataTitle,
-    // border style
-    borderRightStyleDataTitle,
-    borderLeftStyleDataTitle,
-    borderTopStyleDataTitle,
-    borderBottomStyleDataTitle,
-    // border radius
-    borderTopRightRadiusDataTitle,
-    borderTopLeftRadiusDataTitle,
-    borderBottomRightRadiusDataTitle,
-    borderBottomLeftRadiusDataTitle,
-    // padding
-    paddingTopDataTitle,
-    paddingBottomDataTitle,
-    paddingLeftDataTitle,
-    paddingRightDataTitle,
-    // margin
-    marginTopDataTitle,
-    marginBottomDataTitle,
-    marginLeftDataTitle,
-    marginRightDataTitle,
-
-    // -------------------------
-
-    borderBottomColorData,
-    borderBottomWidthData,
-    borderTopColorData,
-    borderTopWidthData,
-    borderLeftColorData,
-    borderLeftWidthData,
-    borderRightColorData,
-    borderRightWidthData,
-    // border style
-    borderRightStyleData,
-    borderLeftStyleData,
-    borderTopStyleData,
-    borderBottomStyleData,
-    // border radius
-    borderTopRightRadiusData,
-    borderTopLeftRadiusData,
-    borderBottomRightRadiusData,
-    borderBottomLeftRadiusData,
-    // padding
-    paddingTopData,
-    paddingBottomData,
-    paddingLeftData,
-    paddingRightData,
-    // margin
-    marginTopData,
-    marginBottomData,
-    marginLeftData,
-    marginRightData,
-    fontSizeData,
-    colorData,
-    fontData,
-  }: any = useModalsAppProvider();
-  const [contentStyle, setContentStyle] = useState({ display: "none" });
-  const [titleStyle, setTitleStyle] = useState({ display: "none" });
   const { isReadOnly }: any = useAppProvider();
 
   const [currentId, setCurrentId] = useState(0);
@@ -109,7 +37,8 @@ const CloudDataComponent = () => {
           <CloudMenu activeId={currentId} />
         </div>
         <div className="flex lg:w-[65%] flex-col w-full z-20  ">
-          <CloudCardList getItemId={getIdCurrentItem} />
+          {/* <CloudCardList getItemId={getIdCurrentItem} /> */}
+          <CarouselCloud getItemId={getIdCurrentItem} />
         </div>
       </div>
       <div className="flex flex-col w-full z-20  ">

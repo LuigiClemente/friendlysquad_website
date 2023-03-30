@@ -1,14 +1,25 @@
 import ArrowRight from "@/icons/ArrowRight";
-import { ChevronRight } from "@mui/icons-material";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { NOTE_CLOUD_SECTION } from "../constant";
 
 const CloudMenu = ({ activeId }: any) => {
   const { t } = useTranslation("");
+
+  let cloudCardId = "cloud-card-1";
   useEffect(() => {
-    console.log("activeId", activeId);
+    console.log("activeId", activeId, cloudCardId);
   }, [activeId]);
+
+  const handleClick = (id: any) => {
+    cloudCardId = "cloud-card-" + id;
+    console.log("==>id :", id, cloudCardId);
+    document.getElementById(cloudCardId)?.scrollIntoView({
+      block: "start",
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div
       style={{
@@ -36,7 +47,6 @@ const CloudMenu = ({ activeId }: any) => {
             <div className="flex flex-row items-center content-start justify-start">
               <a
                 key={index}
-                href="https://www.google.com"
                 style={{
                   fontSize: activeId === item?.id ? "1.2rem" : "1rem",
                   fontWeight: "bold",
@@ -46,6 +56,7 @@ const CloudMenu = ({ activeId }: any) => {
                   fontFamily: "Ppneuemontreal",
                 }}
                 className="cursor-pointer hover:px-15 hover:text-2xl"
+                onClick={() => handleClick(item?.id)}
               >
                 {/* {item.title} */}
                 {t(`home.cloud_data.${index}.title`)}

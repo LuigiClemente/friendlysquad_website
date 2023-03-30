@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import FooterSite1 from "@/Footer/FooterSite1";
 import { useAppProvider } from "@appProvider/AppProvider";
 import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
 import { useState } from "react";
@@ -90,6 +91,8 @@ const GlobalEdgeNetwork = () => {
           height: "100%",
           paddingTop: "200px",
           backgroundColor: "#000",
+          display: "flex",
+          flexDirection: "column",
         }}
       >
         <div
@@ -98,13 +101,13 @@ const GlobalEdgeNetwork = () => {
         >
           <div className="w-full lg:sticky lg:inset-x-0 lg:top-0 lg:left-0 lg:bottom-auto z-30 self-auto items-stretch lg:w-[50%] h-fit">
             {/* <GlobeComponent /> */}
-            {/* <Scene /> */}
-            <div>Hi</div>
+            <Scene />
           </div>
-          <div className="flex flex-col w-full lg:w-[50%] z-20">
+          <div className="flex flex-col w-full lg:w-[50%] z-20 lg:pr-5">
             <GlobeCardList />
           </div>
         </div>
+        <FooterSite1 color="#fff" background={"rgb(0,0,0,0.5)"} />
       </div>
     </div>
   );

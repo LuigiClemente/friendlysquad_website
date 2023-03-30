@@ -1,3 +1,6 @@
+import Footer from "@/Footer";
+import FooterSite from "@/Footer/FooterSite";
+import FooterSite1 from "@/Footer/FooterSite1";
 import { useRef, useState } from "react";
 import CarouselHorizontal from "../carousel/CarouselHorizontal";
 import CloudDataComponent from "../cloud/CloudDataComponent";
@@ -40,19 +43,19 @@ const HomeSite = () => {
           }}
         >
           <CarouselHorizontal images={SLIDER_IMAGES} scrollFun={null} />
-
           <div
             ref={cloudRef}
             style={{
               height: "fit-content",
               width: "fit-content",
               position: "relative",
-              // marginBottom: "300px",
             }}
           >
             <CloudDataComponent />
           </div>
+          <FooterSite1 color="#000" background={"rgb(255,255,255,0.5)"} />
         </div>
+
         <ScrollToTop />
       </Layout>
     </div>

@@ -119,27 +119,28 @@
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
 }
+/* ----------------------------------- */
 
+#verticalSwiper .swiper {
+  width: 100%;
+  height: 100%;
+}
 
-.slider{
-  transform: translate3d(-8.7696rem, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-   transform-style: preserve-3d;
-    will-change: transform
-}
-/* move animation  */
-.slider-transition{
-  transition: transform 0.5s ease 0s;
-  /* repeat animation */
-  animation: slider-move 0.5s ease 0s infinite;
+#verticalSwiper  .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
 
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
- /* repeat animation */
-@keyframes slider-move {
-  0% {
-    transform: translate3d(-8.7696rem, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-  }
-  100% {
-    transform: translate3d(-8.7696rem, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-  }
- 
+
+#verticalSwiper  .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
+

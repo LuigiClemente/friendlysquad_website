@@ -9,7 +9,9 @@ const Layout = ({ children }) => {
       style={{ width: "100%", height: "100%" }}
       className="flex flex-col w-full min-h-full bg-transparent z-40"
     >
-      {currentMenu === "CONTACT US" || currentMenu === "INFRASTUCTURE" ? (
+      {currentMenu === "CONTACT US" ||
+      currentMenu === "INFRASTUCTURE" ||
+      currentMenu === "SERVICE" ? (
         <>
           {/* <DynamicHeader bgHeader={`bg-transparent`} colorMenu={"#fff"} /> */}
           <Navbar bgHeader={"transparent"} colorMenu={"#fff"} fixed={true} />

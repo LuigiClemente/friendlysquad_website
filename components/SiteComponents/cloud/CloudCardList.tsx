@@ -18,7 +18,14 @@ const CloudCardList = ({ getItemId }: any) => {
     getItemId(id);
   };
 
+  const handleClick = (id: any) => {
+    setIsHovering(id);
+    getItemId(id);
+  };
+
   const handleMouseOut = () => setIsHovering(null);
+
+  //
   return (
     <div
       style={{
@@ -40,13 +47,13 @@ const CloudCardList = ({ getItemId }: any) => {
             key={index}
             style={{
               borderRadius: "0px",
-              // margin: "20px",
               ...(isHovering && isHovering === item?.id
                 ? mouseInStyle
                 : mouseOutStyle),
             }}
             onMouseOver={() => handleMouseOver(item?.id)}
             onMouseOut={handleMouseOut}
+            onClick={() => handleClick(item?.id)}
           >
             <div
               style={

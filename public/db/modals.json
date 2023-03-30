@@ -23,7 +23,7 @@
                                         "en": {
                                             "fontSizeTitleModal": "1.5rem",
                                             "fontTitleModal": "MAD Sans Fill",
-                                            "colorTitleModal": "#000000",
+                                            "colorTitleModal": "#fff",
                                             "backgroundColorTitleModal": "#000000",
                                             "borderBottomColorTitleModal": "#000000",
                                             "borderBottomWidthTitleModal": "0",
@@ -49,9 +49,9 @@
                                             "marginBottomTitleModal": "0",
                                             "marginLeftTitleModal": "0",
                                             "marginRightTitleModal": "1",
-                                            "fontSizeDataTitle": "1.5rem",
-                                            "fontDataTitle": "Oxygen",
-                                            "colorDataTitle": "#fff",
+                                            "fontSizeDataTitle": "2rem",
+                                            "fontDataTitle": "Segoe UI",
+                                            "colorDataTitle": "#000",
                                             "backgroundColorDataTitle": "#000000",
                                             "borderBottomColorDataTitle": "#000000",
                                             "borderBottomWidthDataTitle": "0",
@@ -96,7 +96,7 @@
                                     },
                                     "dataI18n": {
                                         "en": {
-                                            "fontSizeData": "1rem",
+                                            "fontSizeData": "1.5rem",
                                             "fontData": "MAD Sans Fill",
                                             "colorData": "#D3D3D3",
                                             "backgroundColorData": "#000000",

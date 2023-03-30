@@ -15,7 +15,7 @@ export function World(props) {
   const { nodes, materials, animations }: any = useGLTF("/model/world.glb");
 
   return (
-    <group ref={group} scale={2.5} {...props} dispose={null}>
+    <group ref={group} scale={3} {...props} dispose={null}>
       <group name="Sketchfab_Scene">
         <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]}>
           <group name="sketchfabtimeframe">

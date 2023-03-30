@@ -2,7 +2,7 @@ import ModalDataOptionsUi from "@/CustomPopover/ModalDataOptionsUi";
 import { MODAL_DATA } from "@/SiteComponents/constant";
 import { useAppProvider } from "@appProvider/AppProvider";
 import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
-import React from "react";
+import React, { useEffect } from "react";
 
 interface DialogContentProps {
   data: any;
@@ -48,6 +48,7 @@ const DialogContent = ({ data, isBookingList }: DialogContentProps) => {
   const [dialogContent, setDialogContent] = React.useState({
     display: "block",
   });
+
   const {
     bodyBackgroundColor,
     setBodyBackgroundColor,
@@ -72,11 +73,7 @@ const DialogContent = ({ data, isBookingList }: DialogContentProps) => {
           flexDirection: "column",
           width: "fit-content",
           padding: "2px",
-          fontSize: fontSizeDataModal,
-          color: colorDataModal,
-          font: fontDataModal,
-          fontFamily: fontDataModal,
-          // backgroundColor: backgroundColorDataModal,
+
           borderBottomColor: borderBottomColorDataModal,
           borderBottomWidth: `${borderBottomWidthDataModal}px`,
           borderTopColor: borderTopColorDataModal,
@@ -110,6 +107,7 @@ const DialogContent = ({ data, isBookingList }: DialogContentProps) => {
               fontFamily: fontDataModal,
               fontSize: fontSizeDataModal,
               textAlign: "left",
+              color: colorDataModal,
             }}
           >
             {data}
@@ -118,12 +116,15 @@ const DialogContent = ({ data, isBookingList }: DialogContentProps) => {
           data.map((item, index) => (
             <p
               key={index + item.name}
-              className="p-3 text-lg font-serif font-medium leading-5"
+              className="p-3 leading-5"
               style={{
                 marginBottom: "10px",
-                fontFamily: fontDataModal,
-                fontSize: "1.9rem",
                 cursor: "pointer",
+                fontFamily: fontDataModal,
+                fontSize: fontSizeDataModal,
+                textAlign: "left",
+                color: colorDataModal,
+                font: fontDataModal,
               }}
             >
               {item.name}

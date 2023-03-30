@@ -1,4 +1,8 @@
+import DataOptionsUi from "@/CustomPopover/DataOptionsUi";
+import DataTitleOptionsUi from "@/CustomPopover/DataTitleOptionsUi";
+import { useAppProvider } from "@appProvider/AppProvider";
 import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const CloudCard = ({ item, index }: any) => {
@@ -6,72 +10,16 @@ const CloudCard = ({ item, index }: any) => {
     fontSizeDataTitle,
     fontDataTitle,
     colorDataTitle,
-    // backgroundColorDataTitle,
-    //  border
-    borderBottomColorDataTitle,
-    borderBottomWidthDataTitle,
-    borderTopColorDataTitle,
-    borderTopWidthDataTitle,
-    borderLeftColorDataTitle,
-    borderLeftWidthDataTitle,
-    borderRightColorDataTitle,
-    borderRightWidthDataTitle,
-    // border style
-    borderRightStyleDataTitle,
-    borderLeftStyleDataTitle,
-    borderTopStyleDataTitle,
-    borderBottomStyleDataTitle,
-    // border radius
-    borderTopRightRadiusDataTitle,
-    borderTopLeftRadiusDataTitle,
-    borderBottomRightRadiusDataTitle,
-    borderBottomLeftRadiusDataTitle,
-    // padding
-    paddingTopDataTitle,
-    paddingBottomDataTitle,
-    paddingLeftDataTitle,
-    paddingRightDataTitle,
-    // margin
-    marginTopDataTitle,
-    marginBottomDataTitle,
-    marginLeftDataTitle,
-    marginRightDataTitle,
 
-    // -------------------------
-
-    borderBottomColorData,
-    borderBottomWidthData,
-    borderTopColorData,
-    borderTopWidthData,
-    borderLeftColorData,
-    borderLeftWidthData,
-    borderRightColorData,
-    borderRightWidthData,
-    // border style
-    borderRightStyleData,
-    borderLeftStyleData,
-    borderTopStyleData,
-    borderBottomStyleData,
-    // border radius
-    borderTopRightRadiusData,
-    borderTopLeftRadiusData,
-    borderBottomRightRadiusData,
-    borderBottomLeftRadiusData,
-    // padding
-    paddingTopData,
-    paddingBottomData,
-    paddingLeftData,
-    paddingRightData,
-    // margin
-    marginTopData,
-    marginBottomData,
-    marginLeftData,
-    marginRightData,
     fontSizeData,
     colorData,
     fontData,
   }: any = useModalsAppProvider();
   const { t } = useTranslation("");
+  const [contentStyle, setContentStyle] = useState({ display: "none" });
+  const [titleStyle, setTitleStyle] = useState({ display: "none" });
+  const { isReadOnly }: any = useAppProvider();
+
   return (
     <div
       // className="hero"
@@ -80,6 +28,7 @@ const CloudCard = ({ item, index }: any) => {
         height: "fit-content",
         width: "fit-content",
       }}
+      id={`cloud-card-${item.id}`}
     >
       <div
         style={{
@@ -94,15 +43,20 @@ const CloudCard = ({ item, index }: any) => {
         }}
       >
         <div key={index} style={{ margin: "20px" }}>
-          <div className="flex flex-col items-center content-start justify-start">
+          <div
+            className="flex flex-col items-center relative content-start justify-start"
+            onMouseEnter={() => setTitleStyle({ display: "block" })}
+            onMouseLeave={() => setTitleStyle({ display: "none" })}
+          >
+            {isReadOnly ? null : <DataTitleOptionsUi style={titleStyle} />}
             <h1
               style={{
-                color: "#000",
+                color: colorDataTitle,
                 textAlign: "left",
                 width: "100%",
                 fontWeight: 500,
-                fontFamily: "Segoe UI",
-                fontSize: "2rem",
+                fontFamily: fontDataTitle,
+                fontSize: fontSizeDataTitle,
               }}
             >
               {/* {item.title} */}
@@ -110,14 +64,17 @@ const CloudCard = ({ item, index }: any) => {
             </h1>
             <p
               style={{
-                fontSize: "1.5rem",
+                fontSize: fontSizeData,
                 fontWeight: 400,
-                color: "#000",
+                color: colorData,
                 textAlign: "left",
-                fontFamily: "Segoe UI",
+                fontFamily: fontData,
               }}
-              className="mt-1 mb-2 ml-2 font-sans text-lg font-weight-500 leading-8 align-center text-black"
+              className="mt-1 mb-2 ml-2 font-sans text-lg font-weight-500 relative leading-8 align-center text-black"
+              onMouseEnter={() => setContentStyle({ display: "block" })}
+              onMouseLeave={() => setContentStyle({ display: "none" })}
             >
+              {isReadOnly ? null : <DataOptionsUi style={contentStyle} />}
               {t(`home.cloud_data.${index}.description`)}
               {/* {item.description} */}
             </p>

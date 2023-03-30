@@ -31,7 +31,9 @@ const GrassIframe = () => {
     };
   }, []);
   return (
-    <div className="w-full h-full">
+    <div
+      style={{ width: "100%", position: "relative", height: size.height + 100 }}
+    >
       {!load ? (
         <div
           style={{
@@ -73,6 +75,7 @@ const GrassIframe = () => {
           content={MODAL_DATA}
           handleClose={() => setOpenBookList(false)}
           open={openBookList}
+          hasFooter={true}
         />
       )}
     </div>

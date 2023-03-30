@@ -83,10 +83,10 @@ export const AppProvider = ({ children }: any) => {
   const [marginBottomHeader, setMarginBottomHeader] = useState("0");
 
   // ---------------------------------------------------------------- for logo
-  const [fontSizeLogo, setFontSizeLogo] = useState("1rem");
+  const [fontSizeLogo, setFontSizeLogo] = useState("1.5rem");
   const [backgroundColorLogo, setBackgroundColorLogo] = useState("transparent");
-  const [colorLogo, setColorLogo] = useState("#000");
-  const [fontLogo, setFontLogo] = useState("Roboto");
+  const [colorLogo, setColorLogo] = useState("#fff");
+  const [fontLogo, setFontLogo] = useState("Ppneuemontreal");
 
   //  border background color
 
@@ -127,7 +127,7 @@ export const AppProvider = ({ children }: any) => {
   // min height for logo
   const [minHeightLogo, setMinHeightLogo] = useState("60");
   // max width for logo
-  const [maxWidthLogo, setMaxWidthLogo] = useState("300");
+  const [maxWidthLogo, setMaxWidthLogo] = useState("200");
   // max height for logo
   const [maxHeightLogo, setMaxHeightLogo] = useState("60");
   // for logo dialog

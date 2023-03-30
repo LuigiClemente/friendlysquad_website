@@ -1,11 +1,11 @@
 import { useAppStateProvider } from "@appProvider/AppStateProvider";
+import { useTranslation } from "next-i18next";
 import React, { useEffect, useRef, useState } from "react";
-import { ABOUT_US, MODAL_DATA } from "../constant";
+import { MODAL_DATA } from "../constant";
 import BookingListModal from "../modals/BookingListModal";
 import PageModal from "../modals/PageModal";
 import Spinner from "../spinner/Spinner";
 import { useWindowSize } from "../utils/utility";
-import { useTranslation } from "next-i18next";
 const IframeFood = () => {
   const { t } = useTranslation("");
   const pageRef = useRef(null);
@@ -26,7 +26,9 @@ const IframeFood = () => {
     };
   }, []);
   return (
-    <div className="w-full h-full">
+    <div
+      style={{ width: "100%", position: "relative", height: size.height + 100 }}
+    >
       {!load ? (
         <div
           style={{
@@ -75,6 +77,7 @@ const IframeFood = () => {
           content={MODAL_DATA}
           handleClose={() => setOpenBookList(false)}
           open={openBookList}
+          hasFooter={true}
         />
       )}
     </div>
