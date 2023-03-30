@@ -77,7 +77,6 @@ const IframeFood = () => {
           content={MODAL_DATA}
           handleClose={() => setOpenBookList(false)}
           open={openBookList}
-          hasFooter={true}
         />
       )}
     </div>
