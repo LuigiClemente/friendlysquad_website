@@ -4,7 +4,7 @@ import Globe from "@/icons/Globe";
 import Logo from "@/Logo";
 import { useAppProvider } from "@appProvider/AppProvider";
 import { useAppStateProvider } from "@appProvider/AppStateProvider";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { LANGUAGES, NAVIGATION } from "../constant";
 import LangsModal from "../modals/LangsModal";
@@ -18,7 +18,6 @@ const Navbar = ({ bgHeader, colorMenu, fixed }: any) => {
   };
   const [style, setStyle] = useState({ display: "none" });
   const [navbarOpen, setNavbarOpen] = React.useState(false);
-  const [backgroundHeader, setBackgroundHeader] = useState("bg-transparent");
   const {
     isReadOnly,
     fontSizeHeader,
@@ -65,7 +64,7 @@ const Navbar = ({ bgHeader, colorMenu, fixed }: any) => {
         setStyle({ display: "none" });
       }}
     >
-      <HeaderOptionsUi style={style} />
+      {isReadOnly ? null : <HeaderOptionsUi style={style} />}
       <nav
         className={
           "z-30 flex flex-wrap items-center justify-between absolute top-0 left-0 right-0  w-full" +
@@ -78,7 +77,7 @@ const Navbar = ({ bgHeader, colorMenu, fixed }: any) => {
         <div
           className="w-full mx-auto flex flex-wrap items-center justify-between"
           style={{
-            borderBottomColor: `${borderBottomColorHeader}px`,
+            borderBottomColor: borderBottomColorHeader,
             borderBottomWidth: `${borderBottomWidthHeader}px`,
             borderTopColor: borderTopColorHeader,
             borderTopWidth: `${borderTopWidthHeader}px`,
@@ -138,11 +137,10 @@ const Navbar = ({ bgHeader, colorMenu, fixed }: any) => {
                     className="font-bold leading-6  text-sm px-2 py-2 flex items-center hover:opacity-75"
                     style={{
                       fontSize: fontSizeHeader,
-                      // fontFamily: fontHeader,
+                      fontFamily: fontHeader,
                       textDecoration: "none",
                       color: colorMenu,
                       cursor: "pointer",
-                      fontFamily: "Ppneuemontreal",
                     }}
                     onClick={() => {
                       setCurrentMenu(item.name);

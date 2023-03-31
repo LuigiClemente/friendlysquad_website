@@ -1,7 +1,6 @@
 import Button from "@/Buttons/Button";
 import ButtonsOptionsUi from "@/CustomPopover/ButtonsOptionsUi";
 import DialogContent from "@/DialogContent/DialogContent";
-import DialogTitle from "@/GlobeTitle/GlobeTitle";
 import { useAppProvider } from "@appProvider/AppProvider";
 import { useAppStateProvider } from "@appProvider/AppStateProvider";
 import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
@@ -90,19 +89,12 @@ const PageModal = ({ title, content }: PageModalsProps) => {
                 marginRight: `${marginRightDataModal}px`,
               }}
             >
-              {/*content*/}
               <div className="relative flex flex-col w-full  outline-none focus:outline-none">
-                {/*header*/}
-                {/* <div className="flex items-start justify-between p-3 pb-0 rounded-t">
-                  <DialogTitle title={title} />
-                </div> */}
-                {/*body*/}
                 <div className="relative flex-auto">
                   <div className="mt-3 text-center sm:mt-5 ">
                     <DialogContent data={content} isBookingList={false} />
                   </div>
                 </div>
-                {/*footer*/}
                 <div
                   className="flex items-center relative justify-center p-3 rounded-b"
                   onMouseEnter={() => setButtonStyle({ display: "block" })}

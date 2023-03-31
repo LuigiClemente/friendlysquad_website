@@ -1,8 +1,8 @@
-import { useAppProvider } from "@appProvider/AppProvider"
-import { useAppStateProvider } from "@appProvider/AppStateProvider"
-import { useModalsAppProvider } from "@appProvider/ModalsAppProvider"
-import { useEffect } from "react"
-import { updatePluginValue } from "../../utils/uiController"
+import { useAppProvider } from "@appProvider/AppProvider";
+import { useAppStateProvider } from "@appProvider/AppStateProvider";
+import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
+import { useEffect } from "react";
+import { updatePluginValue } from "../../utils/uiController";
 import {
   VERIFY_DATA,
   VERIFY_CODE,
@@ -20,8 +20,8 @@ import {
   BUTTONS,
   BUTTONS_PLUGIN_ID,
   MODAL_BOX,
-  MODAL_BOX_PLUGIN_ID
-} from "../Constant/const"
+  MODAL_BOX_PLUGIN_ID,
+} from "../Constant/const";
 const UndoCustomization = ({ name, value, nameSection }: any) => {
   const {
     headerDBFormat,
@@ -74,37 +74,37 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
     setMarginRightHeader,
     // --------------------------------Modal Box
     setBackgroundColorModalBox,
-     setFontModalBox,
-     setFontSizeModalBox,
-     setColorModalBox,
-     setBorderBottomColorModalBox,
-     setBorderBottomWidthModalBox,
-     setBorderTopColorModalBox,
-     setBorderTopWidthModalBox,
-     setBorderLeftColorModalBox,
-     setBorderLeftWidthModalBox,
-     setBorderRightColorModalBox,
-     setBorderRightWidthModalBox,
-     // border style
-     setBorderRightStyleModalBox,
-     setBorderLeftStyleModalBox,
-     setBorderTopStyleModalBox,
-     setBorderBottomStyleModalBox,
-     // border radius
-     setBorderTopRightRadiusModalBox,
-     setBorderTopLeftRadiusModalBox,
-     setBorderBottomRightRadiusModalBox,
-     setBorderBottomLeftRadiusModalBox,
-     // padding
-     setPaddingTopModalBox,
-     setPaddingBottomModalBox,
-     setPaddingLeftModalBox,
-     setPaddingRightModalBox,
-     // margin
-     setMarginTopModalBox,
-     setMarginBottomModalBox,
-     setMarginLeftModalBox,
-     setMarginRightModalBox,
+    setFontModalBox,
+    setFontSizeModalBox,
+    setColorModalBox,
+    setBorderBottomColorModalBox,
+    setBorderBottomWidthModalBox,
+    setBorderTopColorModalBox,
+    setBorderTopWidthModalBox,
+    setBorderLeftColorModalBox,
+    setBorderLeftWidthModalBox,
+    setBorderRightColorModalBox,
+    setBorderRightWidthModalBox,
+    // border style
+    setBorderRightStyleModalBox,
+    setBorderLeftStyleModalBox,
+    setBorderTopStyleModalBox,
+    setBorderBottomStyleModalBox,
+    // border radius
+    setBorderTopRightRadiusModalBox,
+    setBorderTopLeftRadiusModalBox,
+    setBorderBottomRightRadiusModalBox,
+    setBorderBottomLeftRadiusModalBox,
+    // padding
+    setPaddingTopModalBox,
+    setPaddingBottomModalBox,
+    setPaddingLeftModalBox,
+    setPaddingRightModalBox,
+    // margin
+    setMarginTopModalBox,
+    setMarginBottomModalBox,
+    setMarginLeftModalBox,
+    setMarginRightModalBox,
 
     // --------------this is for logo
     // border color and width
@@ -136,9 +136,8 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
     setMarginTopLogo,
     setMarginBottomLogo,
     setMarginLeftLogo,
-    setMarginRightLogo
-    
-  }: any = useAppProvider()
+    setMarginRightLogo,
+  }: any = useAppProvider();
 
   const {
     dbModalsFormat,
@@ -148,7 +147,7 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
     setBackgroundColorDataModal,
     setBackgroundColorBalanceCheck,
     setBackgroundColorTitleModal,
-    setBackgroundColorDataTitle,
+    setBackgroundColorBox2,
     // -------------------this is for font
     setFontData,
     setFontDataModal,
@@ -218,35 +217,35 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
     setMarginBottomTitleModal,
     setMarginLeftTitleModal,
     setMarginRightTitleModal,
-    // -------------------------- TitleModal Btn --------------------------
-    setBorderBottomColorDataTitle,
-    setBorderBottomWidthDataTitle,
-    setBorderTopColorDataTitle,
-    setBorderTopWidthDataTitle,
-    setBorderLeftColorDataTitle,
-    setBorderLeftWidthDataTitle,
-    setBorderRightColorDataTitle,
-    setBorderRightWidthDataTitle,
+    // -------------------------- Box 2--------------------------
+    setBorderBottomColorBox2,
+    setBorderBottomWidthBox2,
+    setBorderTopColorBox2,
+    setBorderTopWidthBox2,
+    setBorderLeftColorBox2,
+    setBorderLeftWidthBox2,
+    setBorderRightColorBox2,
+    setBorderRightWidthBox2,
     // border style
-    setBorderRightStyleDataTitle,
-    setBorderLeftStyleDataTitle,
-    setBorderTopStyleDataTitle,
-    setBorderBottomStyleDataTitle,
+    setBorderRightStyleBox2,
+    setBorderLeftStyleBox2,
+    setBorderTopStyleBox2,
+    setBorderBottomStyleBox2,
     // border radius
-    setBorderTopRightRadiusDataTitle,
-    setBorderTopLeftRadiusDataTitle,
-    setBorderBottomRightRadiusDataTitle,
-    setBorderBottomLeftRadiusDataTitle,
+    setBorderTopRightRadiusBox2,
+    setBorderTopLeftRadiusBox2,
+    setBorderBottomRightRadiusBox2,
+    setBorderBottomLeftRadiusBox2,
     // padding
-    setPaddingTopDataTitle,
-    setPaddingBottomDataTitle,
-    setPaddingLeftDataTitle,
-    setPaddingRightDataTitle,
+    setPaddingTopBox2,
+    setPaddingBottomBox2,
+    setPaddingLeftBox2,
+    setPaddingRightBox2,
     // margin
-    setMarginTopDataTitle,
-    setMarginBottomDataTitle,
-    setMarginLeftDataTitle,
-    setMarginRightDataTitle,
+    setMarginTopBox2,
+    setMarginBottomBox2,
+    setMarginLeftBox2,
+    setMarginRightBox2,
 
     // -------------------------- Data Btn --------------------------
     setBorderBottomColorDataModal,
@@ -287,161 +286,167 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
     setBorderTopStyleTitleModal,
     setBorderBottomStyleTitleModal,
 
-
     // ---------------------------------- Button ----------------------
-      // border width
-  setBorderRightWidthButtons,
-  setBorderLeftWidthButtons,
-  setBorderTopWidthButtons,
-  setBorderBottomWidthButtons,
-  // border style
+    // border width
+    setBorderRightWidthButtons,
+    setBorderLeftWidthButtons,
+    setBorderTopWidthButtons,
+    setBorderBottomWidthButtons,
+    // border style
 
-  setBorderTopRightRadiusButtons,
-  setBorderTopLeftRadiusButtons,
-  setBorderBottomRightRadiusButtons,
-  setBorderBottomLeftRadiusButtons,
-  // padding
-  setPaddingRightButtons,
-  setPaddingLeftButtons,
-  setPaddingTopButtons,
-  setPaddingBottomButtons,
-  // margin
-  setMarginRightButtons,
-  setMarginLeftButtons,
-  setMarginTopButtons,
-  setMarginBottomButtons,
-  // for buttons
-  setFontSizeButtons,
-  setBackgroundColorButtons,
-  setColorButtons,
-  setFontButtons,
-  //  border background color
-  setBorderBottomColorButtons,
-  setBorderRightColorButtons,
-  setBorderLeftColorButtons,
-  setBorderTopColorButtons,
+    setBorderTopRightRadiusButtons,
+    setBorderTopLeftRadiusButtons,
+    setBorderBottomRightRadiusButtons,
+    setBorderBottomLeftRadiusButtons,
+    // padding
+    setPaddingRightButtons,
+    setPaddingLeftButtons,
+    setPaddingTopButtons,
+    setPaddingBottomButtons,
+    // margin
+    setMarginRightButtons,
+    setMarginLeftButtons,
+    setMarginTopButtons,
+    setMarginBottomButtons,
+    // for buttons
+    setFontSizeButtons,
+    setBackgroundColorButtons,
+    setColorButtons,
+    setFontButtons,
+    //  border background color
+    setBorderBottomColorButtons,
+    setBorderRightColorButtons,
+    setBorderLeftColorButtons,
+    setBorderTopColorButtons,
 
-  // border style
-  setBorderRightStyleButtons,
-  setBorderLeftStyleButtons,
-  setBorderTopStyleButtons,
-  setBorderBottomStyleButtons
-  }: 
-
-  any = useModalsAppProvider()
+    // border style
+    setBorderRightStyleButtons,
+    setBorderLeftStyleButtons,
+    setBorderTopStyleButtons,
+    setBorderBottomStyleButtons,
+  }: any = useModalsAppProvider();
   // setTabColor(getPluginValueProperty(dbFormat, TAP_PLUGIN_ID, "tabColor"))
   // console.log("value is::", value)
   const handleUndoRedo = () => {
     switch (name) {
       case "backgroundColor":
-        handleBackgroundColor()
-        break
+        handleBackgroundColor();
+        break;
       case "font":
-        handleChangeFont()
-        break
+        handleChangeFont();
+        break;
       case "fontSize":
-        handleChangeFontSize()
-        break
+        handleChangeFontSize();
+        break;
       case "color":
-        handleChangeColor()
-        break
+        handleChangeColor();
+        break;
       case "borderBottomWidth":
-        handleBorderBottomWidth()
-        break
+        handleBorderBottomWidth();
+        break;
       case "borderTopWidth":
-        handleBorderTopWidth()
-        break
+        handleBorderTopWidth();
+        break;
       case "borderLeftWidth":
-        handleBorderLeftWidth()
-        break
+        handleBorderLeftWidth();
+        break;
       case "borderRightWidth":
-        handleBorderRightWidth()
-        break
+        handleBorderRightWidth();
+        break;
       case "borderTopRightRadius":
-        handleBorderTopRightRadius()
-        break
+        handleBorderTopRightRadius();
+        break;
       case "borderTopLeftRadius":
-        handleBorderTopLeftRadius()
-        break
+        handleBorderTopLeftRadius();
+        break;
       case "borderBottomRightRadius":
-        handleBorderBottomRightRadius()
-        break
+        handleBorderBottomRightRadius();
+        break;
       case "borderBottomLeftRadius":
-        handleBorderBottomLeftRadius()
-        break
+        handleBorderBottomLeftRadius();
+        break;
       case "paddingTop":
-        handlePaddingTop()
-        break
+        handlePaddingTop();
+        break;
       case "paddingBottom":
-        handlePaddingBottom()
-        break
+        handlePaddingBottom();
+        break;
       case "paddingLeft":
-        handlePaddingLeft()
-        break
+        handlePaddingLeft();
+        break;
       case "paddingRight":
-        handlePaddingRight()
-        break
+        handlePaddingRight();
+        break;
       case "marginTop":
-        handleMarginTop()
-        break
+        handleMarginTop();
+        break;
       case "marginBottom":
-        handleMarginBottom()
-        break
+        handleMarginBottom();
+        break;
       case "marginLeft":
-        handleMarginLeft()
-        break
+        handleMarginLeft();
+        break;
       case "marginRight":
-        handleMarginRight()
-        break
+        handleMarginRight();
+        break;
       case "borderBottomColor":
-        handleBorderBottomColor()
-        break
+        handleBorderBottomColor();
+        break;
       case "borderTopColor":
-        handleBorderTopColor()
-        break
+        handleBorderTopColor();
+        break;
       case "borderLeftColor":
-        handleBorderLeftColor()
-        break
+        handleBorderLeftColor();
+        break;
       case "borderRightColor":
-        handleBorderRightColor()
-        break
+        handleBorderRightColor();
+        break;
       case "borderRightStyle":
-        handleBorderRightStyle()
-        break
+        handleBorderRightStyle();
+        break;
       case "borderLeftStyle":
-        handleBorderLeftStyle()
-        break
+        handleBorderLeftStyle();
+        break;
       case "borderTopStyle":
-        handleBorderTopStyle()
-        break
+        handleBorderTopStyle();
+        break;
       case "borderBottomStyle":
-        handleBorderBottomStyle()
-        break
+        handleBorderBottomStyle();
+        break;
     }
-  }
+  };
 
   useEffect(() => {
-    console.log("call undo or redo!", callUndo)
+    console.log("call undo or redo!", callUndo);
     if (callUndo) {
-      handleUndoRedo()
-      setCallUndo(false)
+      handleUndoRedo();
+      setCallUndo(false);
     }
-  }, [callUndo])
+  }, [callUndo]);
   //handle color for background color for undo and redo
   const handleBackgroundColor = () => {
     if (nameSection === HEADER) {
-      setBackgroundColorHeader(value)
+      setBackgroundColorHeader(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "backgroundColorHeader", value)
-      )
-    }else if (nameSection === MODAL_BOX) {
-      setBackgroundColorModalBox(value)
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "backgroundColorHeader",
+          value
+        )
+      );
+    } else if (nameSection === MODAL_BOX) {
+      setBackgroundColorModalBox(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, MODAL_BOX_PLUGIN_ID, "backgroundColorModalBox", value)
-      )
-    }
-     else if (nameSection === VERIFY_TITLE) {
-      setBackgroundColorTitleModal(value)
+        updatePluginValue(
+          headerDBFormat,
+          MODAL_BOX_PLUGIN_ID,
+          "backgroundColorModalBox",
+          value
+        )
+      );
+    } else if (nameSection === VERIFY_TITLE) {
+      setBackgroundColorTitleModal(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -449,40 +454,67 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "backgroundColorTitleModal",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBackgroundColorDataTitle(value)
+      setBackgroundColorBox2(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "backgroundColorDataTitle",
+          "backgroundColorBox2",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_DATA) {
-      setBackgroundColorData(value)
+      setBackgroundColorData(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "backgroundColorData", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "backgroundColorData",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_CODE) {
-      setBackgroundColorDataModal(value)
+      setBackgroundColorDataModal(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "backgroundColorDataModal", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "backgroundColorDataModal",
+          value
+        )
+      );
     } else if (nameSection === BODY_CUSTOMIZE) {
-      setBodyBackgroundColor(value)
+      setBodyBackgroundColor(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, BODY_PLUGIN_ID, "bodyBackgroundColor", value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          BODY_PLUGIN_ID,
+          "bodyBackgroundColor",
+          value
+        )
+      );
     } else if (nameSection === CONTAINER_CUSTOMIZE) {
-      setContainerBackgroundColor(value)
+      setContainerBackgroundColor(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, BODY_PLUGIN_ID, "containerBackgroundColor", value)
-      )
-    }else if (nameSection === BUTTONS) {
-      setBackgroundColorButtons(value)
-      setDbFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID , "backgroundColorButtons", value))
+        updatePluginValue(
+          headerDBFormat,
+          BODY_PLUGIN_ID,
+          "containerBackgroundColor",
+          value
+        )
+      );
+    } else if (nameSection === BUTTONS) {
+      setBackgroundColorButtons(value);
+      setDbFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "backgroundColorButtons",
+          value
+        )
+      );
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -490,64 +522,110 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "backgroundColorButtons",
           value
         )
-      )
+      );
     }
-  }
+  };
   //handle color for font for undo and redo
   const handleChangeFont = () => {
     if (nameSection === HEADER) {
-      setFontHeader(value)
-      setHeaderDBFormat(updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "fontHeader", value))
-    } 
-    else if (nameSection === MODAL_BOX) {
-      setFontModalBox(value)
+      setFontHeader(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, MODAL_BOX_PLUGIN_ID, "fontModalBox", value)
-      )
-    }
-    else if (nameSection === VERIFY_TITLE) {
-      setFontTitleModal(value)
+        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "fontHeader", value)
+      );
+    } else if (nameSection === MODAL_BOX) {
+      setFontModalBox(value);
+      setHeaderDBFormat(
+        updatePluginValue(
+          headerDBFormat,
+          MODAL_BOX_PLUGIN_ID,
+          "fontModalBox",
+          value
+        )
+      );
+    } else if (nameSection === VERIFY_TITLE) {
+      setFontTitleModal(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_TITLE_PLUGIN_ID, "fontTitleModal", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_TITLE_PLUGIN_ID,
+          "fontTitleModal",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setFontDataTitle(value)
+      setFontDataTitle(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_TITLE_PLUGIN_ID, "fontDataTitle", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_TITLE_PLUGIN_ID,
+          "fontDataTitle",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_DATA) {
-      setFontData(value)
+      setFontData(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "fontData", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "fontData",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_CODE) {
-      setFontDataModal(value)
+      setFontDataModal(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "fontDataModal", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "fontDataModal",
+          value
+        )
+      );
+    } else if (nameSection === BUTTONS) {
+      setFontButtons(value);
+      setDbFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "fontButtons",
+          value
+        )
+      );
     }
-    else if (nameSection === BUTTONS) {
-      setFontButtons(value)
-      setDbFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID , "fontButtons", value))
-    }
-  }
+  };
   //handle color for font size for undo and redo
   const handleChangeFontSize = () => {
     if (nameSection === HEADER) {
-      setFontSizeHeader(value)
+      setFontSizeHeader(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "fontSizeHeader", value)
-      )
-    }
-    else if (nameSection === MODAL_BOX) {
-      setFontSizeModalBox(value)
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "fontSizeHeader",
+          value
+        )
+      );
+    } else if (nameSection === MODAL_BOX) {
+      setFontSizeModalBox(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, MODAL_BOX_PLUGIN_ID, "fontSizeModalBox", value)
-      )
-    }
-    else if (nameSection === BUTTONS) {
-      setFontSizeButtons(value)
-      setDbFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID , "fontSizeButtons", value))
+        updatePluginValue(
+          headerDBFormat,
+          MODAL_BOX_PLUGIN_ID,
+          "fontSizeModalBox",
+          value
+        )
+      );
+    } else if (nameSection === BUTTONS) {
+      setFontSizeButtons(value);
+      setDbFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "fontSizeButtons",
+          value
+        )
+      );
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -555,24 +633,41 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "fontSizeButtons",
           value
         )
-      )
+      );
     }
-  }
+  };
   //handle color for undo and redo
   const handleChangeColor = () => {
     if (nameSection === HEADER) {
-      setColorHeader(value)
-      setHeaderDBFormat(updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "colorHeader", value))
-    }
-    else if (nameSection === MODAL_BOX) {
-      setColorModalBox(value)
+      setColorHeader(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, MODAL_BOX_PLUGIN_ID, "colorModalBox", value)
-      )
-    }
-    else if (nameSection === BUTTONS) {
-      setColorButtons(value)
-      setDbFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID , "colorButtons", value))
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "colorHeader",
+          value
+        )
+      );
+    } else if (nameSection === MODAL_BOX) {
+      setColorModalBox(value);
+      setHeaderDBFormat(
+        updatePluginValue(
+          headerDBFormat,
+          MODAL_BOX_PLUGIN_ID,
+          "colorModalBox",
+          value
+        )
+      );
+    } else if (nameSection === BUTTONS) {
+      setColorButtons(value);
+      setDbFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "colorButtons",
+          value
+        )
+      );
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -580,26 +675,34 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "colorButtons",
           value
         )
-      )
+      );
     }
-  }
+  };
 
   //handle for border bottom for undo and redo
   const handleBorderBottomWidth = () => {
     if (nameSection === LOGO) {
-      setBorderBottomWidthLogo(value)
+      setBorderBottomWidthLogo(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "borderBottomWidthLogo", value)
-      )
-    } 
-    else if (nameSection === MODAL_BOX) {
-      setBorderBottomWidthModalBox(value)
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "borderBottomWidthLogo",
+          value
+        )
+      );
+    } else if (nameSection === MODAL_BOX) {
+      setBorderBottomWidthModalBox(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, MODAL_BOX_PLUGIN_ID, "borderBottomWidthModalBox", value)
-      )
-    }
-    else if (nameSection === VERIFY_TITLE) {
-      setBorderBottomWidthTitleModal(value)
+        updatePluginValue(
+          headerDBFormat,
+          MODAL_BOX_PLUGIN_ID,
+          "borderBottomWidthModalBox",
+          value
+        )
+      );
+    } else if (nameSection === VERIFY_TITLE) {
+      setBorderBottomWidthTitleModal(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -607,19 +710,19 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderBottomWidthTitleModal",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderBottomWidthDataTitle(value)
+      setBorderBottomWidthBox2(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderBottomWidthDataTitle",
+          "borderBottomWidthBox2",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_DATA) {
-      setBorderBottomWidthData(value)
+      setBorderBottomWidthData(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -627,9 +730,9 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderBottomWidthData",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_CODE) {
-      setBorderBottomWidthDataModal(value)
+      setBorderBottomWidthDataModal(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -637,11 +740,17 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderBottomWidthDataModal",
           value
         )
-      )
-    }
-    else if (nameSection === BUTTONS) {
-      setBorderBottomWidthButtons(value)
-      setDbFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID , "borderBottomWidthButtons", value))
+      );
+    } else if (nameSection === BUTTONS) {
+      setBorderBottomWidthButtons(value);
+      setDbFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "borderBottomWidthButtons",
+          value
+        )
+      );
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -649,30 +758,44 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderBottomWidthButtons",
           value
         )
-      )
+      );
     }
-  }
+  };
 
   //handle for border top width change
   const handleBorderTopWidth = () => {
     if (nameSection === LOGO) {
-      setBorderTopWidthLogo(value)
+      setBorderTopWidthLogo(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "borderTopWidthLogo", value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "borderTopWidthLogo",
+          value
+        )
+      );
     } else if (nameSection === HEADER) {
-      setBorderTopWidthHeader(value)
+      setBorderTopWidthHeader(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "borderTopWidthHeader", value)
-      )
-    }  else if (nameSection === MODAL_BOX) {
-      setBorderTopWidthModalBox(value)
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "borderTopWidthHeader",
+          value
+        )
+      );
+    } else if (nameSection === MODAL_BOX) {
+      setBorderTopWidthModalBox(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, MODAL_BOX_PLUGIN_ID, "borderTopWidthModalBox", value)
-      )
-    }
-    else if (nameSection === VERIFY_TITLE) {
-      setBorderTopWidthTitleModal(value)
+        updatePluginValue(
+          headerDBFormat,
+          MODAL_BOX_PLUGIN_ID,
+          "borderTopWidthModalBox",
+          value
+        )
+      );
+    } else if (nameSection === VERIFY_TITLE) {
+      setBorderTopWidthTitleModal(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -680,31 +803,47 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderTopWidthTitleModal",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderTopWidthDataTitle(value)
+      setBorderTopWidthBox2(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderTopWidthDataTitle",
+          "borderTopWidthBox2",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_DATA) {
-      setBorderTopWidthData(value)
+      setBorderTopWidthData(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "borderTopWidthData", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "borderTopWidthData",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_CODE) {
-      setBorderTopWidthDataModal(value)
+      setBorderTopWidthDataModal(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "borderTopWidthDataModal", value)
-      )
-    }
-    else if (nameSection === BUTTONS) {
-      setBorderTopWidthButtons(value)
-      setDbFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID , "borderTopWidthButtons", value))
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "borderTopWidthDataModal",
+          value
+        )
+      );
+    } else if (nameSection === BUTTONS) {
+      setBorderTopWidthButtons(value);
+      setDbFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "borderTopWidthButtons",
+          value
+        )
+      );
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -712,31 +851,44 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderTopWidthButtons",
           value
         )
-      )
-      
+      );
     }
-  }
+  };
 
   //handle for border left width change
   const handleBorderLeftWidth = () => {
     if (nameSection === LOGO) {
-      setBorderLeftWidthLogo(value)
+      setBorderLeftWidthLogo(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "borderLeftWidthLogo", value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "borderLeftWidthLogo",
+          value
+        )
+      );
     } else if (nameSection === HEADER) {
-      setBorderLeftWidthHeader(value)
+      setBorderLeftWidthHeader(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "borderLeftWidthHeader", value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "borderLeftWidthHeader",
+          value
+        )
+      );
     } else if (nameSection === MODAL_BOX) {
-      setBorderLeftWidthModalBox(value)
+      setBorderLeftWidthModalBox(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, MODAL_BOX_PLUGIN_ID, "borderLeftWidthModalBox", value)
-      )
-    }
-    else if (nameSection === VERIFY_TITLE) {
-      setBorderLeftWidthTitleModal(value)
+        updatePluginValue(
+          headerDBFormat,
+          MODAL_BOX_PLUGIN_ID,
+          "borderLeftWidthModalBox",
+          value
+        )
+      );
+    } else if (nameSection === VERIFY_TITLE) {
+      setBorderLeftWidthTitleModal(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -744,31 +896,47 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderLeftWidthTitleModal",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderLeftWidthDataTitle(value)
+      setBorderLeftWidthBox2(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderLeftWidthDataTitle",
+          "borderLeftWidthBox2",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_DATA) {
-      setBorderLeftWidthData(value)
+      setBorderLeftWidthData(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "borderLeftWidthData", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "borderLeftWidthData",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_CODE) {
-      setBorderLeftWidthDataModal(value)
+      setBorderLeftWidthDataModal(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "borderLeftWidthDataModal", value)
-      )
-    }
-    else if (nameSection === BUTTONS) {
-      setBorderLeftWidthButtons(value)
-      setDbFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID , "borderLeftWidthButtons", value))
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "borderLeftWidthDataModal",
+          value
+        )
+      );
+    } else if (nameSection === BUTTONS) {
+      setBorderLeftWidthButtons(value);
+      setDbFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "borderLeftWidthButtons",
+          value
+        )
+      );
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -776,25 +944,34 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderLeftWidthButtons",
           value
         )
-      )
+      );
     }
-  }
+  };
 
   //handle for border right width change
   const handleBorderRightWidth = () => {
     if (nameSection === LOGO) {
-      setBorderRightWidthLogo(value)
+      setBorderRightWidthLogo(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "borderRightWidthLogo", value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "borderRightWidthLogo",
+          value
+        )
+      );
     } else if (nameSection === MODAL_BOX) {
-      setBorderRightWidthModalBox(value)
+      setBorderRightWidthModalBox(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, MODAL_BOX_PLUGIN_ID, "borderRightWidthModalBox", value)
-      )
-    }
-    else if (nameSection === VERIFY_TITLE) {
-      setBorderRightWidthTitleModal(value)
+        updatePluginValue(
+          headerDBFormat,
+          MODAL_BOX_PLUGIN_ID,
+          "borderRightWidthModalBox",
+          value
+        )
+      );
+    } else if (nameSection === VERIFY_TITLE) {
+      setBorderRightWidthTitleModal(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -802,19 +979,19 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderRightWidthTitleModal",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderRightWidthDataTitle(value)
+      setBorderRightWidthBox2(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderRightWidthDataTitle",
+          "borderRightWidthBox2",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_DATA) {
-      setBorderRightWidthData(value)
+      setBorderRightWidthData(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -822,9 +999,9 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderRightWidthData",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_CODE) {
-      setBorderRightWidthDataModal(value)
+      setBorderRightWidthDataModal(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -832,11 +1009,17 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderRightWidthDataModal",
           value
         )
-      )
-    }
-    else if (nameSection === BUTTONS) {
-      setBorderRightWidthButtons(value)
-      setDbFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID , "borderRightWidthButtons", value))
+      );
+    } else if (nameSection === BUTTONS) {
+      setBorderRightWidthButtons(value);
+      setDbFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "borderRightWidthButtons",
+          value
+        )
+      );
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -844,31 +1027,44 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderRightWidthButtons",
           value
         )
-      )
+      );
     }
-  }
+  };
 
   //handle for border top right radius change
   const handleBorderTopRightRadius = () => {
     if (nameSection === LOGO) {
-      setBorderTopRightRadiusLogo(value)
+      setBorderTopRightRadiusLogo(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "borderTopRightRadiusLogo", value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "borderTopRightRadiusLogo",
+          value
+        )
+      );
     } else if (nameSection === HEADER) {
-      setBorderTopRightRadiusHeader(value)
+      setBorderTopRightRadiusHeader(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "borderTopRightRadiusHeader", value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "borderTopRightRadiusHeader",
+          value
+        )
+      );
     } else if (nameSection === MODAL_BOX) {
-      setBorderTopRightRadiusModalBox(value)
+      setBorderTopRightRadiusModalBox(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, MODAL_BOX_PLUGIN_ID, "borderTopRightRadiusModalBox", value)
-      )
-    }
-    
-    else if (nameSection === VERIFY_TITLE) {
-      setBorderTopRightRadiusTitleModal(value)
+        updatePluginValue(
+          headerDBFormat,
+          MODAL_BOX_PLUGIN_ID,
+          "borderTopRightRadiusModalBox",
+          value
+        )
+      );
+    } else if (nameSection === VERIFY_TITLE) {
+      setBorderTopRightRadiusTitleModal(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -876,19 +1072,19 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderTopRightRadiusTitleModal",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderTopRightRadiusDataTitle(value)
+      setBorderTopRightRadiusBox2(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderTopRightRadiusDataTitle",
+          "borderTopRightRadiusBox2",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_DATA) {
-      setBorderTopRightRadiusData(value)
+      setBorderTopRightRadiusData(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -896,9 +1092,9 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderTopRightRadiusData",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_CODE) {
-      setBorderTopRightRadiusDataModal(value)
+      setBorderTopRightRadiusDataModal(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -906,11 +1102,17 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderTopRightRadiusDataModal",
           value
         )
-      )
-    }
-    else if (nameSection === BUTTONS) {
-      setBorderTopRightRadiusButtons(value)
-      setDbFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID , "borderTopRightRadiusButtons", value))
+      );
+    } else if (nameSection === BUTTONS) {
+      setBorderTopRightRadiusButtons(value);
+      setDbFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "borderTopRightRadiusButtons",
+          value
+        )
+      );
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -918,30 +1120,43 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderTopRightRadiusButtons",
           value
         )
-      )
+      );
     }
-  }
+  };
   //handle for border top left radius change
   const handleBorderTopLeftRadius = () => {
     if (nameSection === LOGO) {
-      setBorderTopLeftRadiusLogo(value)
+      setBorderTopLeftRadiusLogo(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "borderTopLeftRadiusLogo", value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "borderTopLeftRadiusLogo",
+          value
+        )
+      );
     } else if (nameSection === HEADER) {
-      setBorderTopLeftRadiusHeader(value)
+      setBorderTopLeftRadiusHeader(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "borderTopLeftRadiusHeader", value)
-      )
-    } 
-    else if (nameSection === MODAL_BOX) {
-      setBorderTopLeftRadiusModalBox(value)
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "borderTopLeftRadiusHeader",
+          value
+        )
+      );
+    } else if (nameSection === MODAL_BOX) {
+      setBorderTopLeftRadiusModalBox(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, MODAL_BOX_PLUGIN_ID, "borderTopLeftRadiusModalBox", value)
-      )
-    }
-    else if (nameSection === VERIFY_TITLE) {
-      setBorderTopLeftRadiusTitleModal(value)
+        updatePluginValue(
+          headerDBFormat,
+          MODAL_BOX_PLUGIN_ID,
+          "borderTopLeftRadiusModalBox",
+          value
+        )
+      );
+    } else if (nameSection === VERIFY_TITLE) {
+      setBorderTopLeftRadiusTitleModal(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -949,19 +1164,19 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderTopLeftRadiusTitleModal",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderTopLeftRadiusDataTitle(value)
+      setBorderTopLeftRadiusBox2(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderTopLeftRadiusDataTitle",
+          "borderTopLeftRadiusBox2",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_DATA) {
-      setBorderTopLeftRadiusData(value)
+      setBorderTopLeftRadiusData(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -969,9 +1184,9 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderTopLeftRadiusData",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_CODE) {
-      setBorderTopLeftRadiusDataModal(value)
+      setBorderTopLeftRadiusDataModal(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -979,11 +1194,17 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderTopLeftRadiusDataModal",
           value
         )
-      )
-    }
-    else if (nameSection === BUTTONS) {
-      setBorderTopLeftRadiusButtons(value)
-      setDbFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID , "borderTopLeftRadiusButtons", value))
+      );
+    } else if (nameSection === BUTTONS) {
+      setBorderTopLeftRadiusButtons(value);
+      setDbFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "borderTopLeftRadiusButtons",
+          value
+        )
+      );
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -991,25 +1212,33 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderTopLeftRadiusButtons",
           value
         )
-      )
+      );
     }
-  }
+  };
   //handle for border bottom right radius change
   const handleBorderBottomRightRadius = () => {
     if (nameSection === LOGO) {
-      setBorderBottomRightRadiusLogo(value)
+      setBorderBottomRightRadiusLogo(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "borderBottomRightRadiusLogo", value)
-      )
-    } 
-    else if (nameSection === MODAL_BOX) {
-      setBorderBottomRightRadiusModalBox(value)
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "borderBottomRightRadiusLogo",
+          value
+        )
+      );
+    } else if (nameSection === MODAL_BOX) {
+      setBorderBottomRightRadiusModalBox(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, MODAL_BOX_PLUGIN_ID, "borderBottomRightRadiusModalBox", value)
-      )
-    }
-    else if (nameSection === VERIFY_TITLE) {
-      setBorderBottomRightRadiusTitleModal(value)
+        updatePluginValue(
+          headerDBFormat,
+          MODAL_BOX_PLUGIN_ID,
+          "borderBottomRightRadiusModalBox",
+          value
+        )
+      );
+    } else if (nameSection === VERIFY_TITLE) {
+      setBorderBottomRightRadiusTitleModal(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1017,19 +1246,19 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderBottomRightRadiusTitleModal",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderBottomRightRadiusDataTitle(value)
+      setBorderBottomRightRadiusBox2(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderBottomRightRadiusDataTitle",
+          "borderBottomRightRadiusBox2",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_DATA) {
-      setBorderBottomRightRadiusData(value)
+      setBorderBottomRightRadiusData(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1037,9 +1266,9 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderBottomRightRadiusData",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_CODE) {
-      setBorderBottomRightRadiusDataModal(value)
+      setBorderBottomRightRadiusDataModal(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1047,11 +1276,17 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderBottomRightRadiusDataModal",
           value
         )
-      )
-    }
-    else if (nameSection === BUTTONS) {
-      setBorderBottomRightRadiusButtons(value)
-      setDbFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID , "borderBottomRightRadiusButtons", value))
+      );
+    } else if (nameSection === BUTTONS) {
+      setBorderBottomRightRadiusButtons(value);
+      setDbFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "borderBottomRightRadiusButtons",
+          value
+        )
+      );
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1059,25 +1294,33 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderBottomRightRadiusButtons",
           value
         )
-      )
+      );
     }
-  }
+  };
   //handle for border bottom left radius change
   const handleBorderBottomLeftRadius = () => {
     if (nameSection === LOGO) {
-      setBorderBottomLeftRadiusLogo(value)
+      setBorderBottomLeftRadiusLogo(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "borderBottomLeftRadiusLogo", value)
-      )
-    }
-    else if (nameSection === MODAL_BOX) {
-      setBorderBottomLeftRadiusModalBox(value)
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "borderBottomLeftRadiusLogo",
+          value
+        )
+      );
+    } else if (nameSection === MODAL_BOX) {
+      setBorderBottomLeftRadiusModalBox(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, MODAL_BOX_PLUGIN_ID, "borderBottomLeftRadiusModalBox", value)
-      )
-    }
-     else if (nameSection === VERIFY_TITLE) {
-      setBorderBottomLeftRadiusTitleModal(value)
+        updatePluginValue(
+          headerDBFormat,
+          MODAL_BOX_PLUGIN_ID,
+          "borderBottomLeftRadiusModalBox",
+          value
+        )
+      );
+    } else if (nameSection === VERIFY_TITLE) {
+      setBorderBottomLeftRadiusTitleModal(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1085,19 +1328,19 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderBottomLeftRadiusTitleModal",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderBottomLeftRadiusDataTitle(value)
+      setBorderBottomLeftRadiusBox2(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderBottomLeftRadiusDataTitle",
+          "borderBottomLeftRadiusBox2",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_DATA) {
-      setBorderBottomLeftRadiusData(value)
+      setBorderBottomLeftRadiusData(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1105,9 +1348,9 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderBottomLeftRadiusData",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_CODE) {
-      setBorderBottomLeftRadiusDataModal(value)
+      setBorderBottomLeftRadiusDataModal(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1115,11 +1358,17 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderBottomLeftRadiusDataModal",
           value
         )
-      )
-    }
-    else if (nameSection === BUTTONS) {
-      setBorderBottomLeftRadiusButtons(value)
-      setDbFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID , "borderBottomLeftRadiusButtons", value))
+      );
+    } else if (nameSection === BUTTONS) {
+      setBorderBottomLeftRadiusButtons(value);
+      setDbFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "borderBottomLeftRadiusButtons",
+          value
+        )
+      );
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1127,52 +1376,83 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderBottomLeftRadiusButtons",
           value
         )
-      )
+      );
     }
-  }
+  };
   //handle for padding top change
   const handlePaddingTop = () => {
     if (nameSection === LOGO) {
-      setPaddingTopLogo(value)
-      setHeaderDBFormat(updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "paddingTopLogo", value))
+      setPaddingTopLogo(value);
+      setHeaderDBFormat(
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "paddingTopLogo",
+          value
+        )
+      );
     } else if (nameSection === HEADER) {
-      setPaddingTopHeader(value)
+      setPaddingTopHeader(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "paddingTopHeader", value)
-      )
-    } 
-    else if (nameSection === MODAL_BOX) {
-      setPaddingTopModalBox(value)
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "paddingTopHeader",
+          value
+        )
+      );
+    } else if (nameSection === MODAL_BOX) {
+      setPaddingTopModalBox(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, MODAL_BOX_PLUGIN_ID, "paddingTopModalBox", value)
-      )
-    }
-    
-    else if (nameSection === VERIFY_TITLE) {
-      setPaddingTopTitleModal(value)
+        updatePluginValue(
+          headerDBFormat,
+          MODAL_BOX_PLUGIN_ID,
+          "paddingTopModalBox",
+          value
+        )
+      );
+    } else if (nameSection === VERIFY_TITLE) {
+      setPaddingTopTitleModal(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_TITLE_PLUGIN_ID, "paddingTopTitleModal", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_TITLE_PLUGIN_ID,
+          "paddingTopTitleModal",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setPaddingTopDataTitle(value)
+      setPaddingTopBox2(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_TITLE_PLUGIN_ID, "paddingTopDataTitle", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_TITLE_PLUGIN_ID,
+          "paddingTopBox2",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_DATA) {
-      setPaddingTopData(value)
+      setPaddingTopData(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "paddingTopData", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "paddingTopData",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_CODE) {
-      setPaddingTopDataModal(value)
+      setPaddingTopDataModal(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "paddingTopDataModal", value)
-      )
-
-    }
-    else if (nameSection === BUTTONS) {
-      setPaddingTopButtons(value)
-      setDbModalsFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID , "paddingTopButtons", value))
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "paddingTopDataModal",
+          value
+        )
+      );
+    } else if (nameSection === BUTTONS) {
+      setPaddingTopButtons(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1180,57 +1460,91 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "paddingTopButtons",
           value
         )
-      )
-  }
-}
+      );
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "paddingTopButtons",
+          value
+        )
+      );
+    }
+  };
   //handle for padding bottom change
   const handlePaddingBottom = () => {
     if (nameSection === LOGO) {
-      setPaddingBottomLogo(value)
+      setPaddingBottomLogo(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "paddingBottomLogo", value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "paddingBottomLogo",
+          value
+        )
+      );
     } else if (nameSection === HEADER) {
-      setPaddingBottomHeader(value)
+      setPaddingBottomHeader(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "paddingBottomHeader", value)
-      )
-    }
-    else if (nameSection === MODAL_BOX) {
-      setPaddingBottomModalBox(value)
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "paddingBottomHeader",
+          value
+        )
+      );
+    } else if (nameSection === MODAL_BOX) {
+      setPaddingBottomModalBox(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, MODAL_BOX_PLUGIN_ID, "paddingBottomModalBox", value)
-      )
-    }
-     else if (nameSection === VERIFY_TITLE) {
-      setPaddingBottomTitleModal(value)
-      setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_TITLE_PLUGIN_ID, "PaddingBottomTitleModal", value)
-      )
-    } else if (nameSection === VERIFY_TITLE_BTN) {
-      setPaddingBottomDataTitle(value)
+        updatePluginValue(
+          headerDBFormat,
+          MODAL_BOX_PLUGIN_ID,
+          "paddingBottomModalBox",
+          value
+        )
+      );
+    } else if (nameSection === VERIFY_TITLE) {
+      setPaddingBottomTitleModal(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "paddingBottomDataTitle",
+          "PaddingBottomTitleModal",
           value
         )
-      )
+      );
+    } else if (nameSection === VERIFY_TITLE_BTN) {
+      setPaddingBottomBox2(value);
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_TITLE_PLUGIN_ID,
+          "paddingBottomBox2",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_DATA) {
-      setPaddingBottomData(value)
+      setPaddingBottomData(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "paddingBottomData", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "paddingBottomData",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_CODE) {
-      setPaddingBottomDataModal(value)
+      setPaddingBottomDataModal(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "paddingBottomDataModal", value)
-      )
-    }
-    else if (nameSection === BUTTONS) {
-      setPaddingBottomButtons(value)
-      setDbModalsFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID , "paddingBottomButtons", value))
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "paddingBottomDataModal",
+          value
+        )
+      );
+    } else if (nameSection === BUTTONS) {
+      setPaddingBottomButtons(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1238,50 +1552,91 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "paddingBottomButtons",
           value
         )
-      )
-  }
-  }
+      );
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "paddingBottomButtons",
+          value
+        )
+      );
+    }
+  };
   //handle for padding left change
   const handlePaddingLeft = () => {
     if (nameSection === LOGO) {
-      setPaddingLeftLogo(value)
-      setHeaderDBFormat(updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "paddingLeftLogo", value))
+      setPaddingLeftLogo(value);
+      setHeaderDBFormat(
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "paddingLeftLogo",
+          value
+        )
+      );
     } else if (nameSection === HEADER) {
-      setPaddingLeftHeader(value)
+      setPaddingLeftHeader(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "paddingLeftHeader", value)
-      )
-    } 
-    else if (nameSection === MODAL_BOX) {
-      setPaddingLeftModalBox(value)
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "paddingLeftHeader",
+          value
+        )
+      );
+    } else if (nameSection === MODAL_BOX) {
+      setPaddingLeftModalBox(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, MODAL_BOX_PLUGIN_ID, "paddingLeftModalBox", value)
-      )
-    }
-    else if (nameSection === VERIFY_TITLE) {
-      setPaddingLeftTitleModal(value)
+        updatePluginValue(
+          headerDBFormat,
+          MODAL_BOX_PLUGIN_ID,
+          "paddingLeftModalBox",
+          value
+        )
+      );
+    } else if (nameSection === VERIFY_TITLE) {
+      setPaddingLeftTitleModal(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_TITLE_PLUGIN_ID, "paddingLeftTitleModal", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_TITLE_PLUGIN_ID,
+          "paddingLeftTitleModal",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setPaddingLeftDataTitle(value)
+      setPaddingLeftBox2(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_TITLE_PLUGIN_ID, "paddingLeftDataTitle", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_TITLE_PLUGIN_ID,
+          "paddingLeftBox2",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_DATA) {
-      setPaddingLeftData(value)
+      setPaddingLeftData(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "paddingLeftData", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "paddingLeftData",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_CODE) {
-      setPaddingLeftDataModal(value)
+      setPaddingLeftDataModal(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "paddingLeftDataModal", value)
-      )
-    }
-    else if (nameSection === BUTTONS) {
-      setPaddingLeftButtons(value)
-      setDbModalsFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID , "paddingLeftButtons", value))
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "paddingLeftDataModal",
+          value
+        )
+      );
+    } else if (nameSection === BUTTONS) {
+      setPaddingLeftButtons(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1289,51 +1644,91 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "paddingLeftButtons",
           value
         )
-      )
-  }
-  }
+      );
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "paddingLeftButtons",
+          value
+        )
+      );
+    }
+  };
   //handle for padding right change
   const handlePaddingRight = () => {
     if (nameSection === LOGO) {
-      setPaddingRightLogo(value)
+      setPaddingRightLogo(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "paddingRightLogo", value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "paddingRightLogo",
+          value
+        )
+      );
     } else if (nameSection === HEADER) {
-      setPaddingRightHeader(value)
+      setPaddingRightHeader(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "paddingRightHeader", value)
-      )
-    }  else if (nameSection === MODAL_BOX) {
-      setPaddingRightModalBox(value)
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "paddingRightHeader",
+          value
+        )
+      );
+    } else if (nameSection === MODAL_BOX) {
+      setPaddingRightModalBox(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, MODAL_BOX_PLUGIN_ID, "paddingRightModalBox", value)
-      )
-    }
-    else if (nameSection === VERIFY_TITLE) {
-      setPaddingRightTitleModal(value)
+        updatePluginValue(
+          headerDBFormat,
+          MODAL_BOX_PLUGIN_ID,
+          "paddingRightModalBox",
+          value
+        )
+      );
+    } else if (nameSection === VERIFY_TITLE) {
+      setPaddingRightTitleModal(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_TITLE_PLUGIN_ID, "paddingRightTitleModal", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_TITLE_PLUGIN_ID,
+          "paddingRightTitleModal",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setPaddingRightDataTitle(value)
+      setPaddingRightBox2(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_TITLE_PLUGIN_ID, "paddingRightDataTitle", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_TITLE_PLUGIN_ID,
+          "paddingRightBox2",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_DATA) {
-      setPaddingRightData(value)
+      setPaddingRightData(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "paddingRightData", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "paddingRightData",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_CODE) {
-      setPaddingRightDataModal(value)
+      setPaddingRightDataModal(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "paddingRightDataModal", value)
-      )
-    }
-    else if (nameSection === BUTTONS) {
-      setPaddingRightButtons(value)
-      setDbModalsFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID , "paddingRightButtons", value))
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "paddingRightDataModal",
+          value
+        )
+      );
+    } else if (nameSection === BUTTONS) {
+      setPaddingRightButtons(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1341,50 +1736,91 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "paddingRightButtons",
           value
         )
-      )
-  }
-  }
+      );
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "paddingRightButtons",
+          value
+        )
+      );
+    }
+  };
   //handle for margin top change
   const handleMarginTop = () => {
     if (nameSection === LOGO) {
-      setMarginTopLogo(value)
-      setHeaderDBFormat(updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "marginTopLogo", value))
+      setMarginTopLogo(value);
+      setHeaderDBFormat(
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "marginTopLogo",
+          value
+        )
+      );
     } else if (nameSection === HEADER) {
-      setMarginTopHeader(value)
+      setMarginTopHeader(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "marginTopHeader", value)
-      )
-    }
-    else if (nameSection === MODAL_BOX) {
-      setMarginTopModalBox(value)
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "marginTopHeader",
+          value
+        )
+      );
+    } else if (nameSection === MODAL_BOX) {
+      setMarginTopModalBox(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, MODAL_BOX_PLUGIN_ID, "marginTopModalBox", value)
-      )
-    }
-     else if (nameSection === VERIFY_TITLE) {
-      setMarginTopTitleModal(value)
+        updatePluginValue(
+          headerDBFormat,
+          MODAL_BOX_PLUGIN_ID,
+          "marginTopModalBox",
+          value
+        )
+      );
+    } else if (nameSection === VERIFY_TITLE) {
+      setMarginTopTitleModal(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_TITLE_PLUGIN_ID, "marginTopTitleModal", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_TITLE_PLUGIN_ID,
+          "marginTopTitleModal",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setMarginTopDataTitle(value)
+      setMarginTopBox2(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_TITLE_PLUGIN_ID, "marginTopDataTitle", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_TITLE_PLUGIN_ID,
+          "marginTopBox2",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_DATA) {
-      setMarginTopData(value)
+      setMarginTopData(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "marginTopData", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "marginTopData",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_CODE) {
-      setMarginTopDataModal(value)
+      setMarginTopDataModal(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "marginTopDataModal", value)
-      )
-    }
-    else if (nameSection === BUTTONS) {
-      setMarginTopButtons(value)
-      setDbModalsFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID , "marginTopButtons", value))
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "marginTopDataModal",
+          value
+        )
+      );
+    } else if (nameSection === BUTTONS) {
+      setMarginTopButtons(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1392,49 +1828,91 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "marginTopButtons",
           value
         )
-      )
-  }
-  }
+      );
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "marginTopButtons",
+          value
+        )
+      );
+    }
+  };
   //handle for margin bottom change
   const handleMarginBottom = () => {
     if (nameSection === LOGO) {
-      setMarginBottomLogo(value)
-      setHeaderDBFormat(updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "marginLeftLogo", value))
+      setMarginBottomLogo(value);
+      setHeaderDBFormat(
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "marginLeftLogo",
+          value
+        )
+      );
     } else if (nameSection === HEADER) {
-      setMarginBottomHeader(value)
+      setMarginBottomHeader(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "marginBottomHeader", value)
-      )
-    }  else if (nameSection === MODAL_BOX) {
-      setMarginBottomModalBox(value)
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "marginBottomHeader",
+          value
+        )
+      );
+    } else if (nameSection === MODAL_BOX) {
+      setMarginBottomModalBox(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, MODAL_BOX_PLUGIN_ID, "marginBottomModalBox", value)
-      )
-    }
-    else if (nameSection === VERIFY_TITLE) {
-      setMarginBottomTitleModal(value)
+        updatePluginValue(
+          headerDBFormat,
+          MODAL_BOX_PLUGIN_ID,
+          "marginBottomModalBox",
+          value
+        )
+      );
+    } else if (nameSection === VERIFY_TITLE) {
+      setMarginBottomTitleModal(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_TITLE_PLUGIN_ID, "marginBottomTitleModal", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_TITLE_PLUGIN_ID,
+          "marginBottomTitleModal",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setMarginBottomDataTitle(value)
+      setMarginBottomBox2(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_TITLE_PLUGIN_ID, "marginBottomDataTitle", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_TITLE_PLUGIN_ID,
+          "marginBottomBox2",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_DATA) {
-      setMarginBottomData(value)
+      setMarginBottomData(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "marginBottomData", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "marginBottomData",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_CODE) {
-      setMarginBottomDataModal(value)
+      setMarginBottomDataModal(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "marginBottomDataModal", value)
-      )
-    }
-    else if (nameSection === BUTTONS) {
-      setMarginBottomButtons(value)
-      setDbModalsFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID , "marginBottomButtons", value))
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "marginBottomDataModal",
+          value
+        )
+      );
+    } else if (nameSection === BUTTONS) {
+      setMarginBottomButtons(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1442,50 +1920,91 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "marginBottomButtons",
           value
         )
-      )
-  }
-  }
+      );
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "marginBottomButtons",
+          value
+        )
+      );
+    }
+  };
   //handle for margin left change
   const handleMarginLeft = () => {
     if (nameSection === LOGO) {
-      setMarginLeftLogo(value)
-      setHeaderDBFormat(updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "marginLeftLogo", value))
+      setMarginLeftLogo(value);
+      setHeaderDBFormat(
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "marginLeftLogo",
+          value
+        )
+      );
     } else if (nameSection === HEADER) {
-      setMarginLeftHeader(value)
+      setMarginLeftHeader(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "marginLeftHeader", value)
-      )
-    }
-    else if (nameSection === MODAL_BOX) {
-      setMarginLeftModalBox(value)
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "marginLeftHeader",
+          value
+        )
+      );
+    } else if (nameSection === MODAL_BOX) {
+      setMarginLeftModalBox(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, MODAL_BOX_PLUGIN_ID, "marginLeftModalBox", value)
-      )
-    }
-     else if (nameSection === VERIFY_TITLE) {
-      setMarginLeftTitleModal(value)
+        updatePluginValue(
+          headerDBFormat,
+          MODAL_BOX_PLUGIN_ID,
+          "marginLeftModalBox",
+          value
+        )
+      );
+    } else if (nameSection === VERIFY_TITLE) {
+      setMarginLeftTitleModal(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_TITLE_PLUGIN_ID, "marginLeftTitleModal", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_TITLE_PLUGIN_ID,
+          "marginLeftTitleModal",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setMarginLeftDataTitle(value)
+      setMarginLeftBox2(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_TITLE_PLUGIN_ID, "marginLeftDataTitle", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_TITLE_PLUGIN_ID,
+          "marginLeftBox2",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_DATA) {
-      setMarginLeftData(value)
+      setMarginLeftData(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "marginLeftData", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "marginLeftData",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_CODE) {
-      setMarginLeftDataModal(value)
+      setMarginLeftDataModal(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "marginLeftDataModal", value)
-      )
-    }
-    else if (nameSection === BUTTONS) {
-      setMarginLeftButtons(value)
-      setDbModalsFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID , "marginLeftButtons", value))
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "marginLeftDataModal",
+          value
+        )
+      );
+    } else if (nameSection === BUTTONS) {
+      setMarginLeftButtons(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1493,49 +2012,91 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "marginLeftButtons",
           value
         )
-      )
-  }
-  }
+      );
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "marginLeftButtons",
+          value
+        )
+      );
+    }
+  };
   //handle for margin right change
   const handleMarginRight = () => {
     if (nameSection === LOGO) {
-      setMarginRightLogo(value)
-      setHeaderDBFormat(updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "marginRightLogo", value))
+      setMarginRightLogo(value);
+      setHeaderDBFormat(
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "marginRightLogo",
+          value
+        )
+      );
     } else if (nameSection === HEADER) {
-      setMarginRightHeader(value)
+      setMarginRightHeader(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "marginRightHeader", value)
-      )
-    }  else if (nameSection === MODAL_BOX) {
-      setMarginRightModalBox(value)
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "marginRightHeader",
+          value
+        )
+      );
+    } else if (nameSection === MODAL_BOX) {
+      setMarginRightModalBox(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, MODAL_BOX_PLUGIN_ID, "marginRightModalBox", value)
-      )
-    }
-    else if (nameSection === VERIFY_TITLE) {
-      setMarginRightTitleModal(value)
+        updatePluginValue(
+          headerDBFormat,
+          MODAL_BOX_PLUGIN_ID,
+          "marginRightModalBox",
+          value
+        )
+      );
+    } else if (nameSection === VERIFY_TITLE) {
+      setMarginRightTitleModal(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_TITLE_PLUGIN_ID, "marginRightTitleModal", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_TITLE_PLUGIN_ID,
+          "marginRightTitleModal",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setMarginRightDataTitle(value)
+      setMarginRightBox2(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_TITLE_PLUGIN_ID, "marginRightDataTitle", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_TITLE_PLUGIN_ID,
+          "marginRightBox2",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_DATA) {
-      setMarginRightData(value)
+      setMarginRightData(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "marginRightData", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "marginRightData",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_CODE) {
-      setMarginRightDataModal(value)
+      setMarginRightDataModal(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "marginRightDataModal", value)
-      )
-    }
-    else if (nameSection === BUTTONS) {
-      setMarginRightButtons(value)
-      setDbModalsFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID , "marginRightButtons", value))
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "marginRightDataModal",
+          value
+        )
+      );
+    } else if (nameSection === BUTTONS) {
+      setMarginRightButtons(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1543,31 +2104,52 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "marginRightButtons",
           value
         )
-      )
-  }
-  }
+      );
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "marginRightButtons",
+          value
+        )
+      );
+    }
+  };
 
   //handle for border bottom color change
   const handleBorderBottomColor = () => {
     if (nameSection === LOGO) {
-      setBorderBottomColorLogo(value)
+      setBorderBottomColorLogo(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "borderBottomColorLogo", value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "borderBottomColorLogo",
+          value
+        )
+      );
     } else if (nameSection === HEADER) {
-      setBorderBottomColorHeader(value)
+      setBorderBottomColorHeader(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "borderBottomColorHeader", value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "borderBottomColorHeader",
+          value
+        )
+      );
     } else if (nameSection === MODAL_BOX) {
-      setBorderBottomColorModalBox(value)
+      setBorderBottomColorModalBox(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, MODAL_BOX_PLUGIN_ID, "borderBottomColorModalBox", value)
-      )
-    }
-    
-    else if (nameSection === VERIFY_TITLE) {
-      setBorderBottomColorTitleModal(value)
+        updatePluginValue(
+          headerDBFormat,
+          MODAL_BOX_PLUGIN_ID,
+          "borderBottomColorModalBox",
+          value
+        )
+      );
+    } else if (nameSection === VERIFY_TITLE) {
+      setBorderBottomColorTitleModal(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1575,19 +2157,19 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderBottomColorTitleModal",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderBottomColorDataTitle(value)
+      setBorderBottomColorBox2(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderBottomColorDataTitle",
+          "borderBottomColorBox2",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_DATA) {
-      setBorderBottomColorData(value)
+      setBorderBottomColorData(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1595,9 +2177,9 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderBottomColorData",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_CODE) {
-      setBorderBottomColorDataModal(value)
+      setBorderBottomColorDataModal(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1605,11 +2187,9 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderBottomColorDataModal",
           value
         )
-      )
-    }
-    else if (nameSection === BUTTONS) {
-      setBorderBottomColorButtons(value)
-      setDbModalsFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID , "borderBottomColorButtons", value))
+      );
+    } else if (nameSection === BUTTONS) {
+      setBorderBottomColorButtons(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1617,31 +2197,53 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderBottomColorButtons",
           value
         )
-      )
-  }
-  }
+      );
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "borderBottomColorButtons",
+          value
+        )
+      );
+    }
+  };
   //handle for border top color change
   const handleBorderTopColor = () => {
     if (nameSection === LOGO) {
-      setBorderTopColorLogo(value)
+      setBorderTopColorLogo(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "borderTopColorLogo", value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "borderTopColorLogo",
+          value
+        )
+      );
     } else if (nameSection === HEADER) {
-      setBorderTopColorHeader(value)
+      setBorderTopColorHeader(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "borderTopColorHeader", value)
-      )
-    }
-    else if (nameSection === MODAL_BOX) {
-      setBorderTopColorModalBox(value)
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "borderTopColorHeader",
+          value
+        )
+      );
+    } else if (nameSection === MODAL_BOX) {
+      setBorderTopColorModalBox(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, MODAL_BOX_PLUGIN_ID, "borderTopColorModalBox", value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          MODAL_BOX_PLUGIN_ID,
+          "borderTopColorModalBox",
+          value
+        )
+      );
     }
     // this is for modals
     else if (nameSection === VERIFY_TITLE) {
-      setBorderTopColorTitleModal(value)
+      setBorderTopColorTitleModal(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1649,31 +2251,39 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderTopColorTitleModal",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderTopColorDataTitle(value)
+      setBorderTopColorBox2(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderTopColorDataTitle",
+          "borderTopColorBox2",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_DATA) {
-      setBorderTopColorData(value)
+      setBorderTopColorData(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "borderTopColorData", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "borderTopColorData",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_CODE) {
-      setBorderTopColorDataModal(value)
+      setBorderTopColorDataModal(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "borderTopColorDataModal", value)
-      )
-    }
-    else if (nameSection === BUTTONS) {
-      setBorderTopColorButtons(value)
-      setDbModalsFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID , "borderTopColorButtons", value))
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "borderTopColorDataModal",
+          value
+        )
+      );
+    } else if (nameSection === BUTTONS) {
+      setBorderTopColorButtons(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1681,30 +2291,51 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderTopColorButtons",
           value
         )
-      )
-  }
-  }
+      );
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "borderTopColorButtons",
+          value
+        )
+      );
+    }
+  };
   //handle for border left color change
   const handleBorderLeftColor = () => {
     if (nameSection === LOGO) {
-      setBorderLeftColorLogo(value)
+      setBorderLeftColorLogo(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "borderLeftColorLogo", value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "borderLeftColorLogo",
+          value
+        )
+      );
     } else if (nameSection === HEADER) {
-      setBorderLeftColorHeader(value)
+      setBorderLeftColorHeader(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "borderLeftColorHeader", value)
-      )
-    } 
-    else if (nameSection === MODAL_BOX) {
-      setBorderLeftColorModalBox(value)
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "borderLeftColorHeader",
+          value
+        )
+      );
+    } else if (nameSection === MODAL_BOX) {
+      setBorderLeftColorModalBox(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, MODAL_BOX_PLUGIN_ID, "borderLeftColorModalBox", value)
-      )
-    }
-    else if (nameSection === VERIFY_TITLE) {
-      setBorderLeftColorTitleModal(value)
+        updatePluginValue(
+          headerDBFormat,
+          MODAL_BOX_PLUGIN_ID,
+          "borderLeftColorModalBox",
+          value
+        )
+      );
+    } else if (nameSection === VERIFY_TITLE) {
+      setBorderLeftColorTitleModal(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1712,31 +2343,39 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderLeftColorTitleModal",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderLeftColorDataTitle(value)
+      setBorderLeftColorBox2(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderLeftColorDataTitle",
+          "borderLeftColorBox2",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_DATA) {
-      setBorderLeftColorData(value)
+      setBorderLeftColorData(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "borderLeftColorData", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "borderLeftColorData",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_CODE) {
-      setBorderLeftColorDataModal(value)
+      setBorderLeftColorDataModal(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "borderLeftColorDataModal", value)
-      )
-    }
-    else if (nameSection === BUTTONS) {
-      setBorderLeftColorButtons(value)
-      setDbModalsFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID , "borderLeftColorButtons", value))
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "borderLeftColorDataModal",
+          value
+        )
+      );
+    } else if (nameSection === BUTTONS) {
+      setBorderLeftColorButtons(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1744,30 +2383,51 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderLeftColorButtons",
           value
         )
-      )
-  }
-  }
+      );
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "borderLeftColorButtons",
+          value
+        )
+      );
+    }
+  };
   //handle for border right color change
   const handleBorderRightColor = () => {
     if (nameSection === LOGO) {
-      setBorderRightColorLogo(value)
+      setBorderRightColorLogo(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "borderRightColorLogo", value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "borderRightColorLogo",
+          value
+        )
+      );
     } else if (nameSection === HEADER) {
-      setBorderRightColorHeader(value)
+      setBorderRightColorHeader(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "borderRightColorHeader", value)
-      )
-    } 
-    else if (nameSection === MODAL_BOX) {
-      setBorderRightColorModalBox(value)
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "borderRightColorHeader",
+          value
+        )
+      );
+    } else if (nameSection === MODAL_BOX) {
+      setBorderRightColorModalBox(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, MODAL_BOX_PLUGIN_ID, "borderRightColorModalBox", value)
-      )
-    }
-    else if (nameSection === VERIFY_TITLE) {
-      setBorderRightColorTitleModal(value)
+        updatePluginValue(
+          headerDBFormat,
+          MODAL_BOX_PLUGIN_ID,
+          "borderRightColorModalBox",
+          value
+        )
+      );
+    } else if (nameSection === VERIFY_TITLE) {
+      setBorderRightColorTitleModal(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1775,19 +2435,19 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderRightColorTitleModal",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderRightColorDataTitle(value)
+      setBorderRightColorBox2(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderRightColorDataTitle",
+          "borderRightColorBox2",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_DATA) {
-      setBorderRightColorData(value)
+      setBorderRightColorData(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1795,9 +2455,9 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderRightColorData",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_CODE) {
-      setBorderRightColorDataModal(value)
+      setBorderRightColorDataModal(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1805,11 +2465,9 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderRightColorDataModal",
           value
         )
-      )
-    }
-    else if (nameSection === BUTTONS) {
-      setBorderRightColorButtons(value)
-      setDbModalsFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID , "borderRightColorButtons", value))
+      );
+    } else if (nameSection === BUTTONS) {
+      setBorderRightColorButtons(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1817,30 +2475,51 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderRightColorButtons",
           value
         )
-      )
-  }
-  }
+      );
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "borderRightColorButtons",
+          value
+        )
+      );
+    }
+  };
   //handle for border right style change
   const handleBorderRightStyle = () => {
     if (nameSection === LOGO) {
-      setBorderRightStyleLogo(value)
+      setBorderRightStyleLogo(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "borderRightStyleLogo", value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "borderRightStyleLogo",
+          value
+        )
+      );
     } else if (nameSection === HEADER) {
-      setBorderRightStyleHeader(value)
+      setBorderRightStyleHeader(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "borderRightStyleHeader", value)
-      )
-    }
-    else if (nameSection === MODAL_BOX) {
-      setBorderRightStyleModalBox(value)
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "borderRightStyleHeader",
+          value
+        )
+      );
+    } else if (nameSection === MODAL_BOX) {
+      setBorderRightStyleModalBox(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, MODAL_BOX_PLUGIN_ID, "borderRightStyleModalBox", value)
-      )
-    }
-     else if (nameSection === VERIFY_TITLE) {
-      setBorderRightStyleTitleModal(value)
+        updatePluginValue(
+          headerDBFormat,
+          MODAL_BOX_PLUGIN_ID,
+          "borderRightStyleModalBox",
+          value
+        )
+      );
+    } else if (nameSection === VERIFY_TITLE) {
+      setBorderRightStyleTitleModal(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1848,19 +2527,19 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderRightStyleTitleModal",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderRightStyleDataTitle(value)
+      setBorderRightStyleBox2(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderRightStyleDataTitle",
+          "borderRightStyleBox2",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_DATA) {
-      setBorderRightStyleData(value)
+      setBorderRightStyleData(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1868,9 +2547,9 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderRightStyleData",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_CODE) {
-      setBorderRightStyleDataModal(value)
+      setBorderRightStyleDataModal(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1878,11 +2557,9 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderRightStyleDataModal",
           value
         )
-      )
-    }
-    else if (nameSection === BUTTONS) {
-      setBorderRightStyleButtons(value)
-      setDbModalsFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID , "borderRightStyleButtons", value))
+      );
+    } else if (nameSection === BUTTONS) {
+      setBorderRightStyleButtons(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1890,31 +2567,52 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderRightStyleButtons",
           value
         )
-      )
-  }
-  }
+      );
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "borderRightStyleButtons",
+          value
+        )
+      );
+    }
+  };
 
   //handle for border left style change
   const handleBorderLeftStyle = () => {
     if (nameSection === LOGO) {
-      setBorderLeftStyleLogo(value)
+      setBorderLeftStyleLogo(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "borderLeftStyleLogo", value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "borderLeftStyleLogo",
+          value
+        )
+      );
     } else if (nameSection === HEADER) {
-      setBorderLeftStyleHeader(value)
+      setBorderLeftStyleHeader(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "borderLeftStyleHeader", value)
-      )
-    } 
-    else if (nameSection === MODAL_BOX) {
-      setBorderLeftStyleModalBox(value)
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "borderLeftStyleHeader",
+          value
+        )
+      );
+    } else if (nameSection === MODAL_BOX) {
+      setBorderLeftStyleModalBox(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, MODAL_BOX_PLUGIN_ID, "borderLeftStyleModalBox", value)
-      )
-    }
-    else if (nameSection === VERIFY_TITLE) {
-      setBorderLeftStyleTitleModal(value)
+        updatePluginValue(
+          headerDBFormat,
+          MODAL_BOX_PLUGIN_ID,
+          "borderLeftStyleModalBox",
+          value
+        )
+      );
+    } else if (nameSection === VERIFY_TITLE) {
+      setBorderLeftStyleTitleModal(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1922,31 +2620,39 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderLeftStyleTitleModal",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderLeftStyleDataTitle(value)
+      setBorderLeftStyleBox2(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderLeftStyleDataTitle",
+          "borderLeftStyleBox2",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_DATA) {
-      setBorderLeftStyleData(value)
+      setBorderLeftStyleData(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "borderLeftStyleData", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "borderLeftStyleData",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_CODE) {
-      setBorderLeftStyleDataModal(value)
+      setBorderLeftStyleDataModal(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "borderLeftStyleDataModal", value)
-      )
-    }
-    else if (nameSection === BUTTONS) {
-      setBorderLeftStyleButtons(value)
-      setDbModalsFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID , "borderLeftStyleButtons", value))
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "borderLeftStyleDataModal",
+          value
+        )
+      );
+    } else if (nameSection === BUTTONS) {
+      setBorderLeftStyleButtons(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1954,25 +2660,41 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderLeftStyleButtons",
           value
         )
-      )
-  }
-  }
+      );
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "borderLeftStyleButtons",
+          value
+        )
+      );
+    }
+  };
   //handle for border top style change
   const handleBorderTopStyle = () => {
     if (nameSection === LOGO) {
-      setBorderTopStyleLogo(value)
+      setBorderTopStyleLogo(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "borderTopStyleLogo", value)
-      )
-    }
-    else if (nameSection === MODAL_BOX) {
-      setBorderTopStyleModalBox(value)
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "borderTopStyleLogo",
+          value
+        )
+      );
+    } else if (nameSection === MODAL_BOX) {
+      setBorderTopStyleModalBox(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, MODAL_BOX_PLUGIN_ID, "borderTopStyleModalBox", value)
-      )
-    }
-     else if (nameSection === VERIFY_TITLE) {
-      setBorderTopStyleTitleModal(value)
+        updatePluginValue(
+          headerDBFormat,
+          MODAL_BOX_PLUGIN_ID,
+          "borderTopStyleModalBox",
+          value
+        )
+      );
+    } else if (nameSection === VERIFY_TITLE) {
+      setBorderTopStyleTitleModal(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1980,31 +2702,39 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderTopStyleTitleModal",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderTopStyleDataTitle(value)
+      setBorderTopStyleBox2(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderTopStyleDataTitle",
+          "borderTopStyleBox2",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_DATA) {
-      setBorderTopStyleData(value)
+      setBorderTopStyleData(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "borderTopStyleData", value)
-      )
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "borderTopStyleData",
+          value
+        )
+      );
     } else if (nameSection === VERIFY_CODE) {
-      setBorderTopStyleDataModal(value)
+      setBorderTopStyleDataModal(value);
       setDbModalsFormat(
-        updatePluginValue(dbModalsFormat, VERIFY_DATA_PLUGIN_ID, "borderTopStyleDataModal", value)
-      )
-    }
-    else if (nameSection === BUTTONS) {
-      setBorderTopStyleButtons(value)
-      setDbModalsFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID , "borderTopStyleButtons", value))
+        updatePluginValue(
+          dbModalsFormat,
+          VERIFY_DATA_PLUGIN_ID,
+          "borderTopStyleDataModal",
+          value
+        )
+      );
+    } else if (nameSection === BUTTONS) {
+      setBorderTopStyleButtons(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -2012,31 +2742,52 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderTopStyleButtons",
           value
         )
-      )
-  }
-  }
+      );
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "borderTopStyleButtons",
+          value
+        )
+      );
+    }
+  };
   //handle for border bottom style change -----------------------------------------------------------------------
   const handleBorderBottomStyle = () => {
     if (nameSection === LOGO) {
-      setBorderBottomStyleLogo(value)
+      setBorderBottomStyleLogo(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "borderBottomStyleLogo", value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "borderBottomStyleLogo",
+          value
+        )
+      );
     }
     if (nameSection === HEADER) {
-      setBorderBottomStyleHeader(value)
+      setBorderBottomStyleHeader(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "borderBottomStyleHeader", value)
-      )
-    } 
-    else if (nameSection === MODAL_BOX) {
-      setBorderBottomStyleModalBox(value)
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "borderBottomStyleHeader",
+          value
+        )
+      );
+    } else if (nameSection === MODAL_BOX) {
+      setBorderBottomStyleModalBox(value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, MODAL_BOX_PLUGIN_ID, "borderBottomStyleModalBox", value)
-      )
-    }
-    else if (nameSection === VERIFY_TITLE) {
-      setBorderBottomStyleTitleModal(value)
+        updatePluginValue(
+          headerDBFormat,
+          MODAL_BOX_PLUGIN_ID,
+          "borderBottomStyleModalBox",
+          value
+        )
+      );
+    } else if (nameSection === VERIFY_TITLE) {
+      setBorderBottomStyleTitleModal(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -2044,19 +2795,19 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderBottomStyleTitleModal",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderBottomStyleDataTitle(value)
+      setBorderBottomStyleBox2(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderBottomStyleDataTitle",
+          "borderBottomStyleBox2",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_DATA) {
-      setBorderBottomStyleData(value)
+      setBorderBottomStyleData(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -2064,9 +2815,9 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderBottomStyleData",
           value
         )
-      )
+      );
     } else if (nameSection === VERIFY_CODE) {
-      setBorderBottomStyleDataModal(value)
+      setBorderBottomStyleDataModal(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -2074,11 +2825,9 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderBottomStyleDataModal",
           value
         )
-      )
-    }
-    else if (nameSection === BUTTONS) {
-      setBorderBottomStyleButtons(value)
-      setDbModalsFormat(updatePluginValue(dbModalsFormat, BUTTONS_PLUGIN_ID , "borderBottomStyleButtons", value))
+      );
+    } else if (nameSection === BUTTONS) {
+      setBorderBottomStyleButtons(value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -2086,11 +2835,19 @@ const UndoCustomization = ({ name, value, nameSection }: any) => {
           "borderBottomStyleButtons",
           value
         )
-      )
-  }
-  }
-}
+      );
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "borderBottomStyleButtons",
+          value
+        )
+      );
+    }
+  };
+};
 
-export default UndoCustomization
+export default UndoCustomization;
 
 // optimize code the above code

@@ -36,7 +36,7 @@ export default function Scene() {
       <div style={{ height: "fit-content", width: "fit-content" }}>
         <Canvas
           camera={{ position: [-10, 0, 0] }}
-          style={{ height: "500px", width: "500px" }}
+          style={{ height: "600px", width: "600px" }}
         >
           <directionalLight intensity={0.75} />
           <ambientLight intensity={1} />

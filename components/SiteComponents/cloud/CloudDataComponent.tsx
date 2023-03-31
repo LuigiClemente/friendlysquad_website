@@ -3,6 +3,7 @@ import { useAppProvider } from "@appProvider/AppProvider";
 import { useState } from "react";
 import CarouselBrand from "../carousel/CarouselBrand";
 import CarouselCloud from "../carousel/CarouselCloud";
+import CloudCardList from "./CloudCardList";
 import CloudMenu from "./CloudMenu";
 
 const CloudDataComponent = () => {
@@ -37,8 +38,8 @@ const CloudDataComponent = () => {
           <CloudMenu activeId={currentId} />
         </div>
         <div className="flex lg:w-[65%] flex-col w-full z-20  ">
-          {/* <CloudCardList getItemId={getIdCurrentItem} /> */}
-          <CarouselCloud getItemId={getIdCurrentItem} />
+          <CloudCardList getItemId={getIdCurrentItem} />
+          {/* <CarouselCloud getItemId={getIdCurrentItem} /> */}
         </div>
       </div>
       <div className="flex flex-col w-full z-20  ">

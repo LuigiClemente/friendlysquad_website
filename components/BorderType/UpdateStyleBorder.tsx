@@ -1,15 +1,15 @@
-import { useAppProvider } from "@appProvider/AppProvider"
-import { useModalsAppProvider } from "@appProvider/ModalsAppProvider"
-import { useUpdateSettingsProvider } from "@appProvider/UpdateSettingsProvider"
-import { useEffect } from "react"
+import { useAppProvider } from "@appProvider/AppProvider";
+import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
+import { useUpdateSettingsProvider } from "@appProvider/UpdateSettingsProvider";
+import { useEffect } from "react";
 import {
   HEADER,
   LOGO,
   VERIFY_CODE,
   VERIFY_DATA,
   VERIFY_TITLE,
-  VERIFY_TITLE_BTN
-} from "../Constant/const"
+  VERIFY_TITLE_BTN,
+} from "../Constant/const";
 
 const UpdateStyleBorder = (nameSection: string, sideName: string) => {
   const {
@@ -22,8 +22,8 @@ const UpdateStyleBorder = (nameSection: string, sideName: string) => {
     borderBottomStyle,
     setBorderBottomStyle,
     borderStyle,
-    setBorderStyle
-  }: any = useUpdateSettingsProvider()
+    setBorderStyle,
+  }: any = useUpdateSettingsProvider();
 
   const {
     // border style
@@ -35,8 +35,8 @@ const UpdateStyleBorder = (nameSection: string, sideName: string) => {
     borderRightStyleLogo,
     borderLeftStyleLogo,
     borderTopStyleLogo,
-    borderBottomStyleLogo
-  }: any = useAppProvider()
+    borderBottomStyleLogo,
+  }: any = useAppProvider();
   //  use state size
   const {
     // -------------------------- VerifyData --------------------------
@@ -69,133 +69,133 @@ const UpdateStyleBorder = (nameSection: string, sideName: string) => {
     // -------------------------- TitleModal Btn --------------------------
 
     // border style
-    borderRightStyleDataTitle,
-    borderLeftStyleDataTitle,
-    borderTopStyleDataTitle,
-    borderBottomStyleDataTitle
-  }: any = useModalsAppProvider()
+    borderRightStyleBox2,
+    borderLeftStyleBox2,
+    borderTopStyleBox2,
+    borderBottomStyleBox2,
+  }: any = useModalsAppProvider();
 
   const updateBorderRightStyle = () => {
     switch (nameSection) {
       case LOGO:
-        setBorderRightStyle(borderRightStyleLogo)
-        break
+        setBorderRightStyle(borderRightStyleLogo);
+        break;
       case HEADER:
-        setBorderRightStyle(borderRightStyleHeader)
-        break
+        setBorderRightStyle(borderRightStyleHeader);
+        break;
       // this is for modals
       case VERIFY_TITLE:
-        setBorderRightStyle(borderRightStyleTitleModal)
-        break
+        setBorderRightStyle(borderRightStyleTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setBorderRightStyle(borderRightStyleDataTitle)
-        break
+        setBorderRightStyle(borderRightStyleBox2);
+        break;
       case VERIFY_DATA:
-        setBorderRightStyle(borderRightStyleVerifyData)
-        break
+        setBorderRightStyle(borderRightStyleVerifyData);
+        break;
       case VERIFY_CODE:
-        setBorderRightStyle(borderRightStyleDataModal)
-        break
+        setBorderRightStyle(borderRightStyleDataModal);
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
   const updateBorderLeftStyle = () => {
     switch (nameSection) {
       case LOGO:
-        setBorderLeftStyle(borderLeftStyleLogo)
+        setBorderLeftStyle(borderLeftStyleLogo);
       case HEADER:
-        setBorderLeftStyle(borderLeftStyleHeader)
-        break
+        setBorderLeftStyle(borderLeftStyleHeader);
+        break;
       // this is for modals
       case VERIFY_TITLE:
-        setBorderLeftStyle(borderLeftStyleTitleModal)
-        break
+        setBorderLeftStyle(borderLeftStyleTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setBorderLeftStyle(borderLeftStyleDataTitle)
-        break
+        setBorderLeftStyle(borderLeftStyleBox2);
+        break;
       case VERIFY_DATA:
-        setBorderLeftStyle(borderLeftStyleVerifyData)
-        break
+        setBorderLeftStyle(borderLeftStyleVerifyData);
+        break;
       case VERIFY_CODE:
-        setBorderLeftStyle(borderLeftStyleDataModal)
-        break
+        setBorderLeftStyle(borderLeftStyleDataModal);
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
   const updateBorderTopStyle = () => {
     switch (nameSection) {
       case LOGO:
-        setBorderTopStyle(borderTopStyleLogo)
-        break
+        setBorderTopStyle(borderTopStyleLogo);
+        break;
       case HEADER:
-        setBorderTopStyle(borderTopStyleHeader)
-        break
+        setBorderTopStyle(borderTopStyleHeader);
+        break;
       // this is for modals
       case VERIFY_TITLE:
-        setBorderTopStyle(borderTopStyleTitleModal)
-        break
+        setBorderTopStyle(borderTopStyleTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setBorderTopStyle(borderTopStyleDataTitle)
-        break
+        setBorderTopStyle(borderTopStyleBox2);
+        break;
       case VERIFY_DATA:
-        setBorderTopStyle(borderTopStyleVerifyData)
-        break
+        setBorderTopStyle(borderTopStyleVerifyData);
+        break;
       case VERIFY_CODE:
-        setBorderTopStyle(borderTopStyleDataModal)
-        break
+        setBorderTopStyle(borderTopStyleDataModal);
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
   const updateBorderBottomStyle = () => {
     switch (nameSection) {
       case LOGO:
-        setBorderBottomStyle(borderBottomStyleLogo)
+        setBorderBottomStyle(borderBottomStyleLogo);
       case HEADER:
-        setBorderBottomStyle(borderBottomStyleHeader)
-        break
+        setBorderBottomStyle(borderBottomStyleHeader);
+        break;
       // this is for modals
       case VERIFY_TITLE:
-        setBorderBottomStyle(borderBottomStyleTitleModal)
-        break
+        setBorderBottomStyle(borderBottomStyleTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setBorderBottomStyle(borderBottomStyleDataTitle)
-        break
+        setBorderBottomStyle(borderBottomStyleBox2);
+        break;
       case VERIFY_DATA:
-        setBorderBottomStyle(borderBottomStyleVerifyData)
-        break
+        setBorderBottomStyle(borderBottomStyleVerifyData);
+        break;
       case VERIFY_CODE:
-        setBorderBottomStyle(borderBottomStyleDataModal)
-        break
+        setBorderBottomStyle(borderBottomStyleDataModal);
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
   const getValueStyle = () => {
     switch (sideName) {
       case "top":
-        updateBorderTopStyle()
-        setBorderStyle(borderTopStyle)
-        break
+        updateBorderTopStyle();
+        setBorderStyle(borderTopStyle);
+        break;
       case "bottom":
-        updateBorderBottomStyle()
-        setBorderStyle(borderBottomStyle)
-        break
+        updateBorderBottomStyle();
+        setBorderStyle(borderBottomStyle);
+        break;
       case "right":
-        updateBorderRightStyle()
-        setBorderStyle(borderRightStyle)
-        break
+        updateBorderRightStyle();
+        setBorderStyle(borderRightStyle);
+        break;
       case "left":
-        updateBorderLeftStyle()
-        setBorderStyle(borderLeftStyle)
-        break
+        updateBorderLeftStyle();
+        setBorderStyle(borderLeftStyle);
+        break;
     }
-  }
+  };
   useEffect(() => {
-    getValueStyle()
-  }, [nameSection])
-}
+    getValueStyle();
+  }, [nameSection]);
+};
 
-export default UpdateStyleBorder
+export default UpdateStyleBorder;

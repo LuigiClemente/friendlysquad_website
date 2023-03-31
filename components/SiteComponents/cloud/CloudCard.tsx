@@ -31,18 +31,13 @@ const CloudCard = ({ item, index }: any) => {
       id={`cloud-card-${item.id}`}
     >
       <div
-        style={{
-          backgroundColor: "transparent",
-          position: "relative",
-          height: "400px",
-          width: "fit-content",
-          zIndex: 1000,
-          borderRadius: "5px",
-          padding: "40px",
-          opacity: 1,
-        }}
+        className="flex flex-col items-center relative content-start justify-start bg-transparent h-[400px] z-50 w-fit r
+        rounded-sm p-4 lg:p-8"
       >
-        <div key={index} style={{ margin: "20px", padding: "2.5rem" }}>
+        <div
+          key={index}
+          style={{ paddingRight: "2.5rem", paddingLeft: "2.5rem" }}
+        >
           <div
             className="flex flex-col items-center relative content-start justify-start "
             onMouseEnter={() => setTitleStyle({ display: "block" })}
@@ -58,6 +53,7 @@ const CloudCard = ({ item, index }: any) => {
                 fontFamily: fontDataTitle,
                 fontSize: fontSizeDataTitle,
               }}
+              className="pb-4 lg:pb-10"
             >
               {/* {item.title} */}
               {t(`home.cloud_data.${index}.title`)}
@@ -65,12 +61,12 @@ const CloudCard = ({ item, index }: any) => {
             <p
               style={{
                 fontSize: fontSizeData,
-                fontWeight: 400,
+                fontWeight: 500,
                 color: colorData,
                 textAlign: "left",
                 fontFamily: fontData,
               }}
-              className="mt-1 mb-2 ml-2 font-sans text-lg font-weight-500 relative leading-8 align-center text-black"
+              className="mt-1 mb-2 ml-2 relative leading-8 align-center"
               onMouseEnter={() => setContentStyle({ display: "block" })}
               onMouseLeave={() => setContentStyle({ display: "none" })}
             >

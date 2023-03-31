@@ -1,7 +1,6 @@
 import Button from "@/Buttons/Button";
 import ButtonsOptionsUi from "@/CustomPopover/ButtonsOptionsUi";
 import DialogContent from "@/DialogContent/DialogContent";
-import DialogTitle from "@/GlobeTitle/GlobeTitle";
 import { useAppProvider } from "@appProvider/AppProvider";
 import { useAppStateProvider } from "@appProvider/AppStateProvider";
 import React, { useState } from "react";

@@ -1,8 +1,8 @@
-import { useAppProvider } from "@appProvider/AppProvider"
-import { useAppStateProvider } from "@appProvider/AppStateProvider"
-import { useModalsAppProvider } from "@appProvider/ModalsAppProvider"
-import { useUpdateSettingsProvider } from "@appProvider/UpdateSettingsProvider"
-import { useEffect } from "react"
+import { useAppProvider } from "@appProvider/AppProvider";
+import { useAppStateProvider } from "@appProvider/AppStateProvider";
+import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
+import { useUpdateSettingsProvider } from "@appProvider/UpdateSettingsProvider";
+import { useEffect } from "react";
 import {
   BUTTONS,
   HEADER,
@@ -11,8 +11,8 @@ import {
   VERIFY_CODE,
   VERIFY_DATA,
   VERIFY_TITLE,
-  VERIFY_TITLE_BTN
-} from "../Constant/const"
+  VERIFY_TITLE_BTN,
+} from "../Constant/const";
 
 const UpdateValueSettings = (nameSection: string) => {
   const {
@@ -39,8 +39,8 @@ const UpdateValueSettings = (nameSection: string) => {
     setMarginTop,
     setMarginBottom,
     setMarginLeft,
-    setMarginRight
-  }: any = useUpdateSettingsProvider()
+    setMarginRight,
+  }: any = useUpdateSettingsProvider();
   const {
     // ----------------------------------------- header
     borderBottomColorHeader,
@@ -132,8 +132,8 @@ const UpdateValueSettings = (nameSection: string) => {
     marginTopLogo,
     marginBottomLogo,
     marginLeftLogo,
-    marginRightLogo
-  }: any = useAppProvider()
+    marginRightLogo,
+  }: any = useAppProvider();
   //  use state size
   const {
     // -------------------------- Data --------------------------
@@ -223,66 +223,66 @@ const UpdateValueSettings = (nameSection: string) => {
     marginBottomTitleModal,
     marginLeftTitleModal,
     marginRightTitleModal,
-    // -------------------------- TitleModal Btn --------------------------
-    borderBottomColorDataTitle,
-    borderBottomWidthDataTitle,
-    borderTopColorDataTitle,
-    borderTopWidthDataTitle,
-    borderLeftColorDataTitle,
-    borderLeftWidthDataTitle,
-    borderRightColorDataTitle,
-    borderRightWidthDataTitle,
+    // -------------------------- Box 2 --------------------------
+    borderBottomColorBox2,
+    borderBottomWidthBox2,
+    borderTopColorBox2,
+    borderTopWidthBox2,
+    borderLeftColorBox2,
+    borderLeftWidthBox2,
+    borderRightColorBox2,
+    borderRightWidthBox2,
     // border style
-    borderRightStyleDataTitle,
-    borderLeftStyleDataTitle,
-    borderTopStyleDataTitle,
-    borderBottomStyleDataTitle,
+    borderRightStyleBox2,
+    borderLeftStyleBox2,
+    borderTopStyleBox2,
+    borderBottomStyleBox2,
     // border radius
-    borderTopRightRadiusDataTitle,
-    borderTopLeftRadiusDataTitle,
-    borderBottomRightRadiusDataTitle,
-    borderBottomLeftRadiusDataTitle,
+    borderTopRightRadiusBox2,
+    borderTopLeftRadiusBox2,
+    borderBottomRightRadiusBox2,
+    borderBottomLeftRadiusBox2,
     // padding
-    paddingTopDataTitle,
-    paddingBottomDataTitle,
-    paddingLeftDataTitle,
-    paddingRightDataTitle,
+    paddingTopBox2,
+    paddingBottomBox2,
+    paddingLeftBox2,
+    paddingRightBox2,
     // margin
-    marginTopDataTitle,
-    marginBottomDataTitle,
-    marginLeftDataTitle,
-    marginRightDataTitle,
-      // ---------------------------------------buttons
-      borderBottomColorButtons,
-      borderRightColorButtons,
-      borderLeftColorButtons,
-      borderTopColorButtons,
-      //  border width
-      borderRightWidthButtons,
-      borderLeftWidthButtons,
-      borderTopWidthButtons,
-      borderBottomWidthButtons,
-      // border style
-      borderRightStyleButtons,
-      borderLeftStyleButtons,
-      borderTopStyleButtons,
-      borderBottomStyleButtons,
-      // border radius border-top-right-radius
-      borderTopRightRadiusButtons,
-      borderTopLeftRadiusButtons,
-      borderBottomRightRadiusButtons,
-      borderBottomLeftRadiusButtons,
-      // padding
-      paddingRightButtons,
-      paddingLeftButtons,
-      paddingTopButtons,
-      paddingBottomButtons,
-      // margin
-      marginRightButtons,
-      marginLeftButtons,
-      marginTopButtons,
-      marginBottomButtons
-  }: any = useModalsAppProvider()
+    marginTopBox2,
+    marginBottomBox2,
+    marginLeftBox2,
+    marginRightBox2,
+    // ---------------------------------------buttons
+    borderBottomColorButtons,
+    borderRightColorButtons,
+    borderLeftColorButtons,
+    borderTopColorButtons,
+    //  border width
+    borderRightWidthButtons,
+    borderLeftWidthButtons,
+    borderTopWidthButtons,
+    borderBottomWidthButtons,
+    // border style
+    borderRightStyleButtons,
+    borderLeftStyleButtons,
+    borderTopStyleButtons,
+    borderBottomStyleButtons,
+    // border radius border-top-right-radius
+    borderTopRightRadiusButtons,
+    borderTopLeftRadiusButtons,
+    borderBottomRightRadiusButtons,
+    borderBottomLeftRadiusButtons,
+    // padding
+    paddingRightButtons,
+    paddingLeftButtons,
+    paddingTopButtons,
+    paddingBottomButtons,
+    // margin
+    marginRightButtons,
+    marginLeftButtons,
+    marginTopButtons,
+    marginBottomButtons,
+  }: any = useModalsAppProvider();
 
   // const {
   //   // ---------------------------------------buttons
@@ -320,760 +320,760 @@ const UpdateValueSettings = (nameSection: string) => {
   const updateBorderBottomColor = () => {
     switch (nameSection) {
       case LOGO:
-        setBorderBottomColor(borderBottomColorLogo)
-        break
+        setBorderBottomColor(borderBottomColorLogo);
+        break;
 
       case HEADER:
-        setBorderBottomColor(borderBottomColorHeader)
-        break
+        setBorderBottomColor(borderBottomColorHeader);
+        break;
       case MODAL_BOX:
-        setBorderBottomColor(borderBottomColorModalBox)
-        break
+        setBorderBottomColor(borderBottomColorModalBox);
+        break;
 
       case VERIFY_TITLE:
-        setBorderBottomColor(borderBottomColorTitleModal)
-        break
+        setBorderBottomColor(borderBottomColorTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setBorderBottomColor(borderBottomColorDataTitle)
-        break
+        setBorderBottomColor(borderBottomColorBox2);
+        break;
       case VERIFY_DATA:
-        setBorderBottomColor(borderBottomColorData)
-        break
+        setBorderBottomColor(borderBottomColorData);
+        break;
       case VERIFY_CODE:
-        setBorderBottomColor(borderBottomColorDataModal)
-        break
+        setBorderBottomColor(borderBottomColorDataModal);
+        break;
       case BUTTONS:
-        setBorderBottomColor(borderBottomColorButtons)
-        break
+        setBorderBottomColor(borderBottomColorButtons);
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
 
   const updateBorderBottomWidth = () => {
     switch (nameSection) {
       case LOGO:
-        setBorderBottomWidth(borderBottomWidthLogo)
-        break
+        setBorderBottomWidth(borderBottomWidthLogo);
+        break;
 
       case HEADER:
-        setBorderBottomWidth(borderBottomWidthHeader)
-        break
+        setBorderBottomWidth(borderBottomWidthHeader);
+        break;
       case MODAL_BOX:
-        setBorderBottomWidth(borderBottomWidthModalBox)
-        break
+        setBorderBottomWidth(borderBottomWidthModalBox);
+        break;
 
       case VERIFY_TITLE:
-        setBorderBottomWidth(borderBottomWidthTitleModal)
-        break
+        setBorderBottomWidth(borderBottomWidthTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setBorderBottomWidth(borderBottomWidthDataTitle)
-        break
+        setBorderBottomWidth(borderBottomWidthBox2);
+        break;
       case VERIFY_DATA:
-        setBorderBottomWidth(borderBottomWidthData)
-        break
+        setBorderBottomWidth(borderBottomWidthData);
+        break;
       case VERIFY_CODE:
-        setBorderBottomWidth(borderBottomWidthDataModal)
-        break
+        setBorderBottomWidth(borderBottomWidthDataModal);
+        break;
       case BUTTONS:
-        setBorderBottomWidth(borderBottomWidthButtons)
-        break
+        setBorderBottomWidth(borderBottomWidthButtons);
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
   const updateBorderTopColor = () => {
     switch (nameSection) {
       case LOGO:
-        setBorderTopColor(borderTopColorLogo)
-        break
+        setBorderTopColor(borderTopColorLogo);
+        break;
 
       case HEADER:
-        setBorderTopColor(borderTopColorHeader)
-        break
+        setBorderTopColor(borderTopColorHeader);
+        break;
       case MODAL_BOX:
-        setBorderTopColor(borderTopColorModalBox)
-        break
+        setBorderTopColor(borderTopColorModalBox);
+        break;
       case VERIFY_TITLE:
-        setBorderTopColor(borderTopColorTitleModal)
-        break
+        setBorderTopColor(borderTopColorTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setBorderTopColor(borderTopColorDataTitle)
-        break
+        setBorderTopColor(borderTopColorBox2);
+        break;
       case VERIFY_DATA:
-        setBorderTopColor(borderTopColorData)
-        break
+        setBorderTopColor(borderTopColorData);
+        break;
       case VERIFY_CODE:
-        setBorderTopColor(borderTopColorDataModal)
-        break
+        setBorderTopColor(borderTopColorDataModal);
+        break;
       case BUTTONS:
-        setBorderTopColor(borderTopColorButtons)
-        break
+        setBorderTopColor(borderTopColorButtons);
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
   const updateBorderTopWidth = () => {
     switch (nameSection) {
       case LOGO:
-        setBorderTopWidth(borderTopWidthLogo)
-        break
+        setBorderTopWidth(borderTopWidthLogo);
+        break;
 
       case HEADER:
-        setBorderTopWidth(borderTopWidthHeader)
-        break
+        setBorderTopWidth(borderTopWidthHeader);
+        break;
       case MODAL_BOX:
-        setBorderTopWidth(borderTopWidthModalBox)
-        break
+        setBorderTopWidth(borderTopWidthModalBox);
+        break;
       case VERIFY_TITLE:
-        setBorderTopWidth(borderTopWidthTitleModal)
-        break
+        setBorderTopWidth(borderTopWidthTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setBorderTopWidth(borderTopWidthDataTitle)
-        break
+        setBorderTopWidth(borderTopWidthBox2);
+        break;
       case VERIFY_DATA:
-        setBorderTopWidth(borderTopWidthData)
-        break
+        setBorderTopWidth(borderTopWidthData);
+        break;
       case VERIFY_CODE:
-        setBorderTopWidth(borderTopWidthDataModal)
-        break
+        setBorderTopWidth(borderTopWidthDataModal);
+        break;
       case BUTTONS:
-        setBorderTopWidth(borderTopWidthButtons)
-        break
+        setBorderTopWidth(borderTopWidthButtons);
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
   const updateBorderLeftColor = () => {
     switch (nameSection) {
       case LOGO:
-        setBorderLeftColor(borderLeftColorLogo)
-        break
+        setBorderLeftColor(borderLeftColorLogo);
+        break;
 
       case HEADER:
-        setBorderLeftColor(borderLeftColorHeader)
-        break
+        setBorderLeftColor(borderLeftColorHeader);
+        break;
       case MODAL_BOX:
-        setBorderLeftColor(borderLeftColorModalBox)
-        break
+        setBorderLeftColor(borderLeftColorModalBox);
+        break;
       case VERIFY_TITLE:
-        setBorderLeftColor(borderLeftColorTitleModal)
-        break
+        setBorderLeftColor(borderLeftColorTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setBorderLeftColor(borderLeftColorDataTitle)
-        break
+        setBorderLeftColor(borderLeftColorBox2);
+        break;
       case VERIFY_DATA:
-        setBorderLeftColor(borderLeftColorData)
-        break
+        setBorderLeftColor(borderLeftColorData);
+        break;
       case VERIFY_CODE:
-        setBorderLeftColor(borderLeftColorDataModal)
-        break
+        setBorderLeftColor(borderLeftColorDataModal);
+        break;
       case BUTTONS:
-        setBorderLeftColor(borderLeftColorButtons)
-        break
+        setBorderLeftColor(borderLeftColorButtons);
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
   const updateBorderLeftWidth = () => {
     switch (nameSection) {
       case LOGO:
-        setBorderLeftWidth(borderLeftWidthLogo)
-        break
+        setBorderLeftWidth(borderLeftWidthLogo);
+        break;
       case HEADER:
-        setBorderLeftWidth(borderLeftWidthHeader)
-        break
+        setBorderLeftWidth(borderLeftWidthHeader);
+        break;
       case MODAL_BOX:
-        setBorderLeftWidth(borderLeftWidthModalBox)
-        break
+        setBorderLeftWidth(borderLeftWidthModalBox);
+        break;
       case VERIFY_TITLE:
-        setBorderLeftWidth(borderLeftWidthTitleModal)
-        break
+        setBorderLeftWidth(borderLeftWidthTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setBorderLeftWidth(borderLeftWidthDataTitle)
-        break
+        setBorderLeftWidth(borderLeftWidthBox2);
+        break;
       case VERIFY_DATA:
-        setBorderLeftWidth(borderLeftWidthData)
-        break
+        setBorderLeftWidth(borderLeftWidthData);
+        break;
       case VERIFY_CODE:
-        setBorderLeftWidth(borderLeftWidthDataModal)
-        break
+        setBorderLeftWidth(borderLeftWidthDataModal);
+        break;
       case BUTTONS:
-        setBorderLeftWidth(borderLeftWidthButtons)
-        break
+        setBorderLeftWidth(borderLeftWidthButtons);
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
   const updateBorderRightColor = () => {
     switch (nameSection) {
       case LOGO:
-        setBorderRightColor(borderRightColorLogo)
-        break
+        setBorderRightColor(borderRightColorLogo);
+        break;
 
       case HEADER:
-        setBorderRightColor(borderRightColorHeader)
-        break
+        setBorderRightColor(borderRightColorHeader);
+        break;
       case MODAL_BOX:
-        setBorderRightColor(borderRightColorModalBox)
-        break
+        setBorderRightColor(borderRightColorModalBox);
+        break;
       case VERIFY_TITLE:
-        setBorderRightColor(borderRightColorTitleModal)
-        break
+        setBorderRightColor(borderRightColorTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setBorderRightColor(borderRightColorDataTitle)
-        break
+        setBorderRightColor(borderRightColorBox2);
+        break;
       case VERIFY_DATA:
-        setBorderRightColor(borderRightColorData)
-        break
+        setBorderRightColor(borderRightColorData);
+        break;
       case VERIFY_CODE:
-        setBorderRightColor(borderRightColorDataModal)
-        break
+        setBorderRightColor(borderRightColorDataModal);
+        break;
       case BUTTONS:
-        setBorderRightColor(borderRightColorButtons)
-        break
+        setBorderRightColor(borderRightColorButtons);
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
   const updateBorderRightWidth = () => {
     switch (nameSection) {
       case LOGO:
-        setBorderRightWidth(borderRightWidthLogo)
-        break
+        setBorderRightWidth(borderRightWidthLogo);
+        break;
       case HEADER:
-        setBorderRightWidth(borderRightWidthHeader)
-        break
+        setBorderRightWidth(borderRightWidthHeader);
+        break;
       case MODAL_BOX:
-        setBorderRightWidth(borderRightWidthModalBox)
-        break
+        setBorderRightWidth(borderRightWidthModalBox);
+        break;
       case VERIFY_TITLE:
-        setBorderRightWidth(borderRightWidthTitleModal)
-        break
+        setBorderRightWidth(borderRightWidthTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setBorderRightWidth(borderRightWidthDataTitle)
-        break
+        setBorderRightWidth(borderRightWidthBox2);
+        break;
       case VERIFY_DATA:
-        setBorderRightWidth(borderRightWidthData)
-        break
+        setBorderRightWidth(borderRightWidthData);
+        break;
       case VERIFY_CODE:
-        setBorderRightWidth(borderRightWidthDataModal)
-        break
+        setBorderRightWidth(borderRightWidthDataModal);
+        break;
       case BUTTONS:
-        setBorderRightWidth(borderRightWidthButtons)
-        break
+        setBorderRightWidth(borderRightWidthButtons);
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
   const updateBorderRightStyle = () => {
     switch (nameSection) {
       case LOGO:
-        setBorderRightStyle(borderRightStyleLogo)
-        break
+        setBorderRightStyle(borderRightStyleLogo);
+        break;
       case HEADER:
-        setBorderRightStyle(borderRightStyleHeader)
-        break
+        setBorderRightStyle(borderRightStyleHeader);
+        break;
       case MODAL_BOX:
-        setBorderRightStyle(borderRightStyleModalBox)
-        break
+        setBorderRightStyle(borderRightStyleModalBox);
+        break;
       case VERIFY_TITLE:
-        setBorderRightStyle(borderRightStyleTitleModal)
-        break
+        setBorderRightStyle(borderRightStyleTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setBorderRightStyle(borderRightStyleDataTitle)
-        break
+        setBorderRightStyle(borderRightStyleBox2);
+        break;
       case VERIFY_DATA:
-        setBorderRightStyle(borderRightStyleData)
-        break
+        setBorderRightStyle(borderRightStyleData);
+        break;
       case VERIFY_CODE:
-        setBorderRightStyle(borderRightStyleDataModal)
-        break
+        setBorderRightStyle(borderRightStyleDataModal);
+        break;
       case BUTTONS:
-        setBorderRightStyle(borderRightStyleButtons)
-        break
+        setBorderRightStyle(borderRightStyleButtons);
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
   const updateBorderLeftStyle = () => {
     switch (nameSection) {
       case LOGO:
-        setBorderLeftStyle(borderLeftStyleLogo)
-        break
+        setBorderLeftStyle(borderLeftStyleLogo);
+        break;
       case HEADER:
-        setBorderLeftStyle(borderLeftStyleHeader)
-        break
+        setBorderLeftStyle(borderLeftStyleHeader);
+        break;
       case MODAL_BOX:
-        setBorderLeftStyle(borderLeftStyleModalBox)
-        break
+        setBorderLeftStyle(borderLeftStyleModalBox);
+        break;
       case VERIFY_TITLE:
-        setBorderLeftStyle(borderLeftStyleTitleModal)
-        break
+        setBorderLeftStyle(borderLeftStyleTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setBorderLeftStyle(borderLeftStyleDataTitle)
-        break
+        setBorderLeftStyle(borderLeftStyleBox2);
+        break;
       case VERIFY_DATA:
-        setBorderLeftStyle(borderLeftStyleData)
-        break
+        setBorderLeftStyle(borderLeftStyleData);
+        break;
       case VERIFY_CODE:
-        setBorderLeftStyle(borderLeftStyleDataModal)
-        break
+        setBorderLeftStyle(borderLeftStyleDataModal);
+        break;
       case BUTTONS:
-        setBorderLeftStyle(borderLeftStyleButtons)
-        break
+        setBorderLeftStyle(borderLeftStyleButtons);
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
   const updateBorderTopStyle = () => {
     switch (nameSection) {
       case LOGO:
-        setBorderTopStyle(borderTopStyleLogo)
-        break
+        setBorderTopStyle(borderTopStyleLogo);
+        break;
       case HEADER:
-        setBorderTopStyle(borderTopStyleHeader)
-        break
+        setBorderTopStyle(borderTopStyleHeader);
+        break;
       case MODAL_BOX:
-        setBorderTopStyle(borderTopStyleModalBox)
-        break
+        setBorderTopStyle(borderTopStyleModalBox);
+        break;
       case VERIFY_TITLE:
-        setBorderTopStyle(borderTopStyleTitleModal)
-        break
+        setBorderTopStyle(borderTopStyleTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setBorderTopStyle(borderTopStyleDataTitle)
-        break
+        setBorderTopStyle(borderTopStyleBox2);
+        break;
       case VERIFY_DATA:
-        setBorderTopStyle(borderTopStyleData)
-        break
+        setBorderTopStyle(borderTopStyleData);
+        break;
       case VERIFY_CODE:
-        setBorderTopStyle(borderTopStyleDataModal)
-        break
+        setBorderTopStyle(borderTopStyleDataModal);
+        break;
       case BUTTONS:
-        setBorderTopStyle(borderTopStyleButtons)
-        break
+        setBorderTopStyle(borderTopStyleButtons);
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
   const updateBorderBottomStyle = () => {
     switch (nameSection) {
       case LOGO:
-        setBorderBottomStyle(borderBottomStyleLogo)
-        break
+        setBorderBottomStyle(borderBottomStyleLogo);
+        break;
       case HEADER:
-        setBorderBottomStyle(borderBottomStyleHeader)
-        break
+        setBorderBottomStyle(borderBottomStyleHeader);
+        break;
       case MODAL_BOX:
-        setBorderBottomStyle(borderBottomStyleModalBox)
-        break
+        setBorderBottomStyle(borderBottomStyleModalBox);
+        break;
       case VERIFY_TITLE:
-        setBorderBottomStyle(borderBottomStyleTitleModal)
-        break
+        setBorderBottomStyle(borderBottomStyleTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setBorderBottomStyle(borderBottomStyleDataTitle)
-        break
+        setBorderBottomStyle(borderBottomStyleBox2);
+        break;
       case VERIFY_DATA:
-        setBorderBottomStyle(borderBottomStyleData)
-        break
+        setBorderBottomStyle(borderBottomStyleData);
+        break;
       case VERIFY_CODE:
-        setBorderBottomStyle(borderBottomStyleDataModal)
-        break
+        setBorderBottomStyle(borderBottomStyleDataModal);
+        break;
       case BUTTONS:
-        setBorderBottomStyle(borderBottomStyleButtons)
-        break
+        setBorderBottomStyle(borderBottomStyleButtons);
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
   const updateBorderTopRightRadius = () => {
     switch (nameSection) {
       case LOGO:
-        setBorderTopRightRadius(borderTopRightRadiusLogo)
-        break
+        setBorderTopRightRadius(borderTopRightRadiusLogo);
+        break;
       case HEADER:
-        setBorderTopRightRadius(borderTopRightRadiusHeader)
-        break
+        setBorderTopRightRadius(borderTopRightRadiusHeader);
+        break;
       case MODAL_BOX:
-        setBorderTopRightRadius(borderTopRightRadiusModalBox)
-        break
+        setBorderTopRightRadius(borderTopRightRadiusModalBox);
+        break;
       case VERIFY_TITLE:
-        setBorderTopRightRadius(borderTopRightRadiusTitleModal)
-        break
+        setBorderTopRightRadius(borderTopRightRadiusTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setBorderTopRightRadius(borderTopRightRadiusDataTitle)
-        break
+        setBorderTopRightRadius(borderTopRightRadiusBox2);
+        break;
       case VERIFY_DATA:
-        setBorderTopRightRadius(borderTopRightRadiusData)
-        break
+        setBorderTopRightRadius(borderTopRightRadiusData);
+        break;
       case VERIFY_CODE:
-        setBorderTopRightRadius(borderTopRightRadiusDataModal)
-        break
+        setBorderTopRightRadius(borderTopRightRadiusDataModal);
+        break;
       case BUTTONS:
-        setBorderTopRightRadius(borderTopRightRadiusButtons)
-        break
+        setBorderTopRightRadius(borderTopRightRadiusButtons);
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
   const updateBorderTopLeftRadius = () => {
     switch (nameSection) {
       case LOGO:
-        setBorderTopLeftRadius(borderTopLeftRadiusLogo)
-        break
+        setBorderTopLeftRadius(borderTopLeftRadiusLogo);
+        break;
       case HEADER:
-        setBorderTopLeftRadius(borderTopLeftRadiusHeader)
-        break
+        setBorderTopLeftRadius(borderTopLeftRadiusHeader);
+        break;
       case MODAL_BOX:
-        setBorderTopLeftRadius(borderTopLeftRadiusModalBox)
-        break
+        setBorderTopLeftRadius(borderTopLeftRadiusModalBox);
+        break;
       case VERIFY_TITLE:
-        setBorderTopLeftRadius(borderTopLeftRadiusTitleModal)
-        break
+        setBorderTopLeftRadius(borderTopLeftRadiusTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setBorderTopLeftRadius(borderTopLeftRadiusDataTitle)
-        break
+        setBorderTopLeftRadius(borderTopLeftRadiusBox2);
+        break;
       case VERIFY_DATA:
-        setBorderTopLeftRadius(borderTopLeftRadiusData)
-        break
+        setBorderTopLeftRadius(borderTopLeftRadiusData);
+        break;
       case VERIFY_CODE:
-        setBorderTopLeftRadius(borderTopLeftRadiusDataModal)
-        break
+        setBorderTopLeftRadius(borderTopLeftRadiusDataModal);
+        break;
       case BUTTONS:
-        setBorderTopLeftRadius(borderTopLeftRadiusButtons)
-        break
+        setBorderTopLeftRadius(borderTopLeftRadiusButtons);
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
   const updateBorderBottomLeftRadius = () => {
     switch (nameSection) {
       case LOGO:
-        setBorderBottomLeftRadius(borderBottomLeftRadiusLogo)
-        break
+        setBorderBottomLeftRadius(borderBottomLeftRadiusLogo);
+        break;
       case HEADER:
-        setBorderBottomLeftRadius(borderBottomLeftRadiusHeader)
-        break
+        setBorderBottomLeftRadius(borderBottomLeftRadiusHeader);
+        break;
       case MODAL_BOX:
-        setBorderBottomLeftRadius(borderBottomLeftRadiusModalBox)
-        break
+        setBorderBottomLeftRadius(borderBottomLeftRadiusModalBox);
+        break;
       case VERIFY_TITLE:
-        setBorderBottomLeftRadius(borderBottomLeftRadiusTitleModal)
-        break
+        setBorderBottomLeftRadius(borderBottomLeftRadiusTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setBorderBottomLeftRadius(borderBottomLeftRadiusDataTitle)
-        break
+        setBorderBottomLeftRadius(borderBottomLeftRadiusBox2);
+        break;
       case VERIFY_DATA:
-        setBorderBottomLeftRadius(borderBottomLeftRadiusData)
-        break
+        setBorderBottomLeftRadius(borderBottomLeftRadiusData);
+        break;
       case VERIFY_CODE:
-        setBorderBottomLeftRadius(borderBottomLeftRadiusDataModal)
-        break
+        setBorderBottomLeftRadius(borderBottomLeftRadiusDataModal);
+        break;
       case BUTTONS:
-        setBorderBottomLeftRadius(borderBottomLeftRadiusButtons)
-        break
+        setBorderBottomLeftRadius(borderBottomLeftRadiusButtons);
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
   const updateBorderBottomRightRadius = () => {
     switch (nameSection) {
       case LOGO:
-        setBorderBottomRightRadius(borderBottomRightRadiusLogo)
-        break
+        setBorderBottomRightRadius(borderBottomRightRadiusLogo);
+        break;
       case HEADER:
-        setBorderBottomRightRadius(borderBottomRightRadiusHeader)
-        break
+        setBorderBottomRightRadius(borderBottomRightRadiusHeader);
+        break;
       case MODAL_BOX:
-        setBorderBottomRightRadius(borderBottomRightRadiusModalBox)
-        break
+        setBorderBottomRightRadius(borderBottomRightRadiusModalBox);
+        break;
       case VERIFY_TITLE:
-        setBorderBottomRightRadius(borderBottomRightRadiusTitleModal)
-        break
+        setBorderBottomRightRadius(borderBottomRightRadiusTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setBorderBottomRightRadius(borderBottomRightRadiusDataTitle)
-        break
+        setBorderBottomRightRadius(borderBottomRightRadiusBox2);
+        break;
       case VERIFY_DATA:
-        setBorderBottomRightRadius(borderBottomRightRadiusData)
-        break
+        setBorderBottomRightRadius(borderBottomRightRadiusData);
+        break;
       case VERIFY_CODE:
-        setBorderBottomRightRadius(borderBottomRightRadiusDataModal)
-        break
+        setBorderBottomRightRadius(borderBottomRightRadiusDataModal);
+        break;
       case BUTTONS:
-        setBorderBottomRightRadius(borderBottomRightRadiusButtons)
-        break
+        setBorderBottomRightRadius(borderBottomRightRadiusButtons);
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
   const updatePaddingTop = () => {
     switch (nameSection) {
       case LOGO:
-        setPaddingTop(paddingTopLogo)
-        break
+        setPaddingTop(paddingTopLogo);
+        break;
       case HEADER:
-        setPaddingTop(paddingTopHeader)
-        break
+        setPaddingTop(paddingTopHeader);
+        break;
       case MODAL_BOX:
-        setPaddingTop(paddingTopModalBox)
-        break
+        setPaddingTop(paddingTopModalBox);
+        break;
       case VERIFY_TITLE:
-        setPaddingTop(paddingTopTitleModal)
-        break
+        setPaddingTop(paddingTopTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setPaddingTop(paddingTopDataTitle)
-        break
+        setPaddingTop(paddingTopBox2);
+        break;
       case VERIFY_DATA:
-        setPaddingTop(paddingTopData)
-        break
+        setPaddingTop(paddingTopData);
+        break;
       case VERIFY_CODE:
-        setPaddingTop(paddingTopDataModal)
-        break
+        setPaddingTop(paddingTopDataModal);
+        break;
       case BUTTONS:
-        setPaddingTop(paddingTopButtons)
-        break
+        setPaddingTop(paddingTopButtons);
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
   const updatePaddingBottom = () => {
     switch (nameSection) {
       case LOGO:
-        setPaddingBottom(paddingBottomLogo)
-        break
+        setPaddingBottom(paddingBottomLogo);
+        break;
       case HEADER:
-        setPaddingBottom(paddingBottomHeader)
-        break
+        setPaddingBottom(paddingBottomHeader);
+        break;
       case MODAL_BOX:
-        setPaddingBottom(paddingBottomModalBox)
-        break
+        setPaddingBottom(paddingBottomModalBox);
+        break;
       case VERIFY_TITLE:
-        setPaddingBottom(paddingBottomTitleModal)
-        break
+        setPaddingBottom(paddingBottomTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setPaddingBottom(paddingBottomDataTitle)
-        break
+        setPaddingBottom(paddingBottomBox2);
+        break;
       case VERIFY_DATA:
-        setPaddingBottom(paddingBottomData)
-        break
+        setPaddingBottom(paddingBottomData);
+        break;
       case VERIFY_CODE:
-        setPaddingBottom(paddingBottomDataModal)
-        break
+        setPaddingBottom(paddingBottomDataModal);
+        break;
       case BUTTONS:
-        setPaddingBottom(paddingBottomButtons)
-        break
+        setPaddingBottom(paddingBottomButtons);
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
   const updatePaddingLeft = () => {
     switch (nameSection) {
       case LOGO:
-        setPaddingLeft(paddingLeftLogo)
-        break
+        setPaddingLeft(paddingLeftLogo);
+        break;
       case HEADER:
-        setPaddingLeft(paddingLeftHeader)
-        break
+        setPaddingLeft(paddingLeftHeader);
+        break;
       case MODAL_BOX:
-        setPaddingLeft(paddingLeftModalBox)
-        break
+        setPaddingLeft(paddingLeftModalBox);
+        break;
       case VERIFY_TITLE:
-        setPaddingLeft(paddingLeftTitleModal)
-        break
+        setPaddingLeft(paddingLeftTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setPaddingLeft(paddingLeftDataTitle)
-        break
+        setPaddingLeft(paddingLeftBox2);
+        break;
       case VERIFY_DATA:
-        setPaddingLeft(paddingLeftData)
-        break
+        setPaddingLeft(paddingLeftData);
+        break;
       case VERIFY_CODE:
-        setPaddingLeft(paddingLeftDataModal)
-        break
+        setPaddingLeft(paddingLeftDataModal);
+        break;
       case BUTTONS:
-        setPaddingLeft(paddingLeftButtons)
-        break
+        setPaddingLeft(paddingLeftButtons);
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
   const updatePaddingRight = () => {
     switch (nameSection) {
       case LOGO:
-        setPaddingRight(paddingRightLogo)
-        break
+        setPaddingRight(paddingRightLogo);
+        break;
       case HEADER:
-        setPaddingRight(paddingRightHeader)
-        break
+        setPaddingRight(paddingRightHeader);
+        break;
       case MODAL_BOX:
-        setPaddingRight(paddingRightModalBox)
-        break
+        setPaddingRight(paddingRightModalBox);
+        break;
       case VERIFY_TITLE:
-        setPaddingRight(paddingRightTitleModal)
-        break
+        setPaddingRight(paddingRightTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setPaddingRight(paddingRightDataTitle)
-        break
+        setPaddingRight(paddingRightBox2);
+        break;
       case VERIFY_DATA:
-        setPaddingRight(paddingRightData)
-        break
+        setPaddingRight(paddingRightData);
+        break;
       case VERIFY_CODE:
-        setPaddingRight(paddingRightDataModal)
-        break
+        setPaddingRight(paddingRightDataModal);
+        break;
       case BUTTONS:
-        setPaddingRight(paddingRightButtons)
-        break
+        setPaddingRight(paddingRightButtons);
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
   const updateMarginTop = () => {
     switch (nameSection) {
       case LOGO:
-        setMarginTop(marginTopLogo)
-        break
+        setMarginTop(marginTopLogo);
+        break;
       case HEADER:
-        setMarginTop(marginTopHeader)
-        break
+        setMarginTop(marginTopHeader);
+        break;
       case MODAL_BOX:
-        setMarginTop(marginTopModalBox)
-        break
+        setMarginTop(marginTopModalBox);
+        break;
       case VERIFY_TITLE:
-        setMarginTop(marginTopTitleModal)
-        console.log("margin top TitleModal", marginTopTitleModal)
-        break
+        setMarginTop(marginTopTitleModal);
+        console.log("margin top TitleModal", marginTopTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setMarginTop(marginTopDataTitle)
-        break
+        setMarginTop(marginTopBox2);
+        break;
       case VERIFY_DATA:
-        setMarginTop(marginTopData)
-        break
+        setMarginTop(marginTopData);
+        break;
       case VERIFY_CODE:
-        setMarginTop(marginTopDataModal)
-        break
+        setMarginTop(marginTopDataModal);
+        break;
       case BUTTONS:
-        setMarginTop(marginTopButtons)
-        break
+        setMarginTop(marginTopButtons);
+        break;
 
       default:
-        break
+        break;
     }
-  }
+  };
   const updateMarginBottom = () => {
     switch (nameSection) {
       case LOGO:
-        setMarginBottom(marginBottomLogo)
-        break
+        setMarginBottom(marginBottomLogo);
+        break;
       case HEADER:
-        setMarginBottom(marginBottomHeader)
-        break
+        setMarginBottom(marginBottomHeader);
+        break;
       case MODAL_BOX:
-        setMarginBottom(marginBottomModalBox)
-        break
+        setMarginBottom(marginBottomModalBox);
+        break;
       case VERIFY_TITLE:
-        setMarginBottom(marginBottomTitleModal)
-        break
+        setMarginBottom(marginBottomTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setMarginBottom(marginBottomDataTitle)
-        break
+        setMarginBottom(marginBottomBox2);
+        break;
       case VERIFY_DATA:
-        setMarginBottom(marginBottomData)
-        break
+        setMarginBottom(marginBottomData);
+        break;
       case VERIFY_CODE:
-        setMarginBottom(marginBottomDataModal)
-        break
+        setMarginBottom(marginBottomDataModal);
+        break;
       case BUTTONS:
-        setMarginBottom(marginBottomButtons)
-        break
+        setMarginBottom(marginBottomButtons);
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
   const updateMarginLeft = () => {
     switch (nameSection) {
       case LOGO:
-        setMarginLeft(marginLeftLogo)
-        break
+        setMarginLeft(marginLeftLogo);
+        break;
       case HEADER:
-        setMarginLeft(marginLeftHeader)
-        break
+        setMarginLeft(marginLeftHeader);
+        break;
       case MODAL_BOX:
-        setMarginLeft(marginLeftModalBox)
-        break
+        setMarginLeft(marginLeftModalBox);
+        break;
       case VERIFY_TITLE:
-        setMarginLeft(marginLeftTitleModal)
-        break
+        setMarginLeft(marginLeftTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setMarginLeft(marginLeftDataTitle)
-        break
+        setMarginLeft(marginLeftBox2);
+        break;
       case VERIFY_DATA:
-        setMarginLeft(marginLeftData)
-        break
+        setMarginLeft(marginLeftData);
+        break;
       case VERIFY_CODE:
-        setMarginLeft(marginLeftDataModal)
-        break
+        setMarginLeft(marginLeftDataModal);
+        break;
       case BUTTONS:
-        setMarginLeft(marginLeftButtons)
-        break
+        setMarginLeft(marginLeftButtons);
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
   const updateMarginRight = () => {
     switch (nameSection) {
       case LOGO:
-        setMarginRight(marginRightLogo)
-        break
+        setMarginRight(marginRightLogo);
+        break;
       case HEADER:
-        setMarginRight(marginRightHeader)
-        break
+        setMarginRight(marginRightHeader);
+        break;
       case MODAL_BOX:
-        setMarginRight(marginRightModalBox)
-        break
+        setMarginRight(marginRightModalBox);
+        break;
       case VERIFY_TITLE:
-        setMarginRight(marginRightTitleModal)
-        break
+        setMarginRight(marginRightTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setMarginRight(marginRightDataTitle)
-        break
+        setMarginRight(marginRightBox2);
+        break;
       case VERIFY_DATA:
-        setMarginRight(marginRightData)
-        break
+        setMarginRight(marginRightData);
+        break;
       case VERIFY_CODE:
-        setMarginRight(marginRightDataModal)
-        break
+        setMarginRight(marginRightDataModal);
+        break;
       case BUTTONS:
-        setMarginRight(marginRightButtons)
-        break
+        setMarginRight(marginRightButtons);
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
   useEffect(() => {
-    updateBorderBottomColor()
-    updateBorderTopColor()
-    updateBorderLeftColor()
-    updateBorderRightColor()
-    updateBorderBottomWidth()
-    updateBorderTopWidth()
-    updateBorderLeftWidth()
-    updateBorderRightWidth()
-    updateBorderBottomStyle()
-    updateBorderTopStyle()
-    updateBorderLeftStyle()
-    updateBorderRightStyle()
-    updateBorderTopRightRadius()
-    updateBorderTopLeftRadius()
-    updateBorderBottomRightRadius()
-    updateBorderBottomLeftRadius()
-    updatePaddingTop()
-    updatePaddingBottom()
-    updatePaddingLeft()
-    updatePaddingRight()
-    updateMarginTop()
-    updateMarginBottom()
-    updateMarginLeft()
-    updateMarginRight()
-  }, [nameSection])
-}
+    updateBorderBottomColor();
+    updateBorderTopColor();
+    updateBorderLeftColor();
+    updateBorderRightColor();
+    updateBorderBottomWidth();
+    updateBorderTopWidth();
+    updateBorderLeftWidth();
+    updateBorderRightWidth();
+    updateBorderBottomStyle();
+    updateBorderTopStyle();
+    updateBorderLeftStyle();
+    updateBorderRightStyle();
+    updateBorderTopRightRadius();
+    updateBorderTopLeftRadius();
+    updateBorderBottomRightRadius();
+    updateBorderBottomLeftRadius();
+    updatePaddingTop();
+    updatePaddingBottom();
+    updatePaddingLeft();
+    updatePaddingRight();
+    updateMarginTop();
+    updateMarginBottom();
+    updateMarginLeft();
+    updateMarginRight();
+  }, [nameSection]);
+};
 
-export default UpdateValueSettings
+export default UpdateValueSettings;

@@ -1,5 +1,4 @@
 import { useAppProvider } from "@appProvider/AppProvider";
-import { useAppStateProvider } from "@appProvider/AppStateProvider";
 import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
 import { useUndoable } from "@appProvider/UndoableProvider";
 import { useUpdateSettingsProvider } from "@appProvider/UpdateSettingsProvider";
@@ -14,6 +13,8 @@ import BorderType from "../../BorderType";
 import {
   BUTTONS,
   BUTTONS_PLUGIN_ID,
+  CONTENT,
+  DATA_PLUGIN,
   HEADER,
   HEADER_PLUGIN_ID,
   LOGO,
@@ -65,18 +66,10 @@ const PopperBorderStyle = ({
   nameSection,
   sideName,
 }: PopperBorderStyleProps) => {
-  // const [borderWidth, setBorderWidth] = React.useState(0)
-  // const [borderColor, setBorderColor] = React.useState("#000000")
   const classes = useStyles();
 
-  const {
-    borderStyle,
-    setBorderStyle,
-    setBorderColor,
-    setBorderWidth,
-    borderWidth,
-    borderColor,
-  }: any = useUpdateSettingsProvider();
+  const { setBorderColor, setBorderWidth, borderWidth, borderColor }: any =
+    useUpdateSettingsProvider();
 
   console.log("border style dialogs", nameSection, sideName);
 
@@ -116,6 +109,8 @@ const PopperBorderStyle = ({
     setBorderRightColorData,
     setBorderRightWidthData,
 
+    // --------------------------Modal Data --------------------------
+
     setBorderBottomWidthDataModal,
     setBorderTopWidthDataModal,
     setBorderLeftWidthDataModal,
@@ -134,11 +129,11 @@ const PopperBorderStyle = ({
     setBorderLeftColorTitleModal,
     setBorderRightColorTitleModal,
 
-    // -------------------------- TitleModal Btn --------------------------
-    setBorderBottomColorDataTitle,
-    setBorderTopColorDataTitle,
-    setBorderLeftColorDataTitle,
-    setBorderRightColorDataTitle,
+    // -------------------------- Box 2 --------------------------
+    setBorderBottomColorBox2,
+    setBorderTopColorBox2,
+    setBorderLeftColorBox2,
+    setBorderRightColorBox2,
 
     //  width border
     setBorderBottomWidthTitleModal,
@@ -146,10 +141,10 @@ const PopperBorderStyle = ({
     setBorderLeftWidthTitleModal,
     setBorderRightWidthTitleModal,
     // btn
-    setBorderBottomWidthDataTitle,
-    setBorderTopWidthDataTitle,
-    setBorderLeftWidthDataTitle,
-    setBorderRightWidthDataTitle,
+    setBorderBottomWidthBox2,
+    setBorderTopWidthBox2,
+    setBorderLeftWidthBox2,
+    setBorderRightWidthBox2,
     //  db json table for modals
     dbModalsFormat,
     setDbModalsFormat,
@@ -280,12 +275,12 @@ const PopperBorderStyle = ({
         nameSection: VERIFY_TITLE,
       });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderBottomColorDataTitle(e.hex);
+      setBorderBottomColorBox2(e.hex);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderBottomColorDataTitle",
+          "borderBottomColorBox2setBorderBottomColorBox2",
           e.hex
         )
       );
@@ -340,6 +335,23 @@ const PopperBorderStyle = ({
         nameSection: BUTTONS,
       });
     }
+    // content
+    else if (nameSection === CONTENT) {
+      setBorderBottomColorData(e.hex);
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          DATA_PLUGIN,
+          "borderBottomColorData",
+          e.hex
+        )
+      );
+      setContent({
+        name: "borderBottomColor",
+        value: e.hex,
+        nameSection: CONTENT,
+      });
+    }
   };
   //handle for border top color change
   const handleBorderTopColorChange = (e: any) => {
@@ -354,6 +366,21 @@ const PopperBorderStyle = ({
         )
       );
       setContent({ name: "borderTopColor", value: e.hex, nameSection: LOGO });
+    } else if (nameSection === HEADER) {
+      setBorderTopColorHeader(e.hex);
+      setHeaderDBFormat(
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "borderTopColorHeader",
+          e.hex
+        )
+      );
+      setContent({
+        name: "borderTopColorLogo",
+        value: e.hex,
+        nameSection: HEADER,
+      });
     } else if (nameSection === VERIFY_TITLE) {
       setBorderTopColorTitleModal(e.hex);
       setDbModalsFormat(
@@ -370,12 +397,12 @@ const PopperBorderStyle = ({
         nameSection: VERIFY_TITLE,
       });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderTopColorDataTitle(e.hex);
+      setBorderTopColorBox2(e.hex);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderTopColorDataTitle",
+          "borderTopColorBox2",
           e.hex
         )
       );
@@ -430,6 +457,23 @@ const PopperBorderStyle = ({
         nameSection: BUTTONS,
       });
     }
+    // content
+    else if (nameSection === CONTENT) {
+      setBorderTopColorData(e.hex);
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          DATA_PLUGIN,
+          "borderTopColorData",
+          e.hex
+        )
+      );
+      setContent({
+        name: "borderTopColor",
+        value: e.hex,
+        nameSection: CONTENT,
+      });
+    }
   };
   //handle for border left color change
   const handleBorderLeftColorChange = (e: any) => {
@@ -475,12 +519,12 @@ const PopperBorderStyle = ({
         nameSection: VERIFY_TITLE,
       });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderLeftColorDataTitle(e.hex);
+      setBorderLeftColorBox2(e.hex);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderLeftColorDataTitle",
+          "borderLeftColorBox2",
           e.hex
         )
       );
@@ -535,7 +579,25 @@ const PopperBorderStyle = ({
         nameSection: BUTTONS,
       });
     }
+    // content
+    else if (nameSection === CONTENT) {
+      setBorderLeftColorData(e.hex);
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          DATA_PLUGIN,
+          "borderLeftColorData",
+          e.hex
+        )
+      );
+      setContent({
+        name: "borderLeftColor",
+        value: e.hex,
+        nameSection: CONTENT,
+      });
+    }
   };
+
   //handle for border right color change
   const handleBorderRightColorChange = (e: any) => {
     if (nameSection === LOGO) {
@@ -580,12 +642,12 @@ const PopperBorderStyle = ({
         nameSection: VERIFY_TITLE,
       });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderRightColorDataTitle(e.hex);
+      setBorderRightColorBox2(e.hex);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderRightColorDataTitle",
+          "borderRightColorBox2",
           e.hex
         )
       );
@@ -640,8 +702,25 @@ const PopperBorderStyle = ({
         nameSection: BUTTONS,
       });
     }
+    // content
+    else if (nameSection === CONTENT) {
+      setBorderRightColorData(e.hex);
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          DATA_PLUGIN,
+          "borderRightColorData",
+          e.hex
+        )
+      );
+      setContent({
+        name: "borderRightColor",
+        value: e.hex,
+        nameSection: CONTENT,
+      });
+    }
   };
-
+  // ---------------------------------------------width---------------------------------------------
   //handle for border bottom width change
   const handleBorderBottomWidthChange = (e: any) => {
     setBorderBottomWidth(e.target.value);
@@ -691,12 +770,12 @@ const PopperBorderStyle = ({
         nameSection: VERIFY_TITLE,
       });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderBottomWidthDataTitle(e.target.value);
+      setBorderBottomWidthBox2(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderBottomWidthDataTitle",
+          "borderBottomWidthBox2",
           e.target.value
         )
       );
@@ -751,6 +830,24 @@ const PopperBorderStyle = ({
         nameSection: BUTTONS,
       });
     }
+    // content
+    else if (nameSection === CONTENT) {
+      console.log("border bottom", e.target.value);
+      setBorderBottomWidthData(e.target.value);
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          DATA_PLUGIN,
+          "borderBottomWidthData",
+          e.target.value
+        )
+      );
+      setContent({
+        name: "borderBottomWidth",
+        value: e.target.value,
+        nameSection: CONTENT,
+      });
+    }
   };
 
   //handle for border top width change
@@ -802,12 +899,12 @@ const PopperBorderStyle = ({
         nameSection: VERIFY_TITLE,
       });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderTopWidthDataTitle(e.target.value);
+      setBorderTopWidthBox2(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderTopWidthDataTitle",
+          "borderTopWidthBox2",
           e.target.value
         )
       );
@@ -862,6 +959,24 @@ const PopperBorderStyle = ({
         nameSection: BUTTONS,
       });
     }
+    // content
+    else if (nameSection === CONTENT) {
+      console.log("border bottom", e.target.value);
+      setBorderTopWidthData(e.target.value);
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          DATA_PLUGIN,
+          "borderTopWidthData",
+          e.target.value
+        )
+      );
+      setContent({
+        name: "borderTopWidth",
+        value: e.target.value,
+        nameSection: CONTENT,
+      });
+    }
   };
 
   //handle for border left width change
@@ -898,12 +1013,12 @@ const PopperBorderStyle = ({
         nameSection: VERIFY_TITLE,
       });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderLeftWidthDataTitle(e.target.value);
+      setBorderLeftWidthBox2(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderLeftWidthDataTitle",
+          "borderLeftWidthBox2",
           e.target.value
         )
       );
@@ -959,6 +1074,39 @@ const PopperBorderStyle = ({
         nameSection: BUTTONS,
       });
     }
+    // content
+    else if (nameSection === CONTENT) {
+      console.log("border bottom", e.target.value);
+      setBorderLeftWidthData(e.target.value);
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          DATA_PLUGIN,
+          "borderLeftWidthData",
+          e.target.value
+        )
+      );
+      setContent({
+        name: "borderLeftWidth",
+        value: e.target.value,
+        nameSection: CONTENT,
+      });
+    } else if (nameSection === HEADER) {
+      setBorderLeftWidthHeader(e.target.value);
+      setHeaderDBFormat(
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "borderLeftWidthHeader",
+          e.target.value
+        )
+      );
+      setContent({
+        name: "borderLeftWidth",
+        value: e.target.value,
+        nameSection: HEADER,
+      });
+    }
   };
 
   //handle for border right width change
@@ -979,6 +1127,21 @@ const PopperBorderStyle = ({
         value: e.target.value,
         nameSection: LOGO,
       });
+    } else if (nameSection === HEADER) {
+      setBorderRightWidthHeader(e.target.value);
+      setHeaderDBFormat(
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "borderRightWidthHeader",
+          e.target.value
+        )
+      );
+      setContent({
+        name: "borderRightWidth",
+        value: e.target.value,
+        nameSection: HEADER,
+      });
     } else if (nameSection === VERIFY_TITLE) {
       setBorderRightWidthTitleModal(e.target.value);
       setDbModalsFormat(
@@ -995,12 +1158,12 @@ const PopperBorderStyle = ({
         nameSection: VERIFY_TITLE,
       });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderRightWidthDataTitle(e.target.value);
+      setBorderRightWidthBox2(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderRightWidthDataTitle",
+          "borderRightWidthBox2",
           e.target.value
         )
       );
@@ -1055,8 +1218,26 @@ const PopperBorderStyle = ({
         nameSection: BUTTONS,
       });
     }
+    // content
+    else if (nameSection === CONTENT) {
+      console.log("border bottom", e.target.value);
+      setBorderRightWidthData(e.target.value);
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          DATA_PLUGIN,
+          "borderRightWidthData",
+          e.target.value
+        )
+      );
+      setContent({
+        name: "borderRightWidth",
+        value: e.target.value,
+        nameSection: CONTENT,
+      });
+    }
   };
-  //
+  //-----------------------------------------End Width --------------------------------------------
   const handleBorderColor = (e: any) => {
     console.log(" color :", e.hex);
     setBorderColor(e.hex);

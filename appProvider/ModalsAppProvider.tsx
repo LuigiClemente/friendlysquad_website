@@ -22,15 +22,15 @@ export const ModalsAppProvider = ({ children }: any) => {
   const [dialogOpenButtons, setDialogOpenButtons] = useState(false);
 
   // ------------------------------------------------------------Data ------------------------------------------------ 1
-  const [borderBottomColorData, setBorderBottomColorData] = useState("#000");
-  const [borderRightColorData, setBorderRightColorData] = useState("#000");
-  const [borderLeftColorData, setBorderLeftColorData] = useState("#000");
-  const [borderTopColorData, setBorderTopColorData] = useState("#000");
+  const [borderBottomColorData, setBorderBottomColorData] = useState("gray");
+  const [borderRightColorData, setBorderRightColorData] = useState("gray");
+  const [borderLeftColorData, setBorderLeftColorData] = useState("gray");
+  const [borderTopColorData, setBorderTopColorData] = useState("gray");
   // border width
-  const [borderRightWidthData, setBorderRightWidthData] = useState("0");
-  const [borderLeftWidthData, setBorderLeftWidthData] = useState("0");
-  const [borderTopWidthData, setBorderTopWidthData] = useState("0");
-  const [borderBottomWidthData, setBorderBottomWidthData] = useState("0");
+  const [borderRightWidthData, setBorderRightWidthData] = useState("1");
+  const [borderLeftWidthData, setBorderLeftWidthData] = useState("1");
+  const [borderTopWidthData, setBorderTopWidthData] = useState("0.5");
+  const [borderBottomWidthData, setBorderBottomWidthData] = useState("0.5");
   // border style
   const [borderRightStyleData, setBorderRightStyleData] = useState("solid");
   const [borderLeftStyleData, setBorderLeftStyleData] = useState("solid");
@@ -55,7 +55,9 @@ export const ModalsAppProvider = ({ children }: any) => {
   const [marginBottomData, setMarginBottomData] = useState("0");
 
   // for background color of Data
-  const [backgroundColorData, setBackgroundColorData] = useState("#202844");
+  const [backgroundColorData, setBackgroundColorData] = useState(
+    "rgba(255, 255, 255, 0.4)"
+  );
   // for color of Data
   const [colorData, setColorData] = useState("#000");
   // for font size of Data
@@ -176,56 +178,42 @@ export const ModalsAppProvider = ({ children }: any) => {
 
   //---------------------------------------------------------------- DataTitle
   const [fontSizeDataTitle, setFontSizeDataTitle] = useState("2rem");
-  const [backgroundColorDataTitle, setBackgroundColorDataTitle] =
-    useState("#5BD62A");
+  const [backgroundColorBox2, setBackgroundColorBox2] = useState("transparent");
   const [colorDataTitle, setColorDataTitle] = useState("#000");
   const [fontDataTitle, setFontDataTitle] = useState("Segoe UI");
   // border for DataTitle
-  const [borderBottomColorDataTitle, setBorderBottomColorDataTitle] =
-    useState("#c3c3c3");
-  const [borderRightColorDataTitle, setBorderRightColorDataTitle] =
-    useState("#c3c3c3");
-  const [borderLeftColorDataTitle, setBorderLeftColorDataTitle] =
-    useState("#c3c3c3");
-  const [borderTopColorDataTitle, setBorderTopColorDataTitle] =
-    useState("#c3c3c3");
+  // -----------------------------------------------------------box 2
+  const [borderBottomColorBox2, setBorderBottomColorBox2] = useState("#fff");
+  const [borderRightColorBox2, setBorderRightColorBox2] = useState("#fff");
+  const [borderLeftColorBox2, setBorderLeftColorBox2] = useState("#fff");
+  const [borderTopColorBox2, setBorderTopColorBox2] = useState("#fff");
   // border width
-  const [borderRightWidthDataTitle, setBorderRightWidthDataTitle] =
-    useState("0");
-  const [borderLeftWidthDataTitle, setBorderLeftWidthDataTitle] = useState("0");
-  const [borderTopWidthDataTitle, setBorderTopWidthDataTitle] = useState("0");
-  const [borderBottomWidthDataTitle, setBorderBottomWidthDataTitle] =
-    useState("0");
+  const [borderRightWidthBox2, setBorderRightWidthBox2] = useState("1");
+  const [borderLeftWidthBox2, setBorderLeftWidthBox2] = useState("1");
+  const [borderTopWidthBox2, setBorderTopWidthBox2] = useState("1");
+  const [borderBottomWidthBox2, setBorderBottomWidthBox2] = useState("1");
   // border style
-  const [borderRightStyleDataTitle, setBorderRightStyleDataTitle] =
-    useState("solid");
-  const [borderLeftStyleDataTitle, setBorderLeftStyleDataTitle] =
-    useState("solid");
-  const [borderTopStyleDataTitle, setBorderTopStyleDataTitle] =
-    useState("solid");
-  const [borderBottomStyleDataTitle, setBorderBottomStyleDataTitle] =
-    useState("solid");
+  const [borderRightStyleBox2, setBorderRightStyleBox2] = useState("solid");
+  const [borderLeftStyleBox2, setBorderLeftStyleBox2] = useState("solid");
+  const [borderTopStyleBox2, setBorderTopStyleBox2] = useState("solid");
+  const [borderBottomStyleBox2, setBorderBottomStyleBox2] = useState("solid");
   // border radius border-top-right-radius
-  const [borderTopRightRadiusDataTitle, setBorderTopRightRadiusDataTitle] =
-    useState("5");
-  const [borderTopLeftRadiusDataTitle, setBorderTopLeftRadiusDataTitle] =
-    useState("5");
-  const [
-    borderBottomRightRadiusDataTitle,
-    setBorderBottomRightRadiusDataTitle,
-  ] = useState("0");
-  const [borderBottomLeftRadiusDataTitle, setBorderBottomLeftRadiusDataTitle] =
+  const [borderTopRightRadiusBox2, setBorderTopRightRadiusBox2] = useState("0");
+  const [borderTopLeftRadiusBox2, setBorderTopLeftRadiusBox2] = useState("0");
+  const [borderBottomRightRadiusBox2, setBorderBottomRightRadiusBox2] =
     useState("0");
-  // padding for DataTitle
-  const [paddingRightDataTitle, setPaddingRightDataTitle] = useState("15");
-  const [paddingLeftDataTitle, setPaddingLeftDataTitle] = useState("15");
-  const [paddingTopDataTitle, setPaddingTopDataTitle] = useState("10");
-  const [paddingBottomDataTitle, setPaddingBottomDataTitle] = useState("10");
-  // margin for DataTitle
-  const [marginRightDataTitle, setMarginRightDataTitle] = useState("0");
-  const [marginLeftDataTitle, setMarginLeftDataTitle] = useState("0");
-  const [marginTopDataTitle, setMarginTopDataTitle] = useState("0");
-  const [marginBottomDataTitle, setMarginBottomDataTitle] = useState("0");
+  const [borderBottomLeftRadiusBox2, setBorderBottomLeftRadiusBox2] =
+    useState("0");
+  // padding for Box2
+  const [paddingRightBox2, setPaddingRightBox2] = useState("15");
+  const [paddingLeftBox2, setPaddingLeftBox2] = useState("15");
+  const [paddingTopBox2, setPaddingTopBox2] = useState("10");
+  const [paddingBottomBox2, setPaddingBottomBox2] = useState("10");
+  // margin for Box2
+  const [marginRightBox2, setMarginRightBox2] = useState("0");
+  const [marginLeftBox2, setMarginLeftBox2] = useState("0");
+  const [marginTopBox2, setMarginTopBox2] = useState("0");
+  const [marginBottomBox2, setMarginBottomBox2] = useState("0");
   const [isLoadFooter, setIsLoadFooter] = useState(false);
 
   //---------------------------------------------------------------- buttons -----------------------------------------------
@@ -382,75 +370,48 @@ export const ModalsAppProvider = ({ children }: any) => {
       );
       // ------------for TitleModal button----------------
       setFontSizeDataTitle(defaultTitleModalFormat?.fontSizeDataTitle);
-      setBackgroundColorDataTitle(
-        defaultTitleModalFormat?.backgroundColorDataTitle
-      );
+      setBackgroundColorBox2(defaultTitleModalFormat?.backgroundColorBox2);
       setColorDataTitle(defaultTitleModalFormat?.colorDataTitle);
       setFontDataTitle(defaultTitleModalFormat?.fontDataTitle);
+      // ------------for Box 2----------------
       // border background color
-      setBorderBottomColorDataTitle(
-        defaultTitleModalFormat?.borderBottomColorDataTitle
-      );
-      setBorderRightColorDataTitle(
-        defaultTitleModalFormat?.borderRightColorDataTitle
-      );
-      setBorderLeftColorDataTitle(
-        defaultTitleModalFormat?.borderLeftColorDataTitle
-      );
-      setBorderTopColorDataTitle(
-        defaultTitleModalFormat?.borderTopColorDataTitle
-      );
+      setBorderBottomColorBox2(defaultTitleModalFormat?.borderBottomColorBox2);
+      setBorderRightColorBox2(defaultTitleModalFormat?.borderRightColorBox2);
+      setBorderLeftColorBox2(defaultTitleModalFormat?.borderLeftColorBox2);
+      setBorderTopColorBox2(defaultTitleModalFormat?.borderTopColorBox2);
       // border width
-      setBorderRightWidthDataTitle(
-        defaultTitleModalFormat?.borderRightWidthDataTitle
-      );
-      setBorderLeftWidthDataTitle(
-        defaultTitleModalFormat?.borderLeftWidthDataTitle
-      );
-      setBorderTopWidthDataTitle(
-        defaultTitleModalFormat?.borderTopWidthDataTitle
-      );
-      setBorderBottomWidthDataTitle(
-        defaultTitleModalFormat?.borderBottomWidthDataTitle
-      );
+      setBorderRightWidthBox2(defaultTitleModalFormat?.borderRightWidthBox2);
+      setBorderLeftWidthBox2(defaultTitleModalFormat?.borderLeftWidthBox2);
+      setBorderTopWidthBox2(defaultTitleModalFormat?.borderTopWidthBox2);
+      setBorderBottomWidthBox2(defaultTitleModalFormat?.borderBottomWidthBox2);
       // border style
-      setBorderRightStyleDataTitle(
-        defaultTitleModalFormat?.borderRightStyleDataTitle
-      );
-      setBorderLeftStyleDataTitle(
-        defaultTitleModalFormat?.borderLeftStyleDataTitle
-      );
-      setBorderTopStyleDataTitle(
-        defaultTitleModalFormat?.borderTopStyleDataTitle
-      );
-      setBorderBottomStyleDataTitle(
-        defaultTitleModalFormat?.borderBottomStyleDataTitle
-      );
+      setBorderRightStyleBox2(defaultTitleModalFormat?.borderRightStyleBox2);
+      setBorderLeftStyleBox2(defaultTitleModalFormat?.borderLeftStyleBox2);
+      setBorderTopStyleBox2(defaultTitleModalFormat?.borderTopStyleBox2);
+      setBorderBottomStyleBox2(defaultTitleModalFormat?.borderBottomStyleBox2);
       // border radius border-top-right-radius
-      setBorderTopRightRadiusDataTitle(
-        defaultTitleModalFormat?.borderTopRightRadiusDataTitle
+      setBorderTopRightRadiusBox2(
+        defaultTitleModalFormat?.borderTopRightRadiusBox2
       );
-      setBorderTopLeftRadiusDataTitle(
-        defaultTitleModalFormat?.borderTopLeftRadiusDataTitle
+      setBorderTopLeftRadiusBox2(
+        defaultTitleModalFormat?.borderTopLeftRadiusBox2
       );
-      setBorderBottomRightRadiusDataTitle(
-        defaultTitleModalFormat?.borderBottomRightRadiusDataTitle
+      setBorderBottomRightRadiusBox2(
+        defaultTitleModalFormat?.borderBottomRightRadiusBox2
       );
-      setBorderBottomLeftRadiusDataTitle(
-        defaultTitleModalFormat?.borderBottomLeftRadiusDataTitle
+      setBorderBottomLeftRadiusBox2(
+        defaultTitleModalFormat?.borderBottomLeftRadiusBox2
       );
       // padding
-      setPaddingRightDataTitle(defaultTitleModalFormat?.paddingRightDataTitle);
-      setPaddingLeftDataTitle(defaultTitleModalFormat?.paddingLeftDataTitle);
-      setPaddingTopDataTitle(defaultTitleModalFormat?.paddingTopDataTitle);
-      setPaddingBottomDataTitle(
-        defaultTitleModalFormat?.paddingBottomDataTitle
-      );
+      setPaddingRightBox2(defaultTitleModalFormat?.paddingRightBox2);
+      setPaddingLeftBox2(defaultTitleModalFormat?.paddingLeftBox2);
+      setPaddingTopBox2(defaultTitleModalFormat?.paddingTopBox2);
+      setPaddingBottomBox2(defaultTitleModalFormat?.paddingBottomBox2);
       // margin
-      setMarginRightDataTitle(defaultTitleModalFormat?.marginRightDataTitle);
-      setMarginLeftDataTitle(defaultTitleModalFormat?.marginLeftDataTitle);
-      setMarginTopDataTitle(defaultTitleModalFormat?.marginTopDataTitle);
-      setMarginBottomDataTitle(defaultTitleModalFormat?.marginBottomDataTitle);
+      setMarginRightBox2(defaultTitleModalFormat?.marginRightBox2);
+      setMarginLeftBox2(defaultTitleModalFormat?.marginLeftBox2);
+      setMarginTopBox2(defaultTitleModalFormat?.marginTopBox2);
+      setMarginBottomBox2(defaultTitleModalFormat?.marginBottomBox2);
 
       // -------------------------- Data --------------------------
       const defaultDataFormat: any = getPluginValue(
@@ -877,61 +838,62 @@ export const ModalsAppProvider = ({ children }: any) => {
         setFontDataTitle,
         colorDataTitle,
         setColorDataTitle,
-        backgroundColorDataTitle,
-        setBackgroundColorDataTitle,
-        //  border
-        borderBottomColorDataTitle,
-        setBorderBottomColorDataTitle,
-        borderBottomWidthDataTitle,
-        setBorderBottomWidthDataTitle,
-        borderTopColorDataTitle,
-        setBorderTopColorDataTitle,
-        borderTopWidthDataTitle,
-        setBorderTopWidthDataTitle,
-        borderLeftColorDataTitle,
-        setBorderLeftColorDataTitle,
-        borderLeftWidthDataTitle,
-        setBorderLeftWidthDataTitle,
-        borderRightColorDataTitle,
-        setBorderRightColorDataTitle,
-        borderRightWidthDataTitle,
-        setBorderRightWidthDataTitle,
+        backgroundColorBox2,
+        setBackgroundColorBox2,
+        //  border -------------------------Box 2 -------------------------
+        borderBottomColorBox2,
+        setBorderBottomColorBox2,
+        borderBottomWidthBox2,
+        setBorderBottomWidthBox2,
+        borderTopColorBox2,
+        setBorderTopColorBox2,
+        borderTopWidthBox2,
+        setBorderTopWidthBox2,
+        borderLeftColorBox2,
+        setBorderLeftColorBox2,
+        borderLeftWidthBox2,
+        setBorderLeftWidthBox2,
+        borderRightColorBox2,
+        setBorderRightColorBox2,
+        borderRightWidthBox2,
+        setBorderRightWidthBox2,
         // border style
-        borderRightStyleDataTitle,
-        setBorderRightStyleDataTitle,
-        borderLeftStyleDataTitle,
-        setBorderLeftStyleDataTitle,
-        borderTopStyleDataTitle,
-        setBorderTopStyleDataTitle,
-        borderBottomStyleDataTitle,
-        setBorderBottomStyleDataTitle,
+        borderRightStyleBox2,
+        setBorderRightStyleBox2,
+        borderLeftStyleBox2,
+        setBorderLeftStyleBox2,
+        borderTopStyleBox2,
+        setBorderTopStyleBox2,
+        borderBottomStyleBox2,
+        setBorderBottomStyleBox2,
         // border radius
-        borderTopRightRadiusDataTitle,
-        setBorderTopRightRadiusDataTitle,
-        borderTopLeftRadiusDataTitle,
-        setBorderTopLeftRadiusDataTitle,
-        borderBottomRightRadiusDataTitle,
-        setBorderBottomRightRadiusDataTitle,
-        borderBottomLeftRadiusDataTitle,
-        setBorderBottomLeftRadiusDataTitle,
+        borderTopRightRadiusBox2,
+        setBorderTopRightRadiusBox2,
+        borderTopLeftRadiusBox2,
+        setBorderTopLeftRadiusBox2,
+        borderBottomRightRadiusBox2,
+        setBorderBottomRightRadiusBox2,
+        borderBottomLeftRadiusBox2,
+        setBorderBottomLeftRadiusBox2,
         // padding
-        paddingTopDataTitle,
-        setPaddingTopDataTitle,
-        paddingBottomDataTitle,
-        setPaddingBottomDataTitle,
-        paddingLeftDataTitle,
-        setPaddingLeftDataTitle,
-        paddingRightDataTitle,
-        setPaddingRightDataTitle,
+        paddingTopBox2,
+        setPaddingTopBox2,
+        paddingBottomBox2,
+        setPaddingBottomBox2,
+        paddingLeftBox2,
+        setPaddingLeftBox2,
+        paddingRightBox2,
+        setPaddingRightBox2,
         // margin
-        marginTopDataTitle,
-        setMarginTopDataTitle,
-        marginBottomDataTitle,
-        setMarginBottomDataTitle,
-        marginLeftDataTitle,
-        setMarginLeftDataTitle,
-        marginRightDataTitle,
-        setMarginRightDataTitle,
+        marginTopBox2,
+        setMarginTopBox2,
+        marginBottomBox2,
+        setMarginBottomBox2,
+        marginLeftBox2,
+        setMarginLeftBox2,
+        marginRightBox2,
+        setMarginRightBox2,
+
         // TitleModal hight and width
 
         //  db json table for modals

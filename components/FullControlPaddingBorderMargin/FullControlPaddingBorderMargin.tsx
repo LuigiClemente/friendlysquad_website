@@ -1,12 +1,12 @@
-import { useAppProvider } from "@appProvider/AppProvider"
-import { useTheme } from "@material-ui/core/styles"
-import useMediaQuery from "@mui/material/useMediaQuery"
-import { useState } from "react"
+import { useAppProvider } from "@appProvider/AppProvider";
+import { useTheme } from "@material-ui/core/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useState } from "react";
 
-import { useModalsAppProvider } from "@appProvider/ModalsAppProvider"
-import { useUndoable } from "@appProvider/UndoableProvider"
-import { useUpdateSettingsProvider } from "@appProvider/UpdateSettingsProvider"
-import { updatePluginValue } from "../../utils/uiController"
+import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
+import { useUndoable } from "@appProvider/UndoableProvider";
+import { useUpdateSettingsProvider } from "@appProvider/UpdateSettingsProvider";
+import { updatePluginValue } from "../../utils/uiController";
 import {
   BUTTONS,
   BUTTONS_PLUGIN_ID,
@@ -21,41 +21,15 @@ import {
   VERIFY_DATA_PLUGIN_ID,
   VERIFY_TITLE,
   VERIFY_TITLE_BTN,
-  VERIFY_TITLE_PLUGIN_ID
-} from "../Constant/const"
-import PopperBorderStyle from "../CustomPopover/ToolBoxBorder/PopperBorderStyle"
-import UpdateValueSettings from "./UpdateValueSettings"
-import { useAppStateProvider } from "@appProvider/AppStateProvider"
+  VERIFY_TITLE_PLUGIN_ID,
+} from "../Constant/const";
+import PopperBorderStyle from "../CustomPopover/ToolBoxBorder/PopperBorderStyle";
+import UpdateValueSettings from "./UpdateValueSettings";
+import { useAppStateProvider } from "@appProvider/AppStateProvider";
 
 const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
-  const theme = useTheme()
-  const isMdUp = useMediaQuery(theme.breakpoints.down("md"))
-
-  // const {
-  //   // ------------------------------------- buttons
-  //   // border width
-  //   setBorderRightWidthButtons,
-  //   setBorderLeftWidthButtons,
-  //   setBorderTopWidthButtons,
-  //   setBorderBottomWidthButtons,
-  //   // border style
-
-  //   setBorderTopRightRadiusButtons,
-  //   setBorderTopLeftRadiusButtons,
-  //   setBorderBottomRightRadiusButtons,
-  //   setBorderBottomLeftRadiusButtons,
-  //   // padding
-  //   setPaddingRightButtons,
-  //   setPaddingLeftButtons,
-  //   setPaddingTopButtons,
-  //   setPaddingBottomButtons,
-  //   // margin
-  //   setMarginRightButtons,
-  //   setMarginLeftButtons,
-  //   setMarginTopButtons,
-  //   setMarginBottomButtons,
-  // }:any=useAppStateProvider()
-
+  const theme = useTheme();
+  const isMdUp = useMediaQuery(theme.breakpoints.down("md"));
 
   const {
     setHeaderDBFormat,
@@ -106,8 +80,8 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
     setMarginTopLogo,
     setMarginBottomLogo,
     setMarginLeftLogo,
-    setMarginRightLogo
-  }: any = useAppProvider()
+    setMarginRightLogo,
+  }: any = useAppProvider();
   // set use state size
   const {
     // -------------------------- VerifyData --------------------------
@@ -173,86 +147,57 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
     setMarginBottomTitleModal,
     setMarginLeftTitleModal,
     setMarginRightTitleModal,
-    // -------------------------- TitleModal Btn --------------------------
-    setBorderBottomWidthDataTitle,
-    setBorderTopWidthDataTitle,
-    setBorderLeftWidthDataTitle,
-    setBorderRightWidthDataTitle,
+    // -------------------------- Box 2 --------------------------
+    setBorderBottomWidthBox2,
+    setBorderTopWidthBox2,
+    setBorderLeftWidthBox2,
+    setBorderRightWidthBox2,
 
     // border radius
-    setBorderTopRightRadiusDataTitle,
-    setBorderTopLeftRadiusDataTitle,
-    setBorderBottomRightRadiusDataTitle,
-    setBorderBottomLeftRadiusDataTitle,
+    setBorderTopRightRadiusBox2,
+    setBorderTopLeftRadiusBox2,
+    setBorderBottomRightRadiusBox2,
+    setBorderBottomLeftRadiusBox2,
     // padding
-    setPaddingTopDataTitle,
-    setPaddingBottomDataTitle,
-    setPaddingLeftDataTitle,
-    setPaddingRightDataTitle,
+    setPaddingTopBox2,
+    setPaddingBottomBox2,
+    setPaddingLeftBox2,
+    setPaddingRightBox2,
     // margin
-    setMarginTopDataTitle,
-    setMarginBottomDataTitle,
-    setMarginLeftDataTitle,
-    setMarginRightDataTitle,
+    setMarginTopBox2,
+    setMarginBottomBox2,
+    setMarginLeftBox2,
+    setMarginRightBox2,
     //  db json table for modals
     dbModalsFormat,
     setDbModalsFormat,
     // --------------------------------- Content
 
-    borderBottomColorData,
     setBorderBottomColorData,
-    borderBottomWidthData,
     setBorderBottomWidthData,
-    borderTopColorData,
     setBorderTopColorData,
-    borderTopWidthData,
     setBorderTopWidthData,
-    borderLeftColorData,
     setBorderLeftColorData,
-    borderLeftWidthData,
     setBorderLeftWidthData,
-    borderRightColorData,
     setBorderRightColorData,
-    borderRightWidthData,
     setBorderRightWidthData,
-    // border style
-    borderRightStyleData,
-    setBorderRightStyleData,
-    borderLeftStyleData,
-    setBorderLeftStyleData,
-    borderTopStyleData,
-    setBorderTopStyleData,
-    borderBottomStyleData,
-    setBorderBottomStyleData,
+
     // border radius
-    borderTopRightRadiusData,
     setBorderTopRightRadiusData,
-    borderTopLeftRadiusData,
     setBorderTopLeftRadiusData,
-    borderBottomRightRadiusData,
     setBorderBottomRightRadiusData,
-    borderBottomLeftRadiusData,
     setBorderBottomLeftRadiusData,
     // padding
-    paddingTopData,
     setPaddingTopData,
-    paddingBottomData,
     setPaddingBottomData,
-    paddingLeftData,
     setPaddingLeftData,
-    paddingRightData,
     setPaddingRightData,
     // margin
-    marginTopData,
     setMarginTopData,
-    marginBottomData,
     setMarginBottomData,
-    marginLeftData,
     setMarginLeftData,
-    marginRightData,
     setMarginRightData,
 
-    // ------------------------------------Buttons
     // ------------------------------------- buttons
     // border width
     setBorderRightWidthButtons,
@@ -275,7 +220,7 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
     setMarginLeftButtons,
     setMarginTopButtons,
     setMarginBottomButtons,
-  }: any = useModalsAppProvider()
+  }: any = useModalsAppProvider();
   // set use state margin
   const {
     borderBottomColor,
@@ -325,27 +270,36 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
     marginLeft,
     setMarginLeft,
     marginRight,
-    setMarginRight
-  }: any = useUpdateSettingsProvider()
-  UpdateValueSettings(nameSection)
-  const [isActiveStyleBorderPopper, setIsActiveStyleBorderPopper] = useState(false)
+    setMarginRight,
+  }: any = useUpdateSettingsProvider();
+  UpdateValueSettings(nameSection);
+  const [isActiveStyleBorderPopper, setIsActiveStyleBorderPopper] =
+    useState(false);
 
-  const [sideEffect, setSideEffect] = useState("top")
+  const [sideEffect, setSideEffect] = useState("top");
 
-  const { content, setContent }: any = useUndoable()
-
+  const { content, setContent }: any = useUndoable();
+  // -------------------------------------------------------------------width
   //handle for border bottom width change
   const handleBorderBottomWidthChange = (e: any) => {
-    setBorderBottomWidth(e.target.value)
+    setBorderBottomWidth(e.target.value);
     if (nameSection === LOGO) {
-      setBorderBottomWidthLogo(e.target.value)
+      setBorderBottomWidthLogo(e.target.value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "borderBottomWidthLogo", e.target.value)
-      )
-      setContent({ name: "borderBottomWidth", value: e.target.value, nameSection: LOGO })
-    }
-    if (nameSection === HEADER) {
-      setBorderBottomWidthHeader(e.target.value)
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "borderBottomWidthLogo",
+          e.target.value
+        )
+      );
+      setContent({
+        name: "borderBottomWidth",
+        value: e.target.value,
+        nameSection: LOGO,
+      });
+    } else if (nameSection === HEADER) {
+      setBorderBottomWidthHeader(e.target.value);
       setHeaderDBFormat(
         updatePluginValue(
           headerDBFormat,
@@ -353,10 +307,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderBottomWidthHeader",
           e.target.value
         )
-      )
-      setContent({ name: "borderBottomWidth", value: e.target.value, nameSection: HEADER })
+      );
+      setContent({
+        name: "borderBottomWidth",
+        value: e.target.value,
+        nameSection: HEADER,
+      });
     } else if (nameSection === VERIFY_TITLE) {
-      setBorderBottomWidthTitleModal(e.target.value)
+      setBorderBottomWidthTitleModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -364,25 +322,29 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderBottomWidthTitleModal",
           e.target.value
         )
-      )
-      setContent({ name: "borderBottomWidth", value: e.target.value, nameSection: VERIFY_TITLE })
+      );
+      setContent({
+        name: "borderBottomWidth",
+        value: e.target.value,
+        nameSection: VERIFY_TITLE,
+      });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderBottomWidthDataTitle(e.target.value)
+      setBorderBottomWidthBox2(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderBottomWidthDataTitle",
+          "borderBottomWidthBox2",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderBottomWidth",
         value: e.target.value,
-        nameSection: VERIFY_TITLE_BTN
-      })
+        nameSection: VERIFY_TITLE_BTN,
+      });
     } else if (nameSection === VERIFY_DATA) {
-      setBorderBottomWidthVerifyData(e.target.value)
+      setBorderBottomWidthVerifyData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -390,10 +352,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderBottomWidthVerifyData",
           e.target.value
         )
-      )
-      setContent({ name: "borderBottomWidth", value: e.target.value, nameSection: VERIFY_DATA })
+      );
+      setContent({
+        name: "borderBottomWidth",
+        value: e.target.value,
+        nameSection: VERIFY_DATA,
+      });
     } else if (nameSection === VERIFY_CODE) {
-      setBorderBottomWidthDataModal(e.target.value)
+      setBorderBottomWidthDataModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -401,18 +367,18 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderBottomWidthDataModal",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderBottomWidth",
         value: e.target.value,
-        nameSection: VERIFY_CODE
-      })
+        nameSection: VERIFY_CODE,
+      });
     }
 
     // buttons
     else if (nameSection === BUTTONS) {
-      console.log("border bottom", e.target.value)
-      setBorderBottomWidthButtons(e.target.value)
+      console.log("border bottom", e.target.value);
+      setBorderBottomWidthButtons(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -420,18 +386,18 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderBottomWidthButtons",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderBottomWidth",
         value: e.target.value,
-        nameSection: BUTTONS
-      })
+        nameSection: BUTTONS,
+      });
     }
 
     // content
     else if (nameSection === CONTENT) {
-      console.log("border bottom", e.target.value)
-      setBorderBottomWidthData(e.target.value)
+      console.log("border bottom", e.target.value);
+      setBorderBottomWidthData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -439,37 +405,69 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderBottomWidthData",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderBottomWidth",
         value: e.target.value,
-        nameSection: CONTENT
-      })
+        nameSection: CONTENT,
+      });
     }
-  }
+  };
 
   //handle for border top width change
   const handleBorderTopWidthChange = (e: any) => {
-    setBorderTopWidth(e.target.value)
+    setBorderTopWidth(e.target.value);
     if (nameSection === LOGO) {
-      setBorderTopWidthLogo(e.target.value)
+      setBorderTopWidthLogo(e.target.value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "borderTopWidthLogo", e.target.value)
-      )
-      setContent({ name: "borderTopWidth", value: e.target.value, nameSection: LOGO })
-    } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderTopWidthDataTitle(e.target.value)
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "borderTopWidthLogo",
+          e.target.value
+        )
+      );
+      setContent({
+        name: "borderTopWidth",
+        value: e.target.value,
+        nameSection: LOGO,
+      });
+    }
+    // -----------------
+    else if (nameSection === HEADER) {
+      setBorderTopWidthHeader(e.target.value);
+      setHeaderDBFormat(
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "borderTopWidthHeader",
+          e.target.value
+        )
+      );
+      setContent({
+        name: "borderTopWidth",
+        value: e.target.value,
+        nameSection: HEADER,
+      });
+    }
+    // ----------------
+    else if (nameSection === VERIFY_TITLE_BTN) {
+      setBorderTopWidthBox2(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderTopWidthDataTitle",
+          "borderTopWidthBox2",
           e.target.value
         )
-      )
-      setContent({ name: "borderTopWidth", value: e.target.value, nameSection: VERIFY_TITLE_BTN })
+      );
+      setContent({
+        name: "borderTopWidth",
+        value: e.target.value,
+        nameSection: VERIFY_TITLE_BTN,
+      });
     } else if (nameSection === VERIFY_DATA) {
-      setBorderTopWidthVerifyData(e.target.value)
+      setBorderTopWidthVerifyData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -477,10 +475,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderTopWidthVerifyData",
           e.target.value
         )
-      )
-      setContent({ name: "borderTopWidth", value: e.target.value, nameSection: VERIFY_DATA })
+      );
+      setContent({
+        name: "borderTopWidth",
+        value: e.target.value,
+        nameSection: VERIFY_DATA,
+      });
     } else if (nameSection === VERIFY_CODE) {
-      setBorderTopWidthDataModal(e.target.value)
+      setBorderTopWidthDataModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -488,13 +490,17 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderTopWidthDataModal",
           e.target.value
         )
-      )
-      setContent({ name: "borderTopWidth", value: e.target.value, nameSection: VERIFY_CODE })
+      );
+      setContent({
+        name: "borderTopWidth",
+        value: e.target.value,
+        nameSection: VERIFY_CODE,
+      });
     }
-     // buttons
+    // buttons
     else if (nameSection === BUTTONS) {
-      console.log("border bottom", e.target.value)
-      setBorderTopWidthButtons(e.target.value)
+      console.log("border bottom", e.target.value);
+      setBorderTopWidthButtons(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -502,17 +508,17 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderTopWidthButtons",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderTopWidth",
         value: e.target.value,
-        nameSection: BUTTONS
-      })
+        nameSection: BUTTONS,
+      });
     }
-     // content
-     else if (nameSection === CONTENT) {
-      console.log("border bottom", e.target.value)
-      setBorderTopWidthData(e.target.value)
+    // content
+    else if (nameSection === CONTENT) {
+      console.log("border bottom", e.target.value);
+      setBorderTopWidthData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -520,32 +526,50 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderTopWidthData",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderTopWidth",
         value: e.target.value,
-        nameSection: CONTENT
-      })
+        nameSection: CONTENT,
+      });
     }
-  }
+  };
 
   //handle for border left width change
   const handleBorderLeftWidthChange = (e: any) => {
-    setBorderLeftWidth(e.target.value)
+    setBorderLeftWidth(e.target.value);
     if (nameSection === LOGO) {
-      setBorderLeftWidthLogo(e.target.value)
+      setBorderLeftWidthLogo(e.target.value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "borderLeftWidthLogo", e.target.value)
-      )
-      setContent({ name: "borderLeftWidth", value: e.target.value, nameSection: LOGO })
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "borderLeftWidthLogo",
+          e.target.value
+        )
+      );
+      setContent({
+        name: "borderLeftWidth",
+        value: e.target.value,
+        nameSection: LOGO,
+      });
     } else if (nameSection === HEADER) {
-      setBorderLeftWidthHeader(e.target.value)
+      setBorderLeftWidthHeader(e.target.value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "borderLeftWidthHeader", e.target.value)
-      )
-      setContent({ name: "borderLeftWidth", value: e.target.value, nameSection: HEADER })
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "borderLeftWidthHeader",
+          e.target.value
+        )
+      );
+      setContent({
+        name: "borderLeftWidth",
+        value: e.target.value,
+        nameSection: HEADER,
+      });
     } else if (nameSection === VERIFY_TITLE) {
-      setBorderLeftWidthTitleModal(e.target.value)
+      setBorderLeftWidthTitleModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -553,21 +577,29 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderLeftWidthTitleModal",
           e.target.value
         )
-      )
-      setContent({ name: "borderLeftWidth", value: e.target.value, nameSection: VERIFY_TITLE })
+      );
+      setContent({
+        name: "borderLeftWidth",
+        value: e.target.value,
+        nameSection: VERIFY_TITLE,
+      });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderLeftWidthDataTitle(e.target.value)
+      setBorderLeftWidthBox2(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderLeftWidthDataTitle",
+          "borderLeftWidthBox2",
           e.target.value
         )
-      )
-      setContent({ name: "borderLeftWidth", value: e.target.value, nameSection: VERIFY_TITLE_BTN })
+      );
+      setContent({
+        name: "borderLeftWidth",
+        value: e.target.value,
+        nameSection: VERIFY_TITLE_BTN,
+      });
     } else if (nameSection === VERIFY_DATA) {
-      setBorderLeftWidthVerifyData(e.target.value)
+      setBorderLeftWidthVerifyData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -575,31 +607,35 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderLeftWidthVerifyData",
           e.target.value
         )
-      )
-      setContent({ name: "borderLeftWidth", value: e.target.value, nameSection: VERIFY_DATA })
+      );
+      setContent({
+        name: "borderLeftWidth",
+        value: e.target.value,
+        nameSection: VERIFY_DATA,
+      });
     }
-         // buttons
-      else if (nameSection === BUTTONS) {
-          console.log("border bottom", e.target.value)
-          setBorderLeftWidthButtons(e.target.value)
-          setDbModalsFormat(
-            updatePluginValue(
-              dbModalsFormat,
-              BUTTONS_PLUGIN_ID,
-              "borderLeftWidthButtons",
-              e.target.value
-            )
-          )
-          setContent({
-            name: "borderLeftWidth",
-            value: e.target.value,
-            nameSection: BUTTONS
-          })
-        }
-         // content
-     else if (nameSection === CONTENT) {
-      console.log("border bottom", e.target.value)
-      setBorderLeftWidthData(e.target.value)
+    // buttons
+    else if (nameSection === BUTTONS) {
+      console.log("border bottom", e.target.value);
+      setBorderLeftWidthButtons(e.target.value);
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          BUTTONS_PLUGIN_ID,
+          "borderLeftWidthButtons",
+          e.target.value
+        )
+      );
+      setContent({
+        name: "borderLeftWidth",
+        value: e.target.value,
+        nameSection: BUTTONS,
+      });
+    }
+    // content
+    else if (nameSection === CONTENT) {
+      console.log("border bottom", e.target.value);
+      setBorderLeftWidthData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -607,26 +643,35 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderLeftWidthData",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderLeftWidth",
         value: e.target.value,
-        nameSection: CONTENT
-      })
+        nameSection: CONTENT,
+      });
     }
-  }
+  };
 
   //handle for border right width change
   const handleBorderRightWidthChange = (e: any) => {
-    setBorderRightWidth(e.target.value)
+    setBorderRightWidth(e.target.value);
     if (nameSection === LOGO) {
-      setBorderRightWidthLogo(e.target.value)
+      setBorderRightWidthLogo(e.target.value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "borderRightWidthLogo", e.target.value)
-      )
-      setContent({ name: "borderRightWidth", value: e.target.value, nameSection: LOGO })
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "borderRightWidthLogo",
+          e.target.value
+        )
+      );
+      setContent({
+        name: "borderRightWidth",
+        value: e.target.value,
+        nameSection: LOGO,
+      });
     } else if (nameSection === HEADER) {
-      setBorderRightWidthHeader(e.target.value)
+      setBorderRightWidthHeader(e.target.value);
       setHeaderDBFormat(
         updatePluginValue(
           headerDBFormat,
@@ -634,10 +679,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderRightWidthHeader",
           e.target.value
         )
-      )
-      setContent({ name: "borderRightWidth", value: e.target.value, nameSection: HEADER })
+      );
+      setContent({
+        name: "borderRightWidth",
+        value: e.target.value,
+        nameSection: HEADER,
+      });
     } else if (nameSection === VERIFY_TITLE) {
-      setBorderRightWidthTitleModal(e.target.value)
+      setBorderRightWidthTitleModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -645,21 +694,29 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderRightWidthTitleModal",
           e.target.value
         )
-      )
-      setContent({ name: "borderRightWidth", value: e.target.value, nameSection: VERIFY_TITLE })
+      );
+      setContent({
+        name: "borderRightWidth",
+        value: e.target.value,
+        nameSection: VERIFY_TITLE,
+      });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderRightWidthDataTitle(e.target.value)
+      setBorderRightWidthBox2(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderRightWidthDataTitle",
+          "borderRightWidthBox2",
           e.target.value
         )
-      )
-      setContent({ name: "borderRightWidth", value: e.target.value, nameSection: VERIFY_TITLE_BTN })
+      );
+      setContent({
+        name: "borderRightWidth",
+        value: e.target.value,
+        nameSection: VERIFY_TITLE_BTN,
+      });
     } else if (nameSection === VERIFY_DATA) {
-      setBorderRightWidthVerifyData(e.target.value)
+      setBorderRightWidthVerifyData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -667,10 +724,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderRightWidthVerifyData",
           e.target.value
         )
-      )
-      setContent({ name: "borderRightWidth", value: e.target.value, nameSection: VERIFY_DATA })
+      );
+      setContent({
+        name: "borderRightWidth",
+        value: e.target.value,
+        nameSection: VERIFY_DATA,
+      });
     } else if (nameSection === VERIFY_CODE) {
-      setBorderRightWidthDataModal(e.target.value)
+      setBorderRightWidthDataModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -678,15 +739,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderRightWidthDataModal",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderRightWidth",
         value: e.target.value,
-        nameSection: VERIFY_CODE
-      })
-    }
-    else if (nameSection === BUTTONS) {
-      setBorderRightWidthButtons(e.target.value)
+        nameSection: VERIFY_CODE,
+      });
+    } else if (nameSection === BUTTONS) {
+      setBorderRightWidthButtons(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -694,38 +754,38 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderRightWidthButtons",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderRightWidth",
         value: e.target.value,
-        nameSection: BUTTONS
-      })
+        nameSection: BUTTONS,
+      });
     }
-      // content
-      else if (nameSection === CONTENT) {
-        console.log("border bottom", e.target.value)
-        setBorderRightWidthData(e.target.value)
-        setDbModalsFormat(
-          updatePluginValue(
-            dbModalsFormat,
-            DATA_PLUGIN,
-            "borderRightWidthData",
-            e.target.value
-          )
+    // content
+    else if (nameSection === CONTENT) {
+      console.log("border bottom", e.target.value);
+      setBorderRightWidthData(e.target.value);
+      setDbModalsFormat(
+        updatePluginValue(
+          dbModalsFormat,
+          DATA_PLUGIN,
+          "borderRightWidthData",
+          e.target.value
         )
-        setContent({
-          name: "borderRightWidth",
-          value: e.target.value,
-          nameSection: CONTENT
-        })
-      }
-  }
-
+      );
+      setContent({
+        name: "borderRightWidth",
+        value: e.target.value,
+        nameSection: CONTENT,
+      });
+    }
+  };
+  // -----------------------------------------------------------------------Radius
   //handle for border top right radius change
   const handleBorderTopRightRadiusChange = (e: any) => {
-    setBorderTopRightRadius(e.target.value)
+    setBorderTopRightRadius(e.target.value);
     if (nameSection === LOGO) {
-      setBorderTopRightRadiusLogo(e.target.value)
+      setBorderTopRightRadiusLogo(e.target.value);
       setHeaderDBFormat(
         updatePluginValue(
           headerDBFormat,
@@ -733,14 +793,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderTopRightRadiusLogo",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderTopRightRadius",
         value: e.target.value,
-        nameSection: LOGO
-      })
+        nameSection: LOGO,
+      });
     } else if (nameSection === HEADER) {
-      setBorderTopRightRadiusHeader(e.target.value)
+      setBorderTopRightRadiusHeader(e.target.value);
       setHeaderDBFormat(
         updatePluginValue(
           headerDBFormat,
@@ -748,14 +808,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderTopRightRadiusHeader",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderTopRightRadius",
         value: e.target.value,
-        nameSection: HEADER
-      })
+        nameSection: HEADER,
+      });
     } else if (nameSection === VERIFY_TITLE) {
-      setBorderTopRightRadiusTitleModal(e.target.value)
+      setBorderTopRightRadiusTitleModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -763,29 +823,29 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderTopRightRadiusTitleModal",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderTopRightRadius",
         value: e.target.value,
-        nameSection: VERIFY_TITLE
-      })
+        nameSection: VERIFY_TITLE,
+      });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderTopRightRadiusDataTitle(e.target.value)
+      setBorderTopRightRadiusBox2(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderTopRightRadiusDataTitle",
+          "borderTopRightRadiusBox2",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderTopRightRadius",
         value: e.target.value,
-        nameSection: VERIFY_TITLE_BTN
-      })
+        nameSection: VERIFY_TITLE_BTN,
+      });
     } else if (nameSection === VERIFY_DATA) {
-      setBorderTopRightRadiusVerifyData(e.target.value)
+      setBorderTopRightRadiusVerifyData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -793,14 +853,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderTopRightRadiusVerifyData",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderTopRightRadius",
         value: e.target.value,
-        nameSection: VERIFY_DATA
-      })
+        nameSection: VERIFY_DATA,
+      });
     } else if (nameSection === VERIFY_CODE) {
-      setBorderTopRightRadiusDataModal(e.target.value)
+      setBorderTopRightRadiusDataModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -808,15 +868,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderTopRightRadiusDataModal",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderTopRightRadius",
         value: e.target.value,
-        nameSection: VERIFY_CODE
-      })
-    }
-    else if (nameSection === BUTTONS) {
-      setBorderTopRightRadiusButtons(e.target.value)
+        nameSection: VERIFY_CODE,
+      });
+    } else if (nameSection === BUTTONS) {
+      setBorderTopRightRadiusButtons(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -824,16 +883,16 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderTopRightRadiusButtons",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderTopRightRadius",
         value: e.target.value,
-        nameSection: BUTTONS
-      })
+        nameSection: BUTTONS,
+      });
     }
-     // content
-     else if (nameSection === CONTENT) {
-      setBorderTopRightRadiusData(e.target.value)
+    // content
+    else if (nameSection === CONTENT) {
+      setBorderTopRightRadiusData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -841,29 +900,35 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderTopRightRadiusData",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderTopRightRadius",
         value: e.target.value,
-        nameSection: CONTENT
-      })
+        nameSection: CONTENT,
+      });
     }
-  }
+  };
+
   //handle for border top left radius change
   const handleBorderTopLeftRadiusChange = (e: any) => {
-    setBorderTopLeftRadius(e.target.value)
+    setBorderTopLeftRadius(e.target.value);
     if (nameSection === LOGO) {
-      setBorderTopLeftRadiusLogo(e.target.value)
+      setBorderTopLeftRadiusLogo(e.target.value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "borderTopLeftRadiusLogo", e.target.value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "borderTopLeftRadiusLogo",
+          e.target.value
+        )
+      );
       setContent({
         name: "borderTopLeftRadius",
         value: e.target.value,
-        nameSection: LOGO
-      })
+        nameSection: LOGO,
+      });
     } else if (nameSection === HEADER) {
-      setBorderTopLeftRadiusHeader(e.target.value)
+      setBorderTopLeftRadiusHeader(e.target.value);
       setHeaderDBFormat(
         updatePluginValue(
           headerDBFormat,
@@ -871,14 +936,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderTopLeftRadiusHeader",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderTopLeftRadius",
         value: e.target.value,
-        nameSection: HEADER
-      })
+        nameSection: HEADER,
+      });
     } else if (nameSection === VERIFY_TITLE) {
-      setBorderTopLeftRadiusTitleModal(e.target.value)
+      setBorderTopLeftRadiusTitleModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -886,29 +951,29 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderTopLeftRadiusTitleModal",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderTopLeftRadius",
         value: e.target.value,
-        nameSection: VERIFY_TITLE
-      })
+        nameSection: VERIFY_TITLE,
+      });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderTopLeftRadiusDataTitle(e.target.value)
+      setBorderTopLeftRadiusBox2(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderTopLeftRadiusDataTitle",
+          "borderTopLeftRadiusBox2",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderTopLeftRadius",
         value: e.target.value,
-        nameSection: VERIFY_TITLE_BTN
-      })
+        nameSection: VERIFY_TITLE_BTN,
+      });
     } else if (nameSection === VERIFY_DATA) {
-      setBorderTopLeftRadiusVerifyData(e.target.value)
+      setBorderTopLeftRadiusVerifyData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -916,14 +981,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderTopLeftRadiusVerifyData",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderTopLeftRadius",
         value: e.target.value,
-        nameSection: VERIFY_DATA
-      })
+        nameSection: VERIFY_DATA,
+      });
     } else if (nameSection === VERIFY_CODE) {
-      setBorderTopLeftRadiusDataModal(e.target.value)
+      setBorderTopLeftRadiusDataModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -931,15 +996,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderTopLeftRadiusDataModal",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderTopLeftRadius",
         value: e.target.value,
-        nameSection: VERIFY_CODE
-      })
-    }
-    else if (nameSection === BUTTONS) {
-      setBorderTopLeftRadiusButtons(e.target.value)
+        nameSection: VERIFY_CODE,
+      });
+    } else if (nameSection === BUTTONS) {
+      setBorderTopLeftRadiusButtons(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -947,17 +1011,17 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderTopLeftRadiusButtons",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderTopLeftRadius",
         value: e.target.value,
-        nameSection: BUTTONS
-      })
+        nameSection: BUTTONS,
+      });
     }
 
     // content
     else if (nameSection === CONTENT) {
-      setBorderTopLeftRadiusData(e.target.value)
+      setBorderTopLeftRadiusData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -965,19 +1029,19 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderTopLeftRadiusData",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderTopLeftRadius",
         value: e.target.value,
-        nameSection: CONTENT
-      })
+        nameSection: CONTENT,
+      });
     }
-  }
+  };
   //handle for border bottom right radius change
   const handleBorderBottomRightRadiusChange = (e: any) => {
-    setBorderBottomRightRadius(e.target.value)
+    setBorderBottomRightRadius(e.target.value);
     if (nameSection === LOGO) {
-      setBorderBottomRightRadiusLogo(e.target.value)
+      setBorderBottomRightRadiusLogo(e.target.value);
       setHeaderDBFormat(
         updatePluginValue(
           headerDBFormat,
@@ -985,14 +1049,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderBottomRightRadiusLogo",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderBottomRightRadius",
         value: e.target.value,
-        nameSection: LOGO
-      })
+        nameSection: LOGO,
+      });
     } else if (nameSection === HEADER) {
-      setBorderBottomRightRadiusHeader(e.target.value)
+      setBorderBottomRightRadiusHeader(e.target.value);
       setHeaderDBFormat(
         updatePluginValue(
           headerDBFormat,
@@ -1000,14 +1064,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderBottomRightRadiusHeader",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderBottomRightRadius",
         value: e.target.value,
-        nameSection: HEADER
-      })
+        nameSection: HEADER,
+      });
     } else if (nameSection === VERIFY_TITLE) {
-      setBorderBottomRightRadiusTitleModal(e.target.value)
+      setBorderBottomRightRadiusTitleModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1015,29 +1079,29 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderBottomRightRadiusTitleModal",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderBottomRightRadius",
         value: e.target.value,
-        nameSection: VERIFY_TITLE
-      })
+        nameSection: VERIFY_TITLE,
+      });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderBottomRightRadiusDataTitle(e.target.value)
+      setBorderBottomRightRadiusBox2(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderBottomRightRadiusDataTitle",
+          "borderBottomRightRadiusBox2",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderBottomRightRadius",
         value: e.target.value,
-        nameSection: VERIFY_TITLE_BTN
-      })
+        nameSection: VERIFY_TITLE_BTN,
+      });
     } else if (nameSection === VERIFY_DATA) {
-      setBorderBottomRightRadiusVerifyData(e.target.value)
+      setBorderBottomRightRadiusVerifyData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1045,14 +1109,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderBottomRightRadiusVerifyData",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderBottomRightRadius",
         value: e.target.value,
-        nameSection: VERIFY_DATA
-      })
+        nameSection: VERIFY_DATA,
+      });
     } else if (nameSection === VERIFY_CODE) {
-      setBorderBottomRightRadiusDataModal(e.target.value)
+      setBorderBottomRightRadiusDataModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1060,15 +1124,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderBottomRightRadiusDataModal",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderBottomRightRadius",
         value: e.target.value,
-        nameSection: VERIFY_CODE
-      })
-    }
-    else if (nameSection === BUTTONS) {
-      setBorderBottomRightRadiusButtons(e.target.value)
+        nameSection: VERIFY_CODE,
+      });
+    } else if (nameSection === BUTTONS) {
+      setBorderBottomRightRadiusButtons(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1076,16 +1139,16 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderBottomRightRadiusButtons",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderBottomRightRadius",
         value: e.target.value,
-        nameSection: BUTTONS
-      })
+        nameSection: BUTTONS,
+      });
     }
-     // content
-     else if (nameSection === CONTENT) {
-      setBorderBottomRightRadiusData(e.target.value)
+    // content
+    else if (nameSection === CONTENT) {
+      setBorderBottomRightRadiusData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1093,19 +1156,19 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderBottomRightRadiusData",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderBottomRightRadius",
         value: e.target.value,
-        nameSection: CONTENT
-      })
+        nameSection: CONTENT,
+      });
     }
-  }
+  };
   //handle for border bottom left radius change
   const handleBorderBottomLeftRadiusChange = (e: any) => {
-    setBorderBottomLeftRadius(e.target.value)
+    setBorderBottomLeftRadius(e.target.value);
     if (nameSection === LOGO) {
-      setBorderBottomLeftRadiusLogo(e.target.value)
+      setBorderBottomLeftRadiusLogo(e.target.value);
       setHeaderDBFormat(
         updatePluginValue(
           headerDBFormat,
@@ -1113,14 +1176,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderBottomLeftRadiusLogo",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderBottomLeftRadius",
         value: e.target.value,
-        nameSection: LOGO
-      })
+        nameSection: LOGO,
+      });
     } else if (nameSection === HEADER) {
-      setBorderBottomLeftRadiusHeader(e.target.value)
+      setBorderBottomLeftRadiusHeader(e.target.value);
       setHeaderDBFormat(
         updatePluginValue(
           headerDBFormat,
@@ -1128,14 +1191,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderBottomLeftRadiusHeader",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderBottomLeftRadius",
         value: e.target.value,
-        nameSection: HEADER
-      })
+        nameSection: HEADER,
+      });
     } else if (nameSection === VERIFY_TITLE) {
-      setBorderBottomLeftRadiusTitleModal(e.target.value)
+      setBorderBottomLeftRadiusTitleModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1143,29 +1206,29 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderBottomLeftRadiusTitleModal",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderBottomLeftRadius",
         value: e.target.value,
-        nameSection: VERIFY_TITLE
-      })
+        nameSection: VERIFY_TITLE,
+      });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBorderBottomLeftRadiusDataTitle(e.target.value)
+      setBorderBottomLeftRadiusBox2(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "borderBottomLeftRadiusDataTitle",
+          "borderBottomLeftRadiusBox2",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderBottomLeftRadius",
         value: e.target.value,
-        nameSection: VERIFY_TITLE_BTN
-      })
+        nameSection: VERIFY_TITLE_BTN,
+      });
     } else if (nameSection === VERIFY_DATA) {
-      setBorderBottomLeftRadiusVerifyData(e.target.value)
+      setBorderBottomLeftRadiusVerifyData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1173,14 +1236,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderBottomLeftRadiusVerifyData",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderBottomLeftRadius",
         value: e.target.value,
-        nameSection: VERIFY_DATA
-      })
+        nameSection: VERIFY_DATA,
+      });
     } else if (nameSection === VERIFY_CODE) {
-      setBorderBottomLeftRadiusDataModal(e.target.value)
+      setBorderBottomLeftRadiusDataModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1188,15 +1251,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderBottomLeftRadiusDataModal",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderBottomLeftRadius",
         value: e.target.value,
-        nameSection: VERIFY_CODE
-      })
-    }
-    else if (nameSection === BUTTONS) {
-      setBorderBottomLeftRadiusButtons(e.target.value)
+        nameSection: VERIFY_CODE,
+      });
+    } else if (nameSection === BUTTONS) {
+      setBorderBottomLeftRadiusButtons(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1204,16 +1266,16 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderBottomLeftRadiusButtons",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderBottomLeftRadius",
         value: e.target.value,
-        nameSection: BUTTONS
-      })
+        nameSection: BUTTONS,
+      });
     }
-     // content
-     else if (nameSection === CONTENT) {
-      setBorderBottomLeftRadiusData(e.target.value)
+    // content
+    else if (nameSection === CONTENT) {
+      setBorderBottomLeftRadiusData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1221,39 +1283,49 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "borderBottomLeftRadiusData",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "borderBottomLeftRadius",
         value: e.target.value,
-        nameSection: CONTENT
-      })
+        nameSection: CONTENT,
+      });
     }
-  }
+  };
   //handle for padding top change
   const handlePaddingTopChange = (e: any) => {
-    setPaddingTop(e.target.value)
+    setPaddingTop(e.target.value);
     if (nameSection === LOGO) {
-      setPaddingTopLogo(e.target.value)
+      setPaddingTopLogo(e.target.value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "paddingTopLogo", e.target.value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "paddingTopLogo",
+          e.target.value
+        )
+      );
       setContent({
         name: "paddingTop",
         value: e.target.value,
-        nameSection: LOGO
-      })
+        nameSection: LOGO,
+      });
     } else if (nameSection === HEADER) {
-      setPaddingTopHeader(e.target.value)
+      setPaddingTopHeader(e.target.value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "paddingTopHeader", e.target.value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "paddingTopHeader",
+          e.target.value
+        )
+      );
       setContent({
         name: "paddingTop",
         value: e.target.value,
-        nameSection: HEADER
-      })
+        nameSection: HEADER,
+      });
     } else if (nameSection === VERIFY_TITLE) {
-      setPaddingTopTitleModal(e.target.value)
+      setPaddingTopTitleModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1261,29 +1333,29 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "paddingTopTitleModal",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "paddingTop",
         value: e.target.value,
-        nameSection: VERIFY_TITLE
-      })
+        nameSection: VERIFY_TITLE,
+      });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setPaddingTopDataTitle(e.target.value)
+      setPaddingTopBox2(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "paddingTopDataTitle",
+          "paddingTopBox2",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "paddingTop",
         value: e.target.value,
-        nameSection: VERIFY_TITLE_BTN
-      })
+        nameSection: VERIFY_TITLE_BTN,
+      });
     } else if (nameSection === VERIFY_DATA) {
-      setPaddingTopVerifyData(e.target.value)
+      setPaddingTopVerifyData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1291,14 +1363,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "paddingTopVerifyData",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "paddingTop",
         value: e.target.value,
-        nameSection: VERIFY_DATA
-      })
+        nameSection: VERIFY_DATA,
+      });
     } else if (nameSection === VERIFY_CODE) {
-      setPaddingTopDataModal(e.target.value)
+      setPaddingTopDataModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1306,15 +1378,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "paddingTopDataModal",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "paddingTop",
         value: e.target.value,
-        nameSection: VERIFY_CODE
-      })
-    }
-    else if (nameSection === BUTTONS) {
-      setPaddingTopButtons(e.target.value)
+        nameSection: VERIFY_CODE,
+      });
+    } else if (nameSection === BUTTONS) {
+      setPaddingTopButtons(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1322,16 +1393,16 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "paddingTopButtons",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "paddingTop",
         value: e.target.value,
-        nameSection: BUTTONS
-      })
+        nameSection: BUTTONS,
+      });
     }
-     // content
-     else if (nameSection === CONTENT) {
-      setPaddingTopData(e.target.value)
+    // content
+    else if (nameSection === CONTENT) {
+      setPaddingTopData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1339,39 +1410,49 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "paddingTopData",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "paddingTop",
         value: e.target.value,
-        nameSection: CONTENT
-      })
+        nameSection: CONTENT,
+      });
     }
-  }
+  };
   //handle for padding bottom change
   const handlePaddingBottomChange = (e: any) => {
-    setPaddingBottom(e.target.value)
+    setPaddingBottom(e.target.value);
     if (nameSection === LOGO) {
-      setPaddingBottomLogo(e.target.value)
+      setPaddingBottomLogo(e.target.value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "paddingBottomLogo", e.target.value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "paddingBottomLogo",
+          e.target.value
+        )
+      );
       setContent({
         name: "paddingBottom",
         value: e.target.value,
-        nameSection: LOGO
-      })
+        nameSection: LOGO,
+      });
     } else if (nameSection === HEADER) {
-      setPaddingBottomHeader(e.target.value)
+      setPaddingBottomHeader(e.target.value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "paddingBottomHeader", e.target.value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "paddingBottomHeader",
+          e.target.value
+        )
+      );
       setContent({
         name: "paddingBottom",
         value: e.target.value,
-        nameSection: HEADER
-      })
+        nameSection: HEADER,
+      });
     } else if (nameSection === VERIFY_TITLE) {
-      setPaddingBottomTitleModal(e.target.value)
+      setPaddingBottomTitleModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1379,29 +1460,29 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "PaddingBottomTitleModal",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "paddingBottom",
         value: e.target.value,
-        nameSection: VERIFY_TITLE
-      })
+        nameSection: VERIFY_TITLE,
+      });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setPaddingBottomDataTitle(e.target.value)
+      setPaddingBottomBox2(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "paddingBottomDataTitle",
+          "paddingBottomBox2",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "paddingBottom",
         value: e.target.value,
-        nameSection: VERIFY_TITLE_BTN
-      })
+        nameSection: VERIFY_TITLE_BTN,
+      });
     } else if (nameSection === VERIFY_DATA) {
-      setPaddingBottomVerifyData(e.target.value)
+      setPaddingBottomVerifyData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1409,14 +1490,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "paddingBottomVerifyData",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "paddingBottom",
         value: e.target.value,
-        nameSection: VERIFY_DATA
-      })
+        nameSection: VERIFY_DATA,
+      });
     } else if (nameSection === VERIFY_CODE) {
-      setPaddingBottomDataModal(e.target.value)
+      setPaddingBottomDataModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1424,15 +1505,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "paddingBottomDataModal",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "paddingBottom",
         value: e.target.value,
-        nameSection: VERIFY_CODE
-      })
-    }
-    else if (nameSection === BUTTONS) {
-      setPaddingBottomButtons(e.target.value)
+        nameSection: VERIFY_CODE,
+      });
+    } else if (nameSection === BUTTONS) {
+      setPaddingBottomButtons(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1440,16 +1520,16 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "paddingBottomButtons",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "paddingBottom",
         value: e.target.value,
-        nameSection: BUTTONS
-      })
+        nameSection: BUTTONS,
+      });
     }
-     // content
-     else if (nameSection === CONTENT) {
-      setPaddingBottomData(e.target.value)
+    // content
+    else if (nameSection === CONTENT) {
+      setPaddingBottomData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1457,39 +1537,49 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "paddingBottomData",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "paddingBottom",
         value: e.target.value,
-        nameSection: CONTENT
-      })
+        nameSection: CONTENT,
+      });
     }
-  }
+  };
   //handle for padding left change
   const handlePaddingLeftChange = (e: any) => {
-    setPaddingLeft(e.target.value)
+    setPaddingLeft(e.target.value);
     if (nameSection === LOGO) {
-      setPaddingLeftLogo(e.target.value)
+      setPaddingLeftLogo(e.target.value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "paddingLeftLogo", e.target.value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "paddingLeftLogo",
+          e.target.value
+        )
+      );
       setContent({
         name: "paddingLeft",
         value: e.target.value,
-        nameSection: LOGO
-      })
+        nameSection: LOGO,
+      });
     } else if (nameSection === HEADER) {
-      setPaddingLeftHeader(e.target.value)
+      setPaddingLeftHeader(e.target.value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "paddingLeftHeader", e.target.value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "paddingLeftHeader",
+          e.target.value
+        )
+      );
       setContent({
         name: "paddingLeft",
         value: e.target.value,
-        nameSection: HEADER
-      })
+        nameSection: HEADER,
+      });
     } else if (nameSection === VERIFY_TITLE) {
-      setPaddingLeftTitleModal(e.target.value)
+      setPaddingLeftTitleModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1497,29 +1587,29 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "paddingLeftTitleModal",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "paddingLeft",
         value: e.target.value,
-        nameSection: VERIFY_TITLE
-      })
+        nameSection: VERIFY_TITLE,
+      });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setPaddingLeftDataTitle(e.target.value)
+      setPaddingLeftBox2(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "paddingLeftDataTitle",
+          "paddingLeftBox2",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "paddingLeft",
         value: e.target.value,
-        nameSection: VERIFY_TITLE_BTN
-      })
+        nameSection: VERIFY_TITLE_BTN,
+      });
     } else if (nameSection === VERIFY_DATA) {
-      setPaddingLeftVerifyData(e.target.value)
+      setPaddingLeftVerifyData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1527,14 +1617,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "paddingLeftVerifyData",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "paddingLeft",
         value: e.target.value,
-        nameSection: VERIFY_DATA
-      })
+        nameSection: VERIFY_DATA,
+      });
     } else if (nameSection === VERIFY_CODE) {
-      setPaddingLeftDataModal(e.target.value)
+      setPaddingLeftDataModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1542,15 +1632,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "paddingLeftDataModal",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "paddingLeft",
         value: e.target.value,
-        nameSection: VERIFY_CODE
-      })
-    }
-    else if (nameSection === BUTTONS) {
-      setPaddingLeftButtons(e.target.value)
+        nameSection: VERIFY_CODE,
+      });
+    } else if (nameSection === BUTTONS) {
+      setPaddingLeftButtons(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1558,16 +1647,16 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "paddingLeftButtons",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "paddingLeft",
         value: e.target.value,
-        nameSection: BUTTONS
-      })
+        nameSection: BUTTONS,
+      });
     }
     // content
     else if (nameSection === CONTENT) {
-      setPaddingLeftData(e.target.value)
+      setPaddingLeftData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1575,39 +1664,49 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "paddingLeftData",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "paddingLeft",
         value: e.target.value,
-        nameSection: CONTENT
-      })
+        nameSection: CONTENT,
+      });
     }
-  }
+  };
   //handle for padding right change
   const handlePaddingRightChange = (e: any) => {
-    setPaddingRight(e.target.value)
+    setPaddingRight(e.target.value);
     if (nameSection === LOGO) {
-      setPaddingRightLogo(e.target.value)
+      setPaddingRightLogo(e.target.value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "paddingRightLogo", e.target.value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "paddingRightLogo",
+          e.target.value
+        )
+      );
       setContent({
         name: "paddingRight",
         value: e.target.value,
-        nameSection: LOGO
-      })
+        nameSection: LOGO,
+      });
     } else if (nameSection === HEADER) {
-      setPaddingRightHeader(e.target.value)
+      setPaddingRightHeader(e.target.value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "paddingRightHeader", e.target.value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "paddingRightHeader",
+          e.target.value
+        )
+      );
       setContent({
         name: "paddingRight",
         value: e.target.value,
-        nameSection: HEADER
-      })
+        nameSection: HEADER,
+      });
     } else if (nameSection === VERIFY_TITLE) {
-      setPaddingRightTitleModal(e.target.value)
+      setPaddingRightTitleModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1615,29 +1714,29 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "paddingRightTitleModal",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "paddingRight",
         value: e.target.value,
-        nameSection: VERIFY_TITLE
-      })
+        nameSection: VERIFY_TITLE,
+      });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setPaddingRightDataTitle(e.target.value)
+      setPaddingRightBox2(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "paddingRightDataTitle",
+          "paddingRightBox2",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "paddingRight",
         value: e.target.value,
-        nameSection: VERIFY_TITLE_BTN
-      })
+        nameSection: VERIFY_TITLE_BTN,
+      });
     } else if (nameSection === VERIFY_DATA) {
-      setPaddingRightVerifyData(e.target.value)
+      setPaddingRightVerifyData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1645,14 +1744,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "paddingRightVerifyData",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "paddingRight",
         value: e.target.value,
-        nameSection: VERIFY_DATA
-      })
+        nameSection: VERIFY_DATA,
+      });
     } else if (nameSection === VERIFY_CODE) {
-      setPaddingRightDataModal(e.target.value)
+      setPaddingRightDataModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1660,15 +1759,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "paddingRightDataModal",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "paddingRight",
         value: e.target.value,
-        nameSection: VERIFY_CODE
-      })
-    }
-    else if (nameSection === BUTTONS) {
-      setPaddingRightButtons(e.target.value)
+        nameSection: VERIFY_CODE,
+      });
+    } else if (nameSection === BUTTONS) {
+      setPaddingRightButtons(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1676,16 +1774,16 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "paddingRightButtons",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "paddingRight",
         value: e.target.value,
-        nameSection: BUTTONS
-      })
+        nameSection: BUTTONS,
+      });
     }
-     // content
-     else if (nameSection === CONTENT) {
-      setPaddingRightData(e.target.value)
+    // content
+    else if (nameSection === CONTENT) {
+      setPaddingRightData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1693,29 +1791,49 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "paddingRightData",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "paddingRight",
         value: e.target.value,
-        nameSection: CONTENT
-      })
+        nameSection: CONTENT,
+      });
     }
-  }
+  };
   //handle for margin top change ------------------------------------------------------------------------------------------- remaining
   const handleMarginTopChange = (e: any) => {
-    setMarginTop(e.target.value)
+    setMarginTop(e.target.value);
     if (nameSection === LOGO) {
-      setMarginTopLogo(e.target.value)
+      setMarginTopLogo(e.target.value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "marginTopLogo", e.target.value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "marginTopLogo",
+          e.target.value
+        )
+      );
       setContent({
         name: "marginTop",
         value: e.target.value,
-        nameSection: LOGO
-      })
+        nameSection: LOGO,
+      });
+    } else if (nameSection === HEADER) {
+      setMarginTopHeader(e.target.value);
+      setHeaderDBFormat(
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "marginTopHeader",
+          e.target.value
+        )
+      );
+      setContent({
+        name: "marginTop",
+        value: e.target.value,
+        nameSection: HEADER,
+      });
     } else if (nameSection === VERIFY_TITLE) {
-      setMarginTopTitleModal(e.target.value)
+      setMarginTopTitleModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1723,29 +1841,29 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "marginTopTitleModal",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "marginTop",
         value: e.target.value,
-        nameSection: VERIFY_TITLE
-      })
+        nameSection: VERIFY_TITLE,
+      });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setMarginTopDataTitle(e.target.value)
+      setMarginTopBox2(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "marginTopDataTitle",
+          "marginTopBox2",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "marginTop",
         value: e.target.value,
-        nameSection: VERIFY_TITLE_BTN
-      })
+        nameSection: VERIFY_TITLE_BTN,
+      });
     } else if (nameSection === VERIFY_DATA) {
-      setMarginTopVerifyData(e.target.value)
+      setMarginTopVerifyData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1753,14 +1871,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "marginTopVerifyData",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "marginTop",
         value: e.target.value,
-        nameSection: VERIFY_DATA
-      })
+        nameSection: VERIFY_DATA,
+      });
     } else if (nameSection === VERIFY_CODE) {
-      setMarginTopDataModal(e.target.value)
+      setMarginTopDataModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1768,15 +1886,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "marginTopDataModal",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "marginTop",
         value: e.target.value,
-        nameSection: VERIFY_CODE
-      })
-    }
-    else if (nameSection === BUTTONS) {
-      setMarginTopButtons(e.target.value)
+        nameSection: VERIFY_CODE,
+      });
+    } else if (nameSection === BUTTONS) {
+      setMarginTopButtons(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1784,16 +1901,16 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "marginTopButtons",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "marginTop",
         value: e.target.value,
-        nameSection: BUTTONS
-      })
+        nameSection: BUTTONS,
+      });
     }
-     // content
-     else if (nameSection === CONTENT) {
-      setMarginTopData(e.target.value)
+    // content
+    else if (nameSection === CONTENT) {
+      setMarginTopData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1801,39 +1918,49 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "marginTopData",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "marginTop",
         value: e.target.value,
-        nameSection: CONTENT
-      })
+        nameSection: CONTENT,
+      });
     }
-  }
+  };
   //handle for margin bottom change
   const handleMarginBottomChange = (e: any) => {
-    setMarginBottom(e.target.value)
+    setMarginBottom(e.target.value);
     if (nameSection === LOGO) {
-      setMarginBottomLogo(e.target.value)
+      setMarginBottomLogo(e.target.value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "marginBottomLogo", e.target.value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "marginBottomLogo",
+          e.target.value
+        )
+      );
       setContent({
         name: "marginBottom",
         value: e.target.value,
-        nameSection: LOGO
-      })
+        nameSection: LOGO,
+      });
     } else if (nameSection === HEADER) {
-      setMarginBottomHeader(e.target.value)
+      setMarginBottomHeader(e.target.value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "marginBottomHeader", e.target.value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "marginBottomHeader",
+          e.target.value
+        )
+      );
       setContent({
         name: "marginBottom",
         value: e.target.value,
-        nameSection: HEADER
-      })
+        nameSection: HEADER,
+      });
     } else if (nameSection === VERIFY_TITLE) {
-      setMarginBottomTitleModal(e.target.value)
+      setMarginBottomTitleModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1841,29 +1968,29 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "marginBottomTitleModal",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "marginBottom",
         value: e.target.value,
-        nameSection: VERIFY_TITLE
-      })
+        nameSection: VERIFY_TITLE,
+      });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setMarginBottomDataTitle(e.target.value)
+      setMarginBottomBox2(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "marginBottomDataTitle",
+          "marginBottomBox2",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "marginBottom",
         value: e.target.value,
-        nameSection: VERIFY_TITLE_BTN
-      })
+        nameSection: VERIFY_TITLE_BTN,
+      });
     } else if (nameSection === VERIFY_DATA) {
-      setMarginBottomVerifyData(e.target.value)
+      setMarginBottomVerifyData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1871,14 +1998,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "marginBottomVerifyData",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "marginBottom",
         value: e.target.value,
-        nameSection: VERIFY_DATA
-      })
+        nameSection: VERIFY_DATA,
+      });
     } else if (nameSection === VERIFY_CODE) {
-      setMarginBottomDataModal(e.target.value)
+      setMarginBottomDataModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1886,15 +2013,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "marginBottomDataModal",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "marginBottom",
         value: e.target.value,
-        nameSection: VERIFY_CODE
-      })
-    }
-    else if (nameSection === BUTTONS) {
-      setMarginBottomButtons(e.target.value)
+        nameSection: VERIFY_CODE,
+      });
+    } else if (nameSection === BUTTONS) {
+      setMarginBottomButtons(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1902,16 +2028,16 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "marginBottomButtons",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "marginBottom",
         value: e.target.value,
-        nameSection: BUTTONS
-      })
+        nameSection: BUTTONS,
+      });
     }
-     // content
-     else if (nameSection === CONTENT) {
-      setMarginBottomData(e.target.value)
+    // content
+    else if (nameSection === CONTENT) {
+      setMarginBottomData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1919,29 +2045,49 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "marginBottomData",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "marginBottom",
         value: e.target.value,
-        nameSection: CONTENT
-      })
+        nameSection: CONTENT,
+      });
     }
-  }
+  };
   //handle for margin left change
   const handleMarginLeftChange = (e: any) => {
-    setMarginLeft(e.target.value)
+    setMarginLeft(e.target.value);
     if (nameSection === LOGO) {
-      setMarginLeftLogo(e.target.value)
+      setMarginLeftLogo(e.target.value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "marginLeftLogo", e.target.value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "marginLeftLogo",
+          e.target.value
+        )
+      );
       setContent({
         name: "marginLeft",
         value: e.target.value,
-        nameSection: LOGO
-      })
+        nameSection: LOGO,
+      });
+    } else if (nameSection === HEADER) {
+      setMarginLeftHeader(e.target.value);
+      setHeaderDBFormat(
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "marginLeftHeader",
+          e.target.value
+        )
+      );
+      setContent({
+        name: "marginLeft",
+        value: e.target.value,
+        nameSection: HEADER,
+      });
     } else if (nameSection === VERIFY_TITLE) {
-      setMarginLeftTitleModal(e.target.value)
+      setMarginLeftTitleModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1949,29 +2095,29 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "marginLeftTitleModal",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "marginLeft",
         value: e.target.value,
-        nameSection: VERIFY_TITLE
-      })
+        nameSection: VERIFY_TITLE,
+      });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setMarginLeftDataTitle(e.target.value)
+      setMarginLeftBox2(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "marginLeftDataTitle",
+          "marginLeftBox2",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "marginLeft",
         value: e.target.value,
-        nameSection: VERIFY_TITLE_BTN
-      })
+        nameSection: VERIFY_TITLE_BTN,
+      });
     } else if (nameSection === VERIFY_DATA) {
-      setMarginLeftVerifyData(e.target.value)
+      setMarginLeftVerifyData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1979,14 +2125,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "marginLeftVerifyData",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "marginLeft",
         value: e.target.value,
-        nameSection: VERIFY_DATA
-      })
+        nameSection: VERIFY_DATA,
+      });
     } else if (nameSection === VERIFY_CODE) {
-      setMarginLeftDataModal(e.target.value)
+      setMarginLeftDataModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -1994,15 +2140,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "marginLeftDataModal",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "marginLeft",
         value: e.target.value,
-        nameSection: VERIFY_CODE
-      })
-    }
-    else if (nameSection === BUTTONS) {
-      setMarginLeftButtons(e.target.value)
+        nameSection: VERIFY_CODE,
+      });
+    } else if (nameSection === BUTTONS) {
+      setMarginLeftButtons(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -2010,16 +2155,16 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "marginLeftButtons",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "marginLeft",
         value: e.target.value,
-        nameSection: BUTTONS
-      })
+        nameSection: BUTTONS,
+      });
     }
     // content
     else if (nameSection === CONTENT) {
-      setMarginLeftData(e.target.value)
+      setMarginLeftData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -2027,39 +2172,49 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "marginLeftData",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "marginLeft",
         value: e.target.value,
-        nameSection: CONTENT
-      })
+        nameSection: CONTENT,
+      });
     }
-  }
+  };
   //handle for margin right change
   const handleMarginRightChange = (e: any) => {
-    setMarginRight(e.target.value)
+    setMarginRight(e.target.value);
     if (nameSection === LOGO) {
-      setMarginRightLogo(e.target.value)
+      setMarginRightLogo(e.target.value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, LOGO_PLUGIN_ID, "marginRightLogo", e.target.value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          LOGO_PLUGIN_ID,
+          "marginRightLogo",
+          e.target.value
+        )
+      );
       setContent({
         name: "marginRight",
         value: e.target.value,
-        nameSection: LOGO
-      })
+        nameSection: LOGO,
+      });
     } else if (nameSection === HEADER) {
-      setMarginRightHeader(e.target.value)
+      setMarginRightHeader(e.target.value);
       setHeaderDBFormat(
-        updatePluginValue(headerDBFormat, HEADER_PLUGIN_ID, "marginRightHeader", e.target.value)
-      )
+        updatePluginValue(
+          headerDBFormat,
+          HEADER_PLUGIN_ID,
+          "marginRightHeader",
+          e.target.value
+        )
+      );
       setContent({
         name: "marginRight",
         value: e.target.value,
-        nameSection: HEADER
-      })
+        nameSection: HEADER,
+      });
     } else if (nameSection === VERIFY_TITLE) {
-      setMarginRightTitleModal(e.target.value)
+      setMarginRightTitleModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -2067,29 +2222,29 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "marginRightTitleModal",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "marginRight",
         value: e.target.value,
-        nameSection: VERIFY_TITLE
-      })
+        nameSection: VERIFY_TITLE,
+      });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setMarginRightDataTitle(e.target.value)
+      setMarginRightBox2(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "marginRightDataTitle",
+          "marginRightBox2",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "marginRight",
         value: e.target.value,
-        nameSection: VERIFY_TITLE_BTN
-      })
+        nameSection: VERIFY_TITLE_BTN,
+      });
     } else if (nameSection === VERIFY_DATA) {
-      setMarginRightVerifyData(e.target.value)
+      setMarginRightVerifyData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -2097,14 +2252,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "marginRightVerifyData",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "marginRight",
         value: e.target.value,
-        nameSection: VERIFY_DATA
-      })
+        nameSection: VERIFY_DATA,
+      });
     } else if (nameSection === VERIFY_CODE) {
-      setMarginRightDataModal(e.target.value)
+      setMarginRightDataModal(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -2112,15 +2267,14 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "marginRightDataModal",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "marginRight",
         value: e.target.value,
-        nameSection: VERIFY_CODE
-      })
-    }
-    else if (nameSection === BUTTONS) {
-      setMarginRightButtons(e.target.value)
+        nameSection: VERIFY_CODE,
+      });
+    } else if (nameSection === BUTTONS) {
+      setMarginRightButtons(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -2128,16 +2282,16 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "marginRightButtons",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "marginRight",
         value: e.target.value,
-        nameSection: BUTTONS
-      })
+        nameSection: BUTTONS,
+      });
     }
     // content
     else if (nameSection === CONTENT) {
-      setMarginRightData(e.target.value)
+      setMarginRightData(e.target.value);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
@@ -2145,28 +2299,28 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           "marginRightData",
           e.target.value
         )
-      )
+      );
       setContent({
         name: "marginRight",
         value: e.target.value,
-        nameSection: CONTENT
-      })
+        nameSection: CONTENT,
+      });
     }
-  }
+  };
   // buttons
 
   // popper for border style
-  const [open, setOpen] = useState(false)
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+  const [open, setOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const handleClick = (event: React.MouseEvent<HTMLElement>, sideName: any) => {
-    setAnchorEl(event.currentTarget)
-    setOpen((previousOpen) => !previousOpen)
-    setSideEffect(sideName)
-    setIsActiveStyleBorderPopper(!isActiveStyleBorderPopper)
-  }
-  const canBeOpen = open && Boolean(anchorEl)
-  const id = canBeOpen ? "transition-popper" : undefined
+    setAnchorEl(event.currentTarget);
+    setOpen((previousOpen) => !previousOpen);
+    setSideEffect(sideName);
+    setIsActiveStyleBorderPopper(!isActiveStyleBorderPopper);
+  };
+  const canBeOpen = open && Boolean(anchorEl);
+  const id = canBeOpen ? "transition-popper" : undefined;
 
   return (
     <div
@@ -2175,7 +2329,7 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
         margin: isMdUp ? "0px !important" : "1px !important",
         minWidth: "450px !important",
         width: "400px",
-        position: "relative"
+        position: "relative",
       }}
     >
       {isActiveStyleBorderPopper && (
@@ -2187,19 +2341,26 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
           nameSection={nameSection}
         />
       )}
-      <div role="document" className="editor resizable-content flex flex-column">
+      <div
+        role="document"
+        className="editor resizable-content flex flex-column"
+      >
         <div
           className="form ps ps--active-y"
           style={{
             padding: isMdUp ? "0px !important" : "1px !important",
-            margin: isMdUp ? "0px !important" : "1px !important"
+            margin: isMdUp ? "0px !important" : "1px !important",
           }}
         >
           {/* Size */}
 
           <div
             className="form-group form-group-collapsible"
-            style={{ minWidth: "350px !important", width: "100%", position: "relative" }}
+            style={{
+              minWidth: "350px !important",
+              width: "100%",
+              position: "relative",
+            }}
           >
             <label className="form-label">
               <b className="text">Box</b>
@@ -2369,7 +2530,7 @@ const FullControlPaddingBorderMargin = ({ nameSection }: any) => {
       <div className="rehandle rehandle-left"></div>
       <div className="rehandle rehandle-right"></div>
     </div>
-  )
-}
+  );
+};
 
-export default FullControlPaddingBorderMargin
+export default FullControlPaddingBorderMargin;

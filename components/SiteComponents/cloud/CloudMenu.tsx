@@ -28,7 +28,8 @@ const CloudMenu = ({ activeId }: any) => {
         position: "relative",
         margin: "10px",
         marginRight: "0px",
-        border: "1px solid grey",
+        borderLeft: "1px solid grey",
+        borderTop: "1px solid grey",
       }}
     >
       {NOTE_CLOUD_SECTION.map((item, index) => {
@@ -40,7 +41,7 @@ const CloudMenu = ({ activeId }: any) => {
               justifyContent: "space-between",
               alignItems: "center",
               padding: "20px",
-              borderBottom: "0.5px dotted grey",
+              borderBottom: "0.5px solid grey",
             }}
             className="cursor-pointer hover:px-15 hover:text-2xl"
           >
@@ -54,16 +55,16 @@ const CloudMenu = ({ activeId }: any) => {
                   flexDirection: "row",
                   color: activeId === item?.id ? "#000" : "#28282B",
                   fontFamily: "Ppneuemontreal",
+                  textDecoration: "none",
                 }}
-                className="cursor-pointer hover:px-15 hover:text-2xl"
                 onClick={() => handleClick(item?.id)}
+                // className="cursor-pointer hover:px-15 hover:text-xl hover:text-black hover:font-semibold no-underline cloudCard"
               >
                 {/* {item.title} */}
                 {t(`home.cloud_data.${index}.title`)}
               </a>
             </div>
             <ArrowRight color={activeId === item?.id ? "#000" : "#28282B"} />
-            {/* <ChevronRight /> */}
           </div>
         );
       })}

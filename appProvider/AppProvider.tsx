@@ -43,7 +43,7 @@ export const AppProvider = ({ children }: any) => {
   const [backgroundColorHeader, setBackgroundColorHeader] =
     useState("transparent");
   const [colorHeader, setColorHeader] = useState("#000");
-  const [fontHeader, setFontHeader] = useState("Roboto");
+  const [fontHeader, setFontHeader] = useState("Ppneuemontreal");
   const [dialogOpenHeader, setDialogOpenHeader] = useState(false);
   // border for Header
   const [borderBottomColorHeader, setBorderBottomColorHeader] =
@@ -127,7 +127,7 @@ export const AppProvider = ({ children }: any) => {
   // min height for logo
   const [minHeightLogo, setMinHeightLogo] = useState("60");
   // max width for logo
-  const [maxWidthLogo, setMaxWidthLogo] = useState("200");
+  const [maxWidthLogo, setMaxWidthLogo] = useState("230");
   // max height for logo
   const [maxHeightLogo, setMaxHeightLogo] = useState("60");
   // for logo dialog

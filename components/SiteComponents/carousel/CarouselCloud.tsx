@@ -46,9 +46,10 @@ const CarouselCloud = ({ getItemId }: any) => {
       id="verticalSwiper"
       style={{
         width: "100%",
-        height: "1000px",
+        height: "900px",
         minHeight: "600px",
         zIndex: 10,
+        marginTop: "10px",
       }}
     >
       <Swiper
@@ -76,7 +77,7 @@ const CarouselCloud = ({ getItemId }: any) => {
             spaceBetween: 20,
           },
           1024: {
-            slidesPerView: 3,
+            slidesPerView: 2,
             spaceBetween: 0,
           },
         }}

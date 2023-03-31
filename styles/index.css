@@ -144,3 +144,9 @@
   object-fit: cover;
 }
 
+.cloudCard:hover {
+  font-size: "2rem";
+  color: #a84747;
+}
+
+/* hover in cloudCard class */

@@ -136,7 +136,6 @@ const Header = ({ bgHeader, colorMenu }: any) => {
               <a
                 key={item.name}
                 // href={item.href}
-                className="text-sm font-semibold leading-6"
                 style={{
                   fontSize: fontSizeHeader,
                   fontFamily: fontHeader,

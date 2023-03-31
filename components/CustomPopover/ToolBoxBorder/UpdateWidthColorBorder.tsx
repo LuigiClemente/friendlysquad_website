@@ -1,15 +1,15 @@
-import { useAppProvider } from "@appProvider/AppProvider"
-import { useModalsAppProvider } from "@appProvider/ModalsAppProvider"
-import { useUpdateSettingsProvider } from "@appProvider/UpdateSettingsProvider"
-import { useEffect } from "react"
+import { useAppProvider } from "@appProvider/AppProvider";
+import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
+import { useUpdateSettingsProvider } from "@appProvider/UpdateSettingsProvider";
+import { useEffect } from "react";
 import {
   HEADER,
   LOGO,
   VERIFY_CODE,
   VERIFY_DATA,
   VERIFY_TITLE,
-  VERIFY_TITLE_BTN
-} from "../../Constant/const"
+  VERIFY_TITLE_BTN,
+} from "../../Constant/const";
 
 const UpdateWidthColorBorder = (nameSection: string, sideName: string) => {
   const {
@@ -66,8 +66,8 @@ const UpdateWidthColorBorder = (nameSection: string, sideName: string) => {
     setBorderStyle,
     borderWidth,
     setBorderWidth,
-    setBorderColor
-  }: any = useUpdateSettingsProvider()
+    setBorderColor,
+  }: any = useUpdateSettingsProvider();
 
   const {
     // ----------------------------------------- header
@@ -99,8 +99,8 @@ const UpdateWidthColorBorder = (nameSection: string, sideName: string) => {
     borderRightStyleLogo,
     borderLeftStyleLogo,
     borderTopStyleLogo,
-    borderBottomStyleLogo
-  }: any = useAppProvider()
+    borderBottomStyleLogo,
+  }: any = useAppProvider();
   //  use state size
   const {
     // -------------------------- Data --------------------------
@@ -148,280 +148,280 @@ const UpdateWidthColorBorder = (nameSection: string, sideName: string) => {
     borderTopStyleTitleModal,
     borderBottomStyleTitleModal,
 
-    // -------------------------- TitleModal Btn --------------------------
-    borderBottomColorDataTitle,
-    borderBottomWidthDataTitle,
-    borderTopColorDataTitle,
-    borderTopWidthDataTitle,
-    borderLeftColorDataTitle,
-    borderLeftWidthDataTitle,
-    borderRightColorDataTitle,
-    borderRightWidthDataTitle,
+    // -------------------------- Box 2 --------------------------
+    borderBottomColorBox2,
+    borderBottomWidthBox2,
+    borderTopColorBox2,
+    borderTopWidthBox2,
+    borderLeftColorBox2,
+    borderLeftWidthBox2,
+    borderRightColorBox2,
+    borderRightWidthBox2,
     // border style
-    borderRightStyleDataTitle,
-    borderLeftStyleDataTitle,
-    borderTopStyleDataTitle,
-    borderBottomStyleDataTitle
-  }: any = useModalsAppProvider()
+    borderRightStyleBox2,
+    borderLeftStyleBox2,
+    borderTopStyleBox2,
+    borderBottomStyleBox2,
+  }: any = useModalsAppProvider();
 
   const updateBorderBottomColor = () => {
     switch (nameSection) {
       case LOGO:
-        setBorderBottomColor(borderBottomColorLogo)
-        break
+        setBorderBottomColor(borderBottomColorLogo);
+        break;
 
       case HEADER:
-        setBorderBottomColor(borderBottomColorHeader)
-        break
+        setBorderBottomColor(borderBottomColorHeader);
+        break;
       case VERIFY_TITLE:
-        setBorderBottomColor(borderBottomColorTitleModal)
-        break
+        setBorderBottomColor(borderBottomColorTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setBorderBottomColor(borderBottomColorDataTitle)
-        break
+        setBorderBottomColor(borderBottomColorBox2);
+        break;
       case VERIFY_DATA:
-        setBorderBottomColor(borderBottomColorData)
-        break
+        setBorderBottomColor(borderBottomColorData);
+        break;
       case VERIFY_CODE:
-        setBorderBottomColor(borderBottomColorDataModal)
-        break
+        setBorderBottomColor(borderBottomColorDataModal);
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
 
   const updateBorderBottomWidth = () => {
     switch (nameSection) {
       case LOGO:
-        setBorderBottomWidth(borderBottomWidthLogo)
-        break
+        setBorderBottomWidth(borderBottomWidthLogo);
+        break;
 
       case HEADER:
-        setBorderBottomWidth(borderBottomWidthHeader)
-        break
+        setBorderBottomWidth(borderBottomWidthHeader);
+        break;
 
       case VERIFY_TITLE:
-        setBorderBottomWidth(borderBottomWidthTitleModal)
-        break
+        setBorderBottomWidth(borderBottomWidthTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setBorderBottomWidth(borderBottomWidthDataTitle)
-        break
+        setBorderBottomWidth(borderBottomWidthBox2);
+        break;
       case VERIFY_DATA:
-        setBorderBottomWidth(borderBottomWidthData)
-        break
+        setBorderBottomWidth(borderBottomWidthData);
+        break;
       case VERIFY_CODE:
-        setBorderBottomWidth(borderBottomWidthDataModal)
-        break
+        setBorderBottomWidth(borderBottomWidthDataModal);
+        break;
 
       default:
-        break
+        break;
     }
-  }
+  };
   const updateBorderTopColor = () => {
     switch (nameSection) {
       case LOGO:
-        setBorderTopColor(borderTopColorLogo)
-        break
+        setBorderTopColor(borderTopColorLogo);
+        break;
 
       case HEADER:
-        setBorderTopColor(borderTopColorHeader)
-        break
+        setBorderTopColor(borderTopColorHeader);
+        break;
 
       case VERIFY_TITLE:
-        setBorderTopColor(borderTopColorTitleModal)
-        break
+        setBorderTopColor(borderTopColorTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setBorderTopColor(borderTopColorDataTitle)
-        break
+        setBorderTopColor(borderTopColorBox2);
+        break;
       case VERIFY_DATA:
-        setBorderTopColor(borderTopColorData)
-        break
+        setBorderTopColor(borderTopColorData);
+        break;
       case VERIFY_CODE:
-        setBorderTopColor(borderTopColorDataModal)
-        break
+        setBorderTopColor(borderTopColorDataModal);
+        break;
 
       default:
-        break
+        break;
     }
-  }
+  };
   const updateBorderTopWidth = () => {
     switch (nameSection) {
       case LOGO:
-        setBorderTopWidth(borderTopWidthLogo)
-        break
+        setBorderTopWidth(borderTopWidthLogo);
+        break;
 
       case HEADER:
-        setBorderTopWidth(borderTopWidthHeader)
-        break
+        setBorderTopWidth(borderTopWidthHeader);
+        break;
 
       case VERIFY_TITLE:
-        setBorderTopWidth(borderTopWidthTitleModal)
-        break
+        setBorderTopWidth(borderTopWidthTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setBorderTopWidth(borderTopWidthDataTitle)
-        break
+        setBorderTopWidth(borderTopWidthBox2);
+        break;
       case VERIFY_DATA:
-        setBorderTopWidth(borderTopWidthData)
-        break
+        setBorderTopWidth(borderTopWidthData);
+        break;
       case VERIFY_CODE:
-        setBorderTopWidth(borderTopWidthDataModal)
-        break
+        setBorderTopWidth(borderTopWidthDataModal);
+        break;
 
       default:
-        break
+        break;
     }
-  }
+  };
   const updateBorderLeftColor = () => {
     switch (nameSection) {
       case LOGO:
-        setBorderLeftColor(borderLeftColorLogo)
-        break
+        setBorderLeftColor(borderLeftColorLogo);
+        break;
 
       case HEADER:
-        setBorderLeftColor(borderLeftColorHeader)
-        break
+        setBorderLeftColor(borderLeftColorHeader);
+        break;
 
       case VERIFY_TITLE:
-        setBorderLeftColor(borderLeftColorTitleModal)
-        break
+        setBorderLeftColor(borderLeftColorTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setBorderLeftColor(borderLeftColorDataTitle)
-        break
+        setBorderLeftColor(borderLeftColorBox2);
+        break;
       case VERIFY_DATA:
-        setBorderLeftColor(borderLeftColorData)
-        break
+        setBorderLeftColor(borderLeftColorData);
+        break;
       case VERIFY_CODE:
-        setBorderLeftColor(borderLeftColorDataModal)
-        break
+        setBorderLeftColor(borderLeftColorDataModal);
+        break;
 
       default:
-        break
+        break;
     }
-  }
+  };
   const updateBorderLeftWidth = () => {
     switch (nameSection) {
       case LOGO:
-        setBorderLeftWidth(borderLeftWidthLogo)
-        break
+        setBorderLeftWidth(borderLeftWidthLogo);
+        break;
 
       case VERIFY_TITLE:
-        setBorderLeftWidth(borderLeftWidthTitleModal)
-        break
+        setBorderLeftWidth(borderLeftWidthTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setBorderLeftWidth(borderLeftWidthDataTitle)
-        break
+        setBorderLeftWidth(borderLeftWidthBox2);
+        break;
       case VERIFY_DATA:
-        setBorderLeftWidth(borderLeftWidthData)
-        break
+        setBorderLeftWidth(borderLeftWidthData);
+        break;
       case VERIFY_CODE:
-        setBorderLeftWidth(borderLeftWidthDataModal)
-        break
+        setBorderLeftWidth(borderLeftWidthDataModal);
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
   const updateBorderRightColor = () => {
     switch (nameSection) {
       case LOGO:
-        setBorderRightColor(borderRightColorLogo)
-        break
+        setBorderRightColor(borderRightColorLogo);
+        break;
 
       case HEADER:
-        setBorderRightColor(borderRightColorHeader)
-        break
+        setBorderRightColor(borderRightColorHeader);
+        break;
 
       case VERIFY_TITLE:
-        setBorderRightColor(borderRightColorTitleModal)
-        break
+        setBorderRightColor(borderRightColorTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setBorderRightColor(borderRightColorDataTitle)
-        break
+        setBorderRightColor(borderRightColorBox2);
+        break;
       case VERIFY_DATA:
-        setBorderRightColor(borderRightColorData)
-        break
+        setBorderRightColor(borderRightColorData);
+        break;
       case VERIFY_CODE:
-        setBorderRightColor(borderRightColorDataModal)
-        break
+        setBorderRightColor(borderRightColorDataModal);
+        break;
 
       default:
-        break
+        break;
     }
-  }
+  };
   const updateBorderRightWidth = () => {
     switch (nameSection) {
       case LOGO:
-        setBorderRightWidth(borderRightWidthLogo)
-        break
+        setBorderRightWidth(borderRightWidthLogo);
+        break;
 
       case HEADER:
-        setBorderRightWidth(borderRightWidthHeader)
-        break
+        setBorderRightWidth(borderRightWidthHeader);
+        break;
 
       // this is for modals
       case VERIFY_TITLE:
-        setBorderRightWidth(borderRightWidthTitleModal)
-        break
+        setBorderRightWidth(borderRightWidthTitleModal);
+        break;
       case VERIFY_TITLE_BTN:
-        setBorderRightWidth(borderRightWidthDataTitle)
-        break
+        setBorderRightWidth(borderRightWidthBox2);
+        break;
       case VERIFY_DATA:
-        setBorderRightWidth(borderRightWidthData)
-        break
+        setBorderRightWidth(borderRightWidthData);
+        break;
       case VERIFY_CODE:
-        setBorderRightWidth(borderRightWidthDataModal)
-        break
+        setBorderRightWidth(borderRightWidthDataModal);
+        break;
 
       default:
-        break
+        break;
     }
-  }
+  };
 
   const getValuesWidth = () => {
     switch (sideName) {
       case "top":
-        updateBorderTopWidth()
-        setBorderWidth(borderTopWidth)
-        break
+        updateBorderTopWidth();
+        setBorderWidth(borderTopWidth);
+        break;
       case "bottom":
-        updateBorderBottomWidth()
-        setBorderWidth(borderBottomWidth)
-        break
+        updateBorderBottomWidth();
+        setBorderWidth(borderBottomWidth);
+        break;
       case "right":
-        updateBorderRightWidth()
-        setBorderWidth(borderRightWidth)
-        break
+        updateBorderRightWidth();
+        setBorderWidth(borderRightWidth);
+        break;
       case "left":
-        updateBorderLeftWidth()
-        setBorderWidth(borderLeftWidth)
-        break
+        updateBorderLeftWidth();
+        setBorderWidth(borderLeftWidth);
+        break;
     }
-  }
+  };
 
   const getValuesColor = () => {
     switch (sideName) {
       case "top":
-        updateBorderTopColor()
-        setBorderColor(borderTopColor)
-        break
+        updateBorderTopColor();
+        setBorderColor(borderTopColor);
+        break;
       case "bottom":
-        updateBorderBottomColor()
-        setBorderColor(borderBottomColor)
-        break
+        updateBorderBottomColor();
+        setBorderColor(borderBottomColor);
+        break;
       case "right":
-        updateBorderRightColor()
-        setBorderColor(borderRightColor)
-        break
+        updateBorderRightColor();
+        setBorderColor(borderRightColor);
+        break;
       case "left":
-        updateBorderLeftColor()
-        setBorderColor(borderLeftColor)
-        break
+        updateBorderLeftColor();
+        setBorderColor(borderLeftColor);
+        break;
     }
-  }
+  };
 
   useEffect(() => {
-    getValuesWidth()
-    getValuesColor()
-  }, [nameSection])
-}
+    getValuesWidth();
+    getValuesColor();
+  }, [nameSection]);
+};
 
-export default UpdateWidthColorBorder
+export default UpdateWidthColorBorder;

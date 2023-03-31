@@ -22,7 +22,7 @@
                                     "dataI18n": {
                                         "en": {
                                             "fontSizeHeader": "13",
-                                            "fontHeader": "Segoe UI",
+                                            "fontHeader": "Ppneuemontreal",
                                             "colorHeader": "#3612ec",
                                             "backgroundColorHeader": "#000000",
                                             "borderBottomColorHeader": "#000000",
@@ -96,7 +96,7 @@
                                             "marginLeftLogo": "2",
                                             "marginRightLogo": "3",
                                             "minWidthLogo": "120",
-                                            "maxWidthLogo": "200",
+                                            "maxWidthLogo": "230",
                                             "minHeightLogo": "60",
                                             "maxHeightLogo": "60"
                                         }
