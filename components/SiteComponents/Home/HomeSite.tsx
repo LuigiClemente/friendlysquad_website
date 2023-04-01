@@ -20,7 +20,7 @@ const HomeSite = () => {
         backgroundColor: "#000",
       }}
     >
-      <Layout>
+      <Layout currentMenu={"home"}>
         <div className="header33_background-video-wrapper">
           <video
             autoPlay

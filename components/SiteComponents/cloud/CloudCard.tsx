@@ -31,7 +31,7 @@ const CloudCard = ({ item, index }: any) => {
       id={`cloud-card-${item.id}`}
     >
       <div
-        className="flex flex-col items-center relative content-start justify-start bg-transparent h-[400px] z-50 w-fit r
+        className="flex flex-col items-center relative content-start justify-start bg-transparent h-[400px] z-50 w-fit
         rounded-sm p-4 lg:p-8"
       >
         <div

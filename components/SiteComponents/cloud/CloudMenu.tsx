@@ -26,39 +26,36 @@ const CloudMenu = ({ activeId }: any) => {
         display: "flex",
         flexDirection: "column",
         position: "relative",
-        margin: "10px",
+        marginTop: "10px",
+
         marginRight: "0px",
+        width: "100%",
+        minWidth: "230px",
         borderLeft: "1px solid grey",
         borderTop: "1px solid grey",
+        backgroundColor: "rgba(255, 255, 255, 0.4)",
       }}
     >
       {NOTE_CLOUD_SECTION.map((item, index) => {
         return (
           <div
             style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-between",
-              alignItems: "center",
-              padding: "20px",
               borderBottom: "0.5px solid grey",
             }}
-            className="cursor-pointer hover:px-15 hover:text-2xl"
+            className="flex flex-row justify-between content-between items-center p-6 border-solid border-b-2 border-gray cursor-pointer hover:px-15 hover:text-2xl"
           >
-            <div className="flex flex-row items-center content-start justify-start">
+            <div className="flex flex-row items-center justify-between content-between ">
               <a
                 key={index}
-                style={{
-                  fontSize: activeId === item?.id ? "1.2rem" : "1rem",
-                  fontWeight: "bold",
-                  display: "flex",
-                  flexDirection: "row",
-                  color: activeId === item?.id ? "#000" : "#28282B",
-                  fontFamily: "Ppneuemontreal",
-                  textDecoration: "none",
-                }}
                 onClick={() => handleClick(item?.id)}
-                // className="cursor-pointer hover:px-15 hover:text-xl hover:text-black hover:font-semibold no-underline cloudCard"
+                className={`text-${
+                  activeId === item?.id ? ["#000"] : ["#28282B"]
+                }  flex flex-row  justify-between font-${
+                  activeId === item?.id ? "extrabold" : "normal"
+                } font-${activeId === item?.id ? "black" : "xl"}
+                hover:text-2xl no-underline text-decoration-line: none;
+                hover:no-underline font-[Ppneuemontreal] 
+                `}
               >
                 {/* {item.title} */}
                 {t(`home.cloud_data.${index}.title`)}

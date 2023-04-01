@@ -7,8 +7,8 @@ const DynamicPageLayer = dynamic(() => import("@/PageLayer/PageLayer"), {
   ssr: false,
 });
 
-const DynamicHomeComponent = dynamic(
-  () => import("@/SiteComponents/Home/HomeSite"),
+const DynamicLaserComponent = dynamic(
+  () => import("@/SiteComponents/iframeLaser/IframeLaser"),
   {
     loading: () => (
       <div
@@ -35,12 +35,12 @@ const DynamicHomeComponent = dynamic(
   }
 );
 
-export default function Home() {
+export default function Contact() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <DynamicPageLayer currentMenu={"home"}>
-        <DynamicHomeComponent />
+      <DynamicPageLayer currentMenu={"contact"}>
+        <DynamicLaserComponent />
       </DynamicPageLayer>
     </React.Fragment>
   );

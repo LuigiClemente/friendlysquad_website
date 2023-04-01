@@ -112,12 +112,17 @@ export const NOTE_CLOUD_SECTION = [
 export const DomainsList = [{ name: "whatchhi.com" }];
 
 export const NAVIGATION = [
-  { name: "HOME", tag: "Home" },
-  { name: "ABOUT US", tag: "About" },
-  { name: "INFRASTUCTURE", tag: "infrastructure" },
-  { name: "SERVICE", tag: "Service" },
-  { name: "CONTACT US", tag: "Contact" },
-  { name: "LOG IN", tag: "Login" },
+  { id: 1, name: "HOME", tag: "home", lang: "Home" },
+  { id: 2, name: "ABOUT US", tag: "about", lang: "About" },
+  {
+    id: 3,
+    name: "INFRASTUCTURE",
+    tag: "infrastructure",
+    lang: "infrastructure",
+  },
+  { id: 4, name: "SERVICE", tag: "service", lang: "Service" },
+  { id: 5, name: "CONTACT US", tag: "contact", lang: "Contact" },
+  { id: 6, name: "LOG IN", tag: "login", lang: "Login" },
 ];
 
 export const MODAL_DATA = [

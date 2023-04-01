@@ -6,11 +6,12 @@ import BookingListModal from "../modals/BookingListModal";
 import PageModal from "../modals/PageModal";
 import Spinner from "../spinner/Spinner";
 import { useWindowSize } from "../utils/utility";
+const url = `/foodGallery/FoodGallery.htm`;
 const IframeFood = () => {
   const { t } = useTranslation("");
   const pageRef = useRef(null);
   const size = useWindowSize();
-  const [src, setSrc] = useState(`../foodGallery/FoodGallery.htm`);
+  const [src, setSrc] = useState(url);
   const [load, setLoad] = useState(false);
   const [, setHeight] = React.useState("0px");
   const { openBookList, setOpenBookList }: any = useAppStateProvider();
@@ -27,7 +28,15 @@ const IframeFood = () => {
   }, []);
   return (
     <div
-      style={{ width: "100%", position: "relative", height: size.height + 100 }}
+      style={{
+        width: "100%",
+        position: "relative",
+        height: size.height + 100,
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
     >
       {!load ? (
         <div
@@ -74,7 +83,8 @@ const IframeFood = () => {
       {openBookList && (
         <BookingListModal
           title={"Booking"}
-          content={MODAL_DATA}
+          content={t("about_us.description")}
+          // content={MODAL_DATA}
           handleClose={() => setOpenBookList(false)}
           open={openBookList}
         />

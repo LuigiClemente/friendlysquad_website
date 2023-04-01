@@ -57,4 +57,4 @@ export function World(props) {
   );
 }
 
-useGLTF.preload("/world.glb");
+useGLTF.preload("/model/world.glb");

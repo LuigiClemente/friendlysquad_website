@@ -59,7 +59,8 @@ const PageModal = ({ title, content }: PageModalsProps) => {
     <>
       {showModal ? (
         <>
-          <div className="justify-center items-center flex   overflow-x-hidden overflow-y-auto relative w-full h-full  inset-0 z-50 outline-none focus:outline-none">
+          {/* <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto relative w-full h-full  inset-0 z-50 outline-none focus:outline-none"> */}
+          <div className="justify-center items-end flex relative h-fit w-fit mt-18  z-50">
             <div
               className="relative w-auto mx-auto max-w-xl bg-white border-0 rounded-lg shadow-lg customDialog"
               style={{
@@ -89,7 +90,7 @@ const PageModal = ({ title, content }: PageModalsProps) => {
                 marginRight: `${marginRightDataModal}px`,
               }}
             >
-              <div className="relative flex flex-col w-full  outline-none focus:outline-none">
+              <div className="relative flex flex-col w-full ">
                 <div className="relative flex-auto">
                   <div className="mt-3 text-center sm:mt-5 ">
                     <DialogContent data={content} isBookingList={false} />

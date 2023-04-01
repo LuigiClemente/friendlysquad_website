@@ -133,7 +133,6 @@ export const AppProvider = ({ children }: any) => {
   // for logo dialog
   const [dialogOpenLogo, setDialogOpenLogo] = useState(false);
 
-  // -------------------------------------------------------Modal box
   //---------------------------------------------------------------- ModalBox
   const [fontSizeModalBox, setFontSizeModalBox] = useState("1rem");
   const [backgroundColorModalBox, setBackgroundColorModalBox] =

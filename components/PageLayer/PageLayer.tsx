@@ -1,14 +1,9 @@
 import PageLayout from "@/PageLayout";
-import { LayoutManger } from "@/SiteComponents/layout/LayoutManager";
+import Layout from "@/SiteComponents/layout/Layout";
 import { useAppProvider } from "@appProvider/AppProvider";
 import { Container } from "@mui/material";
-import Box from "@mui/material/Box";
 
-// const DynamicHeader = dynamic(() => import("../Header"), {
-//   ssr: false
-// })
-
-const HomeComponent = () => {
+const PageLayer = ({ children, currentMenu }) => {
   const {
     containerBackgroundColor,
     bodyBackgroundColor,
@@ -31,18 +26,11 @@ const HomeComponent = () => {
           }}
           id="capture"
         >
-          {/* <Box
-            sx={{
-              backgroundColor: `${containerBackgroundColor}`,
-              boxShadow: `${containerShadow}`,
-            }}
-          > */}
-          <LayoutManger />
-          {/* </Box> */}
+          <Layout currentMenu={currentMenu}>{children}</Layout>
         </div>
       </PageLayout>
     </Container>
   );
 };
 
-export default HomeComponent;
+export default PageLayer;

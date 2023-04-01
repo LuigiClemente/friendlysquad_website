@@ -9,11 +9,11 @@ module.exports = withBundleAnalyzer({
   trailingSlash: true,
   i18n,
 
-  webpack: (config, { dev }) => {
-    config.resolve.alias["@babel/runtime/helpers/esm/asyncToGenerator"] =
-      "@babel/runtime/helpers/asyncToGenerator"
-    return config
-  },
+  // webpack: (config, { dev }) => {
+  //   config.resolve.alias["@babel/runtime/helpers/esm/asyncToGenerator"] =
+  //     "@babel/runtime/helpers/asyncToGenerator"
+  //   return config
+  // },
 
   images: {
     domains: [

@@ -6,12 +6,11 @@ import BookingListModal from "../modals/BookingListModal";
 import PageModal from "../modals/PageModal";
 import Spinner from "../spinner/Spinner";
 import { useWindowSize } from "../utils/utility";
-
+const url = `/parlour/the_Parlour.htm`;
 const IframeLaser = () => {
   const { t } = useTranslation("");
   const pageRef = useRef(null);
   const size = useWindowSize();
-  const [src, setSrc] = useState(`../parlour/the_Parlour.htm`);
   const [load, setLoad] = useState(true);
   const [, setHeight] = React.useState("0px");
   const { openBookList, setOpenBookList }: any = useAppStateProvider();
@@ -27,7 +26,15 @@ const IframeLaser = () => {
   }, []);
   return (
     <div
-      style={{ width: "100%", position: "relative", height: size.height + 100 }}
+      style={{
+        width: "100%",
+        position: "relative",
+        height: size.height + 100,
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
     >
       {!load ? (
         <div
@@ -44,7 +51,7 @@ const IframeLaser = () => {
       ) : null}
       <iframe
         id="laser-iframe"
-        src={src}
+        src={url}
         scrolling="yes"
         frameBorder={0}
         allowFullScreen={true}
@@ -67,7 +74,8 @@ const IframeLaser = () => {
       {openBookList && (
         <BookingListModal
           title={"Booking"}
-          content={MODAL_DATA}
+          // content={MODAL_DATA}
+          content={t("about_us.description")}
           handleClose={() => setOpenBookList(false)}
           open={openBookList}
         />

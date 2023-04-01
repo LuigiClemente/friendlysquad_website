@@ -1,7 +1,7 @@
 import HeaderOptionsUi from "@/CustomPopover/HeaderOptionsUi";
+import Logo from "@/Logo";
 import BarrIcon from "@/icons/BarrIcon";
 import Globe from "@/icons/Globe";
-import Logo from "@/Logo";
 import { useAppProvider } from "@appProvider/AppProvider";
 import { useAppStateProvider } from "@appProvider/AppStateProvider";
 import React, { useState } from "react";
@@ -132,8 +132,16 @@ const Navbar = ({ bgHeader, colorMenu, fixed }: any) => {
           >
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
               {NAVIGATION.map((item) => (
-                <li className="nav-item" key={item.name}>
+                <li
+                  className="nav-item"
+                  key={item.name}
+                  onClick={() => {
+                    setCurrentMenu(item.name);
+                    console.log("currentMenu", currentMenu);
+                  }}
+                >
                   <a
+                    href={item?.tag === "home" ? "/" : `/${item.tag}`}
                     className="font-bold leading-6  text-sm px-2 py-2 flex items-center hover:opacity-75"
                     style={{
                       fontSize: fontSizeHeader,
@@ -142,11 +150,8 @@ const Navbar = ({ bgHeader, colorMenu, fixed }: any) => {
                       color: colorMenu,
                       cursor: "pointer",
                     }}
-                    onClick={() => {
-                      setCurrentMenu(item.name);
-                    }}
                   >
-                    {t(`header.${item.tag}`)}
+                    {t(`header.${item.lang}`)}
                     {/* {item.name} */}
                   </a>
                 </li>

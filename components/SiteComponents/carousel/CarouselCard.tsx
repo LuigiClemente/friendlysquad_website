@@ -1,6 +1,8 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const CarouselCard = () => {
+  const { t }: any = useTranslation("");
   return (
     <div
       style={{
@@ -23,19 +25,19 @@ const CarouselCard = () => {
           fontSize: "3rem",
           fontFamily: "Ppneuemontreal",
           fontWeight: 800,
+          textAlign: "center",
+          width: "350px",
+          lineHeight: "1.2",
           display: "flex",
-          textAlign: "left",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
         }}
         className="leading-10"
-      >{`Welcome`}</span>
-      <span
-        style={{
-          fontSize: "3rem",
-          fontFamily: "Ppneuemontreal",
-          fontWeight: 800,
-        }}
-        className="leading-11"
-      >{`to Friendly Squad!`}</span>
+      >
+        {/* {`Welcome to Friendly Squad!`} */}
+        {t(`home.title`)}
+      </span>
       <p
         style={{
           fontFamily: "Ppneuemontreal",

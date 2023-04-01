@@ -9,7 +9,7 @@ import "swiper/swiper-bundle.css";
 import "swiper/swiper.min.css";
 import "swiper/swiper.css";
 import "swiper/swiper-element-bundle.min.css";
-
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { ThemePageProvider } from "@appProvider/ThemePageProvider";
 import { ThemeProvider } from "@mui/material";
 import type { AppProps } from "next/app";
@@ -17,6 +17,11 @@ import { themeDarkStyle, themeLightStyle } from "theme/Theme";
 import { DarkTheme, lightTheme } from "theme/ThemeOveride";
 import createEmotionCache from "../utils/createEmotionCache";
 import { appWithTranslation } from "next-i18next";
+import { AppProvider } from "@appProvider/AppProvider";
+import { AppStateProvider } from "@appProvider/AppStateProvider";
+import { ModalsAppProvider } from "@appProvider/ModalsAppProvider";
+import { UpdateSettingsProvider } from "@appProvider/UpdateSettingsProvider";
+import UndoableProvider from "@appProvider/UndoableProvider";
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -61,7 +66,17 @@ function MyApp({
     <ThemePageProvider>
       <CacheProvider value={emotionCache}>
         <ThemeProvider theme={theme}>
-          <Component {...pageProps} />
+          <AppStateProvider>
+            <UndoableProvider>
+              <AppProvider>
+                <UpdateSettingsProvider>
+                  <ModalsAppProvider>
+                    <Component {...pageProps} />
+                  </ModalsAppProvider>
+                </UpdateSettingsProvider>
+              </AppProvider>
+            </UndoableProvider>
+          </AppStateProvider>
         </ThemeProvider>
       </CacheProvider>
     </ThemePageProvider>
@@ -69,3 +84,10 @@ function MyApp({
 }
 
 export default appWithTranslation(MyApp);
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}

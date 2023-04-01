@@ -23,5 +23,5 @@ export const LayoutManger = () => {
     }
   };
 
-  return <Layout>{handleMenu()}</Layout>;
+  return <Layout currentMenu={"home"}>{handleMenu()}</Layout>;
 };

@@ -68,6 +68,7 @@ const FooterSite1 = ({ color, background }: any) => {
                 (item, index) =>
                   index % 2 !== 0 && (
                     <a
+                      key={item.id}
                       className="hidden md:block cursor-pointer  hover:text-white uppercase ml-10"
                       style={{ color: color }}
                     >
@@ -81,6 +82,7 @@ const FooterSite1 = ({ color, background }: any) => {
                 (item, index) =>
                   index % 2 === 0 && (
                     <a
+                      key={item.id}
                       style={{ color: color }}
                       className="hidden md:block cursor-pointer hover:text-white uppercase ml-10"
                     >

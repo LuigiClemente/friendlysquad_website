@@ -6,14 +6,13 @@ import BookingListModal from "../modals/BookingListModal";
 import PageModal from "../modals/PageModal";
 import Spinner from "../spinner/Spinner";
 import { useWindowSize } from "../utils/utility";
-
+const url = `/glade/Glade.htm`;
 const GrassIframe = () => {
   const { t } = useTranslation("");
 
   const { openBookList, setOpenBookList }: any = useAppStateProvider();
   const pageRef = useRef();
   const size = useWindowSize();
-  const [src, setSrc] = useState(`../glade/Glade.htm`);
 
   const [, setHeight] = React.useState("0px");
   const onLoad = () => {
@@ -32,7 +31,15 @@ const GrassIframe = () => {
   }, []);
   return (
     <div
-      style={{ width: "100%", position: "relative", height: size.height + 100 }}
+      style={{
+        width: "100%",
+        position: "relative",
+        height: size.height + 100,
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
     >
       {!load ? (
         <div
@@ -50,7 +57,7 @@ const GrassIframe = () => {
       <iframe
         ref={pageRef}
         id="grass-iframe"
-        src={src}
+        src={url}
         scrolling="yes"
         frameBorder={0}
         allowFullScreen={true}
@@ -72,7 +79,8 @@ const GrassIframe = () => {
       {openBookList && (
         <BookingListModal
           title={"Booking"}
-          content={MODAL_DATA}
+          // content={MODAL_DATA}
+          content={t("about_us.description")}
           handleClose={() => setOpenBookList(false)}
           open={openBookList}
         />

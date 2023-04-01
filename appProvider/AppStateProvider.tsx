@@ -13,10 +13,8 @@ export const AppStateProvider = ({ children }: any) => {
   const [openBookList, setOpenBookList] = useState(false);
 
   useEffect(() => {
-    if (buttonFormat) {
-      console.log("buttonFormat", buttonFormat?.fontSizeButtons);
-    }
-  }, []);
+    console.log("buttonFormat", buttonFormat?.fontSizeButtons, currentMenu);
+  }, [currentMenu]);
   return (
     <Context.Provider
       value={{

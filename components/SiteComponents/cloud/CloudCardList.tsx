@@ -1,7 +1,7 @@
 import BoxOptionsUi from "@/CustomPopover/BoxOptionsUi";
 import { useAppProvider } from "@appProvider/AppProvider";
 import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { NOTE_CLOUD_SECTION } from "../constant";
 import CloudCard from "./CloudCard";
@@ -72,7 +72,7 @@ const CloudCardList = ({ getItemId }: any) => {
               ...(isHovering && isHovering === item?.id
                 ? mouseInStyle
                 : mouseOutStyle),
-
+              width: "100%",
               borderBottomColor: borderBottomColorData,
               borderBottomWidth: `${borderBottomWidthData}px`,
               borderTopColor: borderTopColorData,

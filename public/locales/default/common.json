@@ -1,19 +1,78 @@
 {
-  "home": {
-    "Home title": "Home title",
-    "Home description": "Home description"
-  },
-  "about": {
-    "About title": "About title",
-    "About description": "About description"
-  },
-  "service": {
-    "Service title": "service title",
-    "Service description": "service description"
-  },
+  "contact_us":{
+    "title":"Contact Us",
+    "dataModal":"We understand that sometimes it's hard to express your thoughts or ideas in words. That's why we've created this unique and engaging animation to spark your imagination and help you communicate in a more creative way! Jokes aside, of course, feel free to skip the animation and send us a message directly. Either way, we're excited to hear from you!"
+    
+},
+"services":{
+    "title":"Services",
+    "dataModal":"Embark on a mesmerizing interactive animated adventure, where you possess the exceptional ability to breathe life into a desolate world! Immerse yourself in a captivating experience that will awaken and enchant your senses. If time is of the essence, fret not – you can plunge directly into our collection of profound and stirring services that will ignite your imagination and reveal the potential waiting to be unleashed."
+    
+},
+"about_us":{
+    "title":"About Us",
+    "dataModal":"Welcome to our website! We're ecstatic to have you here. While we'd relish the opportunity to introduce ourselves over a delightful dinner or a warm cup of coffee, that's not feasible at the moment. Instead, we've meticulously prepared a virtual banquet for you to savor. Our captivating 3D animations serve as a mere appetizer of what we can offer. So, are you ready to indulge in a virtual feast or would you prefer to dive straight into discovering more about us?",
+    "description":"At our core, we are a team bound by a shared vision: to eradicate the hurdles associated with deployments and ensure that the intricacies of the process are never underestimated. We staunchly believe that everyone, regardless of their technical expertise, deserves access to reliable and user-friendly deployment solutions. Fueled by an unwavering passion for both development and deployment, we've amalgamated the finest tools in the industry to create a platform that revolutionizes infrastructure deployment by making it easy, efficient, and seamless. Our team's dedication to delivering top-notch solutions caters to businesses of all sizes and across diverse industries. Recognizing the overwhelming nature of deployment for many organizations, we've devoted ourselves to crafting an intuitive and user-friendly platform that eliminates the necessity for intricate technical expertise. Our platform is ingeniously designed to demystify the deployment process, making it accessible to all and empowering businesses to deploy their infrastructure with ease and assurance. At the heart of our platform lies an unwavering commitment to innovation and excellence. We relentlessly push the boundaries of what is achievable, harnessing cutting-edge technologies and methodologies to deliver groundbreaking solutions. Whether you seek to streamline existing deployment processes or construct an entirely new infrastructure from the ground up, we possess the proficiency and tools essential for your success. Embark on our mission to make infrastructure deployment effortless and accessible to all. With our team of ardent experts and our steadfast dedication to excellence, you can rest assured that you're receiving the finest solutions the market has to offer. Reach out to us today to discover how we can help you accomplish your deployment objectives."
+    
+},
+"home":{
+    "title":"Welcome to Friendly Squad!",
+    "dataModal":"Welcome to our website! We're ecstatic to have you here. While we'd relish the opportunity to introduce ourselves over a delightful dinner or a warm cup of coffee, that's not feasible at the moment. Instead, we've meticulously prepared a virtual banquet for you to savor. Our captivating 3D animations serve as a mere appetizer of what we can offer. So, are you ready to indulge in a virtual feast or would you prefer to dive straight into discovering more about us?",
+
+  "cloud_data":[
+     {
+        "title": "Embrace the Git-First Revolution",
+        "description":
+          "Experience the power of Git as the foundation of modern infrastructure deployment. Our platform streamlines the deployment process and puts you in complete control of your infrastructure."
+      },
+      {
+        "title": "Define, Deploy, and Dominate",
+        "description":
+          "With our platform, you can define your entire infrastructure in your Git repository, making deployment a breeze. Just declare your desired components, and we'll handle the rest"
+      },
+      {
+        "title": "Connect and Conquer",
+        "description": "Our extensive resource catalogue, default connections, and secrets management allow you to seamlessly integrate your preferred message brokers. Just declare it in your Git repository, and you're good to go."
+        
+      },
+      {
+        "title": "Scale with Ease",
+        "description":
+          "Adjusting your infrastructure has never been simpler. Customize your resources to meet your needs, and do it all in your favorite programming languages. Experience hassle-free scalability at its finest."
+      },
+      {
+        "title": "Join the Community",
+        "description":
+          "Become a part of our vibrant community of businesses that have embraced the Git-first approach to infrastructure deployment. Our user-friendly platform empowers developers of all skill levels to deploy and manage infrastructure with confidence"
+      }],
+        "globe_data":[
+     {
+        "title": "Banking-Grade Security",
+        "description":
+          "At Friendly Squad, we prioritize data security. Our Zero Trust security model and partnership with HarshCorp ensure top-of-the-line protection for your sensitive data through Vault Secrets Management and 15-second renewals."
+      },
+      {
+        "title": "Trust in Our Certifications",
+        "description":
+          "Our commitment to security and reliability is backed by a range of certifications, including ISO 9001, ISO 27001, PCI-DSS, and SSAE16/ISAE3402. Rest assured that your infrastructure is in good hands."
+      },
+      {
+        "title": "Impressive Performance",
+        "description": "Experience lightning-fast data transfer with our network nodes' minimum shared speed of 10 gigabytes per second. This level of performance is crucial for data-intensive applications and processes."
+        
+      },
+      {
+        "title": "Secure Your Success",
+        "description":
+          "We provide reliable and secure services, allowing businesses to focus on their goals without worrying about sensitive data security. Partner with Friendly Squad and unlock your true potential."
+      }
+    ]
+    
+},
   "header": {
     "Home": "HOME",
     "About": "ABOUT US",
+    "infrastructure": "INFRASTRUCTURE",
     "Service": "SERVICE",
     "Contact": "CONTACT US",
     "Login": "LOG IN"

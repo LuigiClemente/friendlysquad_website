@@ -71,7 +71,7 @@ const DialogContent = ({ data, isBookingList }: DialogContentProps) => {
         style={{
           display: "flex",
           flexDirection: "column",
-          width: "fit-content",
+          width: "100%",
           padding: "2px",
 
           borderBottomColor: borderBottomColorDataModal,

@@ -7,8 +7,8 @@ const DynamicPageLayer = dynamic(() => import("@/PageLayer/PageLayer"), {
   ssr: false,
 });
 
-const DynamicHomeComponent = dynamic(
-  () => import("@/SiteComponents/Home/HomeSite"),
+const DynamicGrassComponent = dynamic(
+  () => import("@/SiteComponents/grass/GrassIframe"),
   {
     loading: () => (
       <div
@@ -35,12 +35,12 @@ const DynamicHomeComponent = dynamic(
   }
 );
 
-export default function Home() {
+export default function About() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <DynamicPageLayer currentMenu={"home"}>
-        <DynamicHomeComponent />
+      <DynamicPageLayer currentMenu={"service"}>
+        <DynamicGrassComponent />
       </DynamicPageLayer>
     </React.Fragment>
   );
