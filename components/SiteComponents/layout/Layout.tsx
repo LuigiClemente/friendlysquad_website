@@ -1,11 +1,8 @@
-import { useAppStateProvider } from "@appProvider/AppStateProvider";
 import dynamic from "next/dynamic";
-import { useEffect } from "react";
 const DynamicHeader = dynamic(() => import("../Header/Navbar"));
 const Layout = ({ children, currentMenu }) => {
   // const { currentMenu }: any = useAppStateProvider();
 
-  useEffect(() => {}, [currentMenu]);
   return (
     <div
       style={{ width: "100%", height: "100%" }}
@@ -18,7 +15,13 @@ const Layout = ({ children, currentMenu }) => {
           <DynamicHeader
             bgHeader={"transparent"}
             colorMenu={"#fff"}
+            navbarOpenBg={
+              currentMenu === "about" || currentMenu === "home"
+                ? "rgb(255,255,255,0.5)"
+                : "rgb(0,0,0,0.5)"
+            }
             fixed={true}
+            currentMenu={currentMenu}
           />
         </>
       ) : (
@@ -26,7 +29,13 @@ const Layout = ({ children, currentMenu }) => {
           <DynamicHeader
             bgHeader={`transparent`}
             colorMenu={"#000"}
+            navbarOpenBg={
+              currentMenu === "about" || currentMenu === "home"
+                ? "rgb(255,255,255,0.5)"
+                : "rgb(0,0,0,0.5)"
+            }
             fixed={true}
+            currentMenu={currentMenu}
           />
         </>
       )}

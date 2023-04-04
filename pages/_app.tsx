@@ -22,6 +22,7 @@ import { AppStateProvider } from "@appProvider/AppStateProvider";
 import { ModalsAppProvider } from "@appProvider/ModalsAppProvider";
 import { UpdateSettingsProvider } from "@appProvider/UpdateSettingsProvider";
 import UndoableProvider from "@appProvider/UndoableProvider";
+import { PageProvider } from "@appProvider/PageProvider";
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -66,17 +67,19 @@ function MyApp({
     <ThemePageProvider>
       <CacheProvider value={emotionCache}>
         <ThemeProvider theme={theme}>
-          <AppStateProvider>
-            <UndoableProvider>
-              <AppProvider>
-                <UpdateSettingsProvider>
-                  <ModalsAppProvider>
-                    <Component {...pageProps} />
-                  </ModalsAppProvider>
-                </UpdateSettingsProvider>
-              </AppProvider>
-            </UndoableProvider>
-          </AppStateProvider>
+          <PageProvider>
+            <AppStateProvider>
+              <UndoableProvider>
+                <AppProvider>
+                  <UpdateSettingsProvider>
+                    <ModalsAppProvider>
+                      <Component {...pageProps} />
+                    </ModalsAppProvider>
+                  </UpdateSettingsProvider>
+                </AppProvider>
+              </UndoableProvider>
+            </AppStateProvider>
+          </PageProvider>
         </ThemeProvider>
       </CacheProvider>
     </ThemePageProvider>

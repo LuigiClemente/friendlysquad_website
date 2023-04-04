@@ -1,7 +1,6 @@
 import { useAppStateProvider } from "@appProvider/AppStateProvider";
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { MODAL_DATA } from "../constant";
 import BookingListModal from "../modals/BookingListModal";
 import PageModal from "../modals/PageModal";
 import Spinner from "../spinner/Spinner";
@@ -13,7 +12,11 @@ const IframeLaser = () => {
   const size = useWindowSize();
   const [load, setLoad] = useState(true);
   const [, setHeight] = React.useState("0px");
-  const { openBookList, setOpenBookList }: any = useAppStateProvider();
+  // const { openBookList, setOpenBookList }: any = useAppStateProvider();
+  const [openBookList, setOpenBookList] = useState(false);
+  const openBookingModal = () => {
+    setOpenBookList(true);
+  };
   const onLoad = () => {
     setHeight(size.height + "px");
   };
@@ -68,13 +71,13 @@ const IframeLaser = () => {
         <PageModal
           title={t("contact_us.title")}
           content={t("contact_us.dataModal")}
+          openBookingList={openBookingModal}
         />
       )}
 
       {openBookList && (
         <BookingListModal
           title={"Booking"}
-          // content={MODAL_DATA}
           content={t("about_us.description")}
           handleClose={() => setOpenBookList(false)}
           open={openBookList}

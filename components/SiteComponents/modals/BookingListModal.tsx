@@ -23,13 +23,13 @@ const BookingListModal = ({
     <>
       {open ? (
         <>
-          <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto relative w-full h-full  inset-0 z-50 outline-none focus:outline-none">
-            <div className="relative w-auto my-6 mx-auto max-w-xl md:max-w-3xl lg:max-w-full lg:mx-12 customDialog">
+          <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto relative w-full h-full  inset-0 bigModalZ">
+            <div className="relative w-auto my-6 mx-auto max-w-xl h-[75%] lg:my-28 md:max-w-3xl lg:max-w-full customDialog">
               {/*content*/}
-              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+              <div className="border-0 rounded-lg shadow-lg h-full relative flex flex-col w-full bg-white ">
                 <div className="flex items-start justify-between rounded-t">
                   <button
-                    className="p-1 ml-auto bg-transparent border-0 opacity-4 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                    className="p-1 ml-auto bg-transparent border-0 opacity-4 float-right text-3xl leading-none font-semibold "
                     onClick={handleClose}
                   >
                     <Close />
@@ -38,7 +38,11 @@ const BookingListModal = ({
 
                 {/*body*/}
                 <div className="relative flex-auto text-left  pt-0 pb-0">
-                  <DialogContent data={content} isBookingList={false} />
+                  <DialogContent
+                    data={content}
+                    isBookingList={false}
+                    isSmallModal={false}
+                  />
                 </div>
                 {/* CONTACT_DATA */}
                 <div className="flex items-center relative justify-start pr-6 pl-6 rounded-b flex-wrap">

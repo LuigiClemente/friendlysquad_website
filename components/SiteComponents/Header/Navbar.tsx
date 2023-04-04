@@ -8,9 +8,16 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { LANGUAGES, NAVIGATION } from "../constant";
 import LangsModal from "../modals/LangsModal";
+import Link from "next/link";
 
-const Navbar = ({ bgHeader, colorMenu, fixed }: any) => {
-  const { currentMenu, setCurrentMenu }: any = useAppStateProvider();
+const Navbar = ({
+  bgHeader,
+  colorMenu,
+  fixed,
+  currentMenu,
+  navbarOpenBg,
+}: any) => {
+  // const { currentMenu, setCurrentMenu }: any = useAppStateProvider();
 
   const [openLan, setOpenLan] = useState(false);
   const closeLanModals = () => {
@@ -67,11 +74,11 @@ const Navbar = ({ bgHeader, colorMenu, fixed }: any) => {
       {isReadOnly ? null : <HeaderOptionsUi style={style} />}
       <nav
         className={
-          "z-30 flex flex-wrap items-center justify-between absolute top-0 left-0 right-0  w-full" +
+          "z-50 flex flex-wrap items-center justify-between absolute top-0 left-0 right-0  w-full" +
           bgHeader
         }
         style={{
-          backgroundColor: navbarOpen ? "rgb(255, 255, 255, 0.9)" : bgHeader,
+          backgroundColor: navbarOpen ? navbarOpenBg : bgHeader,
         }}
       >
         <div
@@ -108,10 +115,7 @@ const Navbar = ({ bgHeader, colorMenu, fixed }: any) => {
           }}
         >
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-            <a
-              className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
-              href="#pablo"
-            >
+            <a className="lg:mr-4 lg:py-2" href="#pablo">
               <Logo />
             </a>
             <button
@@ -125,40 +129,53 @@ const Navbar = ({ bgHeader, colorMenu, fixed }: any) => {
           </div>
           <div
             className={
-              "lg:flex flex-grow items-center" +
+              "lg:flex flex-grow items-center justify-center" +
               (navbarOpen ? " flex" : " hidden")
             }
             id="example-navbar-danger"
           >
-            <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
+            <ul className="flex flex-col lg:flex-row list-none lg:ml-auto md:justify-center">
               {NAVIGATION.map((item) => (
                 <li
-                  className="nav-item"
+                  className={`nav-item lg:mb-0 mb-3
+                  bg-${item.name === currentMenu ? "red" : "transparent"}`}
                   key={item.name}
                   onClick={() => {
-                    setCurrentMenu(item.name);
-                    console.log("currentMenu", currentMenu);
+                    // setCurrentMenu(item.name);
+                    console.log(
+                      "currentMenu",
+                      currentMenu,
+                      item.name,
+                      item?.tag
+                    );
                   }}
                 >
-                  <a
-                    href={item?.tag === "home" ? "/" : `/${item.tag}`}
-                    className="font-bold leading-6  text-sm px-2 py-2 flex items-center hover:opacity-75"
-                    style={{
-                      fontSize: fontSizeHeader,
-                      fontFamily: fontHeader,
-                      textDecoration: "none",
-                      color: colorMenu,
-                      cursor: "pointer",
-                    }}
-                  >
-                    {t(`header.${item.lang}`)}
+                  <Link href={item?.tag === "home" ? "/" : `/${item.tag}`}>
+                    <a
+                      style={{
+                        fontSize: fontSizeHeader,
+                        fontFamily: fontHeader,
+                        textDecoration: "none",
+                        color: colorMenu,
+                        cursor: "pointer",
+
+                        padding: "0.5rem",
+                        borderRadius: "0.5rem",
+                        backgroundColor:
+                          item?.tag === currentMenu
+                            ? "rgb(255, 255, 255, 0.4)"
+                            : "transparent",
+                      }}
+                    >
+                      {t(`header.${item.lang}`)}
+                    </a>
                     {/* {item.name} */}
-                  </a>
+                  </Link>
                 </li>
               ))}
               <li className="nav-item">
                 <a
-                  className="px-2 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                  className=" px-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                   onClick={() => {
                     console.log("click");
                     setOpenLan(true);

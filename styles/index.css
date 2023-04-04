@@ -150,3 +150,82 @@
 }
 
 /* hover in cloudCard class */
+
+
+/* .text-editor{
+  width:400px;
+  height:400px;
+  background-color: #a84747;
+} */
+
+.text-editor {
+  width: 1086px;
+  margin: 0 auto;
+}
+.ql-editor {
+  min-height: 100px;
+}
+
+.nav-item a:hover{
+  text-decoration: none !important;
+}
+
+.ql-container{
+  position: relative;
+  width: fit-content;
+  height: 100%;
+  border:none !important
+}
+
+.ql-toolbar.ql-snow {
+  position: relative;
+  width: fit-content !important;
+  border:none !important
+
+}
+
+
+.ql-editor {
+  width:"fit-content" !important;
+  border:none !important;
+  /* font-size: 20px;
+  line-height: 1.5;
+  color: #333; */
+}
+
+.quill {
+  position: relative;
+  width: fit-content !important;
+  border:none !important
+}
+.text-editor{
+  position: relative;
+  min-width: fit-content;
+  width:fit-content;
+  border:none !important
+  /* background-color: #6ab1dc; */
+}
+
+
+
+.ql-editor strong {
+  font-weight: bold;
+}
+
+.text-editor__textarea{
+  border:none !important;
+
+}
+
+.editor__textarea{
+  position: relative;
+  width: 100%;
+  min-width: 100%;
+}
+.bigModalZ{
+  z-index: 1000;
+}
+
+.langModalZ{
+  z-index: 1000;
+}

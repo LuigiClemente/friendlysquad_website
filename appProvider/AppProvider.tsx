@@ -17,6 +17,22 @@ export const AppProvider = ({ children }: any) => {
   const [headerDBFormat, setHeaderDBFormat]: any = useState();
   const [giftDBFormat, setGiftDBFormat]: any = useState();
 
+  const [pageModalData, setPageModalData] = useState({
+    title: "",
+    dataModal: "",
+  });
+
+  const [pageModalAboutData, setPageModalAboutData] = useState({
+    title: "",
+    dataModal: "",
+    description: "",
+  });
+
+  const [bookingListModalData, setBookingListModalData] = useState({
+    title: "",
+    description: "",
+  });
+
   // Zoom in and out
   const [zoom, setZoom] = useState(1);
 
@@ -72,8 +88,8 @@ export const AppProvider = ({ children }: any) => {
   const [borderBottomLeftRadiusHeader, setBorderBottomLeftRadiusHeader] =
     useState("0");
   // padding for Header
-  const [paddingRightHeader, setPaddingRightHeader] = useState("10");
-  const [paddingLeftHeader, setPaddingLeftHeader] = useState("8");
+  const [paddingRightHeader, setPaddingRightHeader] = useState("0");
+  const [paddingLeftHeader, setPaddingLeftHeader] = useState("0");
   const [paddingTopHeader, setPaddingTopHeader] = useState("0");
   const [paddingBottomHeader, setPaddingBottomHeader] = useState("0");
   // margin for Header
@@ -118,10 +134,10 @@ export const AppProvider = ({ children }: any) => {
   const [paddingTopLogo, setPaddingTopLogo] = useState("0");
   const [paddingBottomLogo, setPaddingBottomLogo] = useState("0");
   // margin
-  const [marginRightLogo, setMarginRightLogo] = useState("20");
+  const [marginRightLogo, setMarginRightLogo] = useState("0");
   const [marginLeftLogo, setMarginLeftLogo] = useState("0");
   const [marginTopLogo, setMarginTopLogo] = useState("0");
-  const [marginBottomLogo, setMarginBottomLogo] = useState("20");
+  const [marginBottomLogo, setMarginBottomLogo] = useState("0");
   // min width for logo
   const [minWidthLogo, setMinWidthLogo] = useState("120");
   // min height for logo
@@ -601,6 +617,12 @@ export const AppProvider = ({ children }: any) => {
         // calendar
         themeCalendar,
         setThemeCalendar,
+        pageModalData,
+        setPageModalData,
+        bookingListModalData,
+        setBookingListModalData,
+        pageModalAboutData,
+        setPageModalAboutData,
       }}
     >
       {children}

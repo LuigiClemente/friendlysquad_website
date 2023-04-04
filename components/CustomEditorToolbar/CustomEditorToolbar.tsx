@@ -1,24 +1,26 @@
 /* eslint-disable no-console */
-import { Tooltip } from "@material-ui/core"
-import { makeStyles } from "@material-ui/core/styles"
-import { Box, IconButton } from "@mui/material"
-import axios from "axios"
-import { FC, useState } from "react"
-import { toast } from "react-toastify"
+import { Tooltip } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import { Box, IconButton } from "@mui/material";
+import axios from "axios";
+import { FC, useState } from "react";
+import { toast } from "react-toastify";
 // import { ToastContainer, toast } from "react-toastify"
-import { useAppProvider } from "@appProvider/AppProvider"
-import { useUndoable } from "@appProvider/UndoableProvider"
-import "react-toastify/dist/ReactToastify.css"
+import { useAppProvider } from "@appProvider/AppProvider";
+import { useUndoable } from "@appProvider/UndoableProvider";
+import "react-toastify/dist/ReactToastify.css";
 
-import { useModalsAppProvider } from "@appProvider/ModalsAppProvider"
-import Edit from "../icons/Edit"
-import PreviewIcon from "../icons/PreviewIcon"
-import RedoIcon from "../icons/Redo"
-import SaveIcon from "../icons/SaveIcon"
-import UndoIcon from "../icons/UndoIcon"
-import ZoomIn from "../icons/ZoomIn"
-import ZoomOut from "../icons/ZoomOut"
-import UndoCustomization from "./UndoCustomization"
+import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
+import Edit from "../icons/Edit";
+import PreviewIcon from "../icons/PreviewIcon";
+import RedoIcon from "../icons/Redo";
+import SaveIcon from "../icons/SaveIcon";
+import UndoIcon from "../icons/UndoIcon";
+import ZoomIn from "../icons/ZoomIn";
+import ZoomOut from "../icons/ZoomOut";
+import UndoCustomization from "./UndoCustomization";
+import { usePageProvider } from "@appProvider/PageProvider";
+import { LANGUAGES } from "@/SiteComponents/constant";
 
 const useStyles = makeStyles(
   (theme) => ({
@@ -27,12 +29,12 @@ const useStyles = makeStyles(
       border: "none !important",
       minWidth: "94px",
       maxWidth: "94px",
-      width: "94px"
+      width: "94px",
     },
     thinArrow: {
       width: "1px",
       height: "20px",
-      backgroundColor: "lightgray"
+      backgroundColor: "lightgray",
     },
     root: {
       outline: "none",
@@ -41,12 +43,12 @@ const useStyles = makeStyles(
       "&& fieldset": {
         outline: "none",
         border: "none !important",
-        maxWidth: "94px"
-      }
+        maxWidth: "94px",
+      },
     },
     shadow: {},
     shadow2: {
-      padding: "5px !important"
+      padding: "5px !important",
     },
     toolBarContainer: {
       display: "flex",
@@ -60,7 +62,7 @@ const useStyles = makeStyles(
       alignItems: "end",
       marginBottom: "15px",
       marginTop: "15px",
-      backgroundColor: "red"
+      backgroundColor: "red",
     },
 
     rightContent: {
@@ -69,7 +71,7 @@ const useStyles = makeStyles(
       // alignItems: "center",
       width: "60%",
       justifyContent: "flex-end",
-      flexWrap: "wrap"
+      flexWrap: "wrap",
     },
     rightContentFullWidth: {
       display: "flex",
@@ -78,42 +80,42 @@ const useStyles = makeStyles(
       width: "100%",
       justifyContent: "flex-end",
       flexWrap: "wrap",
-      fontSize: "12px"
+      fontSize: "12px",
     },
 
     leftContent: {
       display: "flex",
       flexDirection: "row",
 
-      width: "fit-content"
+      width: "fit-content",
     },
     tag: {
       display: "flex",
       flexDirection: "row",
       fontSize: "5px",
-      alignItems: "center"
+      alignItems: "center",
     },
     icon: {
       width: "auto",
       height: 36,
       "& path": {
-        fill: "#363636"
-      }
+        fill: "#363636",
+      },
     },
     IsShowSearch: {
-      display: "hide"
+      display: "hide",
     },
     inputSearch: {
       width: "40px",
       height: "40px",
       overflow: "hidden",
-      fade: "0"
+      fade: "0",
     },
 
     inputSearchFocus: {
       width: "200px",
       height: "40px",
-      fade: "in"
+      fade: "in",
     },
     textColor: {},
     sizeBtn: {
@@ -126,8 +128,8 @@ const useStyles = makeStyles(
       paddingRight: "5px",
       paddingLeft: "5px",
       "&:hover": {
-        backgroundColor: "transparent"
-      }
+        backgroundColor: "transparent",
+      },
     },
     sizeBtnTwin: {
       maxWidth: "130px",
@@ -140,8 +142,8 @@ const useStyles = makeStyles(
       paddingLeft: "5px",
       color: theme.palette.text.primary,
       "&:hover": {
-        backgroundColor: "transparent"
-      }
+        backgroundColor: "transparent",
+      },
     },
     iconColor: {
       marginTop: "3px",
@@ -150,120 +152,134 @@ const useStyles = makeStyles(
       height: "1.8rem",
       color: theme.palette.text.primary,
       "&:hover": {
-        color: theme.palette.primary.main
-      }
+        color: theme.palette.primary.main,
+      },
     },
     tooltip: {
       backgroundColor: "white",
       color: "#000",
       boxShadow: theme.shadows[1],
       padding: "5px 10px",
-      fontSize: "12px"
+      fontSize: "12px",
     },
     arrow: {
-      color: "white"
-    }
+      color: "white",
+    },
   }),
   { name: "CustomEditorToolbar" }
-)
+);
 interface CustomEditorToolbarProps {
-  onClickGroup?: any
-  style?: any
-  onChangeEvent?: any
+  onClickGroup?: any;
+  style?: any;
+  onChangeEvent?: any;
 }
 const CustomEditorToolbar: FC<CustomEditorToolbarProps> = ({
   onClickGroup,
   style,
-  onChangeEvent
+  onChangeEvent,
 }: CustomEditorToolbarProps) => {
-  const classes: any = useStyles(style)
-  const PATH_POST_HEADER = process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/postHeader"
-  const PATH_POST_UPLOAD_App = process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/uploadApp"
-  const PATH_POST_MODALS = process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/postModals"
-  const { setCallUndo, setIsReadOnly, headerDBFormat, zoom, setZoom, dbFormat, giftDBFormat }: any =
-    useAppProvider()
+  const classes: any = useStyles(style);
+  const PATH_POST_HEADER =
+    process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/postHeader";
+  const PATH_POST_UPLOAD_App =
+    process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/uploadApp";
+  const PATH_POST_MODALS =
+    process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/postModals";
+  const {
+    setCallUndo,
+    setIsReadOnly,
+    headerDBFormat,
+    zoom,
+    setZoom,
+    dbFormat,
+    giftDBFormat,
+  }: any = useAppProvider();
 
-  const { setDbModalsFormat, dbModalsFormat }: any = useModalsAppProvider()
+  const { setDbModalsFormat, dbModalsFormat }: any = useModalsAppProvider();
 
-  const [isSave, setIsSave] = useState(false)
-  const [zoomLevel, setZoomLevel] = useState(1)
+  const [isSave, setIsSave] = useState(false);
+  const [zoomLevel, setZoomLevel] = useState(1);
 
-  const { undo, isUndoable, content, redo, isRedoable }: any = useUndoable()
+  const { undo, isUndoable, content, redo, isRedoable }: any = useUndoable();
 
   function zoomOut() {
-    let value = zoom
-    value += 0.1
-    setZoom(value)
-    setZoomLevel(value)
-    setZoomLevel(zoomLevel + 1)
-    console.log("zoomLevel:::", zoomLevel)
+    let value = zoom;
+    value += 0.1;
+    setZoom(value);
+    setZoomLevel(value);
+    setZoomLevel(zoomLevel + 1);
+    console.log("zoomLevel:::", zoomLevel);
   }
   function zoomIn() {
-    let value = zoom
-    value -= 0.1
-    setZoom(value)
+    let value = zoom;
+    value -= 0.1;
+    setZoom(value);
     // add one each time to zoomLevel
 
-    setZoomLevel(zoomLevel - 1)
+    setZoomLevel(zoomLevel - 1);
   }
 
   function previewMode() {
-    setIsReadOnly(true)
+    setIsReadOnly(true);
   }
 
   function editMode() {
-    setIsReadOnly(false)
+    setIsReadOnly(false);
   }
 
-  UndoCustomization(content)
+  UndoCustomization(content);
 
   const handleRedo = () => {
-    redo()
-    console.log("Redo function:::", content)
-    setCallUndo(true)
-  }
+    redo();
+    console.log("Redo function:::", content);
+    setCallUndo(true);
+  };
 
   const handleUndo = () => {
-    undo()
-    setCallUndo(content)
-    setCallUndo(true)
-    console.log("Undo function:::", content)
-  }
+    undo();
+    setCallUndo(content);
+    setCallUndo(true);
+    console.log("Undo function:::", content);
+  };
+  const { pageModalAboutData, setPageModalAboutData }: any = usePageProvider();
   // save function
   // save locally for test
   const saveLocally = async () => {
-    const headerBody = {  file: headerDBFormat }
-    const modalsBody = { file: dbModalsFormat }
-    console.log("save locally::", dbFormat, giftDBFormat, headerDBFormat)
-    const [header, gift] = await Promise.all([
-      fetch(PATH_POST_HEADER, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(headerBody)
-      }).then((res) => {
-        if (res.status === 200) {
-          setIsSave(true)
-          return res.json()
-        }
-      }),
-      fetch(PATH_POST_MODALS, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(modalsBody)
-      }).then((res) => {
-        if (res.status === 200) {
-          setIsSave(true)
-          return res.json()
-        }
-      })
-    ])
-    console.log("save for header", header)
-    console.log("save for dbModalsFormat >>> ", dbModalsFormat)
-  }
+    const headerBody = { file: headerDBFormat };
+    const modalsBody = { file: dbModalsFormat };
+    console.log("save locally::", pageModalAboutData?.dataModal);
+
+    const data = {};
+
+    console.log("data:::", data);
+
+    // const [header, gift] = await Promise.all([
+    //   fetch(PATH_POST_HEADER, {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json"
+    //     },
+    //     body: JSON.stringify(headerBody)
+    //   }).then((res) => {
+    //     if (res.status === 200) {
+    //       setIsSave(true)
+    //       return res.json()
+    //     }
+    //   }),
+    //   fetch(PATH_POST_MODALS, {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json"
+    //     },
+    //     body: JSON.stringify(modalsBody)
+    //   }).then((res) => {
+    //     if (res.status === 200) {
+    //       setIsSave(true)
+    //       return res.json()
+    //     }
+    //   })
+    // ])
+  };
 
   const callSave = async () => {
     const [header] = await Promise.all([
@@ -272,30 +288,29 @@ const CustomEditorToolbar: FC<CustomEditorToolbarProps> = ({
           `/api/uploadApp`,
           {
             name: "container.json",
-            file: JSON.stringify(headerDBFormat)
+            file: JSON.stringify(headerDBFormat),
           },
           { headers: { "Content-Type": "application/json" } }
         )
 
         .then((res) => {
           if (res.status === 200) {
-            setIsSave(true)
+            setIsSave(true);
           }
         })
         .catch((error) => {
           // Check if it's HTTP 400  error
           if (error.response.status === 400) {
-            console.log(`HTTP 400 error occured for first request`)
+            console.log(`HTTP 400 error occured for first request`);
           }
           // You can get response data (mostly the reason would be in it)
           if (error.response.data) {
-            console.log(" first request", error.response.data)
+            console.log(" first request", error.response.data);
           }
-        })
-    ])
+        }),
+    ]);
 
-    console.log("save file: ", header)
-
+    console.log("save file: ", header);
 
     if (isSave) {
       toast.success("Changes Saved Successfully", {
@@ -306,10 +321,10 @@ const CustomEditorToolbar: FC<CustomEditorToolbarProps> = ({
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: "light"
-      })
+        theme: "light",
+      });
     }
-  }
+  };
   return (
     <Box
       className="editorToolbar"
@@ -317,7 +332,7 @@ const CustomEditorToolbar: FC<CustomEditorToolbarProps> = ({
         flexGrow: 1,
         display: "flex",
         height: "auto",
-        width: "100%"
+        width: "100%",
       }}
     >
       <Box
@@ -331,7 +346,7 @@ const CustomEditorToolbar: FC<CustomEditorToolbarProps> = ({
           justifyContent: "flex-end",
           flexWrap: "wrap",
           marginBottom: "15px",
-          marginTop: "15px"
+          marginTop: "15px",
         }}
       >
         <Box
@@ -341,7 +356,7 @@ const CustomEditorToolbar: FC<CustomEditorToolbarProps> = ({
             // backgroundColor: "white",
             display: "flex",
             justifyContent: "center",
-            alignItems: "center"
+            alignItems: "center",
           }}
         >
           <Tooltip
@@ -350,23 +365,28 @@ const CustomEditorToolbar: FC<CustomEditorToolbarProps> = ({
             arrow
             classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
           >
-            <IconButton
-              className={`toolbox-button btn-info ${classes.sizeBtnTwin}`}
-              sx={{
-                margin: "4px",
-                maxWidth: "100px",
-                width: "40px",
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "center",
-                alignItems: "center"
-              }}
-              onClick={() => zoomIn()}
-              disabled={zoomLevel === 0}
-            >
-              {" "}
-              <ZoomIn className={classes.iconColor} style={{ width: "25px", height: "25px" }} />
-            </IconButton>
+            <span>
+              <IconButton
+                className={`toolbox-button btn-info ${classes.sizeBtnTwin}`}
+                sx={{
+                  margin: "4px",
+                  maxWidth: "100px",
+                  width: "40px",
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+                onClick={() => zoomIn()}
+                disabled={zoomLevel === 0}
+              >
+                {" "}
+                <ZoomIn
+                  className={classes.iconColor}
+                  style={{ width: "25px", height: "25px" }}
+                />
+              </IconButton>
+            </span>
           </Tooltip>
           <Tooltip
             title="Zoom Out"
@@ -374,22 +394,27 @@ const CustomEditorToolbar: FC<CustomEditorToolbarProps> = ({
             arrow
             classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
           >
-            <IconButton
-              className={`toolbox-button btn-info ${classes.sizeBtnTwin}`}
-              sx={{
-                margin: "4px",
-                maxWidth: "100px",
-                width: "40px",
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "center",
-                alignItems: "center"
-              }}
-              onClick={() => zoomOut()}
-              disabled={zoomLevel === 1}
-            >
-              <ZoomOut className={classes.iconColor} style={{ width: "25px", height: "25px" }} />
-            </IconButton>
+            <span>
+              <IconButton
+                className={`toolbox-button btn-info ${classes.sizeBtnTwin}`}
+                sx={{
+                  margin: "4px",
+                  maxWidth: "100px",
+                  width: "40px",
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+                onClick={() => zoomOut()}
+                disabled={zoomLevel === 1}
+              >
+                <ZoomOut
+                  className={classes.iconColor}
+                  style={{ width: "25px", height: "25px" }}
+                />
+              </IconButton>
+            </span>
           </Tooltip>
           <span className={classes.thinArrow} />
 
@@ -409,14 +434,17 @@ const CustomEditorToolbar: FC<CustomEditorToolbarProps> = ({
                   display: "flex",
                   flexDirection: "row",
                   justifyContent: "center",
-                  alignItems: "center"
+                  alignItems: "center",
                 }}
                 disabled={!isRedoable}
                 onClick={() => {
-                  handleRedo()
+                  handleRedo();
                 }}
               >
-                <RedoIcon className={classes.iconColor} style={{ width: "25px", height: "25px" }} />
+                <RedoIcon
+                  className={classes.iconColor}
+                  style={{ width: "25px", height: "25px" }}
+                />
               </IconButton>
             </span>
           </Tooltip>
@@ -437,13 +465,15 @@ const CustomEditorToolbar: FC<CustomEditorToolbarProps> = ({
                   display: "flex",
                   flexDirection: "row",
                   justifyContent: "center",
-                  alignItems: "center"
+                  alignItems: "center",
                 }}
-              
                 disabled={!isUndoable}
                 onClick={handleUndo}
               >
-                <UndoIcon className={classes.iconColor} style={{ width: "25px", height: "25px" }} />
+                <UndoIcon
+                  className={classes.iconColor}
+                  style={{ width: "25px", height: "25px" }}
+                />
               </IconButton>
             </span>
           </Tooltip>
@@ -454,22 +484,27 @@ const CustomEditorToolbar: FC<CustomEditorToolbarProps> = ({
             arrow
             classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
           >
-            <IconButton
-              id="demo-customized-schedule-option-filter"
-              className={`toolbox-button btn-info ${classes.sizeBtn}`}
-              onClick={editMode}
-              sx={{
-                margin: "4px",
-                maxWidth: "130px",
-                width: "70px",
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "center",
-                alignItems: "center"
-              }}
-            >
-              <Edit className={classes.iconColor} style={{ width: "23px", height: "23px" }} />
-            </IconButton>
+            <span>
+              <IconButton
+                id="demo-customized-schedule-option-filter"
+                className={`toolbox-button btn-info ${classes.sizeBtn}`}
+                onClick={editMode}
+                sx={{
+                  margin: "4px",
+                  maxWidth: "130px",
+                  width: "70px",
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <Edit
+                  className={classes.iconColor}
+                  style={{ width: "23px", height: "23px" }}
+                />
+              </IconButton>
+            </span>
           </Tooltip>
           <span className={classes.thinArrow} />
           <Tooltip
@@ -478,22 +513,27 @@ const CustomEditorToolbar: FC<CustomEditorToolbarProps> = ({
             arrow
             classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
           >
-            <IconButton
-              className={`toolbox-button btn-info ${classes.sizeBtn}`}
-              sx={{
-                margin: "4px",
-                maxWidth: "130px",
-                width: "70px",
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "center",
-                alignItems: "center"
-              }}
-              // onClick={callSave}
-              onClick={saveLocally}
-            >
-              <SaveIcon className={classes.iconColor} style={{ width: "25px", height: "25px" }} />
-            </IconButton>
+            <span>
+              <IconButton
+                className={`toolbox-button btn-info ${classes.sizeBtn}`}
+                sx={{
+                  margin: "4px",
+                  maxWidth: "130px",
+                  width: "70px",
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+                // onClick={callSave}
+                onClick={saveLocally}
+              >
+                <SaveIcon
+                  className={classes.iconColor}
+                  style={{ width: "25px", height: "25px" }}
+                />
+              </IconButton>
+            </span>
           </Tooltip>
           <span className={classes.thinArrow} />
           <Tooltip
@@ -502,30 +542,31 @@ const CustomEditorToolbar: FC<CustomEditorToolbarProps> = ({
             arrow
             classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
           >
-            <IconButton
-              onClick={previewMode}
-              className={`toolbox-button btn-info ${classes.sizeBtn}`}
-              sx={{
-                margin: "4px",
-                maxWidth: "130px",
-                width: "70px",
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "center",
-                alignItems: "center"
-              }}
-            >
-              <PreviewIcon
-                className={classes.iconColor}
-                style={{ width: "25px", height: "25px" }}
-              />
-            </IconButton>
+            <span>
+              <IconButton
+                onClick={previewMode}
+                className={`toolbox-button btn-info ${classes.sizeBtn}`}
+                sx={{
+                  margin: "4px",
+                  maxWidth: "130px",
+                  width: "70px",
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <PreviewIcon
+                  className={classes.iconColor}
+                  style={{ width: "25px", height: "25px" }}
+                />
+              </IconButton>
+            </span>
           </Tooltip>
-          
         </Box>
       </Box>
     </Box>
-  )
-}
+  );
+};
 
-export default CustomEditorToolbar
+export default CustomEditorToolbar;

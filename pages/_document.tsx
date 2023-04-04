@@ -2,10 +2,10 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 import React from "react";
 
 export default class MyDocument extends Document {
-  static async getInitialProps(ctx) {
-    const initialProps = await Document.getInitialProps(ctx);
-    return { ...initialProps, locale: ctx?.locale || "en" };
-  }
+  // static async getInitialProps(ctx) {
+  //   const initialProps = await Document.getInitialProps(ctx);
+  //   return { ...initialProps, locale: ctx?.locale || "en" };
+  // }
 
   render() {
     return (
@@ -16,6 +16,10 @@ export default class MyDocument extends Document {
         <Head>
           <script src="https://unpkg.com/react-id-swiper@3.0.0/lib/react-id-swiper.js"></script>
           <script src="https://unpkg.com/react-id-swiper@3.0.0/lib/react-id-swiper.min.js"></script>
+          <link
+            rel="stylesheet"
+            href="https://unpkg.com/react-quill@1.3.3/dist/quill.snow.css"
+          />
 
           {(this.props as any).styleTags}
         </Head>

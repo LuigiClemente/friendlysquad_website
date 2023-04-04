@@ -23,21 +23,17 @@ html , body{
   background-color: ${DEFAULT_BACKGROUND_COLOR_LIGHT} !important;
 }
 
-.editorToolbar [class*="shadow-"]{
-  background-color: ${DEFAULT_BACKGROUND_COLOR_CONTAINER_LIGHT} !important;
-  background: ${DEFAULT_BACKGROUND_COLOR_CONTAINER_LIGHT} !important;
-}
-.editorToolbar [class*="shadow-"] * {
-  // color: ${DARK_GRAY} !important;
-  // color: ${DARK_GRAY} ;
+// .editorToolbar [class*="shadow-"]{
+//   background-color: ${DEFAULT_BACKGROUND_COLOR_CONTAINER_LIGHT} !important;
+//   background: ${DEFAULT_BACKGROUND_COLOR_CONTAINER_LIGHT} !important;
+// }
 
-}
-.editorToolbar [class*="shadow-"] .btn-info:hover {
-  color: ${HOVER_COLOR} !important;
-}   
-.editorToolbar [class*="thinArrow-"] {
-  color: ${DARK_GRAY} !important;
-} 
+// .editorToolbar [class*="shadow-"] .btn-info:hover {
+//   color: ${HOVER_COLOR} !important;
+// }   
+// .editorToolbar [class*="thinArrow-"] {
+//   color: ${DARK_GRAY} !important;
+// } 
   #customized-dialog-editor , #dialog-content-editor .content-editor,#draggable-dialog-title  { 
     background: ${DEFAULT_BACKGROUND_COLOR_LIGHT} !important;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset !important;
@@ -145,20 +141,20 @@ html{
 body{
     background-color: ${DEFAULT_BACKGROUND_COLOR_DARK} !important;
 } 
-.editorToolbar [class*="shadow-"]{
-    background-color: ${DEFAULT_BACKGROUND_COLOR_CONTAINER_DARK} !important;
-    background: ${DEFAULT_BACKGROUND_COLOR_CONTAINER_DARK} !important;
-}
-.editorToolbar [class*="shadow-"] * {
-  color: ${SECONDARY_LIGHT} !important;
+// .editorToolbar [class*="shadow-"]{
+//     background-color: ${DEFAULT_BACKGROUND_COLOR_CONTAINER_DARK} !important;
+//     background: ${DEFAULT_BACKGROUND_COLOR_CONTAINER_DARK} !important;
+// }
+// .editorToolbar [class*="shadow-"] * {
+//   color: ${SECONDARY_LIGHT} !important;
  
-}
-.editorToolbar [class*="shadow-"] .btn-info:hover {
-    color: ${HOVER_COLOR} !important;
-  }   
-  .editorToolbar [class*="thinArrow-"] {
-    background-color: ${HINT_TEXT_LIGHT} !important;
-  }  
+// }
+// .editorToolbar [class*="shadow-"] .btn-info:hover {
+//     color: ${HOVER_COLOR} !important;
+//   }   
+//   .editorToolbar [class*="thinArrow-"] {
+//     background-color: ${HINT_TEXT_LIGHT} !important;
+//   }  
 
   #customized-dialog-editor , #dialog-content-editor .content-editor, .tools_editor,#draggable-dialog-title  { 
     background: ${DEFAULT_BACKGROUND_COLOR_CONTAINER_DARK} !important;

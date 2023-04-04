@@ -6,17 +6,12 @@ import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
 import { usePageProvider } from "@appProvider/PageProvider";
 import React, { useEffect, useRef } from "react";
 
-interface DialogContentProps {
+interface ContentPageModalProps {
   data: any;
   isBookingList?: boolean;
-  isSmallModal?: boolean;
 }
 
-const DialogContent = ({
-  data,
-  isBookingList,
-  isSmallModal,
-}: DialogContentProps) => {
+const ContentPageModal = ({ data, isBookingList }: ContentPageModalProps) => {
   const {
     fontSizeDataModal,
     fontDataModal,
@@ -52,7 +47,7 @@ const DialogContent = ({
     marginLeftDataModal,
     marginRightDataModal,
   }: any = useModalsAppProvider();
-  const [dialogContent, setDialogContent] = React.useState({
+  const [ContentPageModal, setContentPageModal] = React.useState({
     display: "block",
   });
 
@@ -71,29 +66,16 @@ const DialogContent = ({
     color: colorDataModal,
     fontFamily: fontDataModal,
     border: "none",
-    // height: "350px",
-    height: "100%",
+    height: "300px",
     resize: "none" as const,
     position: "relative" as const,
     boxSizing: "border-box" as const,
-    width: "100%",
+    width: "500px",
   };
   const handleChangeText = (content) => {
     console.log("content", content);
     setBookingListModalData(content);
   };
-
-  useEffect(() => {
-    const textarea = textareaRef.current;
-    if (isSmallModal) {
-      console.log("textarea");
-      if (textarea) {
-        textarea.style.height = "auto"; // reset the height
-        textarea.style.height = `${textarea.scrollHeight}px`; // set the new height based on the content
-        isSmallModal = false;
-      }
-    }
-  }, []);
 
   useEffect(() => {
     setBookingListModalData(data);
@@ -108,10 +90,10 @@ const DialogContent = ({
         padding: "10px",
         height: "100%",
       }}
-      onMouseEnter={() => setDialogContent({ display: "block" })}
-      onMouseLeave={() => setDialogContent({ display: "none" })}
+      onMouseEnter={() => setContentPageModal({ display: "block" })}
+      onMouseLeave={() => setContentPageModal({ display: "none" })}
     >
-      {isReadOnly ? null : <ModalDataOptionsUi style={dialogContent} />}
+      {isReadOnly ? null : <ModalDataOptionsUi style={ContentPageModal} />}
       <div
         style={{
           display: "flex",
@@ -179,4 +161,4 @@ const DialogContent = ({
   );
 };
 
-export default DialogContent;
+export default ContentPageModal;

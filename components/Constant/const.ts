@@ -31,3 +31,24 @@ export const BODY_PLUGIN_ID = "body-Plugin"
 
 export const BUTTONS_PLUGIN_ID = "buttons-Plugin"
 export const MODAL_BOX_PLUGIN_ID = "modal-box-Plugin"
+
+
+
+export const PAGE_MODAL = "page-modal"
+export const PAGE_MODAL_PLUGIN_ID = "page-modal-Plugin"
+
+export const BOOKING_MODAL = "booking-modal"
+export const BOOKING_MODAL_PLUGIN_ID = "booking-modal-Plugin"
+
+export const LANGS_MODAL = "langs-modal"
+export const LANGS_MODAL_PLUGIN_ID = "langs-modal-Plugin"
+
+
+export const CLOUD_DATA= "cloud-data"
+export const CLOUD_DATA_PLUGIN_ID = "cloud-data-Plugin"
+
+export const GLOBE_DATA= "globe-data"
+export const GLOBE_DATA_PLUGIN_ID = "globe-data-Plugin"
+
+export const HOME_TITLE= "home-title"
+export const HOME_TITLE_PLUGIN_ID = "home-title-Plugin"

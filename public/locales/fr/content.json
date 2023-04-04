@@ -1,0 +1,25 @@
+{
+    "text": "Bonjour le monde !",
+    "formatting": [
+      {
+        "language": "en",
+        "positions": [
+          {
+            "start": 0,
+            "end": 5,
+            "type": "bold"
+          }
+        ]
+      },
+      {
+        "language": "fr",
+        "positions": [
+          {
+            "start": 0,
+            "end": 7,
+            "type": "bold"
+          }
+        ]
+      }
+    ]
+  }

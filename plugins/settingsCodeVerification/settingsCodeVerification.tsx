@@ -1,3 +1,4 @@
+import TextEditorToolbar from "@/SiteComponents/TextEditorToolbar/TextEditorToolbar";
 import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
 import BackgroundColorChanger from "@components/BackgroundColorChanger";
 import ColorChanger from "@components/ColorChanger";

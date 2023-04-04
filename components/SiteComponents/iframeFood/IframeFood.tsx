@@ -8,14 +8,16 @@ import Spinner from "../spinner/Spinner";
 import { useWindowSize } from "../utils/utility";
 const url = `/foodGallery/FoodGallery.htm`;
 const IframeFood = () => {
-  const { t } = useTranslation("");
+  const { t } = useTranslation("about");
   const pageRef = useRef(null);
   const size = useWindowSize();
   const [src, setSrc] = useState(url);
   const [load, setLoad] = useState(false);
   const [, setHeight] = React.useState("0px");
-  const { openBookList, setOpenBookList }: any = useAppStateProvider();
-
+  const [openBookList, setOpenBookList] = useState(false);
+  const openBookingModal = () => {
+    setOpenBookList(true);
+  };
   const onLoad = () => {
     setHeight(size.height + "px");
   };
@@ -77,6 +79,7 @@ const IframeFood = () => {
         <PageModal
           title={t("about_us.title")}
           content={t("about_us.dataModal")}
+          openBookingList={openBookingModal}
         />
       )}
 
@@ -84,8 +87,10 @@ const IframeFood = () => {
         <BookingListModal
           title={"Booking"}
           content={t("about_us.description")}
-          // content={MODAL_DATA}
-          handleClose={() => setOpenBookList(false)}
+          handleClose={() => {
+            setOpenBookList(false);
+            console.log("close");
+          }}
           open={openBookList}
         />
       )}

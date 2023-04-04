@@ -1,23 +1,23 @@
 import Button from "@/Buttons/Button";
+import ContentPageModal from "@/ContentPageModal/ContentPageModal";
 import ButtonsOptionsUi from "@/CustomPopover/ButtonsOptionsUi";
-import DialogContent from "@/DialogContent/DialogContent";
 import { useAppProvider } from "@appProvider/AppProvider";
-import { useAppStateProvider } from "@appProvider/AppStateProvider";
 import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
 import React, { useState } from "react";
 interface PageModalsProps {
   title?: string;
   content?: any;
+  openBookingList?: () => void;
 }
 
-const PageModal = ({ title, content }: PageModalsProps) => {
+const PageModal = ({ title, content, openBookingList }: PageModalsProps) => {
   const [buttonStyle, setButtonStyle] = useState({ display: "none" });
 
   const { isReadOnly }: any = useAppProvider();
 
   const [showModal, setShowModal] = React.useState(true);
 
-  const { setOpenBookList }: any = useAppStateProvider();
+  // const { setOpenBookList }: any = useAppStateProvider();
 
   const {
     fontSizeDataModal,
@@ -60,7 +60,7 @@ const PageModal = ({ title, content }: PageModalsProps) => {
       {showModal ? (
         <>
           {/* <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto relative w-full h-full  inset-0 z-50 outline-none focus:outline-none"> */}
-          <div className="justify-center items-end flex relative h-fit w-fit mt-18  z-50">
+          <div className="justify-center items-end flex relative h-fit w-fit mt-18  z-20">
             <div
               className="relative w-auto mx-auto max-w-xl bg-white border-0 rounded-lg shadow-lg customDialog"
               style={{
@@ -93,7 +93,7 @@ const PageModal = ({ title, content }: PageModalsProps) => {
               <div className="relative flex flex-col w-full ">
                 <div className="relative flex-auto">
                   <div className="mt-3 text-center sm:mt-5 ">
-                    <DialogContent data={content} isBookingList={false} />
+                    <ContentPageModal data={content} isBookingList={false} />
                   </div>
                 </div>
                 <div
@@ -105,7 +105,7 @@ const PageModal = ({ title, content }: PageModalsProps) => {
                   <Button
                     style={{ width: "100px" }}
                     onClick={() => {
-                      setOpenBookList(true);
+                      openBookingList();
                       setShowModal(false);
                     }}
                     label={"Book"}

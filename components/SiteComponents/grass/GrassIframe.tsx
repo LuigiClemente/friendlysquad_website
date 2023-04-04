@@ -10,7 +10,11 @@ const url = `/glade/Glade.htm`;
 const GrassIframe = () => {
   const { t } = useTranslation("");
 
-  const { openBookList, setOpenBookList }: any = useAppStateProvider();
+  // const { openBookList, setOpenBookList }: any = useAppStateProvider();
+  const [openBookList, setOpenBookList] = useState(false);
+  const openBookingModal = () => {
+    setOpenBookList(true);
+  };
   const pageRef = useRef();
   const size = useWindowSize();
 
@@ -73,13 +77,13 @@ const GrassIframe = () => {
         <PageModal
           title={t("services.title")}
           content={t("services.dataModal")}
+          openBookingList={openBookingModal}
         />
       )}
 
       {openBookList && (
         <BookingListModal
           title={"Booking"}
-          // content={MODAL_DATA}
           content={t("about_us.description")}
           handleClose={() => setOpenBookList(false)}
           open={openBookList}
