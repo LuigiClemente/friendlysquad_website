@@ -1,3 +1,4 @@
+import Login from "@/SiteComponents/login/Login";
 import { CssBaseline, Skeleton } from "@mui/material";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import dynamic from "next/dynamic";
@@ -39,7 +40,9 @@ export default function About() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <DynamicPageLayer currentMenu={"service"}>Login</DynamicPageLayer>
+      <DynamicPageLayer currentMenu={"service"}>
+        <Login />
+      </DynamicPageLayer>
     </React.Fragment>
   );
 }

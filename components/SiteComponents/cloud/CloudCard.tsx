@@ -10,7 +10,6 @@ const CloudCard = ({ item, index }: any) => {
     fontSizeDataTitle,
     fontDataTitle,
     colorDataTitle,
-
     fontSizeData,
     colorData,
     fontData,
@@ -33,6 +32,18 @@ const CloudCard = ({ item, index }: any) => {
     position: "relative" as const,
     boxSizing: "border-box" as const,
     backgroundColor: "transparent",
+  };
+  const textTitleStyle = {
+    color: colorDataTitle,
+    textAlign: "left" as const,
+    width: "100%",
+    fontWeight: 500,
+    fontFamily: fontDataTitle,
+    fontSize: fontSizeDataTitle,
+    backgroundColor: "transparent",
+    boxSizing: "border-box" as const,
+    resize: "none" as const,
+    border: "none",
   };
   const handleChangeText = (content) => {
     console.log("content", content);
@@ -66,7 +77,7 @@ const CloudCard = ({ item, index }: any) => {
             onMouseLeave={() => setTitleStyle({ display: "none" })}
           >
             {isReadOnly ? null : <DataTitleOptionsUi style={titleStyle} />}
-            <h1
+            {/* <h1
               style={{
                 color: colorDataTitle,
                 textAlign: "left",
@@ -77,9 +88,15 @@ const CloudCard = ({ item, index }: any) => {
               }}
               className="pb-4 lg:pb-5 w-full"
             >
-              {/* {item.title} */}
               {t(`home.cloud_data.${index}.title`)}
-            </h1>
+            </h1> */}
+            <textarea
+              ref={textareaRef}
+              className="editor__textarea"
+              value={t(`home.cloud_data.${index}.title`)}
+              onChange={(e) => handleChangeText(e.target.value)}
+              style={textTitleStyle}
+            />
             <div
               className="relative w-full min-w-full"
               onMouseEnter={() => setContentStyle({ display: "block" })}

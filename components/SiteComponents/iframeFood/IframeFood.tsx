@@ -8,7 +8,8 @@ import Spinner from "../spinner/Spinner";
 import { useWindowSize } from "../utils/utility";
 const url = `/foodGallery/FoodGallery.htm`;
 const IframeFood = () => {
-  const { t } = useTranslation("about");
+  const { t: about } = useTranslation("about");
+  const { t: booking } = useTranslation("common");
   const pageRef = useRef(null);
   const size = useWindowSize();
   const [src, setSrc] = useState(url);
@@ -77,8 +78,8 @@ const IframeFood = () => {
 
       {load && (
         <PageModal
-          title={t("about_us.title")}
-          content={t("about_us.dataModal")}
+          title={about("about_us.title")}
+          content={about("about_us.dataModal")}
           openBookingList={openBookingModal}
         />
       )}
@@ -86,7 +87,7 @@ const IframeFood = () => {
       {openBookList && (
         <BookingListModal
           title={"Booking"}
-          content={t("about_us.description")}
+          content={booking("booking.description")}
           handleClose={() => {
             setOpenBookList(false);
             console.log("close");

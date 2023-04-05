@@ -90,7 +90,7 @@ export default appWithTranslation(MyApp);
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common"])),
+      ...(await serverSideTranslations(locale, ["common", "about", "contact"])),
     },
   };
 }

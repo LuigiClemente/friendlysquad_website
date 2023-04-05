@@ -1,14 +1,13 @@
-import { useAppStateProvider } from "@appProvider/AppStateProvider";
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { MODAL_DATA } from "../constant";
 import BookingListModal from "../modals/BookingListModal";
 import PageModal from "../modals/PageModal";
 import Spinner from "../spinner/Spinner";
 import { useWindowSize } from "../utils/utility";
 const url = `/glade/Glade.htm`;
 const GrassIframe = () => {
-  const { t } = useTranslation("");
+  const { t: service } = useTranslation("service");
+  const { t: booking } = useTranslation("common");
 
   // const { openBookList, setOpenBookList }: any = useAppStateProvider();
   const [openBookList, setOpenBookList] = useState(false);
@@ -75,8 +74,8 @@ const GrassIframe = () => {
 
       {load && (
         <PageModal
-          title={t("services.title")}
-          content={t("services.dataModal")}
+          title={service("services.title")}
+          content={service("services.dataModal")}
           openBookingList={openBookingModal}
         />
       )}
@@ -84,7 +83,7 @@ const GrassIframe = () => {
       {openBookList && (
         <BookingListModal
           title={"Booking"}
-          content={t("about_us.description")}
+          content={booking("booking.description")}
           handleClose={() => setOpenBookList(false)}
           open={openBookList}
         />

@@ -3,7 +3,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 const FooterSite = () => {
-  const { t } = useTranslation("");
+  const { t } = useTranslation("common");
   return (
     <section
       className="bg-transparent z-40 w-full"
@@ -17,7 +17,7 @@ const FooterSite = () => {
                 href="#"
                 className="text-base leading-6 text-gray-500 hover:text-gray-900"
               >
-                {t(`header.${item.tag}`)}
+                {t(`header.${item.lang}`)}
               </a>
             </div>
           ))}

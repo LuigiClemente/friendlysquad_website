@@ -63,52 +63,54 @@ const GlobeCardList = () => {
       {isReadOnly ? null : <Box2OptionsUi style={boxStyle} />}
       {NOTE_CLOUD_SECTION.map((item, index) => {
         return (
-          <div
-            key={index}
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              border: "1px solid lightGrey",
-              padding: "20px",
-              backgroundImage: "url(/img/icon/globetext.png)",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "100% 0%",
-              backgroundSize: "70px 70px",
+          <div key={index} className="mx-5 sm=mx-10">
+            <div
+              key={index}
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                border: "1px solid lightGrey",
+                padding: "20px",
+                backgroundImage: "url(/img/icon/globetext.png)",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "100% 0%",
+                backgroundSize: "70px 70px",
 
-              borderRadius: "0px",
+                borderRadius: "0px",
 
-              borderBottomColor: borderBottomColorBox2,
-              borderBottomWidth: `${borderBottomWidthBox2}px`,
-              borderTopColor: borderTopColorBox2,
-              borderTopWidth: `${borderTopWidthBox2}px`,
-              borderLeftColor: borderLeftColorBox2,
-              borderLeftWidth: `${borderLeftWidthBox2}px`,
-              borderRightColor: borderRightColorBox2,
-              borderRightWidth: `${borderRightWidthBox2}px`,
-              // border style
-              borderRightStyle: borderRightStyleBox2,
-              borderLeftStyle: borderLeftStyleBox2,
-              borderTopStyle: borderTopStyleBox2,
-              borderBottomStyle: borderBottomStyleBox2,
-              // border radius
-              borderTopRightRadius: `${borderTopRightRadiusBox2}px`,
-              borderTopLeftRadius: `${borderTopLeftRadiusBox2}px`,
-              borderBottomRightRadius: `${borderBottomRightRadiusBox2}px`,
-              borderBottomLeftRadius: `${borderBottomLeftRadiusBox2}px`,
-              // padding
-              paddingTop: `${paddingTopBox2}px`,
-              paddingBottom: `${paddingBottomBox2}px`,
-              paddingLeft: `${paddingLeftBox2}px`,
-              paddingRight: `${paddingRightBox2}px`,
-              // margin
-              marginTop: `${marginTopBox2}px`,
-              marginBottom: `${marginBottomBox2}px`,
-              marginLeft: `${marginLeftBox2}px`,
-              marginRight: `${marginRightBox2}px`,
-              backgroundColor: backgroundColorBox2,
-            }}
-          >
-            <GlobeCard item={item} index={index} />
+                borderBottomColor: borderBottomColorBox2,
+                borderBottomWidth: `${borderBottomWidthBox2}px`,
+                borderTopColor: borderTopColorBox2,
+                borderTopWidth: `${borderTopWidthBox2}px`,
+                borderLeftColor: borderLeftColorBox2,
+                borderLeftWidth: `${borderLeftWidthBox2}px`,
+                borderRightColor: borderRightColorBox2,
+                borderRightWidth: `${borderRightWidthBox2}px`,
+                // border style
+                borderRightStyle: borderRightStyleBox2,
+                borderLeftStyle: borderLeftStyleBox2,
+                borderTopStyle: borderTopStyleBox2,
+                borderBottomStyle: borderBottomStyleBox2,
+                // border radius
+                borderTopRightRadius: `${borderTopRightRadiusBox2}px`,
+                borderTopLeftRadius: `${borderTopLeftRadiusBox2}px`,
+                borderBottomRightRadius: `${borderBottomRightRadiusBox2}px`,
+                borderBottomLeftRadius: `${borderBottomLeftRadiusBox2}px`,
+                // padding
+                paddingTop: `${paddingTopBox2}px`,
+                paddingBottom: `${paddingBottomBox2}px`,
+                paddingLeft: `${paddingLeftBox2}px`,
+                paddingRight: `${paddingRightBox2}px`,
+                // margin
+                marginTop: `${marginTopBox2}px`,
+                marginBottom: `${marginBottomBox2}px`,
+                marginLeft: `${marginLeftBox2}px`,
+                marginRight: `${marginRightBox2}px`,
+                backgroundColor: backgroundColorBox2,
+              }}
+            >
+              <GlobeCard item={item} index={index} />
+            </div>
           </div>
         );
       })}

@@ -7,7 +7,8 @@ import Spinner from "../spinner/Spinner";
 import { useWindowSize } from "../utils/utility";
 const url = `/parlour/the_Parlour.htm`;
 const IframeLaser = () => {
-  const { t } = useTranslation("");
+  const { t: contact } = useTranslation("contact");
+  const { t: booking } = useTranslation("common");
   const pageRef = useRef(null);
   const size = useWindowSize();
   const [load, setLoad] = useState(true);
@@ -69,8 +70,8 @@ const IframeLaser = () => {
 
       {load && (
         <PageModal
-          title={t("contact_us.title")}
-          content={t("contact_us.dataModal")}
+          title={contact("contact_us.title")}
+          content={contact("contact_us.dataModal")}
           openBookingList={openBookingModal}
         />
       )}
@@ -78,7 +79,7 @@ const IframeLaser = () => {
       {openBookList && (
         <BookingListModal
           title={"Booking"}
-          content={t("about_us.description")}
+          content={booking("booking.description")}
           handleClose={() => setOpenBookList(false)}
           open={openBookList}
         />
