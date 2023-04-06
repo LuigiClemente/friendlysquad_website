@@ -1,5 +1,5 @@
-import { Theme } from "@material-ui/core/styles"
-import { createTheme } from "@material-ui/core/styles"
+import { Theme } from "@material-ui/core/styles";
+import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 import {
   SECONDARY_LIGHT,
   PRIMARY_LIGHT,
@@ -19,8 +19,8 @@ import {
   HINT_TEXT_DARK,
   DIVIDER_COLOR_DARK,
   SECONDARY_DARK,
-  PRIMARY_DARK
-} from "./ConstantColors"
+  PRIMARY_DARK,
+} from "./ConstantColors";
 
 const themeOverrides: Partial<Theme> = {
   overrides: {
@@ -30,48 +30,48 @@ const themeOverrides: Partial<Theme> = {
         paddingTop: 8,
         root: {
           borderBottomColor: SECONDARY_LIGHT + "!important",
-          borderBottom: "0.5px solidSECONDARY_LIGHT+ !important"
-        }
+          borderBottom: "0.5px solidSECONDARY_LIGHT+ !important",
+        },
       },
       root: {
         height: 56,
         paddingBottom: 4,
-        paddingTop: 4
-      }
+        paddingTop: 4,
+      },
     },
     MuiInputBase: {
       root: {
         fontSize: "1.5rem !important",
-        backgroundColor: PRIMARY_LIGHT + "!important"
+        backgroundColor: PRIMARY_LIGHT + "!important",
       },
       input: {
-        backgroundColor: PRIMARY_LIGHT + "!important"
-      }
+        backgroundColor: PRIMARY_LIGHT + "!important",
+      },
     },
     MuiButtonBase: {
       root: {
-        backgroundColor: PRIMARY_LIGHT + "!important"
-      }
+        backgroundColor: PRIMARY_LIGHT + "!important",
+      },
     },
     MuiTableRow: {
       root: {
         "&:hover": {
-          backgroundColor: SECONDARY_LIGHT + "!important"
-        }
-      }
+          backgroundColor: SECONDARY_LIGHT + "!important",
+        },
+      },
     },
     MuiMenuItem: {
       root: {
         "&:hover": {
-          backgroundColor: SECONDARY_LIGHT + "!important"
-        }
-      }
+          backgroundColor: SECONDARY_LIGHT + "!important",
+        },
+      },
     },
     MuiPaper: {
       root: {
         backgroundColor: PRIMARY_LIGHT + "!important",
-        border: "1px solid " + SECONDARY_LIGHT + "!important"
-      }
+        border: "1px solid " + SECONDARY_LIGHT + "!important",
+      },
     },
     MuiSwitch: {
       switchBase: {
@@ -80,86 +80,86 @@ const themeOverrides: Partial<Theme> = {
         "&:hover": {
           backgroundColor: "transparent" + "!important",
           // color: PRIMARY_TEXT_LIGHT + "!important",
-          borderColor: "transparent !important"
+          borderColor: "transparent !important",
         },
         "&$checked": {
           "& + $track": {
-            backgroundColor: PRIMARY_LIGHT + "!important"
-          }
+            backgroundColor: PRIMARY_LIGHT + "!important",
+          },
         },
         "&$checked + $track": {
-          backgroundColor: PRIMARY_LIGHT + "!important"
+          backgroundColor: PRIMARY_LIGHT + "!important",
         },
         thumb: {
-          backgroundColor: PRIMARY_LIGHT + "!important"
-        }
-      }
-    }
-  }
-}
+          backgroundColor: PRIMARY_LIGHT + "!important",
+        },
+      },
+    },
+  },
+};
 
-export default themeOverrides
+export default themeOverrides;
 
 export const lightTheme = createTheme({
   palette: {
-    type: "light",
+    // type: "light",
     primary: {
       main: HOVER_COLOR,
-      contrastText: PRIMARY_TEXT_LIGHT
+      contrastText: PRIMARY_TEXT_LIGHT,
     },
     secondary: {
       main: "#000",
-      contrastText: PRIMARY_TEXT_LIGHT
+      contrastText: PRIMARY_TEXT_LIGHT,
     },
     error: {
       main: ERROR_COLOR,
-      contrastText: PRIMARY_TEXT_LIGHT
+      contrastText: PRIMARY_TEXT_LIGHT,
     },
 
     background: {
       paper: DEFAULT_BACKGROUND_COLOR_CONTAINER_LIGHT,
-      default: DEFAULT_BACKGROUND_COLOR_LIGHT
+      default: DEFAULT_BACKGROUND_COLOR_LIGHT,
     },
     text: {
       primary: PRIMARY_TEXT_LIGHT,
       secondary: SECONDARY_TEXT_LIGHT,
       disabled: DISABLED_COLOR,
-      hint: HINT_TEXT_LIGHT
+      // hint: HINT_TEXT_LIGHT,
     },
 
-    divider: DIVIDER_COLOR_LIGHT
+    divider: DIVIDER_COLOR_LIGHT,
   },
-  ...themeOverrides
-})
+  ...themeOverrides,
+});
 
 export const DarkTheme = createTheme({
   palette: {
-    type: "dark",
+    // type: "dark",
     primary: {
       main: HOVER_COLOR,
-      contrastText: PRIMARY_TEXT_DARK
+      contrastText: PRIMARY_TEXT_DARK,
     },
 
     secondary: {
       main: PRIMARY_TEXT_DARK,
-      contrastText: PRIMARY_TEXT_DARK
+      contrastText: PRIMARY_TEXT_DARK,
     },
     error: {
       main: ERROR_COLOR,
-      contrastText: PRIMARY_TEXT_DARK
+      contrastText: PRIMARY_TEXT_DARK,
     },
     background: {
       paper: DEFAULT_BACKGROUND_COLOR_CONTAINER_DARK,
-      default: DEFAULT_BACKGROUND_COLOR_DARK
+      default: DEFAULT_BACKGROUND_COLOR_DARK,
     },
     text: {
       primary: PRIMARY_TEXT_DARK,
       secondary: SECONDARY_TEXT_DARK,
       disabled: DISABLED_COLOR,
-      hint: HINT_TEXT_DARK
+      // hint: HINT_TEXT_DARK,
     },
-    divider: DIVIDER_COLOR_DARK
-  }
+    divider: DIVIDER_COLOR_DARK,
+  },
   // overrides: {
   //   MuiListItem: {
   //     root: {
@@ -274,4 +274,4 @@ export const DarkTheme = createTheme({
   //     }
   //   }
   // }
-})
+});

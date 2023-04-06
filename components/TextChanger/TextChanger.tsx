@@ -74,12 +74,12 @@ const TextChanger = ({ nameSection, isBody = false }: TextChangerProps) => {
     setBackgroundColorVerifyData,
     setBackgroundColorDataModal,
     setBackgroundColorTitleModal,
-    setBackgroundColorVerifyContent,
+    setBackgroundColorBox2,
     // update settings value
     backgroundColorVerifyData,
     backgroundColorDataModal,
     backgroundColorTitleModal,
-    backgroundColorVerifyContent,
+    backgroundColorBox2,
     setBackgroundColorButtons,
     backgroundColorButtons,
   }: any = useModalsAppProvider();
@@ -133,12 +133,12 @@ const TextChanger = ({ nameSection, isBody = false }: TextChangerProps) => {
         nameSection: LANGS_MODAL,
       });
     } else if (nameSection === CLOUD_DATA) {
-      setBackgroundColorVerifyContent(color.hex);
+      setBackgroundColorBox2(color.hex);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           CLOUD_DATA_PLUGIN_ID,
-          "backgroundColorVerifyContent",
+          "backgroundColorBox2",
           color.hex
         )
       );
@@ -172,7 +172,7 @@ const TextChanger = ({ nameSection, isBody = false }: TextChangerProps) => {
     } else if (nameSection === LANGS_MODAL) {
       setBackgroundColorSelected(backgroundColorTitleModal);
     } else if (nameSection === CLOUD_DATA) {
-      setBackgroundColorSelected(backgroundColorVerifyContent);
+      setBackgroundColorSelected(backgroundColorBox2);
     } else if (nameSection === GLOBE_DATA) {
       setBackgroundColorSelected(backgroundColorVerifyData);
     } else if (nameSection === HOME_TITLE) {

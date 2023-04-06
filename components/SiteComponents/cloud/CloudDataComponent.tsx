@@ -37,7 +37,6 @@ const CloudDataComponent = () => {
         </div>
         <div className="flex lg:w-[65%] flex-col w-full z-20   ">
           <CloudCardList getItemId={getIdCurrentItem} />
-          {/* <CarouselCloud getItemId={getIdCurrentItem} /> */}
         </div>
       </div>
       <div className="flex flex-col w-full z-20  ">

@@ -67,7 +67,7 @@ const BoxOptionsUi = ({ style }: BoxOptionsUiProps) => {
         }}
         className={classes.containerBtn}
       >
-        <Edit onClick={handleClickOpen} />
+        <Edit />
       </IconButton>
       {dialogOpenBox && (
         <SettingsBox open={dialogOpenBox} close={handleClickClose} />

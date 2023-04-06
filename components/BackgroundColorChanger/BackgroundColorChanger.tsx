@@ -82,12 +82,12 @@ const BackgroundColorChanger = ({
     setBackgroundColorVerifyData,
     setBackgroundColorDataModal,
     setBackgroundColorTitleModal,
-    setBackgroundColorVerifyContent,
+    setBackgroundColorBox2,
     // update settings value
     backgroundColorVerifyData,
     backgroundColorDataModal,
     backgroundColorTitleModal,
-    backgroundColorVerifyContent,
+    backgroundColorBox2,
     setBackgroundColorButtons,
     backgroundColorButtons,
   }: any = useModalsAppProvider();
@@ -141,12 +141,12 @@ const BackgroundColorChanger = ({
         nameSection: CONTENT,
       });
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBackgroundColorVerifyContent(color.hex);
+      setBackgroundColorBox2(color.hex);
       setDbModalsFormat(
         updatePluginValue(
           dbModalsFormat,
           VERIFY_TITLE_PLUGIN_ID,
-          "backgroundColorVerifyContent",
+          "backgroundColorBox2",
           color.hex
         )
       );
@@ -241,7 +241,7 @@ const BackgroundColorChanger = ({
     } else if (nameSection === VERIFY_TITLE) {
       setBackgroundColorSelected(backgroundColorTitleModal);
     } else if (nameSection === VERIFY_TITLE_BTN) {
-      setBackgroundColorSelected(backgroundColorVerifyContent);
+      setBackgroundColorSelected(backgroundColorBox2);
     } else if (nameSection === VERIFY_DATA) {
       setBackgroundColorSelected(backgroundColorVerifyData);
     } else if (nameSection === VERIFY_CODE) {

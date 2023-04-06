@@ -9,9 +9,14 @@ import "swiper/swiper.css";
 import "swiper/swiper.min.css";
 import { BRAND_IMAGES, SLIDER_IMAGES } from "../constant";
 import { useWindowSize } from "../utils/utility";
+import { useEffect } from "react";
 const CarouselBrand = ({ images, scrollFun }: any) => {
   const size = useWindowSize();
   const { isEndSlide, setIsEndSlide }: any = useAppStateProvider();
+
+  useEffect(() => {
+    console.log("CarouselBrand", size.width);
+  }, []);
 
   return (
     <div
@@ -64,8 +69,8 @@ const CarouselBrand = ({ images, scrollFun }: any) => {
           reverseDirection: true,
         }}
         style={{
-          width: size.width - 200,
-          minWidth: size.width - 200,
+          width: parseInt(size.width) - 200,
+          minWidth: parseInt(size.width) - 200,
         }}
       >
         {BRAND_IMAGES.map((image, index) => {

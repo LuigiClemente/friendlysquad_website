@@ -9,10 +9,12 @@ import "swiper/swiper.css";
 import "swiper/swiper.min.css";
 import { useWindowSize } from "../utils/utility";
 import CarouselCard from "./CarouselCard";
+import { useEffect } from "react";
 
 const CarouselHorizontal = ({ images, scrollFun }: any) => {
   const size = useWindowSize();
   const { isEndSlide, setIsEndSlide }: any = useAppStateProvider();
+
   return (
     <div
       id="horizontalSwiper"
@@ -60,10 +62,10 @@ const CarouselHorizontal = ({ images, scrollFun }: any) => {
             spaceBetween: 5,
           },
         }}
-        style={{
-          width: size.width - 200,
-          minWidth: size.width - 200,
-        }}
+        // style={{
+        //   width: parseInt(size.width) - 200,
+        //   minWidth: parseInt(size.width) - 200,
+        // }}
       >
         {images.map((image, index) => {
           return (

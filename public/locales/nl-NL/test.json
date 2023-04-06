@@ -1,0 +1,54 @@
+{
+  "cloud_data": [
+    {
+      "id": 1,
+      "title": "Embrace the Git-First Revolution",
+      "description": "Experience the power of Git as the foundation of modern infrastructure deployment. Our platform streamlines the deployment process and puts you in complete control of your infrastructure.",
+      "image": "/img/icon/pngegg.png"
+    },
+    {
+      "id": 2,
+      "title": "Define, Deploy, and Dominate",
+      "description": "With our platform, you can define your entire infrastructure in your Git repository, making deployment a breeze. Just declare your desired components, and we'll handle the rest",
+      "image": "/img/svg/postgresql.svg"
+    },
+    {
+      "id": 3,
+      "title": "Connect and Conquer",
+      "description": "Our extensive resource catalogue, default connections, and secrets management allow you to seamlessly integrate your preferred message brokers. Just declare it in your Git repository, and you're good to go.\n    ",
+      "image": "/img/icon/database.png"
+    },
+    {
+      "id": 4,
+      "title": "Scale with Ease",
+      "description": "Adjusting your infrastructure has never been simpler. Customize your resources to meet your needs, and do it all in your favorite programming languages. Experience hassle-free scalability at its finest.",
+      "image": "/img/icon/greenLeaf.png"
+    }
+  ],
+  "globe_data": [
+    {
+      "id": 1,
+      "title": "Embrace the Git-First Revolution",
+      "description": "Experience the power of Git as the foundation of modern infrastructure deployment. Our platform streamlines the deployment process and puts you in complete control of your infrastructure.",
+      "image": "/img/icon/pngegg.png"
+    },
+    {
+      "id": 2,
+      "title": "Define, Deploy, and Dominate",
+      "description": "With our platform, you can define your entire infrastructure in your Git repository, making deployment a breeze. Just declare your desired components, and we'll handle the rest",
+      "image": "/img/svg/postgresql.svg"
+    },
+    {
+      "id": 3,
+      "title": "Connect and Conquer",
+      "description": "Our extensive resource catalogue, default connections, and secrets management allow you to seamlessly integrate your preferred message brokers. Just declare it in your Git repository, and you're good to go.\n    ",
+      "image": "/img/icon/database.png"
+    },
+    {
+      "id": 4,
+      "title": "Scale with Ease",
+      "description": "Adjusting your infrastructure has never been simpler. Customize your resources to meet your needs, and do it all in your favorite programming languages. Experience hassle-free scalability at its finest.",
+      "image": "/img/icon/greenLeaf.png"
+    }
+  ]
+}

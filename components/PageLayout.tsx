@@ -82,29 +82,22 @@ const PageLayout: FC<any> = ({ children }) => {
             style={{
               position: "relative",
               height: "fit-content",
-              backgroundColor: "red",
-              // height: "650px",
+              // backgroundColor: "red",
               marginBottom: "50px",
             }}
             className="h-full"
-            // onMouseEnter={() => setBodyStyle({ display: "block" })}
-            // onMouseLeave={() => setBodyStyle({ display: "none" })}
           >
-            {/* {loading && (isReadOnly ? null : */}
-            {/* <BodyPopoverOptionsUi style={bodyStyle} /> */}
-            {/* )} */}
             <Box
               sx={{
                 flexGrow: 1,
                 p: 1.5,
-                backgroundColor: `#fff`,
                 width: "100%",
                 height: "fit-content",
                 position: "relative",
                 boxShadow:
                   "rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px",
               }}
-              className="h-full"
+              className="h-full editor-content"
             >
               {children}
             </Box>

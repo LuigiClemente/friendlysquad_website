@@ -7,6 +7,7 @@ const Context = createContext({});
 
 export const AppProvider = ({ children }: any) => {
   const [theme, setTheme] = useState("light");
+
   const [themeCalendar, setThemeCalendar] = useState("light");
   // Editor Toolbar
   const [loading, setLoading] = useState(false);

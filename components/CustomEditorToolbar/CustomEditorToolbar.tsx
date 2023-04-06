@@ -3,7 +3,7 @@ import { Tooltip } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { Box, IconButton } from "@mui/material";
 import axios from "axios";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 // import { ToastContainer, toast } from "react-toastify"
 import { useAppProvider } from "@appProvider/AppProvider";
@@ -21,6 +21,18 @@ import ZoomOut from "../icons/ZoomOut";
 import UndoCustomization from "./UndoCustomization";
 import { usePageProvider } from "@appProvider/PageProvider";
 import { LANGUAGES } from "@/SiteComponents/constant";
+import { useTranslation } from "react-i18next";
+import { PATH_POST_CONTENT } from "config";
+import Sun from "@/icons/Sun";
+import React from "react";
+import { themeLightStyle, themeDarkStyle } from "theme/Theme";
+import { lightTheme, DarkTheme } from "theme/ThemeOveride";
+import {
+  Brightness1Outlined,
+  Brightness4,
+  Brightness7,
+} from "@mui/icons-material";
+import Moon from "@/icons/Moon";
 
 const useStyles = makeStyles(
   (theme) => ({
@@ -62,7 +74,6 @@ const useStyles = makeStyles(
       alignItems: "end",
       marginBottom: "15px",
       marginTop: "15px",
-      backgroundColor: "red",
     },
 
     rightContent: {
@@ -156,7 +167,7 @@ const useStyles = makeStyles(
       },
     },
     tooltip: {
-      backgroundColor: "white",
+      // backgroundColor: "white",
       color: "#000",
       boxShadow: theme.shadows[1],
       padding: "5px 10px",
@@ -185,6 +196,9 @@ const CustomEditorToolbar: FC<CustomEditorToolbarProps> = ({
     process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/uploadApp";
   const PATH_POST_MODALS =
     process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/postModals";
+  const PATH_POST_CONTENT =
+    process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/postContent";
+
   const {
     setCallUndo,
     setIsReadOnly,
@@ -196,6 +210,9 @@ const CustomEditorToolbar: FC<CustomEditorToolbarProps> = ({
   }: any = useAppProvider();
 
   const { setDbModalsFormat, dbModalsFormat }: any = useModalsAppProvider();
+
+  const { theme, setTheme, themeChecker, setThemeChecker }: any =
+    usePageProvider();
 
   const [isSave, setIsSave] = useState(false);
   const [zoomLevel, setZoomLevel] = useState(1);
@@ -241,44 +258,84 @@ const CustomEditorToolbar: FC<CustomEditorToolbarProps> = ({
     setCallUndo(true);
     console.log("Undo function:::", content);
   };
-  const { pageModalAboutData, setPageModalAboutData }: any = usePageProvider();
+  const {
+    pageModalAboutData,
+    setPageModalAboutData,
+    cloudData,
+    setCloudData,
+    globeData,
+    setGlobeData,
+    currentPage,
+    setCurrentPage,
+  }: any = usePageProvider();
+  const { t, i18n } = useTranslation();
   // save function
   // save locally for test
   const saveLocally = async () => {
     const headerBody = { file: headerDBFormat };
     const modalsBody = { file: dbModalsFormat };
-    console.log("save locally::", pageModalAboutData?.dataModal);
 
+    console.log("save locally::", currentPage);
+    console.log("language >>>", i18n.language);
     const data = {};
 
-    console.log("data:::", data);
+    if (cloudData) {
+      const cloudInfo = {
+        file: { cloud_data: cloudData },
+        language: i18n.language,
+        currentPage: currentPage,
+      };
+      fetch(PATH_POST_CONTENT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(cloudInfo),
+      })
+        .then((response) => response.json())
+        .then((data) => console.log(data))
+        .catch((error) => console.error(error));
+    }
+    if (globeData) {
+      const globeInfo = {
+        file: { globe_data: globeData },
+        language: i18n.language,
+        currentPage: currentPage,
+      };
+      fetch(PATH_POST_CONTENT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(globeInfo),
+      })
+        .then((response) => response.json())
+        .then((data) => console.log(data))
+        .catch((error) => console.error(error));
+    }
 
-    // const [header, gift] = await Promise.all([
-    //   fetch(PATH_POST_HEADER, {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json"
-    //     },
-    //     body: JSON.stringify(headerBody)
-    //   }).then((res) => {
-    //     if (res.status === 200) {
-    //       setIsSave(true)
-    //       return res.json()
-    //     }
-    //   }),
-    //   fetch(PATH_POST_MODALS, {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json"
-    //     },
-    //     body: JSON.stringify(modalsBody)
-    //   }).then((res) => {
-    //     if (res.status === 200) {
-    //       setIsSave(true)
-    //       return res.json()
-    //     }
-    //   })
-    // ])
+    //   const [header, gift] = await Promise.all([
+    //     fetch(PATH_POST_HEADER, {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       body: JSON.stringify(headerBody),
+    //     }).then((res) => {
+    //       if (res.status === 200) {
+    //         setIsSave(true);
+    //         return res.json();
+    //       }
+    //     }),
+    //     fetch(PATH_POST_MODALS, {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       body: JSON.stringify(modalsBody),
+    //     }).then((res) => {
+    //       if (res.status === 200) {
+    //         setIsSave(true);
+    //         return res.json();
+    //       }
+    //     }),
+    //   ]);
   };
 
   const callSave = async () => {
@@ -325,6 +382,15 @@ const CustomEditorToolbar: FC<CustomEditorToolbarProps> = ({
       });
     }
   };
+
+  const themeHandler = () => {
+    if (themeChecker === "dark") {
+      setThemeChecker("light");
+    } else {
+      setThemeChecker("dark");
+    }
+  };
+
   return (
     <Box
       className="editorToolbar"
@@ -359,6 +425,41 @@ const CustomEditorToolbar: FC<CustomEditorToolbarProps> = ({
             alignItems: "center",
           }}
         >
+          <Tooltip
+            title="Change Theme"
+            placement="top"
+            arrow
+            classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
+          >
+            <span>
+              <IconButton
+                className={`toolbox-button btn-info ${classes.sizeBtnTwin}`}
+                sx={{
+                  margin: "4px",
+                  maxWidth: "100px",
+                  width: "40px",
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+                onClick={themeHandler}
+              >
+                {themeChecker === "light" ? (
+                  <Sun
+                    className={classes.iconColor}
+                    style={{ width: "34px", height: "34px" }}
+                  />
+                ) : (
+                  <Moon
+                    className={classes.iconColor}
+                    style={{ width: "30px", height: "30px" }}
+                  />
+                )}
+              </IconButton>
+            </span>
+          </Tooltip>
+          <span className={classes.thinArrow} />
           <Tooltip
             title="Zoom In"
             placement="top"

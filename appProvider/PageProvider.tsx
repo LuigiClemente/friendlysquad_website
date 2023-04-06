@@ -1,8 +1,12 @@
-import { createContext, useContext, useState } from "react";
+import { NOTE_CLOUD_SECTION } from "@/SiteComponents/constant";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const Context = createContext({});
 
 export const PageProvider = ({ children }: any) => {
+  const [theme, setTheme] = useState("light");
+  const [themeChecker, setThemeChecker] = useState("light");
+  const [currentPage, setCurrentPage] = useState("light");
   const [pageModalData, setPageModalData] = useState({
     title: "",
     dataModal: "",
@@ -31,6 +35,8 @@ export const PageProvider = ({ children }: any) => {
     description: "",
   });
 
+  const [cloudData, setCloudData]: any = useState([]);
+  const [globeData, setGlobeData]: any = useState([]);
   return (
     <Context.Provider
       value={{
@@ -44,6 +50,16 @@ export const PageProvider = ({ children }: any) => {
         setPageModalServiceData,
         pageModalContactUsData,
         setPageModalContactUsData,
+        cloudData,
+        setCloudData,
+        globeData,
+        setGlobeData,
+        theme,
+        setTheme,
+        themeChecker,
+        setThemeChecker,
+        currentPage,
+        setCurrentPage,
       }}
     >
       {children}

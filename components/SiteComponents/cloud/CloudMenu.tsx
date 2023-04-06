@@ -39,6 +39,7 @@ const CloudMenu = ({ activeId }: any) => {
       {NOTE_CLOUD_SECTION.map((item, index) => {
         return (
           <div
+            key={index}
             style={{
               borderBottom: "0.5px solid grey",
             }}
@@ -46,10 +47,9 @@ const CloudMenu = ({ activeId }: any) => {
           >
             <div className="flex flex-row items-center justify-between content-between ">
               <a
-                key={index}
                 onClick={() => handleClick(item?.id)}
                 className={`text-${
-                  activeId === item?.id ? ["#000"] : ["#28282B"]
+                  activeId === item?.id ? ["#000"] : ["#000"]
                 }  flex flex-row  justify-between font-${
                   activeId === item?.id ? "extrabold" : "normal"
                 } font-${activeId === item?.id ? "black" : "xl"}

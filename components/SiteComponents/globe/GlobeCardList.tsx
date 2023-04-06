@@ -1,7 +1,7 @@
 import Box2OptionsUi from "@/CustomPopover/Box2OptionsUi/Box2OptionsUi";
 import { useAppProvider } from "@appProvider/AppProvider";
 import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/swiper-bundle.css";
@@ -10,6 +10,7 @@ import "swiper/swiper.min.css";
 
 import { NOTE_CLOUD_SECTION } from "../constant";
 import GlobeCard from "../globe/GlobeCard";
+import { usePageProvider } from "@appProvider/PageProvider";
 
 const GlobeCardList = () => {
   const {
@@ -45,6 +46,13 @@ const GlobeCardList = () => {
   }: any = useModalsAppProvider();
   const [boxStyle, setBoxStyle] = useState({ display: "none" });
   const { isReadOnly }: any = useAppProvider();
+  const { globeData, setGlobeData }: any = usePageProvider();
+
+  useEffect(() => {
+    setGlobeData(NOTE_CLOUD_SECTION);
+    console.log("Globe Data: ", globeData);
+  }, [globeData]);
+
   return (
     <div
       style={{

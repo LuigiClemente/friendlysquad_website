@@ -1,10 +1,11 @@
 import BoxOptionsUi from "@/CustomPopover/BoxOptionsUi";
 import { useAppProvider } from "@appProvider/AppProvider";
 import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { NOTE_CLOUD_SECTION } from "../constant";
 import CloudCard from "./CloudCard";
+import { usePageProvider } from "@appProvider/PageProvider";
 const CloudCardList = ({ getItemId }: any) => {
   const mouseInStyle = {
     backgroundColor: "rgba(255, 255, 255, 0.7)",
@@ -23,7 +24,7 @@ const CloudCardList = ({ getItemId }: any) => {
     setIsHovering(id);
     getItemId(id);
   };
-
+  const { cloudData, setCloudData }: any = usePageProvider();
   const [boxStyle, setBoxStyle] = useState({ display: "none" });
 
   const handleMouseOut = () => setIsHovering(null);
@@ -60,6 +61,11 @@ const CloudCardList = ({ getItemId }: any) => {
     marginRightData,
   }: any = useModalsAppProvider();
   const { isReadOnly }: any = useAppProvider();
+
+  useEffect(() => {
+    setCloudData(NOTE_CLOUD_SECTION);
+    console.log("cloudData", cloudData);
+  }, []);
 
   return (
     <div className="z-10 relative w-full flex flex-col justify-center items-center bg-transparent mt-[10px] ml-0">
@@ -109,10 +115,6 @@ const CloudCardList = ({ getItemId }: any) => {
           >
             <div
               style={{
-                // backgroundImage: `url(${item.image})`,
-                // backgroundRepeat: "no-repeat",
-                // backgroundPosition: "50% 50%",
-                // backgroundSize: "cover",
                 position: "relative",
               }}
               onMouseEnter={() => setBoxStyle({ display: "block" })}

@@ -48,7 +48,7 @@ export const PATH_POST_IMG_MOVE =
 // this is only for local we do not need this for server without template
 export const FILE_PATH_MODALS_GET_API = "./public/db/modals.json";
 export const FILE_PATH_HEADER_GET_API = "./public/db/container.json";
-export const FILE_PATH_CONTENT_GET_API = "./public/locals/";
+export const FILE_PATH_CONTENT_GET_API = "./public/locales/";
 
 export const TEMPLATE_PATH_LOCAL = "./public/db/templates/";
 

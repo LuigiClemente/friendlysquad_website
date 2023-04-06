@@ -1,7 +1,8 @@
 import PageLayout from "@/PageLayout";
 import Layout from "@/SiteComponents/layout/Layout";
 import { useAppProvider } from "@appProvider/AppProvider";
-import { Container } from "@mui/material";
+import { usePageProvider } from "@appProvider/PageProvider";
+import { useEffect } from "react";
 
 const PageLayer = ({ children, currentMenu }) => {
   const {
@@ -10,9 +11,14 @@ const PageLayer = ({ children, currentMenu }) => {
     containerShadow,
     zoom,
   }: any = useAppProvider();
+  const { currentPage, setCurrentPage }: any = usePageProvider();
+
+  useEffect(() => {
+    setCurrentPage(currentMenu);
+  }, [currentMenu]);
 
   return (
-    <Container>
+    <div className="px-10">
       <PageLayout>
         <div
           style={{
@@ -29,7 +35,7 @@ const PageLayer = ({ children, currentMenu }) => {
           <Layout currentMenu={currentMenu}>{children}</Layout>
         </div>
       </PageLayout>
-    </Container>
+    </div>
   );
 };
 

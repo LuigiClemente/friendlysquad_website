@@ -2,7 +2,8 @@ import DataOptionsUi from "@/CustomPopover/DataOptionsUi";
 import DataTitleOptionsUi from "@/CustomPopover/DataTitleOptionsUi";
 import { useAppProvider } from "@appProvider/AppProvider";
 import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
-import { useRef, useState } from "react";
+import { usePageProvider } from "@appProvider/PageProvider";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const CloudCard = ({ item, index }: any) => {
@@ -14,12 +15,15 @@ const CloudCard = ({ item, index }: any) => {
     colorData,
     fontData,
   }: any = useModalsAppProvider();
-  const { t } = useTranslation("");
+  const { t, i18n } = useTranslation("");
   const [contentStyle, setContentStyle] = useState({ display: "none" });
   const [titleStyle, setTitleStyle] = useState({ display: "none" });
   const { isReadOnly }: any = useAppProvider();
   const textareaRef = useRef(null);
 
+  const { cloudData, setCloudData }: any = usePageProvider();
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
   const textareaStyle = {
     fontSize: fontSizeData,
     fontWeight: 500,
@@ -40,17 +44,55 @@ const CloudCard = ({ item, index }: any) => {
     fontWeight: 500,
     fontFamily: fontDataTitle,
     fontSize: fontSizeDataTitle,
+    height: "fit-content",
     backgroundColor: "transparent",
     boxSizing: "border-box" as const,
     resize: "none" as const,
     border: "none",
   };
-  const handleChangeText = (content) => {
-    console.log("content", content);
+  const handleChangeText = (content, sectionName) => {
+    if (sectionName === "title") {
+      setTitle(content);
+    } else {
+      setDescription(content);
+    }
+    setCloudData((prev) => {
+      return prev.map((item) => {
+        if (item.id === index) {
+          return {
+            ...item,
+            [sectionName]: content,
+          };
+        } else {
+          return item;
+        }
+      });
+    });
+    console.log(cloudData);
   };
+  useEffect(() => {
+    setDescription(t(`home.cloud_data.${index}.description`));
+    setTitle(t(`home.cloud_data.${index}.title`));
+  }, [t, i18n.language, index]);
+
+  useEffect(() => {
+    setCloudData((prev) => {
+      return prev.map((item) => {
+        if (item.id === index) {
+          return {
+            ...item,
+            description: description,
+            title: title,
+          };
+        } else {
+          return item;
+        }
+      });
+    });
+    console.log("cloudData", cloudData);
+  }, []);
   return (
     <div
-      // className="hero"
       style={{
         position: "relative",
         height: "fit-content",
@@ -77,24 +119,11 @@ const CloudCard = ({ item, index }: any) => {
             onMouseLeave={() => setTitleStyle({ display: "none" })}
           >
             {isReadOnly ? null : <DataTitleOptionsUi style={titleStyle} />}
-            {/* <h1
-              style={{
-                color: colorDataTitle,
-                textAlign: "left",
-                width: "100%",
-                fontWeight: 500,
-                fontFamily: fontDataTitle,
-                fontSize: fontSizeDataTitle,
-              }}
-              className="pb-4 lg:pb-5 w-full"
-            >
-              {t(`home.cloud_data.${index}.title`)}
-            </h1> */}
             <textarea
               ref={textareaRef}
               className="editor__textarea"
-              value={t(`home.cloud_data.${index}.title`)}
-              onChange={(e) => handleChangeText(e.target.value)}
+              value={title}
+              onChange={(e) => handleChangeText(e.target.value, "title")}
               style={textTitleStyle}
             />
             <div
@@ -106,8 +135,10 @@ const CloudCard = ({ item, index }: any) => {
               <textarea
                 ref={textareaRef}
                 className="editor__textarea"
-                value={t(`home.cloud_data.${index}.description`)}
-                onChange={(e) => handleChangeText(e.target.value)}
+                value={description}
+                onChange={(e) =>
+                  handleChangeText(e.target.value, "description")
+                }
                 style={textareaStyle}
               />
               {/* {item.description} */}

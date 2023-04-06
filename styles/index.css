@@ -221,6 +221,8 @@
   position: relative;
   width: 100%;
   min-width: 100%;
+  height: "fit-content";
+  min-height: "fit-content";
 }
 .bigModalZ{
   z-index: 1000;
@@ -228,4 +230,8 @@
 
 .langModalZ{
   z-index: 1000;
+}
+.swiper-wrapper-custom{
+  position: relative;
+  width:500px
 }
