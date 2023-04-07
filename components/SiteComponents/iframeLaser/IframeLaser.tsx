@@ -15,7 +15,6 @@ const IframeLaser = () => {
     setBookingBigModalData,
   }: any = usePageProvider();
   const { t: contact } = useTranslation("contact");
-  const { t: booking } = useTranslation("home");
   const pageRef = useRef(null);
   const size = useWindowSize();
   const [load, setLoad] = useState(true);

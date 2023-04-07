@@ -16,7 +16,6 @@ const IframeFood = () => {
     bookingBigModalData,
   }: any = usePageProvider();
   const { t: about } = useTranslation("about");
-  const { t: booking } = useTranslation("home");
   const pageRef = useRef(null);
   const size = useWindowSize();
   const [src, setSrc] = useState(url);
@@ -39,7 +38,7 @@ const IframeFood = () => {
 
   useEffect(() => {
     setPageModalAboutData(about("about_us.dataModal"));
-    setBookingBigModalData(booking("booking.description"));
+    setBookingBigModalData(about("booking.description"));
   }, []);
 
   return (
@@ -102,7 +101,7 @@ const IframeFood = () => {
       {openBookList && (
         <BookingListModal
           title={"Booking"}
-          content={booking("booking.description")}
+          content={bookingBigModalData}
           handleClose={() => {
             setOpenBookList(false);
             console.log("close");
