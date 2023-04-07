@@ -291,6 +291,9 @@ MuiMenuItem-root{
   .content-dialog-setting-editor, #dialog_title_editor {
     background: ${DEFAULT_BACKGROUND_COLOR_CONTAINER_DARK} !important;
   }
+  .content-dialog-setting-editor , .toolbox, #dialog-content-editor{
+    background: ${DEFAULT_BACKGROUND_COLOR_CONTAINER_DARK} !important;
+  }
   .tab-editor,  #dialog_title_editor *{
     color: ${PRIMARY_TEXT_DARK} !important;
   }
