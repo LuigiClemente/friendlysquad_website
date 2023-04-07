@@ -61,26 +61,6 @@ const CloudCard = ({ item, index }: any) => {
         if (item.id === index) {
           return {
             ...item,
-            [sectionName]: content,
-          };
-        } else {
-          return item;
-        }
-      });
-    });
-    console.log(cloudData);
-  };
-  useEffect(() => {
-    setDescription(t(`home.cloud_data.${index}.description`));
-    setTitle(t(`home.cloud_data.${index}.title`));
-  }, [t, i18n.language, index]);
-
-  useEffect(() => {
-    setCloudData((prev) => {
-      return prev.map((item) => {
-        if (item.id === index) {
-          return {
-            ...item,
             description: description,
             title: title,
           };
@@ -89,8 +69,29 @@ const CloudCard = ({ item, index }: any) => {
         }
       });
     });
-    console.log("cloudData", cloudData);
+    console.log(cloudData);
+  };
+  let getTitle = t(`home.cloud_data.${index}.title`);
+  let getDescription = t(`home.cloud_data.${index}.description`);
+  useEffect(() => {
+    setDescription(getDescription);
+    setTitle(getTitle);
+  }, [t, i18n.language, index]);
+
+  useEffect(() => {
+    setCloudData((prev) => {
+      return [
+        ...prev,
+        {
+          id: index,
+          title: getTitle,
+          description: getDescription,
+        },
+      ];
+    });
+    console.log("cloudData Data:========> ", cloudData);
   }, []);
+
   return (
     <div
       style={{

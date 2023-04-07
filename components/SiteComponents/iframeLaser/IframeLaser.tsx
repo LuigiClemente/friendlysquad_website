@@ -5,10 +5,17 @@ import BookingListModal from "../modals/BookingListModal";
 import PageModal from "../modals/PageModal";
 import Spinner from "../spinner/Spinner";
 import { useWindowSize } from "../utils/utility";
+import { usePageProvider } from "@appProvider/PageProvider";
 const url = `/parlour/the_Parlour.htm`;
 const IframeLaser = () => {
+  const {
+    pageModalContactUsData,
+    setPageModalContactUsData,
+    bookingBigModalData,
+    setBookingBigModalData,
+  }: any = usePageProvider();
   const { t: contact } = useTranslation("contact");
-  const { t: booking } = useTranslation("common");
+  const { t: booking } = useTranslation("home");
   const pageRef = useRef(null);
   const size = useWindowSize();
   const [load, setLoad] = useState(true);
@@ -27,6 +34,8 @@ const IframeLaser = () => {
         setLoad(true);
       }
     };
+    setPageModalContactUsData(contact("contact_us.dataModal"));
+    setBookingBigModalData(contact("booking.description"));
   }, []);
   return (
     <div
@@ -71,15 +80,17 @@ const IframeLaser = () => {
       {load && (
         <PageModal
           title={contact("contact_us.title")}
-          content={contact("contact_us.dataModal")}
+          content={pageModalContactUsData}
           openBookingList={openBookingModal}
+          pageName="contact"
+          booking={bookingBigModalData}
         />
       )}
 
       {openBookList && (
         <BookingListModal
           title={"Booking"}
-          content={booking("booking.description")}
+          content={bookingBigModalData}
           handleClose={() => setOpenBookList(false)}
           open={openBookList}
         />

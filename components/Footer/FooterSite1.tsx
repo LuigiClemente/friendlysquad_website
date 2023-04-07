@@ -3,7 +3,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 const FooterSite1 = ({ color, background }: any) => {
-  const { t } = useTranslation("common");
+  const { t: header } = useTranslation("header");
   return (
     <div
       className="w-full min-h-screen flex items-center justify-center bg-transparent mt-1 z-50"
@@ -72,7 +72,7 @@ const FooterSite1 = ({ color, background }: any) => {
                       className="hidden md:block cursor-pointer  hover:text-white uppercase ml-10"
                       style={{ color: color }}
                     >
-                      {t(`header.${item.lang}`)}
+                      {header(`header.${item.lang}`)}
                     </a>
                   )
               )}
@@ -86,7 +86,7 @@ const FooterSite1 = ({ color, background }: any) => {
                       style={{ color: color }}
                       className="hidden md:block cursor-pointer hover:text-white uppercase ml-10"
                     >
-                      {t(`header.${item.lang}`)}
+                      {header(`header.${item.lang}`)}
                     </a>
                   )
               )}

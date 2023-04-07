@@ -6,10 +6,17 @@ import BookingListModal from "../modals/BookingListModal";
 import PageModal from "../modals/PageModal";
 import Spinner from "../spinner/Spinner";
 import { useWindowSize } from "../utils/utility";
+import { usePageProvider } from "@appProvider/PageProvider";
 const url = `/foodGallery/FoodGallery.htm`;
 const IframeFood = () => {
+  const {
+    pageModalAboutData,
+    setPageModalAboutData,
+    setBookingBigModalData,
+    bookingBigModalData,
+  }: any = usePageProvider();
   const { t: about } = useTranslation("about");
-  const { t: booking } = useTranslation("common");
+  const { t: booking } = useTranslation("home");
   const pageRef = useRef(null);
   const size = useWindowSize();
   const [src, setSrc] = useState(url);
@@ -29,6 +36,12 @@ const IframeFood = () => {
       }
     };
   }, []);
+
+  useEffect(() => {
+    setPageModalAboutData(about("about_us.dataModal"));
+    setBookingBigModalData(booking("booking.description"));
+  }, []);
+
   return (
     <div
       style={{
@@ -79,8 +92,10 @@ const IframeFood = () => {
       {load && (
         <PageModal
           title={about("about_us.title")}
-          content={about("about_us.dataModal")}
+          content={pageModalAboutData}
+          booking={bookingBigModalData}
           openBookingList={openBookingModal}
+          pageName="about"
         />
       )}
 

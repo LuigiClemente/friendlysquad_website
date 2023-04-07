@@ -1,0 +1,25 @@
+{
+  "globe_data":[
+    {
+      "title": "Sécurité de niveau bancaire ",
+      "description":
+        "Chez Friendly Squad, nous accordons la priorité à la sécurité des données. Notre modèle de sécurité Zero Trust et notre partenariat avec HarshCorp garantissent une protection haut de gamme de vos données sensibles grâce à la gestion des secrets Vault et des renouvellements de 15 secondes."
+    },
+    {
+      "title": "Confiance en nos certifications ",
+      "description":
+        "Notre engagement en matière de sécurité et de fiabilité est soutenu par une gamme de certifications, notamment ISO 9001, ISO 27001, PCI-DSS et SSAE16/ISAE3402. Soyez assuré que votre infrastructure est entre de bonnes mains."
+    },
+    {
+      "title": "Performance impressionnante ",
+      "description":
+        "Bénéficiez d'un transfert de données ultra-rapide avec une vitesse minimale partagée de 10 gigabits par seconde sur nos nœuds de réseau. Ce niveau de performance est essentiel pour les applications et les processus gourmands en données."
+    },
+    {
+      "title": "Assurez votre succès ",
+      "description":
+        "Nous offrons des services fiables et sécurisés, permettant aux entreprises de se concentrer sur leurs objectifs sans se soucier de la sécurité des données sensibles. Associez-vous à Friendly Squad et libérez votre véritable potentiel."
+    }
+  ]
+       
+}

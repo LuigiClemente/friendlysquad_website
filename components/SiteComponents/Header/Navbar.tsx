@@ -59,7 +59,7 @@ const Navbar = ({
     marginLeftHeader,
     marginRightHeader,
   }: any = useAppProvider();
-  const { t } = useTranslation();
+  const { t: header } = useTranslation("header");
 
   return (
     <div
@@ -167,7 +167,7 @@ const Navbar = ({
                             : "transparent",
                       }}
                     >
-                      {t(`header.${item.lang}`)}
+                      {header(`header.${item.lang}`)}
                     </a>
                     {/* {item.name} */}
                   </Link>

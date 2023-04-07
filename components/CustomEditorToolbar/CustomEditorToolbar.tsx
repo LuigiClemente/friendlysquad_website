@@ -3,14 +3,18 @@ import { Tooltip } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { Box, IconButton } from "@mui/material";
 import axios from "axios";
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 import { toast } from "react-toastify";
 // import { ToastContainer, toast } from "react-toastify"
 import { useAppProvider } from "@appProvider/AppProvider";
 import { useUndoable } from "@appProvider/UndoableProvider";
 import "react-toastify/dist/ReactToastify.css";
 
+import Moon from "@/icons/Moon";
+import Sun from "@/icons/Sun";
 import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
+import { usePageProvider } from "@appProvider/PageProvider";
+import { useTranslation } from "react-i18next";
 import Edit from "../icons/Edit";
 import PreviewIcon from "../icons/PreviewIcon";
 import RedoIcon from "../icons/Redo";
@@ -19,20 +23,6 @@ import UndoIcon from "../icons/UndoIcon";
 import ZoomIn from "../icons/ZoomIn";
 import ZoomOut from "../icons/ZoomOut";
 import UndoCustomization from "./UndoCustomization";
-import { usePageProvider } from "@appProvider/PageProvider";
-import { LANGUAGES } from "@/SiteComponents/constant";
-import { useTranslation } from "react-i18next";
-import { PATH_POST_CONTENT } from "config";
-import Sun from "@/icons/Sun";
-import React from "react";
-import { themeLightStyle, themeDarkStyle } from "theme/Theme";
-import { lightTheme, DarkTheme } from "theme/ThemeOveride";
-import {
-  Brightness1Outlined,
-  Brightness4,
-  Brightness7,
-} from "@mui/icons-material";
-import Moon from "@/icons/Moon";
 
 const useStyles = makeStyles(
   (theme) => ({
@@ -174,7 +164,7 @@ const useStyles = makeStyles(
       fontSize: "12px",
     },
     arrow: {
-      color: "white",
+      color: "black",
     },
   }),
   { name: "CustomEditorToolbar" }
@@ -267,48 +257,64 @@ const CustomEditorToolbar: FC<CustomEditorToolbarProps> = ({
     setGlobeData,
     currentPage,
     setCurrentPage,
+    pageModalServiceData,
+    setPageModalServiceData,
+    pageModalContactUsData,
+    setPageModalContactUsData,
+    infrastructureData,
+    setInfrastructureData,
+    bookingBigModalData,
+    setBookingBigModalData,
+    siteTitle,
   }: any = usePageProvider();
   const { t, i18n } = useTranslation();
-  // save function
-  // save locally for test
+
   const saveLocally = async () => {
     const headerBody = { file: headerDBFormat };
     const modalsBody = { file: dbModalsFormat };
+    let data = {};
 
-    console.log("save locally::", currentPage);
-    console.log("language >>>", i18n.language);
-    const data = {};
+    if (currentPage === "home") {
+      data = {
+        home: {
+          title: siteTitle,
+          cloud_data: cloudData,
+        },
+      };
+    } else if (currentPage === "about") {
+      data = {
+        about_us: { title: "About US", dataModal: pageModalAboutData },
+        booking: { description: bookingBigModalData },
+      };
+    } else if (currentPage === "service") {
+      data = {
+        services: { title: "Service", dataModal: pageModalServiceData },
+        booking: { description: bookingBigModalData },
+      };
+    } else if (currentPage === "contact") {
+      data = {
+        contact_us: { title: "Contact Us", dataModal: pageModalContactUsData },
+        booking: { description: bookingBigModalData },
+      };
+    } else if (currentPage === "infrastructure") {
+      data = { globe_data: infrastructureData };
+    }
+    const infoData = {
+      file: data,
+      language: i18n.language,
+      currentPage: currentPage === "home" ? "common" : currentPage,
+    };
+    // this is for editable content
+    fetch(PATH_POST_CONTENT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(infoData),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.error(error));
 
-    if (cloudData) {
-      const cloudInfo = {
-        file: { cloud_data: cloudData },
-        language: i18n.language,
-        currentPage: currentPage,
-      };
-      fetch(PATH_POST_CONTENT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(cloudInfo),
-      })
-        .then((response) => response.json())
-        .then((data) => console.log(data))
-        .catch((error) => console.error(error));
-    }
-    if (globeData) {
-      const globeInfo = {
-        file: { globe_data: globeData },
-        language: i18n.language,
-        currentPage: currentPage,
-      };
-      fetch(PATH_POST_CONTENT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(globeInfo),
-      })
-        .then((response) => response.json())
-        .then((data) => console.log(data))
-        .catch((error) => console.error(error));
-    }
+    //  this is for style
 
     //   const [header, gift] = await Promise.all([
     //     fetch(PATH_POST_HEADER, {
@@ -429,7 +435,8 @@ const CustomEditorToolbar: FC<CustomEditorToolbarProps> = ({
             title="Change Theme"
             placement="top"
             arrow
-            classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
+            classes={{ tooltip: "tooltip" }}
+            className="my-tooltip-arrow"
           >
             <span>
               <IconButton
@@ -464,7 +471,8 @@ const CustomEditorToolbar: FC<CustomEditorToolbarProps> = ({
             title="Zoom In"
             placement="top"
             arrow
-            classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
+            // id="my-tooltip"
+            classes={{ tooltip: "tooltip" }}
           >
             <span>
               <IconButton
@@ -490,10 +498,12 @@ const CustomEditorToolbar: FC<CustomEditorToolbarProps> = ({
             </span>
           </Tooltip>
           <Tooltip
+            id="my-tooltip"
             title="Zoom Out"
             placement="top"
             arrow
-            classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
+            // classes={{ arrow: classes.arrow, tooltip: "tooltip" }}
+            classes={{ tooltip: "tooltip" }}
           >
             <span>
               <IconButton
@@ -523,7 +533,9 @@ const CustomEditorToolbar: FC<CustomEditorToolbarProps> = ({
             title="Redo"
             placement="top"
             arrow
-            classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
+            id="my-tooltip"
+            // classes={{ arrow: classes.arrow, tooltip: "tooltip" }}
+            classes={{ tooltip: "tooltip" }}
           >
             <span>
               <IconButton
@@ -553,8 +565,9 @@ const CustomEditorToolbar: FC<CustomEditorToolbarProps> = ({
           <Tooltip
             title="Undo"
             placement="top"
+            id="my-tooltip"
             arrow
-            classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
+            classes={{ tooltip: "tooltip" }}
           >
             <span>
               <IconButton
@@ -582,8 +595,9 @@ const CustomEditorToolbar: FC<CustomEditorToolbarProps> = ({
           <Tooltip
             title="Edit Mode"
             placement="top"
+            id="my-tooltip"
             arrow
-            classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
+            classes={{ tooltip: "tooltip" }}
           >
             <span>
               <IconButton
@@ -611,8 +625,10 @@ const CustomEditorToolbar: FC<CustomEditorToolbarProps> = ({
           <Tooltip
             title="Save changes"
             placement="top"
+            id="my-tooltip"
             arrow
-            classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
+            // classes={{ arrow: classes.arrow, tooltip: "tooltip" }}
+            classes={{ tooltip: "tooltip" }}
           >
             <span>
               <IconButton
@@ -640,8 +656,10 @@ const CustomEditorToolbar: FC<CustomEditorToolbarProps> = ({
           <Tooltip
             title="Previews(Read Only)"
             placement="top"
+            id="my-tooltip"
             arrow
-            classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
+            // classes={{ arrow: classes.arrow, tooltip: "tooltip" }}
+            classes={{ tooltip: "tooltip" }}
           >
             <span>
               <IconButton

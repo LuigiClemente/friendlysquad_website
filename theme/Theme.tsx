@@ -41,7 +41,25 @@ html , body{
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset !important;
     
   }
-  
+
+
+  .MuiInputBase-root{
+    background-color: ${DEFAULT_BACKGROUND_COLOR_CONTAINER_LIGHT} !important;
+    color: ${SECONDARY_TEXT_LIGHT} !important,
+  }
+  .MuiMenu-list{
+    background-color: ${DEFAULT_BACKGROUND_COLOR_CONTAINER_LIGHT} !important;
+    color: ${SECONDARY_TEXT_LIGHT} !important,
+  }
+  .MuiSelect-outlined{
+    background-color: ${DEFAULT_BACKGROUND_COLOR_CONTAINER_LIGHT} !important;
+    color: ${SECONDARY_TEXT_LIGHT} !important,
+  }
+  MuiMenuItem-root{
+    color: ${SECONDARY_TEXT_LIGHT} !important,
+  }
+
+
   .tools_editor{
     background-color: ${DEFAULT_BACKGROUND_COLOR_CONTAINER_LIGHT} !important;
     box-shadow: none !important;
@@ -132,6 +150,20 @@ html , body{
     color: ${DARK_GRAY} !important;
   }
 
+.editorToolbar [class*="shadow-"] * {
+    color: #332e2e !important;
+}
+.tooltip {
+  background-color: ${DEFAULT_BACKGROUND_COLOR_CONTAINER_LIGHT} !important;
+  color: ${DARK_GRAY} !important;
+}
+.arrow {
+  '&::before': {
+    color: ${DARK_GRAY} !important;
+  }
+  
+}
+
   </style>
 `;
 
@@ -153,6 +185,21 @@ body{
 .editorToolbar [class*="shadow-"] * {
   color: ${SECONDARY_LIGHT} !important;
  
+}
+.MuiInputBase-root{
+  background-color: ${DEFAULT_BACKGROUND_COLOR_DARK} !important;
+  color: ${wHITE_COLOR} !important,
+}
+.MuiMenu-list{
+  background-color: ${DEFAULT_BACKGROUND_COLOR_DARK} !important;
+  color: ${wHITE_COLOR} !important,
+}
+.MuiSelect-outlined{
+  background-color: ${DEFAULT_BACKGROUND_COLOR_DARK} !important;
+  color: ${wHITE_COLOR} !important,
+}
+MuiMenuItem-root{
+  color: ${wHITE_COLOR} !important,
 }
 .editorToolbar [class*="shadow-"] .btn-info:hover {
     color: ${HOVER_COLOR} !important;
@@ -259,6 +306,22 @@ body{
     background-color: ${DEFAULT_BACKGROUND_COLOR_DARK} !important;
     color: ${PRIMARY_TEXT_DARK} !important;
   }
+  .tooltip {
+    background-color: ${DEFAULT_BACKGROUND_COLOR_DARK} !important;
+    color: ${PRIMARY_TEXT_DARK} !important;
+  }
 
+  .arrow {
+    '&::before': {
+      color: ${PRIMARY_TEXT_DARK} !important;
+    }
+    
+    .my-tooltip-arrow {
+      color: red;
+    }
+    
+    .my-tooltip-arrow::before {
+      border-color: red;
+    }
   </style> 
 `;

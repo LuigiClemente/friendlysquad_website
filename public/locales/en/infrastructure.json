@@ -1,0 +1,25 @@
+{
+    "globe_data":[
+        {
+           "title": "Banking-Grade Security",
+           "description":
+             "At Friendly Squad, we prioritize data security. Our Zero Trust security model and partnership with HarshCorp ensure top-of-the-line protection for your sensitive data through Vault Secrets Management and 15-second renewals."
+         },
+         {
+           "title": "Trust in Our Certifications",
+           "description":
+             "Our commitment to security and reliability is backed by a range of certifications, including ISO 9001, ISO 27001, PCI-DSS, and SSAE16/ISAE3402. Rest assured that your infrastructure is in good hands."
+         },
+         {
+           "title": "Impressive Performance",
+           "description": "Experience lightning-fast data transfer with our network nodes' minimum shared speed of 10 gigabytes per second. This level of performance is crucial for data-intensive applications and processes."
+           
+         },
+         {
+           "title": "Secure Your Success",
+           "description":
+             "We provide reliable and secure services, allowing businesses to focus on their goals without worrying about sensitive data security. Partner with Friendly Squad and unlock your true potential."
+         }
+       ]
+       
+}

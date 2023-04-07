@@ -52,7 +52,7 @@ const PageLayout: FC<any> = ({ children }) => {
           padding: "0px",
           margin: "0px",
         }}
-        className="editorToolbar"
+        // className="editorToolbar"
       >
         <CssBaseline />
 

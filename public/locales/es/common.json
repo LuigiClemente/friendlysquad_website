@@ -1,8 +1,5 @@
 {
-"booking":{
-  "title":"Book",
-   "description":"En esencia, somos un equipo unido por una visión compartida: erradicar los obstáculos asociados con las implementaciones y asegurar que las complejidades del proceso nunca sean subestimadas. Creemos firmemente que todos, independientemente de su experiencia técnica, merecen acceso a soluciones de implementación confiables y fáciles de usar. Impulsados por una pasión inquebrantable tanto por el desarrollo como por la implementación, hemos fusionado las mejores herramientas del sector para crear una plataforma que revolucione la implementación de infraestructuras, haciéndola fácil, eficiente y sin contratiempos. La dedicación de nuestro equipo a ofrecer soluciones de primer nivel se adapta a empresas de todos los tamaños y en diversas industrias. Reconociendo la naturaleza abrumadora de la implementación para muchas organizaciones, nos hemos dedicado a diseñar una plataforma intuitiva y fácil de usar que elimine la necesidad de una experiencia técnica complicada. Nuestra plataforma está ingeniosamente diseñada para desmitificar el proceso de implementación, haciéndolo accesible para todos y permitiendo que las empresas implementen su infraestructura con facilidad y seguridad. En el corazón de nuestra plataforma se encuentra un compromiso inquebrantable con la innovación y la excelencia. Empujamos incansablemente los límites de lo que es alcanzable, aprovechando las tecnologías y metodologías más avanzadas para ofrecer soluciones realmente innovadoras. Ya sea que busque optimizar los procesos de implementación existentes o construir una infraestructura completamente nueva desde cero, contamos con la experiencia y las herramientas esenciales para su éxito. Únase a nuestra misión de hacer que la implementación de infraestructuras sea fácil y accesible para todos. Con nuestro equipo de expertos apasionados y nuestra firme dedicación a la excelencia, puede estar seguro de que está recibiendo las mejores soluciones que el mercado tiene para ofrecer. Póngase en contacto con nosotros hoy para descubrir cómo podemos ayudarlo a alcanzar sus objetivos de implementación."
-},
+
 
 "home":{
   "title":"¡Bienvenido a Friendly Squad!",
@@ -31,41 +28,8 @@
         "title": "Únete a la Comunidad",
         "description":
         "Forma parte de nuestra vibrante comunidad de empresas que han adoptado el enfoque Git-first para la implementación de infraestructuras. Nuestra plataforma fácil de usar permite a los desarrolladores de todos los niveles de habilidad implementar y administrar infraestructuras con confianza."
-      }],
-        "globe_data":[
-     {
-        "title": "Seguridad de Nivel Bancario",
-        "description":"En Friendly Squad, priorizamos la seguridad de los datos. Nuestro modelo de seguridad Zero Trust y la colaboración con HarshCorp garantizan una protección de primera línea para tus datos sensibles a través de la gestión de secretos de Vault y renovaciones de 15 segundos."
-
-        
-      },
-      {
-        "title": "Confía en Nuestras Certificaciones",
-        "description":
-        "Nuestro compromiso con la seguridad y la fiabilidad está respaldado por una serie de certificaciones, incluidas ISO 9001, ISO 27001, PCI-DSS y SSAE16/ISAE3402. Ten la seguridad de que tu infraestructura está en buenas manos."
-      },
-      {
-        "title": "Rendimiento Impresionante",
-        "description": 
-        "Experimenta una transferencia de datos ultrarrápida con la velocidad compartida mínima de 10 gigabytes por segundo de nuestros nodos de red. Este nivel de rendimiento es crucial para aplicaciones y procesos intensivos en datos."
-        
-      },
-      {
-        "title": "Asegura tu Éxito",
-        "description":
-        "Brindamos servicios confiables y seguros, lo que permite a las empresas concentrarse en sus objetivos sin preocuparse por la seguridad de los datos sensibles. Asóciate con Friendly Squad y desbloquea tu verdadero potencial."
-      }
-    ]
-    
-},
-  "header": {
-    "Home": "INICIO",
-    "About": "SOBRE NOSOTROS",
-    "infrastructure": "INFRAESTRUCTURA",
-    "Service": "SERVICIOS",
-    "Contact": "CONTÁCTANOS",
-    "Login": "INICIAR SESIÓN"
-  }
+      }]
+}
 
 }
 

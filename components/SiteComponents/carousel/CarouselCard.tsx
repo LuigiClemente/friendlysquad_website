@@ -1,8 +1,9 @@
+import { usePageProvider } from "@appProvider/PageProvider";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
 const CarouselCard = () => {
-  const { t }: any = useTranslation("");
+  const { siteTitle }: any = usePageProvider();
   return (
     <div
       style={{
@@ -35,8 +36,7 @@ const CarouselCard = () => {
         }}
         className="leading-10"
       >
-        {/* {`Welcome to Friendly Squad!`} */}
-        {t(`home.title`)}
+        {siteTitle}
       </span>
       <p
         style={{

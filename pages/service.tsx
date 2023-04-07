@@ -48,7 +48,11 @@ export default function About() {
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common", "service"])),
+      ...(await serverSideTranslations(locale, [
+        "common",
+        "header",
+        "service",
+      ])),
     },
   };
 }

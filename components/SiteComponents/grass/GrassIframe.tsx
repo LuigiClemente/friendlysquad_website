@@ -4,10 +4,17 @@ import BookingListModal from "../modals/BookingListModal";
 import PageModal from "../modals/PageModal";
 import Spinner from "../spinner/Spinner";
 import { useWindowSize } from "../utils/utility";
+import { usePageProvider } from "@appProvider/PageProvider";
 const url = `/glade/Glade.htm`;
 const GrassIframe = () => {
+  const {
+    pageModalServiceData,
+    setPageModalServiceData,
+    bookingBigModalData,
+    setBookingBigModalData,
+  }: any = usePageProvider();
   const { t: service } = useTranslation("service");
-  const { t: booking } = useTranslation("common");
+  const { t: booking } = useTranslation("home");
 
   // const { openBookList, setOpenBookList }: any = useAppStateProvider();
   const [openBookList, setOpenBookList] = useState(false);
@@ -31,6 +38,8 @@ const GrassIframe = () => {
         setLoad(true);
       }
     };
+    setPageModalServiceData(service("services.dataModal"));
+    setBookingBigModalData(service("booking.description"));
   }, []);
   return (
     <div
@@ -75,15 +84,17 @@ const GrassIframe = () => {
       {load && (
         <PageModal
           title={service("services.title")}
-          content={service("services.dataModal")}
+          content={pageModalServiceData}
           openBookingList={openBookingModal}
+          pageName="service"
+          booking={bookingBigModalData}
         />
       )}
 
       {openBookList && (
         <BookingListModal
           title={"Booking"}
-          content={booking("booking.description")}
+          content={bookingBigModalData}
           handleClose={() => setOpenBookList(false)}
           open={openBookList}
         />

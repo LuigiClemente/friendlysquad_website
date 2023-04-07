@@ -1,0 +1,10 @@
+{
+  "header": {
+    "Home": "INICIO",
+    "About": "SOBRE NOSOTROS",
+    "infrastructure": "INFRAESTRUCTURA",
+    "Service": "SERVICIOS",
+    "Contact": "CONTÁCTANOS",
+    "Login": "INICIAR SESIÓN"
+  }
+}

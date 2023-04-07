@@ -9,9 +9,8 @@ import "swiper/swiper.css";
 import "swiper/swiper.min.css";
 import { useWindowSize } from "../utils/utility";
 import CarouselCard from "./CarouselCard";
-import { useEffect } from "react";
 
-const CarouselHorizontal = ({ images, scrollFun }: any) => {
+const CarouselHorizontal = ({ images }: any) => {
   const size = useWindowSize();
   const { isEndSlide, setIsEndSlide }: any = useAppStateProvider();
 

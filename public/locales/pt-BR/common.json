@@ -1,8 +1,4 @@
 {
-    "booking":{
-      "title":"Book",
-      "description":"No cerne da nossa equipe, somos unidos por uma visão compartilhada: erradicar os obstáculos relacionados às implantações e garantir que as complexidades do processo nunca sejam subestimadas. Acreditamos firmemente que todos, independentemente de sua experiência técnica, merecem acesso a soluções de implantação confiáveis e fáceis de usar. Impulsionados por uma paixão inabalável pelo desenvolvimento e implantação, reunimos as melhores ferramentas do setor para criar uma plataforma que revoluciona a implantação de infraestrutura, tornando-a fácil, eficiente e contínua. A dedicação da nossa equipe em oferecer soluções de alta qualidade atende a empresas de todos os tamanhos e de diversos setores. Reconhecendo a natureza avassaladora da implantação para muitas organizações, dedicamo-nos a criar uma plataforma intuitiva e fácil de usar que elimina a necessidade de conhecimentos técnicos complexos. Nossa plataforma é projetada de forma engenhosa para desmistificar o processo de implantação, tornando-o acessível a todos e capacitando as empresas a implantar sua infraestrutura com facilidade e confiança. No coração da nossa plataforma, está um compromisso inabalável com a inovação e a excelência. Impulsionamos incansavelmente os limites do que é possível, utilizando tecnologias e metodologias de ponta para oferecer soluções revolucionárias. Seja você quem deseja otimizar os processos de implantação existentes ou construir uma infraestrutura totalmente nova desde o início, temos a competência e as ferramentas necessárias para o seu sucesso. Embarque em nossa missão de tornar a implantação de infraestrutura fácil e acessível a todos. Com nossa equipe de especialistas entusiastas e nosso compromisso firme com a excelência, você pode ter certeza de que está recebendo as melhores soluções disponíveis no mercado. Entre em contato conosco hoje para descobrir como podemos ajudá-lo a alcançar seus objetivos de implantação."
-    },
 
     "home":{
       "title":"Bem-vindo ao Friendly Squad!",
@@ -34,42 +30,8 @@
             "title": "Junte-se à Comunidade",
             "description":
             "Torne-se parte da nossa vibrante comunidade de empresas que abraçaram a abordagem Git-first para implantação de infraestrutura. Nossa plataforma amigável capacita desenvolvedores de todos os níveis de habilidade a implantar e gerenciar infraestrutura com confiança."
-          }],
-         
-      "globe_data":[
-       {
-          "title": "Segurança de Nível Bancário",
-          "description":
-          "Na Friendly Squad, priorizamos a segurança dos dados. Nosso modelo de segurança Zero Trust e parceria com a HarshCorp garantem proteção de ponta para seus dados sensíveis através do Vault Secrets Management e renovações de 15 segundos."
-        },
-        {
-          "title": "Confie em Nossas Certificações",
-          "description":
-          "Nosso compromisso com segurança e confiabilidade é respaldado por uma série de certificações, incluindo ISO 9001, ISO 27001, PCI-DSS e SSAE16/ISAE3402. Fique tranquilo sabendo que sua infraestrutura está em boas mãos."
-        },
-        {
-          "title": "Desempenho Impressionante",
-          "description":
-          "Experimente transferências de dados ultrarrápidas com a velocidade compartilhada mínima de 10 gigabytes por segundo dos nossos nós de rede. Esse nível de desempenho é crucial para aplicações e processos que exigem grande quantidade de dados."
-          
-        },
-        {
-          "title": "Garanta Seu Sucesso",
-          "description":
-          "Oferecemos serviços confiáveis e seguros, permitindo que as empresas se concentrem em seus objetivos sem se preocupar com a segurança dos dados sensíveis. Faça parceria com a Friendly Squad e libere todo o seu potencial."
-        }
-      ]
-        
-    },
-    "header": {
-      "Home": "INÍCIO",
-      "About": "SOBRE NÓS",
-      "infrastructure": "INFRAESTRUTURA",
-      "Service": "SERVIÇOS",
-      "Contact": "FALE CONOSCO",
-      "Login": "ENTRAR"
-    }
-    
+          }]
+    }   
 
 }
 

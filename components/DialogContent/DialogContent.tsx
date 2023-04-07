@@ -62,7 +62,7 @@ const DialogContent = ({
     loading,
     isReadOnly,
   }: any = useAppProvider();
-  const { bookingListModalData, setBookingListModalData }: any =
+  const { bookingBigModalData, setBookingBigModalData }: any =
     usePageProvider();
   const textareaRef = useRef(null);
   const textareaStyle = {
@@ -80,7 +80,7 @@ const DialogContent = ({
   };
   const handleChangeText = (content) => {
     console.log("content", content);
-    setBookingListModalData(content);
+    setBookingBigModalData(content);
   };
 
   useEffect(() => {
@@ -94,10 +94,6 @@ const DialogContent = ({
       }
     }
   }, []);
-
-  useEffect(() => {
-    setBookingListModalData(data);
-  }, [data]);
 
   return (
     <div
@@ -151,7 +147,7 @@ const DialogContent = ({
           <textarea
             ref={textareaRef}
             className="text-editor__textarea"
-            value={bookingListModalData}
+            value={bookingBigModalData}
             onChange={(e) => handleChangeText(e.target.value)}
             style={textareaStyle}
           />

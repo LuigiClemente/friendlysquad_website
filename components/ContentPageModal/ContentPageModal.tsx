@@ -1,6 +1,4 @@
 import ModalDataOptionsUi from "@/CustomPopover/ModalDataOptionsUi";
-import { MODAL_DATA } from "@/SiteComponents/constant";
-import TextEditor from "@/TextEditor/TextEditor";
 import { useAppProvider } from "@appProvider/AppProvider";
 import { useModalsAppProvider } from "@appProvider/ModalsAppProvider";
 import { usePageProvider } from "@appProvider/PageProvider";
@@ -9,9 +7,16 @@ import React, { useEffect, useRef } from "react";
 interface ContentPageModalProps {
   data: any;
   isBookingList?: boolean;
+  currentPage?: string;
+  booking?: any;
 }
 
-const ContentPageModal = ({ data, isBookingList }: ContentPageModalProps) => {
+const ContentPageModal = ({
+  data,
+  isBookingList,
+  currentPage,
+  booking,
+}: ContentPageModalProps) => {
   const {
     fontSizeDataModal,
     fontDataModal,
@@ -57,8 +62,11 @@ const ContentPageModal = ({ data, isBookingList }: ContentPageModalProps) => {
     loading,
     isReadOnly,
   }: any = useAppProvider();
-  const { bookingListModalData, setBookingListModalData }: any =
-    usePageProvider();
+  const {
+    setPageModalAboutData,
+    setPageModalServiceData,
+    setPageModalContactUsData,
+  }: any = usePageProvider();
   const textareaRef = useRef(null);
   const textareaStyle = {
     fontSize: fontSizeDataModal,
@@ -72,13 +80,23 @@ const ContentPageModal = ({ data, isBookingList }: ContentPageModalProps) => {
     boxSizing: "border-box" as const,
     width: "500px",
   };
+  const [dataSmallModal, setDataSmallModal]: any = React.useState({});
   const handleChangeText = (content) => {
-    console.log("content", content);
-    setBookingListModalData(content);
+    if (currentPage === "about") {
+      setPageModalAboutData(content);
+    }
+    if (currentPage === "service") {
+      setPageModalServiceData(content);
+    }
+    if (currentPage === "contact") {
+      setPageModalContactUsData(content);
+    }
+
+    setDataSmallModal(content);
   };
 
   useEffect(() => {
-    setBookingListModalData(data);
+    setDataSmallModal(data);
   }, [data]);
 
   return (
@@ -133,7 +151,7 @@ const ContentPageModal = ({ data, isBookingList }: ContentPageModalProps) => {
           <textarea
             ref={textareaRef}
             className="text-editor__textarea"
-            value={bookingListModalData}
+            value={dataSmallModal}
             onChange={(e) => handleChangeText(e.target.value)}
             style={textareaStyle}
           />

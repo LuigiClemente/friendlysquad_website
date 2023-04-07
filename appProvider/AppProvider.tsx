@@ -29,11 +29,6 @@ export const AppProvider = ({ children }: any) => {
     description: "",
   });
 
-  const [bookingListModalData, setBookingListModalData] = useState({
-    title: "",
-    description: "",
-  });
-
   // Zoom in and out
   const [zoom, setZoom] = useState(1);
 
@@ -620,8 +615,6 @@ export const AppProvider = ({ children }: any) => {
         setThemeCalendar,
         pageModalData,
         setPageModalData,
-        bookingListModalData,
-        setBookingListModalData,
         pageModalAboutData,
         setPageModalAboutData,
       }}

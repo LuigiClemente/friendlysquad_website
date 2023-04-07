@@ -1,8 +1,5 @@
 {
-    "booking":{
-      "title":"Book",
-       "description":"In onze kern zijn wij een team dat verbonden is door een gezamenlijke visie: het wegnemen van de obstakels die gepaard gaan met implementaties en ervoor zorgen dat de complexiteit van het proces nooit wordt onderschat. Wij zijn ervan overtuigd dat iedereen, ongeacht zijn technische expertise, recht heeft op betrouwbare en gebruiksvriendelijke implementatieoplossingen. Gedreven door een onwankelbare passie voor zowel ontwikkeling als implementatie, hebben we de beste tools in de branche samengebracht om een platform te creëren dat infrastructuurimplementatie revolutionair maakt door het eenvoudig, efficiënt en naadloos te maken. De toewijding van ons team aan het leveren van eersteklas oplossingen is geschikt voor bedrijven van alle groottes en in verschillende industrieën. Inzicht in de overweldigende aard van implementatie voor veel organisaties, hebben we onszelf gewijd aan het creëren van een intuïtief en gebruiksvriendelijk platform dat de noodzaak van ingewikkelde technische expertise elimineert. Ons platform is vakkundig ontworpen om het implementatieproces te vereenvoudigen, het toegankelijk te maken voor iedereen en bedrijven in staat te stellen hun infrastructuur met gemak en vertrouwen te implementeren. In het hart van ons platform ligt een onwankelbare toewijding aan innovatie en uitmuntendheid. We verleggen voortdurend de grenzen van wat haalbaar is, door gebruik te maken van geavanceerde technologieën en methodologieën om baanbrekende oplossingen te leveren. Of u nu bestaande implementatieprocessen wilt stroomlijnen of een geheel nieuwe infrastructuur vanaf de grond wilt opbouwen, wij beschikken over de expertise en tools die essentieel zijn voor uw succes. Ga mee op onze missie om infrastructuurimplementatie moeiteloos en toegankelijk te maken voor iedereen. Met ons team van gepassioneerde experts en onze standvastige toewijding aan uitmuntendheid, kunt u er zeker van zijn dat u de beste oplossingen krijgt die de markt te bieden heeft. Neem vandaag nog contact met ons op om te ontdekken hoe we u kunnen helpen uw implementatiedoelen te bereiken."
-    },
+  
 
     "home":{
       "title":"Welkom bij Friendly Squad!",
@@ -29,42 +26,8 @@
             "title": "Word Lid van de Community",
             "description":
               " Word deel van onze levendige community van bedrijven die de Git-first benadering van infrastructuurimplementatie hebben omarmd. Ons gebruiksvriendelijke platform stelt ontwikkelaars van alle vaardigheidsniveaus in staat om met vertrouwen infrastructuur te implementeren en te beheren."
-          }],
-         
-      "globe_data":[
-       {
-          "title": "Bankiersniveau Beveiliging",
-          "description":
-            " Bij Friendly Squad staat gegevensbeveiliging voorop. Ons Zero Trust-beveiligingsmodel en partnerschap met HarshCorp zorgen voor eersteklas bescherming van uw gevoelige gegevens via Vault Secrets Management en 15-seconden vernieuwingen."
-        },
-        {
-          "title": "Vertrouw op Onze Certificeringen",
-          "description":
-          " Onze inzet voor beveiliging en betrouwbaarheid wordt ondersteund door een reeks certificeringen, waaronder ISO 9001, ISO 27001, PCI-DSS en SSAE16/ISAE3402. Wees gerust dat uw infrastructuur in goede handen is."
-        },
-        {
-          "title": "Indrukwekkende Prestaties",
-          "description":
-          " Ervaar bliksemsnelle gegevensoverdracht met onze netwerkknooppunten met een minimale gedeelde snelheid van 10 gigabyte per seconde. Dit prestatieniveau is cruciaal voor gegevensintensieve toepassingen en processen."
-          
-        },
-        {
-          "title": "Verzeker Uw Succes",
-          "description":
-          "We bieden betrouwbare en veilige diensten, waardoor bedrijven zich kunnen concentreren op hun doelen zonder zich zorgen te hoeven maken over gevoelige gegevensbeveiliging. Werk samen met Friendly Squad en ontgrendel uw ware potentieel."
-        }
-      ]
-        
-    },
-    "header": {
-      "Home": "HOME",
-      "About": "ABOUT US",
-      "infrastructure": "INFRASTRUCTURE",
-      "Service": "SERVICE",
-      "Contact": "CONTACT US",
-      "Login": "LOG IN"
+          }]
     }
-
 }
 
 

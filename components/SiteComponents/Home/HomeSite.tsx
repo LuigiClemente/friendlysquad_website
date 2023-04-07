@@ -1,15 +1,23 @@
 import Footer from "@/Footer";
 import FooterSite from "@/Footer/FooterSite";
 import FooterSite1 from "@/Footer/FooterSite1";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CarouselHorizontal from "../carousel/CarouselHorizontal";
 import CloudDataComponent from "../cloud/CloudDataComponent";
 import { SLIDER_IMAGES } from "../constant";
 import Layout from "../layout/Layout";
 import ScrollToTop from "../scrollToTop/ScrollToTop";
+import { usePageProvider } from "@appProvider/PageProvider";
+import { useTranslation } from "react-i18next";
 
 const HomeSite = () => {
   const cloudRef = useRef(undefined);
+  const { t }: any = useTranslation("common");
+  const { siteTitle, setSiteTitle }: any = usePageProvider();
+
+  useEffect(() => {
+    setSiteTitle(t(`home.title`));
+  }, []);
 
   return (
     <div
@@ -42,7 +50,7 @@ const HomeSite = () => {
             justifyContent: "center",
           }}
         >
-          <CarouselHorizontal images={SLIDER_IMAGES} scrollFun={null} />
+          <CarouselHorizontal images={SLIDER_IMAGES} />
           <div
             ref={cloudRef}
             style={{

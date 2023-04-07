@@ -48,10 +48,10 @@ const GlobeCardList = () => {
   const { isReadOnly }: any = useAppProvider();
   const { globeData, setGlobeData }: any = usePageProvider();
 
-  useEffect(() => {
-    setGlobeData(NOTE_CLOUD_SECTION);
-    console.log("Globe Data: ", globeData);
-  }, [globeData]);
+  // useEffect(() => {
+  //   setGlobeData(NOTE_CLOUD_SECTION);
+  //   console.log("Globe Data: ", globeData);
+  // }, [globeData]);
 
   return (
     <div

@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import FooterSite1 from "@/Footer/FooterSite1";
 import Scene from "./ColorGlobe/Scene";
 import GlobeCardList from "./GlobeCardList";

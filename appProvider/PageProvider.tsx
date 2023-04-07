@@ -11,6 +11,7 @@ export const PageProvider = ({ children }: any) => {
     title: "",
     dataModal: "",
   });
+  const [siteTitle, setSiteTitle] = useState("");
 
   const [pageModalAboutData, setPageModalAboutData] = useState({
     title: "",
@@ -30,20 +31,21 @@ export const PageProvider = ({ children }: any) => {
     description: "",
   });
 
-  const [bookingListModalData, setBookingListModalData] = useState({
+  const [bookingBigModalData, setBookingBigModalData] = useState({
     title: "",
     description: "",
   });
 
   const [cloudData, setCloudData]: any = useState([]);
   const [globeData, setGlobeData]: any = useState([]);
+  const [infrastructureData, setInfrastructureData]: any = useState([]);
   return (
     <Context.Provider
       value={{
         pageModalData,
         setPageModalData,
-        bookingListModalData,
-        setBookingListModalData,
+        bookingBigModalData,
+        setBookingBigModalData,
         pageModalAboutData,
         setPageModalAboutData,
         pageModalServiceData,
@@ -60,6 +62,10 @@ export const PageProvider = ({ children }: any) => {
         setThemeChecker,
         currentPage,
         setCurrentPage,
+        infrastructureData,
+        setInfrastructureData,
+        siteTitle,
+        setSiteTitle,
       }}
     >
       {children}

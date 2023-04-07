@@ -1,9 +1,5 @@
 {
-    "booking":{
-      "title":"Book",
-      "description":"Nel profondo del nostro essere, siamo un team legato da una visione condivisa: eliminare gli ostacoli associati alle implementazioni e garantire che le complessità del processo non vengano mai sottovalutate. Crediamo fermamente che tutti, indipendentemente dalla loro competenza tecnica, meritino l'accesso a soluzioni di implementazione affidabili e di facile utilizzo. Alimentati da una passione inarrestabile per lo sviluppo e il deployment, abbiamo unito i migliori strumenti del settore per creare una piattaforma che rivoluziona il deployment delle infrastrutture, rendendolo facile, efficiente e senza soluzione di continuità. La dedizione del nostro team nel fornire soluzioni di altissima qualità si rivolge a imprese di tutte le dimensioni e in diversi settori. Riconoscendo la natura opprimente del deployment per molte organizzazioni, ci siamo dedicati a creare una piattaforma intuitiva e facile da usare che elimina la necessità di competenze tecniche complesse. La nostra piattaforma è sapientemente progettata per semplificare il processo di deployment, rendendolo accessibile a tutti e consentendo alle aziende di implementare le loro infrastrutture con facilità e sicurezza. Al cuore della nostra piattaforma c'è un impegno incrollabile per l'innovazione e l'eccellenza. Spingiamo incessantemente i confini di ciò che è realizzabile, sfruttando tecnologie e metodologie all'avanguardia per offrire soluzioni rivoluzionarie. Che tu stia cercando di semplificare i processi di deployment esistenti o di costruire un'infrastruttura completamente nuova da zero, abbiamo la competenza e gli strumenti essenziali per il tuo successo. Unisciti alla nostra missione per rendere il deployment delle infrastrutture semplice e accessibile a tutti. Con il nostro team di esperti appassionati e il nostro impegno costante all'eccellenza, puoi essere certo di ricevere le migliori soluzioni disponibili sul mercato. Contattaci oggi per scoprire come possiamo aiutarti a raggiungere i tuoi obiettivi di deployment."   
-    },
-
+ 
     "home":{
       "title":"Benvenuti su Friendly Squad!",
       "cloud_data":[
@@ -32,39 +28,10 @@
             "title": "Unisciti alla Comunità",
             "description":
             "Entra a far parte della nostra vivace comunità di aziende che hanno abbracciato l'approccio Git-first alla distribuzione delle infrastrutture. La nostra piattaforma user-friendly permette agli sviluppatori di tutti i livelli di distribuire e gestire le infrastrutture con sicurezza."
-          }],
-         
-      "globe_data":[
-       {
-          "title": "Sicurezza di Livello Bancario",
-          "description":
-          " Da Friendly Squad, la sicurezza dei dati è la nostra priorità. Il nostro modello di sicurezza Zero Trust e la partnership con HarshCorp garantiscono una protezione di alto livello per i tuoi dati sensibili attraverso la gestione dei segreti Vault e i rinnovi di 15 secondi."
-        },
-        {
-          "title": "Fidati delle nostre Certificazioni",
-          "description":"Il nostro impegno per la sicurezza e l'affidabilità è supportato da una serie di certificazioni, tra cui ISO 9001, ISO 27001, PCI-DSS e SSAE16/ISAE3402. Puoi stare tranquillo sapendo che la tua infrastruttura è in buone mani."
-        },
-        {
-          "title": "Prestazioni Straordinarie",
-          "description":
-          " Sperimenta trasferimenti di dati ultraveloci con la velocità condivisa minima dei nostri nodi di rete di 10 gigabit al secondo. Questo livello di prestazioni è fondamentale per le applicazioni e i processi ad alta intensità di dati."
-          
-        },
-        {
-          "title": "Garantisci il tuo Successo",
-          "description":"Forniamo servizi affidabili e sicuri, permettendo alle aziende di concentrarsi sui propri obiettivi senza preoccuparsi della sicurezza dei dati sensibili. Collabora con Friendly Squad e sblocca il tuo vero potenziale."
-        }
-      ]
+          }]
         
-    },
-    "header": {
-      "Home": "HOME",
-      "About": "CHI SIAMO",
-      "infrastructure":"INFRASTRUTTURA",
-      "Service": "SERVIZI",
-      "Contact": "CONTATTACI",
-      "Login": "ACCEDI"
     }
+   
   }
 
 

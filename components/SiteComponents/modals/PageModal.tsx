@@ -8,9 +8,17 @@ interface PageModalsProps {
   title?: string;
   content?: any;
   openBookingList?: () => void;
+  pageName?: string;
+  booking?: any;
 }
 
-const PageModal = ({ title, content, openBookingList }: PageModalsProps) => {
+const PageModal = ({
+  title,
+  content,
+  openBookingList,
+  pageName,
+  booking,
+}: PageModalsProps) => {
   const [buttonStyle, setButtonStyle] = useState({ display: "none" });
 
   const { isReadOnly }: any = useAppProvider();
@@ -59,7 +67,6 @@ const PageModal = ({ title, content, openBookingList }: PageModalsProps) => {
     <>
       {showModal ? (
         <>
-          {/* <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto relative w-full h-full  inset-0 z-50 outline-none focus:outline-none"> */}
           <div className="justify-center items-end flex relative h-fit w-fit mt-18  z-20">
             <div
               className="relative w-auto mx-auto max-w-xl bg-white border-0 rounded-lg shadow-lg customDialog"
@@ -93,7 +100,12 @@ const PageModal = ({ title, content, openBookingList }: PageModalsProps) => {
               <div className="relative flex flex-col w-full ">
                 <div className="relative flex-auto">
                   <div className="mt-3 text-center sm:mt-5 ">
-                    <ContentPageModal data={content} isBookingList={false} />
+                    <ContentPageModal
+                      data={content}
+                      isBookingList={false}
+                      currentPage={pageName}
+                      booking={booking}
+                    />
                   </div>
                 </div>
                 <div

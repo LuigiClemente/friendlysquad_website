@@ -3,7 +3,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 const FooterSite = () => {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation("home");
   return (
     <section
       className="bg-transparent z-40 w-full"

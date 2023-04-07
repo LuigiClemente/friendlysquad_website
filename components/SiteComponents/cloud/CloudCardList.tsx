@@ -62,10 +62,10 @@ const CloudCardList = ({ getItemId }: any) => {
   }: any = useModalsAppProvider();
   const { isReadOnly }: any = useAppProvider();
 
-  useEffect(() => {
-    setCloudData(NOTE_CLOUD_SECTION);
-    console.log("cloudData", cloudData);
-  }, []);
+  // useEffect(() => {
+  //   setCloudData(NOTE_CLOUD_SECTION);
+  //   console.log("cloudData", cloudData);
+  // }, []);
 
   return (
     <div className="z-10 relative w-full flex flex-col justify-center items-center bg-transparent mt-[10px] ml-0">

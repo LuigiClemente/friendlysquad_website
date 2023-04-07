@@ -1,0 +1,26 @@
+{
+  "globe_data":[
+    {
+       "title": "Bankiersniveau Beveiliging",
+       "description":
+         " Bij Friendly Squad staat gegevensbeveiliging voorop. Ons Zero Trust-beveiligingsmodel en partnerschap met HarshCorp zorgen voor eersteklas bescherming van uw gevoelige gegevens via Vault Secrets Management en 15-seconden vernieuwingen."
+     },
+     {
+       "title": "Vertrouw op Onze Certificeringen",
+       "description":
+       " Onze inzet voor beveiliging en betrouwbaarheid wordt ondersteund door een reeks certificeringen, waaronder ISO 9001, ISO 27001, PCI-DSS en SSAE16/ISAE3402. Wees gerust dat uw infrastructuur in goede handen is."
+     },
+     {
+       "title": "Indrukwekkende Prestaties",
+       "description":
+       " Ervaar bliksemsnelle gegevensoverdracht met onze netwerkknooppunten met een minimale gedeelde snelheid van 10 gigabyte per seconde. Dit prestatieniveau is cruciaal voor gegevensintensieve toepassingen en processen."
+       
+     },
+     {
+       "title": "Verzeker Uw Succes",
+       "description":
+       "We bieden betrouwbare en veilige diensten, waardoor bedrijven zich kunnen concentreren op hun doelen zonder zich zorgen te hoeven maken over gevoelige gegevensbeveiliging. Werk samen met Friendly Squad en ontgrendel uw ware potentieel."
+     }
+   ]
+       
+}

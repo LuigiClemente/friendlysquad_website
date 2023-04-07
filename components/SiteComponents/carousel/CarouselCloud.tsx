@@ -11,10 +11,6 @@ import "swiper/swiper-bundle.css";
 import "swiper/swiper-element-bundle.min.css";
 import "swiper/swiper.css";
 import "swiper/swiper.min.css";
-
-// import "./styles.css";
-
-// import required modules
 import { Mousewheel, Pagination } from "swiper";
 import { NOTE_CLOUD_SECTION } from "../constant";
 import CloudCard from "../cloud/CloudCard";
